@@ -1,0 +1,925 @@
+test1
+test2
+DEBUG 2019-08-22 10:47:31,419: 	 Executing command: 'submit'
+DEBUG 2019-08-22 10:47:31,420: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2019-08-22 10:47:31,430: 	 Checking credentials
+DEBUG 2019-08-22 10:47:31,430: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 10:47:31,430: 	 Getting proxy life time left
+DEBUG 2019-08-22 10:47:32,239: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 43134
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 10:47:33,053: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 43134
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 10:47:33,054: 	 Proxy valid for 11:58:54 hours
+INFO 2019-08-22 10:47:33,054: 	 Will use CRAB configuration file crab_flat_pythia8.py
+DEBUG 2019-08-22 10:47:33,054: 	 Loading CRAB configuration file.
+DEBUG 2019-08-22 10:47:36,221: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2019-08-22 10:47:36,350: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 10:47:36,350: 	 Checking credentials
+DEBUG 2019-08-22 10:47:36,350: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 10:47:36,350: 	 Getting proxy life time left
+DEBUG 2019-08-22 10:47:37,058: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 43129
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 10:47:37,769: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 43129
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 10:47:37,769: 	 Proxy valid for 11:58:49 hours
+DEBUG 2019-08-22 10:47:38,578: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u107261 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 10:47:38,764: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-08-22 10:47:38,885: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 10:47:38,886: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-08-22 10:47:38,886: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu_cmsweb.cern.ch for credential name
+DEBUG 2019-08-22 10:47:39,291: 	 Executing : 
+ command : myproxy-info -l c312ac061c9e37dd59fd9402583d5895db871523 -s myproxy.cern.ch
+ output : username: c312ac061c9e37dd59fd9402583d5895db871523
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 419:09:43  (17.5 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 10:47:39,292: 	 Myproxy is valid: 1508983
+DEBUG 2019-08-22 10:47:39,292: 	 Command use: submit
+DEBUG 2019-08-22 10:47:39,292: 	 Options use: ['crab_flat_pythia8.py']
+DEBUG 2019-08-22 10:47:39,443: 	 CRABClient version: 3.3.1904
+DEBUG 2019-08-22 10:47:39,443: 	 Instance is prod
+DEBUG 2019-08-22 10:47:39,443: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-08-22 10:47:39,443: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-08-22 10:47:39,444: 	 Started submission
+DEBUG 2019-08-22 10:47:39,444: 	 Working on /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 10:47:39,736: 	 Loading required information from the environment
+DEBUG 2019-08-22 10:47:39,736: 	 Found CMSSW_9_4_6 for slc7_amd64_gcc630 with base /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6
+DEBUG 2019-08-22 10:47:39,736: 	 Loading required information from the environment
+DEBUG 2019-08-22 10:47:39,736: 	 Found CMSSW_9_4_6 for slc7_amd64_gcc630 with base /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6
+DEBUG 2019-08-22 10:47:39,759: 	 UNIQUE NAME: tarUUID 19fcbb5d-4a9c-4f70-aa69-93f435da013d 
+DEBUG 2019-08-22 10:47:39,760: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferLogs = True
+config.General.transferOutputs = True
+config.General.workArea = 'crab_projects'
+config.General.requestName = 'QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8'
+config.section_('JobType')
+config.JobType.psetName = 'Run_QCD_test_miaod_v2_76x_mc_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.allowUndistributedCMSSW = True
+config.section_('Data')
+config.Data.inputDataset = '/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIIFall17MiniAODv2-NoPU_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM'
+config.Data.outputDatasetTag = 'MC_analysis_Pythia8_flat'
+config.Data.publication = True
+config.Data.unitsPerJob = 10
+config.Data.inputDBS = 'global'
+config.Data.splitting = 'FileBased'
+config.Data.outLFNDirBase = '/store/user/sukundu/'
+config.section_('Site')
+config.Site.storageSite = 'T2_IN_TIFR'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2019-08-22 10:47:39,760: 	 self.config.JobType.psetName: Run_QCD_test_miaod_v2_76x_mc_cfg.py
+INFO 2019-08-22 10:47:39,760: 	 Importing CMSSW configuration Run_QCD_test_miaod_v2_76x_mc_cfg.py
+INFO 2019-08-22 10:47:49,653: 	 Finished importing CMSSW configuration Run_QCD_test_miaod_v2_76x_mc_cfg.py
+DEBUG 2019-08-22 10:47:49,653: 	 Writing CMSSW configuration to /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/inputs/PSet.py
+DEBUG 2019-08-22 10:47:50,102: 	 The following EDM output files will be collected: []
+DEBUG 2019-08-22 10:47:50,102: 	 The following TFile output files will be collected: ['Test_MC_QCD.root']
+DEBUG 2019-08-22 10:47:50,102: 	 The following user output files will be collected: []
+DEBUG 2019-08-22 10:47:50,102: 	 Loading required information from the environment
+DEBUG 2019-08-22 10:47:50,102: 	 Found CMSSW_9_4_6 for slc7_amd64_gcc630 with base /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6
+DEBUG 2019-08-22 10:47:50,102: 	 Making tarball in /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/inputs/19fcbb5d-4a9c-4f70-aa69-93f435da013ddefault.tgz
+DEBUG 2019-08-22 10:47:50,156: 	 Checking directory /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/lib
+DEBUG 2019-08-22 10:47:50,156: 	 Adding directory /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/lib to tarball
+DEBUG 2019-08-22 10:47:50,249: 	 Checking directory /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/biglib
+DEBUG 2019-08-22 10:47:50,249: 	 Adding directory /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/biglib to tarball
+DEBUG 2019-08-22 10:47:50,250: 	 Checking directory /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/module
+DEBUG 2019-08-22 10:47:50,594: 	 Uploading archive /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/inputs/19fcbb5d-4a9c-4f70-aa69-93f435da013ddefault.tgz (230 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2019-08-22 10:47:50,995: 	 Loading required information from the environment
+DEBUG 2019-08-22 10:47:50,995: 	 Found CMSSW_9_4_6 for slc7_amd64_gcc630 with base /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6
+DEBUG 2019-08-22 10:47:50,996: 	 Making tarball in /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/inputs/debugFiles.tgz
+DEBUG 2019-08-22 10:47:51,004: 	 Uploading archive /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/inputs/debugFiles.tgz (5 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2019-08-22 10:47:51,164: 	 Result uploading input files: 807b0b262ef00a6840725594ff35b7a37725f20cf988feec59741a69b9addf3a.tar.gz 
+WARNING 2019-08-22 10:47:51,164: 	 Warning: The following output files will not be published, as they are not EDM files: ['Test_MC_QCD.root']
+INFO 2019-08-22 10:47:51,164: 	 Sending the request to the server
+DEBUG 2019-08-22 10:47:51,164: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 0, 'savelogsflag': 1, 'useparent': 0, 'asyncdest': 'T2_IN_TIFR', 'algoargs': 10, 'cachefilename': '807b0b262ef00a6840725594ff35b7a37725f20cf988feec59741a69b9addf3a.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_9_4_6', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIIFall17MiniAODv2-NoPU_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM', 'lfn': '/store/user/sukundu/', 'dryrun': 0, 'workflow': 'crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'nonprodsw': 1, 'tfileoutfiles': ['Test_MC_QCD.root'], 'oneEventMode': 0, 'debugfilename': '4e2f3e2cddb0bdafea28b3dd3584dd0687d3a9d4ca4491749c3327817a71d4ae.tar.gz', 'saveoutput': 1, 'publication': 1, 'jobarch': 'slc7_amd64_gcc630', 'totalunits': 0, 'splitalgo': 'FileBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': 'MC_analysis_Pythia8_flat'} 
+DEBUG 2019-08-22 10:47:51,165: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=0&savelogsflag=1&useparent=0&asyncdest=T2_IN_TIFR&algoargs=10&cachefilename=807b0b262ef00a6840725594ff35b7a37725f20cf988feec59741a69b9addf3a.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_9_4_6&primarydataset=&inputdata=%2FQCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8%2FRunIIFall17MiniAODv2-NoPU_12Apr2018_94X_mc2017_realistic_v14-v1%2FMINIAODSIM&lfn=%2Fstore%2Fuser%2Fsukundu%2F&dryrun=0&workflow=crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&nonprodsw=1&oneEventMode=0&debugfilename=4e2f3e2cddb0bdafea28b3dd3584dd0687d3a9d4ca4491749c3327817a71d4ae.tar.gz&saveoutput=1&publication=1&jobarch=slc7_amd64_gcc630&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=MC_analysis_Pythia8_flat&tfileoutfiles=Test_MC_QCD.root
+DEBUG 2019-08-22 10:47:51,300: 	 Result: {u'result': [{u'RequestName': u'190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8'}]}
+INFO 2019-08-22 10:47:51,302: 	 Success: Your task has been delivered to the CRAB3 server.
+INFO 2019-08-22 10:47:51,302: 	 Task name: 190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 10:47:51,303: 	 Project dir: crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 10:47:51,303: 	 Please use 'crab status -d crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8' to check how the submission process proceeds.
+DEBUG 2019-08-22 10:47:51,303: 	 About to return
+INFO 2019-08-22 10:47:51,306: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/crab.log
+DEBUG 2019-08-22 11:51:44,866: 	 Executing command: 'status'
+DEBUG 2019-08-22 11:51:44,867: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2019-08-22 11:51:44,894: 	 Checking credentials
+DEBUG 2019-08-22 11:51:44,895: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 11:51:44,895: 	 Getting proxy life time left
+DEBUG 2019-08-22 11:51:45,702: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 39281
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:51:46,416: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 39280
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:51:46,416: 	 Proxy lifetime 39281 secs is different from voms extension lifetime 39280 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 11:51:46,416: 	 Proxy valid for 10:54:40 hours
+DEBUG 2019-08-22 11:51:46,802: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:51:46,802: 	 Checking credentials
+DEBUG 2019-08-22 11:51:46,802: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 11:51:46,802: 	 Getting proxy life time left
+DEBUG 2019-08-22 11:51:47,509: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 39279
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:51:48,215: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 39278
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:51:48,215: 	 Proxy lifetime 39279 secs is different from voms extension lifetime 39278 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 11:51:48,216: 	 Proxy valid for 10:54:38 hours
+DEBUG 2019-08-22 11:51:48,435: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-08-22 11:51:48,546: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:51:48,546: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-08-22 11:51:48,546: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu_cmsweb.cern.ch for credential name
+DEBUG 2019-08-22 11:51:49,352: 	 Executing : 
+ command : myproxy-info -l c312ac061c9e37dd59fd9402583d5895db871523 -s myproxy.cern.ch
+ output : username: c312ac061c9e37dd59fd9402583d5895db871523
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 418:05:33  (17.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:51:49,353: 	 Myproxy is valid: 1505133
+DEBUG 2019-08-22 11:51:49,354: 	 Command use: status
+DEBUG 2019-08-22 11:51:49,354: 	 Options use: ['-d', 'crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8']
+DEBUG 2019-08-22 11:51:49,539: 	 CRABClient version: 3.3.1904
+DEBUG 2019-08-22 11:51:49,539: 	 Instance is prod
+DEBUG 2019-08-22 11:51:49,539: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-08-22 11:51:49,539: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-08-22 11:51:49,684: 	 Got information from server oracle database: {u'result': [u'190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2019-08-22 08:47:51.291017', u'None', u'2019-08-22 08:58:34.282335', u'None', u'CMSSW_9_4_6', u'slc7_amd64_gcc630', u'/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIIFall17MiniAODv2-NoPU_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM', u'F', u'0', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 10, 'runs': [], 'lumis': []}", u'807b0b262ef00a6840725594ff35b7a37725f20cf988feec59741a69b9addf3a.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'sukundu', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu', u'cms', u'None', u'None', u'MC_analysis_Pythia8_flat-00000000000000000000000000000000', u'F', u'T2_IN_TIFR', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'T', u'[]', u"['Test_MC_QCD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0107.cern.ch', u'F', u'[]', u'T', u'/store/user/sukundu/', u'F', u'None', u'F', u'None', u'QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'4e2f3e2cddb0bdafea28b3dd3584dd0687d3a9d4ca4491749c3327817a71d4ae.tar.gz', u'43128449', u'filetransfers', u'F', u'2001:1458:d00:30::100:b9', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2019-08-22 11:51:49,685: 	 CRAB project directory:		/afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:51:49,685: 	 Task name:			190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:51:49,685: 	 Grid scheduler - Task Worker:	crab3@vocms0107.cern.ch - crab-prod-tw01
+INFO 2019-08-22 11:51:49,685: 	 Status on the CRAB server:	SUBMITTED
+INFO 2019-08-22 11:51:49,685: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:51:49,685: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=sukundu&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:51:49,685: 	 New dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=sukundu&var-task=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:51:49,685: 	 In case of issues with the new dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2019-08-22 11:51:49,685: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 43128449)
+DEBUG 2019-08-22 11:51:49,685: 	 Webdir is located at http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 11:51:49,915: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 11:51:49,915: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/status_cache
+DEBUG 2019-08-22 11:51:50,028: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [9.0, 515.0], 'StartTimes': [1566464698.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128463.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323808], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '10': {'Retries': 0, 'WallDurations': [9.0, 517.0], 'StartTimes': [1566464696.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128462.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322824], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [14], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '12': {'Retries': 0, 'WallDurations': [9.0, 513.0], 'StartTimes': [1566464699.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128464.0'], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323840], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '1': {'Retries': 0, 'WallDurations': [10.0, 101.0], 'StartTimes': [1566464949.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128455.0'], 'EndTimes': [1566465050.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [4408], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [6], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [0]}, '3': {'Retries': 0, 'WallDurations': [131.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464326.0], 'JobIds': ['43128453.0'], 'TotalUserCpuTimeHistory': [20], 'EndTimes': [1566464959.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37120], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '2': {'Retries': 0, 'WallDurations': [109.0, 199.62286400794983], 'StartTimes': [1566464827.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128454.0'], 'TotalUserCpuTimeHistory': [8], 'EndTimes': [1566464936.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [35836], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [1]}, '5': {'Retries': 0, 'WallDurations': [168.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128457.0'], 'EndTimes': [1566464996.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [28744], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [20], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '4': {'Retries': 0, 'WallDurations': [121.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128456.0'], 'TotalUserCpuTimeHistory': [13], 'EndTimes': [1566464949.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37248], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [3]}, '7': {'Retries': 0, 'WallDurations': [10.0, 612.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128459.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [896752], 'TotalUserCpuTimeHistory': [15.0], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [3.0]}, '6': {'Retries': 0, 'WallDurations': [10.0, 526.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128458.0'], 'EndTimes': [1566465220.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [325380], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [10], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '9': {'Retries': 0, 'WallDurations': [8.0, 517.0], 'StartTimes': [1566464695.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128461.0'], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322228], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [0]}, '8': {'Retries': 0, 'WallDurations': [8.0, 521.0], 'StartTimes': [1566464692.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128460.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322396], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [15], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}}
+INFO 2019-08-22 11:51:50,029: 	 Status on the scheduler:	SUBMITTED
+INFO 2019-08-22 11:51:50,029: 	 
+Jobs status:                    failed       		 91.7% (11/12)
+INFO 2019-08-22 11:51:50,029: 	 				running      		  8.3% ( 1/12)
+INFO 2019-08-22 11:51:50,029: 	 
+No publication information available yet
+INFO 2019-08-22 11:51:50,029: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+11 jobs failed with exit code 139
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2019-08-22 11:51:50,030: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2019-08-22 11:51:50,030: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2019-08-22 11:51:50,030: 	 
+Summary of run jobs:
+ * Memory: 4MB min, 317MB max, 185MB ave
+ * Runtime: 0:01:41 min, 0:08:46 max, 0:06:04 ave
+ * CPU eff: 1% min, 13% max, 4% ave
+ * Waste: 0:09:52 (13% of total)
+
+INFO 2019-08-22 11:51:50,075: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/crab.log
+DEBUG 2019-08-22 11:52:14,849: 	 Executing command: 'status'
+DEBUG 2019-08-22 11:52:14,850: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2019-08-22 11:52:14,858: 	 Checking credentials
+DEBUG 2019-08-22 11:52:14,858: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 11:52:14,858: 	 Getting proxy life time left
+DEBUG 2019-08-22 11:52:15,566: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 39251
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:52:16,272: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 39250
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:52:16,272: 	 Proxy lifetime 39251 secs is different from voms extension lifetime 39250 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 11:52:16,272: 	 Proxy valid for 10:54:10 hours
+DEBUG 2019-08-22 11:52:16,386: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:52:16,386: 	 Checking credentials
+DEBUG 2019-08-22 11:52:16,386: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 11:52:16,386: 	 Getting proxy life time left
+DEBUG 2019-08-22 11:52:17,092: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 39249
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:52:17,798: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 39249
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:52:17,799: 	 Proxy valid for 10:54:09 hours
+DEBUG 2019-08-22 11:52:17,946: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-08-22 11:52:18,056: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:52:18,056: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-08-22 11:52:18,056: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu_cmsweb.cern.ch for credential name
+DEBUG 2019-08-22 11:52:18,661: 	 Executing : 
+ command : myproxy-info -l c312ac061c9e37dd59fd9402583d5895db871523 -s myproxy.cern.ch
+ output : username: c312ac061c9e37dd59fd9402583d5895db871523
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 418:05:04  (17.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:52:18,662: 	 Myproxy is valid: 1505104
+DEBUG 2019-08-22 11:52:18,663: 	 Command use: status
+DEBUG 2019-08-22 11:52:18,663: 	 Options use: ['--verboseErrors']
+DEBUG 2019-08-22 11:52:18,819: 	 CRABClient version: 3.3.1904
+DEBUG 2019-08-22 11:52:18,819: 	 Instance is prod
+DEBUG 2019-08-22 11:52:18,819: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-08-22 11:52:18,819: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-08-22 11:52:18,999: 	 Got information from server oracle database: {u'result': [u'190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2019-08-22 08:47:51.291017', u'None', u'2019-08-22 08:58:34.282335', u'None', u'CMSSW_9_4_6', u'slc7_amd64_gcc630', u'/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIIFall17MiniAODv2-NoPU_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM', u'F', u'0', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 10, 'runs': [], 'lumis': []}", u'807b0b262ef00a6840725594ff35b7a37725f20cf988feec59741a69b9addf3a.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'sukundu', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu', u'cms', u'None', u'None', u'MC_analysis_Pythia8_flat-00000000000000000000000000000000', u'F', u'T2_IN_TIFR', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'T', u'[]', u"['Test_MC_QCD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0107.cern.ch', u'F', u'[]', u'T', u'/store/user/sukundu/', u'F', u'None', u'F', u'None', u'QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'4e2f3e2cddb0bdafea28b3dd3584dd0687d3a9d4ca4491749c3327817a71d4ae.tar.gz', u'43128449', u'filetransfers', u'F', u'2001:1458:d00:30::100:b9', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2019-08-22 11:52:18,999: 	 CRAB project directory:		/afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:52:18,999: 	 Task name:			190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:52:18,999: 	 Grid scheduler - Task Worker:	crab3@vocms0107.cern.ch - crab-prod-tw01
+INFO 2019-08-22 11:52:18,999: 	 Status on the CRAB server:	SUBMITTED
+INFO 2019-08-22 11:52:19,000: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:52:19,000: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=sukundu&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:52:19,000: 	 New dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=sukundu&var-task=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:52:19,000: 	 In case of issues with the new dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2019-08-22 11:52:19,000: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 43128449)
+DEBUG 2019-08-22 11:52:19,000: 	 Webdir is located at http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 11:52:19,200: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 11:52:19,200: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/status_cache
+DEBUG 2019-08-22 11:52:19,307: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [9.0, 515.0], 'StartTimes': [1566464698.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128463.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323808], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '10': {'Retries': 0, 'WallDurations': [9.0, 517.0], 'StartTimes': [1566464696.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128462.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322824], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [14], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '12': {'Retries': 0, 'WallDurations': [9.0, 513.0], 'StartTimes': [1566464699.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128464.0'], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323840], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '1': {'Retries': 0, 'WallDurations': [10.0, 101.0], 'StartTimes': [1566464949.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128455.0'], 'EndTimes': [1566465050.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [4408], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [6], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [0]}, '3': {'Retries': 0, 'WallDurations': [131.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464326.0], 'JobIds': ['43128453.0'], 'TotalUserCpuTimeHistory': [20], 'EndTimes': [1566464959.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37120], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '2': {'Retries': 0, 'WallDurations': [109.0, 199.62286400794983], 'StartTimes': [1566464827.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128454.0'], 'TotalUserCpuTimeHistory': [8], 'EndTimes': [1566464936.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [35836], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [1]}, '5': {'Retries': 0, 'WallDurations': [168.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128457.0'], 'EndTimes': [1566464996.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [28744], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [20], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '4': {'Retries': 0, 'WallDurations': [121.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128456.0'], 'TotalUserCpuTimeHistory': [13], 'EndTimes': [1566464949.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37248], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [3]}, '7': {'Retries': 0, 'WallDurations': [10.0, 612.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128459.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [896752], 'TotalUserCpuTimeHistory': [15.0], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [3.0]}, '6': {'Retries': 0, 'WallDurations': [10.0, 526.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128458.0'], 'EndTimes': [1566465220.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [325380], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [10], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '9': {'Retries': 0, 'WallDurations': [8.0, 517.0], 'StartTimes': [1566464695.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128461.0'], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322228], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [0]}, '8': {'Retries': 0, 'WallDurations': [8.0, 521.0], 'StartTimes': [1566464692.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128460.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322396], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [15], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}}
+INFO 2019-08-22 11:52:19,307: 	 Status on the scheduler:	SUBMITTED
+INFO 2019-08-22 11:52:19,307: 	 
+Jobs status:                    failed       		 91.7% (11/12)
+INFO 2019-08-22 11:52:19,307: 	 				running      		  8.3% ( 1/12)
+INFO 2019-08-22 11:52:19,307: 	 
+No publication information available yet
+INFO 2019-08-22 11:52:19,308: 	 
+Error Summary:
+
+11 jobs failed with exit code 139:
+
+	11 jobs failed with following error message: (for example, job 1)
+
+		CmsRunFailure
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2019-08-22 11:52:19,308: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2019-08-22 11:52:19,308: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2019-08-22 11:52:19,308: 	 
+Summary of run jobs:
+ * Memory: 4MB min, 317MB max, 185MB ave
+ * Runtime: 0:01:41 min, 0:08:46 max, 0:06:04 ave
+ * CPU eff: 1% min, 13% max, 4% ave
+ * Waste: 0:09:52 (13% of total)
+
+INFO 2019-08-22 11:52:19,315: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/crab.log
+DEBUG 2019-08-22 11:53:19,390: 	 Executing command: 'status'
+DEBUG 2019-08-22 11:53:19,390: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2019-08-22 11:53:19,399: 	 Checking credentials
+DEBUG 2019-08-22 11:53:19,400: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 11:53:19,400: 	 Getting proxy life time left
+DEBUG 2019-08-22 11:53:20,105: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 39186
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:53:20,810: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 39186
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:53:20,810: 	 Proxy valid for 10:53:06 hours
+DEBUG 2019-08-22 11:53:20,926: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:53:20,926: 	 Checking credentials
+DEBUG 2019-08-22 11:53:20,926: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 11:53:20,926: 	 Getting proxy life time left
+DEBUG 2019-08-22 11:53:21,632: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 39185
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:53:22,338: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 39184
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:53:22,338: 	 Proxy lifetime 39185 secs is different from voms extension lifetime 39184 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 11:53:22,338: 	 Proxy valid for 10:53:04 hours
+DEBUG 2019-08-22 11:53:22,473: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-08-22 11:53:22,583: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:53:22,583: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-08-22 11:53:22,583: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu_cmsweb.cern.ch for credential name
+DEBUG 2019-08-22 11:53:23,589: 	 Executing : 
+ command : myproxy-info -l c312ac061c9e37dd59fd9402583d5895db871523 -s myproxy.cern.ch
+ output : username: c312ac061c9e37dd59fd9402583d5895db871523
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 418:03:59  (17.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:53:23,590: 	 Myproxy is valid: 1505039
+DEBUG 2019-08-22 11:53:23,591: 	 Command use: status
+DEBUG 2019-08-22 11:53:23,591: 	 Options use: ['-d', 'crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8']
+DEBUG 2019-08-22 11:53:23,743: 	 CRABClient version: 3.3.1904
+DEBUG 2019-08-22 11:53:23,744: 	 Instance is prod
+DEBUG 2019-08-22 11:53:23,744: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-08-22 11:53:23,744: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-08-22 11:53:23,875: 	 Got information from server oracle database: {u'result': [u'190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2019-08-22 08:47:51.291017', u'None', u'2019-08-22 08:58:34.282335', u'None', u'CMSSW_9_4_6', u'slc7_amd64_gcc630', u'/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIIFall17MiniAODv2-NoPU_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM', u'F', u'0', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 10, 'runs': [], 'lumis': []}", u'807b0b262ef00a6840725594ff35b7a37725f20cf988feec59741a69b9addf3a.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'sukundu', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu', u'cms', u'None', u'None', u'MC_analysis_Pythia8_flat-00000000000000000000000000000000', u'F', u'T2_IN_TIFR', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'T', u'[]', u"['Test_MC_QCD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0107.cern.ch', u'F', u'[]', u'T', u'/store/user/sukundu/', u'F', u'None', u'F', u'None', u'QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'4e2f3e2cddb0bdafea28b3dd3584dd0687d3a9d4ca4491749c3327817a71d4ae.tar.gz', u'43128449', u'filetransfers', u'F', u'2001:1458:d00:30::100:b9', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2019-08-22 11:53:23,876: 	 CRAB project directory:		/afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:53:23,876: 	 Task name:			190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:53:23,876: 	 Grid scheduler - Task Worker:	crab3@vocms0107.cern.ch - crab-prod-tw01
+INFO 2019-08-22 11:53:23,876: 	 Status on the CRAB server:	SUBMITTED
+INFO 2019-08-22 11:53:23,876: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:53:23,876: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=sukundu&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:53:23,876: 	 New dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=sukundu&var-task=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:53:23,877: 	 In case of issues with the new dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2019-08-22 11:53:23,877: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 43128449)
+DEBUG 2019-08-22 11:53:23,877: 	 Webdir is located at http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 11:53:24,055: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 11:53:24,055: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/status_cache
+DEBUG 2019-08-22 11:53:24,166: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [9.0, 515.0], 'StartTimes': [1566464698.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128463.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323808], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '10': {'Retries': 0, 'WallDurations': [9.0, 517.0], 'StartTimes': [1566464696.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128462.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322824], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [14], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '12': {'Retries': 0, 'WallDurations': [9.0, 513.0], 'StartTimes': [1566464699.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128464.0'], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323840], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '1': {'Retries': 0, 'WallDurations': [10.0, 101.0], 'StartTimes': [1566464949.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128455.0'], 'EndTimes': [1566465050.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [4408], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [6], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [0]}, '3': {'Retries': 0, 'WallDurations': [131.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464326.0], 'JobIds': ['43128453.0'], 'TotalUserCpuTimeHistory': [20], 'EndTimes': [1566464959.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37120], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '2': {'Retries': 0, 'WallDurations': [109.0, 199.62286400794983], 'StartTimes': [1566464827.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128454.0'], 'TotalUserCpuTimeHistory': [8], 'EndTimes': [1566464936.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [35836], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [1]}, '5': {'Retries': 0, 'WallDurations': [168.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128457.0'], 'EndTimes': [1566464996.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [28744], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [20], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '4': {'Retries': 0, 'WallDurations': [121.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128456.0'], 'TotalUserCpuTimeHistory': [13], 'EndTimes': [1566464949.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37248], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [3]}, '7': {'Retries': 0, 'WallDurations': [10.0, 612.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128459.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [896752], 'TotalUserCpuTimeHistory': [15.0], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [3.0]}, '6': {'Retries': 0, 'WallDurations': [10.0, 526.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128458.0'], 'EndTimes': [1566465220.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [325380], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [10], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '9': {'Retries': 0, 'WallDurations': [8.0, 517.0], 'StartTimes': [1566464695.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128461.0'], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322228], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [0]}, '8': {'Retries': 0, 'WallDurations': [8.0, 521.0], 'StartTimes': [1566464692.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128460.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322396], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [15], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}}
+INFO 2019-08-22 11:53:24,166: 	 Status on the scheduler:	SUBMITTED
+INFO 2019-08-22 11:53:24,166: 	 
+Jobs status:                    failed       		 91.7% (11/12)
+INFO 2019-08-22 11:53:24,166: 	 				running      		  8.3% ( 1/12)
+INFO 2019-08-22 11:53:24,166: 	 
+No publication information available yet
+INFO 2019-08-22 11:53:24,166: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+11 jobs failed with exit code 139
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2019-08-22 11:53:24,167: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2019-08-22 11:53:24,167: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2019-08-22 11:53:24,167: 	 
+Summary of run jobs:
+ * Memory: 4MB min, 317MB max, 185MB ave
+ * Runtime: 0:01:41 min, 0:08:46 max, 0:06:04 ave
+ * CPU eff: 1% min, 13% max, 4% ave
+ * Waste: 0:09:52 (13% of total)
+
+INFO 2019-08-22 11:53:24,186: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/crab.log
+DEBUG 2019-08-22 11:57:10,916: 	 Executing command: 'status'
+DEBUG 2019-08-22 11:57:10,916: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2019-08-22 11:57:10,933: 	 Checking credentials
+DEBUG 2019-08-22 11:57:10,934: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 11:57:10,934: 	 Getting proxy life time left
+DEBUG 2019-08-22 11:57:11,746: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 38955
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:57:12,462: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 38954
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:57:12,462: 	 Proxy lifetime 38955 secs is different from voms extension lifetime 38954 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 11:57:12,462: 	 Proxy valid for 10:49:14 hours
+DEBUG 2019-08-22 11:57:12,576: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:57:12,577: 	 Checking credentials
+DEBUG 2019-08-22 11:57:12,577: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 11:57:12,577: 	 Getting proxy life time left
+DEBUG 2019-08-22 11:57:13,284: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 38953
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:57:14,092: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 38952
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:57:14,093: 	 Proxy lifetime 38953 secs is different from voms extension lifetime 38952 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 11:57:14,093: 	 Proxy valid for 10:49:12 hours
+DEBUG 2019-08-22 11:57:14,304: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-08-22 11:57:14,414: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:57:14,415: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-08-22 11:57:14,415: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu_cmsweb.cern.ch for credential name
+DEBUG 2019-08-22 11:57:14,820: 	 Executing : 
+ command : myproxy-info -l c312ac061c9e37dd59fd9402583d5895db871523 -s myproxy.cern.ch
+ output : username: c312ac061c9e37dd59fd9402583d5895db871523
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 418:00:08  (17.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:57:14,821: 	 Myproxy is valid: 1504808
+DEBUG 2019-08-22 11:57:14,822: 	 Command use: status
+DEBUG 2019-08-22 11:57:14,822: 	 Options use: ['-d', 'crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8']
+DEBUG 2019-08-22 11:57:14,949: 	 CRABClient version: 3.3.1904
+DEBUG 2019-08-22 11:57:14,949: 	 Instance is prod
+DEBUG 2019-08-22 11:57:14,949: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-08-22 11:57:14,949: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-08-22 11:57:15,081: 	 Got information from server oracle database: {u'result': [u'190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2019-08-22 08:47:51.291017', u'None', u'2019-08-22 08:58:34.282335', u'None', u'CMSSW_9_4_6', u'slc7_amd64_gcc630', u'/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIIFall17MiniAODv2-NoPU_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM', u'F', u'0', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 10, 'runs': [], 'lumis': []}", u'807b0b262ef00a6840725594ff35b7a37725f20cf988feec59741a69b9addf3a.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'sukundu', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu', u'cms', u'None', u'None', u'MC_analysis_Pythia8_flat-00000000000000000000000000000000', u'F', u'T2_IN_TIFR', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'T', u'[]', u"['Test_MC_QCD.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0107.cern.ch', u'F', u'[]', u'T', u'/store/user/sukundu/', u'F', u'None', u'F', u'None', u'QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'4e2f3e2cddb0bdafea28b3dd3584dd0687d3a9d4ca4491749c3327817a71d4ae.tar.gz', u'43128449', u'filetransfers', u'F', u'2001:1458:d00:30::100:b9', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2019-08-22 11:57:15,082: 	 CRAB project directory:		/afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:57:15,082: 	 Task name:			190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:57:15,082: 	 Grid scheduler - Task Worker:	crab3@vocms0107.cern.ch - crab-prod-tw01
+INFO 2019-08-22 11:57:15,082: 	 Status on the CRAB server:	SUBMITTED
+INFO 2019-08-22 11:57:15,082: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:57:15,083: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=sukundu&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:57:15,083: 	 New dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=sukundu&var-task=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 11:57:15,083: 	 In case of issues with the new dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2019-08-22 11:57:15,083: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 43128449)
+DEBUG 2019-08-22 11:57:15,083: 	 Webdir is located at http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 11:57:15,237: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 11:57:15,237: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/status_cache
+DEBUG 2019-08-22 11:57:15,344: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [9.0, 515.0], 'StartTimes': [1566464698.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128463.0'], 'TotalUserCpuTimeHistory': [5], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323808], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '10': {'Retries': 0, 'WallDurations': [9.0, 517.0], 'StartTimes': [1566464696.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128462.0'], 'TotalUserCpuTimeHistory': [14], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322824], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '12': {'Retries': 0, 'WallDurations': [9.0, 513.0], 'StartTimes': [1566464699.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128464.0'], 'TotalUserCpuTimeHistory': [5], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323840], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '1': {'Retries': 0, 'WallDurations': [10.0, 101.0], 'StartTimes': [1566464949.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128455.0'], 'TotalUserCpuTimeHistory': [6], 'EndTimes': [1566465050.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [4408], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [0]}, '3': {'Retries': 0, 'WallDurations': [131.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464326.0], 'JobIds': ['43128453.0'], 'EndTimes': [1566464959.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37120], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [20], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '2': {'Retries': 0, 'WallDurations': [109.0, 199.62286400794983], 'StartTimes': [1566464827.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128454.0'], 'EndTimes': [1566464936.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [35836], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [8], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [1]}, '5': {'Retries': 0, 'WallDurations': [168.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128457.0'], 'TotalUserCpuTimeHistory': [20], 'EndTimes': [1566464996.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [28744], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '4': {'Retries': 0, 'WallDurations': [121.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128456.0'], 'EndTimes': [1566464949.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37248], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [13], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [3]}, '7': {'Retries': 0, 'WallDurations': [10.0, 612.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128459.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [896752], 'TotalUserCpuTimeHistory': [15.0], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [3.0]}, '6': {'Retries': 0, 'WallDurations': [10.0, 526.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128458.0'], 'TotalUserCpuTimeHistory': [10], 'EndTimes': [1566465220.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [325380], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '9': {'Retries': 0, 'WallDurations': [8.0, 517.0], 'StartTimes': [1566464695.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128461.0'], 'TotalUserCpuTimeHistory': [5], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322228], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [0]}, '8': {'Retries': 0, 'WallDurations': [8.0, 521.0], 'StartTimes': [1566464692.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128460.0'], 'TotalUserCpuTimeHistory': [15], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322396], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}}
+INFO 2019-08-22 11:57:15,344: 	 Status on the scheduler:	SUBMITTED
+INFO 2019-08-22 11:57:15,345: 	 
+Jobs status:                    failed       		 91.7% (11/12)
+INFO 2019-08-22 11:57:15,345: 	 				running      		  8.3% ( 1/12)
+INFO 2019-08-22 11:57:15,345: 	 
+No publication information available yet
+INFO 2019-08-22 11:57:15,345: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+11 jobs failed with exit code 139
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2019-08-22 11:57:15,345: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2019-08-22 11:57:15,346: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2019-08-22 11:57:15,346: 	 
+Summary of run jobs:
+ * Memory: 4MB min, 317MB max, 185MB ave
+ * Runtime: 0:01:41 min, 0:08:46 max, 0:06:04 ave
+ * CPU eff: 1% min, 13% max, 4% ave
+ * Waste: 0:09:52 (13% of total)
+
+INFO 2019-08-22 11:57:15,368: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/crab.log
+DEBUG 2019-08-22 11:58:05,861: 	 Executing command: 'kill'
+DEBUG 2019-08-22 11:58:05,861: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2019-08-22 11:58:05,868: 	 Checking credentials
+DEBUG 2019-08-22 11:58:05,869: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 11:58:05,869: 	 Getting proxy life time left
+DEBUG 2019-08-22 11:58:06,574: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 38900
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:58:07,287: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 38899
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:58:07,287: 	 Proxy lifetime 38900 secs is different from voms extension lifetime 38899 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 11:58:07,287: 	 Proxy valid for 10:48:19 hours
+DEBUG 2019-08-22 11:58:07,401: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:58:07,401: 	 Checking credentials
+DEBUG 2019-08-22 11:58:07,401: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 11:58:07,401: 	 Getting proxy life time left
+DEBUG 2019-08-22 11:58:08,106: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 38898
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:58:08,820: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 38898
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:58:08,821: 	 Proxy valid for 10:48:18 hours
+DEBUG 2019-08-22 11:58:10,416: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-08-22 11:58:10,529: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:58:10,529: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-08-22 11:58:10,529: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu_cmsweb.cern.ch for credential name
+DEBUG 2019-08-22 11:58:10,834: 	 Executing : 
+ command : myproxy-info -l c312ac061c9e37dd59fd9402583d5895db871523 -s myproxy.cern.ch
+ output : username: c312ac061c9e37dd59fd9402583d5895db871523
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 417:59:12  (17.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 11:58:10,835: 	 Myproxy is valid: 1504752
+DEBUG 2019-08-22 11:58:10,836: 	 Command use: kill
+DEBUG 2019-08-22 11:58:10,836: 	 Options use: ['crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8']
+DEBUG 2019-08-22 11:58:10,950: 	 CRABClient version: 3.3.1904
+DEBUG 2019-08-22 11:58:10,950: 	 Instance is prod
+DEBUG 2019-08-22 11:58:10,950: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-08-22 11:58:10,950: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-08-22 11:58:10,950: 	 Killing task 190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 11:58:11,283: 	 Result: {u'result': [{u'result': u'ok'}], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_user_role', u'tm_user_group', u'tm_task_failure', u'tm_split_algo', u'tm_split_args', u'panda_resubmitted_jobs', u'tm_save_logs', u'tm_username', u'tm_user_dn', u'tm_arguments', u'tm_input_dataset', u'tm_dbs_url', u'tm_task_warnings', u'tm_publication', u'tm_user_webdir', u'tm_asourl', u'tm_asodb', u'tm_output_dataset', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'clusterid', u'tm_start_time', u'tw_name']}}
+INFO 2019-08-22 11:58:11,283: 	 Kill request successfully sent
+INFO 2019-08-22 11:58:11,285: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/crab.log
+DEBUG 2019-08-22 12:05:07,246: 	 Executing command: 'kill'
+DEBUG 2019-08-22 12:05:07,246: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2019-08-22 12:05:07,259: 	 Checking credentials
+DEBUG 2019-08-22 12:05:07,260: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 12:05:07,260: 	 Getting proxy life time left
+DEBUG 2019-08-22 12:05:07,965: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 38479
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:08,671: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 38478
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:08,671: 	 Proxy lifetime 38479 secs is different from voms extension lifetime 38478 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 12:05:08,671: 	 Proxy valid for 10:41:18 hours
+DEBUG 2019-08-22 12:05:08,786: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:08,786: 	 Checking credentials
+DEBUG 2019-08-22 12:05:08,787: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 12:05:08,787: 	 Getting proxy life time left
+DEBUG 2019-08-22 12:05:09,492: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 38477
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:10,200: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 38476
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:10,200: 	 Proxy lifetime 38477 secs is different from voms extension lifetime 38476 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 12:05:10,200: 	 Proxy valid for 10:41:16 hours
+DEBUG 2019-08-22 12:05:10,333: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-08-22 12:05:10,443: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:10,443: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-08-22 12:05:10,443: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu_cmsweb.cern.ch for credential name
+DEBUG 2019-08-22 12:05:10,848: 	 Executing : 
+ command : myproxy-info -l c312ac061c9e37dd59fd9402583d5895db871523 -s myproxy.cern.ch
+ output : username: c312ac061c9e37dd59fd9402583d5895db871523
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 417:52:12  (17.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:10,849: 	 Myproxy is valid: 1504332
+DEBUG 2019-08-22 12:05:10,850: 	 Command use: kill
+DEBUG 2019-08-22 12:05:10,850: 	 Options use: ['crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8']
+DEBUG 2019-08-22 12:05:11,005: 	 CRABClient version: 3.3.1904
+DEBUG 2019-08-22 12:05:11,005: 	 Instance is prod
+DEBUG 2019-08-22 12:05:11,005: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-08-22 12:05:11,005: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-08-22 12:05:11,005: 	 Killing task 190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 12:05:11,200: 	 Result: {u'result': [{u'result': u'ok'}], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_user_role', u'tm_user_group', u'tm_task_failure', u'tm_split_algo', u'tm_split_args', u'panda_resubmitted_jobs', u'tm_save_logs', u'tm_username', u'tm_user_dn', u'tm_arguments', u'tm_input_dataset', u'tm_dbs_url', u'tm_task_warnings', u'tm_publication', u'tm_user_webdir', u'tm_asourl', u'tm_asodb', u'tm_output_dataset', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'clusterid', u'tm_start_time', u'tw_name']}}
+INFO 2019-08-22 12:05:11,200: 	 Kill request successfully sent
+INFO 2019-08-22 12:05:11,202: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/crab.log
+DEBUG 2019-08-22 12:05:16,582: 	 Executing command: 'status'
+DEBUG 2019-08-22 12:05:16,583: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2019-08-22 12:05:16,592: 	 Checking credentials
+DEBUG 2019-08-22 12:05:16,593: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 12:05:16,593: 	 Getting proxy life time left
+DEBUG 2019-08-22 12:05:17,298: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 38469
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:18,004: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 38469
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:18,004: 	 Proxy valid for 10:41:09 hours
+DEBUG 2019-08-22 12:05:18,162: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:18,162: 	 Checking credentials
+DEBUG 2019-08-22 12:05:18,162: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 12:05:18,162: 	 Getting proxy life time left
+DEBUG 2019-08-22 12:05:18,871: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 38468
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:19,578: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 38467
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:19,579: 	 Proxy lifetime 38468 secs is different from voms extension lifetime 38467 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 12:05:19,579: 	 Proxy valid for 10:41:07 hours
+DEBUG 2019-08-22 12:05:19,773: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-08-22 12:05:19,884: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:19,884: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-08-22 12:05:19,884: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu_cmsweb.cern.ch for credential name
+DEBUG 2019-08-22 12:05:20,189: 	 Executing : 
+ command : myproxy-info -l c312ac061c9e37dd59fd9402583d5895db871523 -s myproxy.cern.ch
+ output : username: c312ac061c9e37dd59fd9402583d5895db871523
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 417:52:02  (17.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:05:20,190: 	 Myproxy is valid: 1504322
+DEBUG 2019-08-22 12:05:20,191: 	 Command use: status
+DEBUG 2019-08-22 12:05:20,191: 	 Options use: ['-d', 'crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8']
+DEBUG 2019-08-22 12:05:20,326: 	 CRABClient version: 3.3.1904
+DEBUG 2019-08-22 12:05:20,326: 	 Instance is prod
+DEBUG 2019-08-22 12:05:20,326: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-08-22 12:05:20,326: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-08-22 12:05:20,459: 	 Got information from server oracle database: {u'result': [u'190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'None', u'HOLDING', u'KILL', u'2019-08-22 08:47:51.291017', u'None', u'2019-08-22 08:58:34.282335', u'None', u'CMSSW_9_4_6', u'slc7_amd64_gcc630', u'/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIIFall17MiniAODv2-NoPU_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM', u'F', u'0', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 10, 'runs': [], 'lumis': []}", u'807b0b262ef00a6840725594ff35b7a37725f20cf988feec59741a69b9addf3a.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'sukundu', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu', u'cms', u'None', u'None', u'MC_analysis_Pythia8_flat-00000000000000000000000000000000', u'F', u'T2_IN_TIFR', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'T', u'[]', u"['Test_MC_QCD.root']", u'[]', u'Analysis', u'pythia', u'None', u"{'killList': None, 'ASOURL': 'https://cmsweb.cern.ch/crabserver/prod'}", u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u"['/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu', '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu']", u'http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0107.cern.ch', u'F', u'[]', u'T', u'/store/user/sukundu/', u'F', u'None', u'F', u'None', u'QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'4e2f3e2cddb0bdafea28b3dd3584dd0687d3a9d4ca4491749c3327817a71d4ae.tar.gz', u'43128449', u'filetransfers', u'F', u'2001:1458:d00:30::100:b9', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2019-08-22 12:05:20,459: 	 CRAB project directory:		/afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 12:05:20,459: 	 Task name:			190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 12:05:20,459: 	 Grid scheduler - Task Worker:	crab3@vocms0107.cern.ch - crab-prod-tw01
+INFO 2019-08-22 12:05:20,459: 	 Status on the CRAB server:	HOLDING on command KILL
+INFO 2019-08-22 12:05:20,460: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 12:05:20,460: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=sukundu&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 12:05:20,460: 	 New dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=sukundu&var-task=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 12:05:20,460: 	 In case of issues with the new dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+WARNING 2019-08-22 12:05:20,460: 	 Warning:			/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+WARNING 2019-08-22 12:05:20,460: 	 Warning:			/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+DEBUG 2019-08-22 12:05:20,460: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 43128449)
+DEBUG 2019-08-22 12:05:20,460: 	 Webdir is located at http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 12:05:20,603: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 12:05:20,604: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/status_cache
+DEBUG 2019-08-22 12:05:20,712: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [9.0, 515.0], 'StartTimes': [1566464698.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128463.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323808], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '10': {'Retries': 0, 'WallDurations': [9.0, 517.0], 'StartTimes': [1566464696.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128462.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322824], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [14], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '12': {'Retries': 0, 'WallDurations': [9.0, 513.0], 'StartTimes': [1566464699.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128464.0'], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323840], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '1': {'Retries': 0, 'WallDurations': [10.0, 101.0], 'StartTimes': [1566464949.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128455.0'], 'EndTimes': [1566465050.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [4408], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [6], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [0]}, '3': {'Retries': 0, 'WallDurations': [131.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464326.0], 'JobIds': ['43128453.0'], 'TotalUserCpuTimeHistory': [20], 'EndTimes': [1566464959.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37120], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '2': {'Retries': 0, 'WallDurations': [109.0, 199.62286400794983], 'StartTimes': [1566464827.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128454.0'], 'TotalUserCpuTimeHistory': [8], 'EndTimes': [1566464936.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [35836], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [1]}, '5': {'Retries': 0, 'WallDurations': [168.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128457.0'], 'EndTimes': [1566464996.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [28744], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [20], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '4': {'Retries': 0, 'WallDurations': [121.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128456.0'], 'TotalUserCpuTimeHistory': [13], 'EndTimes': [1566464949.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37248], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [3]}, '7': {'Retries': 0, 'WallDurations': [10.0, 612.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128459.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'running', 'ResidentSetSize': [896752], 'TotalUserCpuTimeHistory': [15.0], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [3.0]}, '6': {'Retries': 0, 'WallDurations': [10.0, 526.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128458.0'], 'EndTimes': [1566465220.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [325380], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [10], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '9': {'Retries': 0, 'WallDurations': [8.0, 517.0], 'StartTimes': [1566464695.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128461.0'], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322228], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [5], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [0]}, '8': {'Retries': 0, 'WallDurations': [8.0, 521.0], 'StartTimes': [1566464692.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128460.0'], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322396], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [15], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}}
+INFO 2019-08-22 12:05:20,712: 	 Status on the scheduler:	SUBMITTED
+INFO 2019-08-22 12:05:20,712: 	 
+Jobs status:                    failed       		 91.7% (11/12)
+INFO 2019-08-22 12:05:20,713: 	 				running      		  8.3% ( 1/12)
+INFO 2019-08-22 12:05:20,713: 	 
+No publication information available yet
+INFO 2019-08-22 12:05:20,713: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+11 jobs failed with exit code 139
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2019-08-22 12:05:20,713: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2019-08-22 12:05:20,713: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2019-08-22 12:05:20,713: 	 
+Summary of run jobs:
+ * Memory: 4MB min, 317MB max, 185MB ave
+ * Runtime: 0:01:41 min, 0:08:46 max, 0:06:04 ave
+ * CPU eff: 1% min, 13% max, 4% ave
+ * Waste: 0:09:52 (13% of total)
+
+INFO 2019-08-22 12:05:20,748: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/crab.log
+DEBUG 2019-08-22 12:06:36,996: 	 Executing command: 'status'
+DEBUG 2019-08-22 12:06:36,996: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2019-08-22 12:06:37,006: 	 Checking credentials
+DEBUG 2019-08-22 12:06:37,007: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 12:06:37,007: 	 Getting proxy life time left
+DEBUG 2019-08-22 12:06:37,712: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 38389
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:06:38,424: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 38388
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:06:38,424: 	 Proxy lifetime 38389 secs is different from voms extension lifetime 38388 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 12:06:38,424: 	 Proxy valid for 10:39:48 hours
+DEBUG 2019-08-22 12:06:38,543: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:06:38,543: 	 Checking credentials
+DEBUG 2019-08-22 12:06:38,543: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2019-08-22 12:06:38,543: 	 Getting proxy life time left
+DEBUG 2019-08-22 12:06:39,255: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 38387
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:06:40,064: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 38386
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:06:40,065: 	 Proxy lifetime 38387 secs is different from voms extension lifetime 38386 secs for proxy: /tmp/x509up_u107261
+DEBUG 2019-08-22 12:06:40,065: 	 Proxy valid for 10:39:46 hours
+DEBUG 2019-08-22 12:06:40,178: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-08-22 12:06:40,293: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:06:40,294: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-08-22 12:06:40,294: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu_cmsweb.cern.ch for credential name
+DEBUG 2019-08-22 12:06:40,707: 	 Executing : 
+ command : myproxy-info -l c312ac061c9e37dd59fd9402583d5895db871523 -s myproxy.cern.ch
+ output : username: c312ac061c9e37dd59fd9402583d5895db871523
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 417:50:42  (17.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-08-22 12:06:40,708: 	 Myproxy is valid: 1504242
+DEBUG 2019-08-22 12:06:40,709: 	 Command use: status
+DEBUG 2019-08-22 12:06:40,709: 	 Options use: ['-d', 'crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8']
+DEBUG 2019-08-22 12:06:40,877: 	 CRABClient version: 3.3.1904
+DEBUG 2019-08-22 12:06:40,877: 	 Instance is prod
+DEBUG 2019-08-22 12:06:40,877: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-08-22 12:06:40,877: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-08-22 12:06:40,980: 	 Got information from server oracle database: {u'result': [u'190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'None', u'KILLED', u'None', u'2019-08-22 08:47:51.291017', u'None', u'2019-08-22 08:58:34.282335', u'None', u'CMSSW_9_4_6', u'slc7_amd64_gcc630', u'/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIIFall17MiniAODv2-NoPU_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM', u'F', u'0', u'[]', u'[]', u'FileBased', u"{'splitOnRun': False, 'halt_job_on_file_boundaries': False, 'files_per_job': 10, 'runs': [], 'lumis': []}", u'807b0b262ef00a6840725594ff35b7a37725f20cf988feec59741a69b9addf3a.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'sukundu', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu', u'cms', u'None', u'None', u'MC_analysis_Pythia8_flat-00000000000000000000000000000000', u'F', u'T2_IN_TIFR', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'T', u'[]', u"['Test_MC_QCD.root']", u'[]', u'Analysis', u'pythia', u'None', u"{'killList': None, 'ASOURL': 'https://cmsweb.cern.ch/crabserver/prod'}", u'[]', u'T', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u"['/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu', '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu']", u'http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv623.fnal.gov:9620', u'crab3@vocms0107.cern.ch', u'F', u'[]', u'T', u'/store/user/sukundu/', u'F', u'None', u'F', u'None', u'QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8', u'None', u'4e2f3e2cddb0bdafea28b3dd3584dd0687d3a9d4ca4491749c3327817a71d4ae.tar.gz', u'43128449', u'filetransfers', u'F', u'2001:1458:d00:30::100:b9', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2019-08-22 12:06:40,981: 	 CRAB project directory:		/afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 12:06:40,981: 	 Task name:			190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 12:06:40,981: 	 Grid scheduler - Task Worker:	crab3@vocms0107.cern.ch - crab-prod-tw01
+INFO 2019-08-22 12:06:40,981: 	 Status on the CRAB server:	KILLED
+INFO 2019-08-22 12:06:40,981: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 12:06:40,981: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=sukundu&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 12:06:40,981: 	 New dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=sukundu&var-task=190822_084751%3Asukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+INFO 2019-08-22 12:06:40,981: 	 In case of issues with the new dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+WARNING 2019-08-22 12:06:40,981: 	 Warning:			/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+WARNING 2019-08-22 12:06:40,982: 	 Warning:			/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+DEBUG 2019-08-22 12:06:40,982: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 43128449)
+DEBUG 2019-08-22 12:06:40,982: 	 Webdir is located at http://vocms0107.cern.ch/mon/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 12:06:41,157: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8
+DEBUG 2019-08-22 12:06:41,158: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0107/cms1472/190822_084751:sukundu_crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/status_cache
+DEBUG 2019-08-22 12:06:41,289: 	 Got information from status cache file: {'11': {'Retries': 0, 'WallDurations': [9.0, 515.0], 'StartTimes': [1566464698.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128463.0'], 'TotalUserCpuTimeHistory': [5], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323808], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '10': {'Retries': 0, 'WallDurations': [9.0, 517.0], 'StartTimes': [1566464696.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128462.0'], 'TotalUserCpuTimeHistory': [14], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322824], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '12': {'Retries': 0, 'WallDurations': [9.0, 513.0], 'StartTimes': [1566464699.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128464.0'], 'TotalUserCpuTimeHistory': [5], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323840], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [1]}, '1': {'Retries': 0, 'WallDurations': [10.0, 101.0], 'StartTimes': [1566464949.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128455.0'], 'TotalUserCpuTimeHistory': [6], 'EndTimes': [1566465050.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [4408], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [0]}, '3': {'Retries': 0, 'WallDurations': [131.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464326.0], 'JobIds': ['43128453.0'], 'EndTimes': [1566464959.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37120], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [20], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '2': {'Retries': 0, 'WallDurations': [109.0, 199.62286400794983], 'StartTimes': [1566464827.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128454.0'], 'EndTimes': [1566464936.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [35836], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [8], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [1]}, '5': {'Retries': 0, 'WallDurations': [168.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128457.0'], 'TotalUserCpuTimeHistory': [20], 'EndTimes': [1566464996.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [28744], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [5]}, '4': {'Retries': 0, 'WallDurations': [121.0, 198.62286400794983], 'StartTimes': [1566464828.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128456.0'], 'EndTimes': [1566464949.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [37248], 'Error': [139, 'CmsRunFailure', {}], 'TotalUserCpuTimeHistory': [13], 'SiteHistory': ['Unknown', 'T1_US_FNAL'], 'TotalSysCpuTimeHistory': [3]}, '7': {'Retries': 0, 'WallDurations': [10.0, 612.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128459.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [896752], 'TotalUserCpuTimeHistory': [15.0], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [3.0]}, '6': {'Retries': 0, 'WallDurations': [10.0, 526.0], 'StartTimes': [1566464694.0], 'SubmitTimes': [1566464327.0], 'JobIds': ['43128458.0'], 'TotalUserCpuTimeHistory': [10], 'EndTimes': [1566465220.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [325380], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}, '9': {'Retries': 0, 'WallDurations': [8.0, 517.0], 'StartTimes': [1566464695.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128461.0'], 'TotalUserCpuTimeHistory': [5], 'EndTimes': [1566465212.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322228], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [0]}, '8': {'Retries': 0, 'WallDurations': [8.0, 521.0], 'StartTimes': [1566464692.0], 'SubmitTimes': [1566464328.0], 'JobIds': ['43128460.0'], 'TotalUserCpuTimeHistory': [15], 'EndTimes': [1566465213.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [322396], 'Error': [139, 'CmsRunFailure', {}], 'SiteHistory': ['Unknown', 'T2_IN_TIFR'], 'TotalSysCpuTimeHistory': [2]}}
+INFO 2019-08-22 12:06:41,289: 	 Status on the scheduler:	FAILED (KILLED)
+INFO 2019-08-22 12:06:41,289: 	 
+Jobs status:                    failed       		100.0% (12/12)
+INFO 2019-08-22 12:06:41,289: 	 
+No publication information available yet
+INFO 2019-08-22 12:06:41,289: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+11 jobs failed with exit code 139
+
+Could not find exit code details for 1 jobs.
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2019-08-22 12:06:41,290: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2019-08-22 12:06:41,290: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2019-08-22 12:06:41,290: 	 
+Summary of run jobs:
+ * Memory: 4MB min, 875MB max, 243MB ave
+ * Runtime: 0:01:41 min, 0:10:12 max, 0:06:24 ave
+ * CPU eff: 1% min, 13% max, 3% ave
+ * Waste: 0:10:02 (12% of total)
+
+INFO 2019-08-22 12:06:41,325: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_Charge_Jet/CMSSW_9_4_6/src/Test/QCDEventShape/test/crab_projects/crab_QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/crab.log
