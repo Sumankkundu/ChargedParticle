@@ -38,6 +38,8 @@ cd plugin
  ``` 
  cd QCDEventShape
  scramv1 b    **this will complie 
+ cd test 
+ cmsRun Run_QCD_test_miaod_v2_76x_mc_cfg.py
 ```
 
 
