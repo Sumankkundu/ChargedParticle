@@ -1,7 +1,7 @@
 # Chargedparticle
 Study of Event Shape Variables with the charged particles inside jets 
 
-Analysis base on MINIAOD Format with data set 2017 
+Analysis code based on MINIAOD Format
 # Data Used: 
 ```
 /JetHT/Run2017F-17Nov2017-v1/MINIAOD
@@ -28,13 +28,13 @@ mkedanlzr QCDEventShape
 cd QCDEventShape
 cd plugin
 ```
-***In plugin put those files: 
-               QCDEventShape.cc(Replace existing one) , EventShape_vector.cc(Copy)& EventShape_vector.h(copy)
+**In plugin put those files: 
+               QCDEventShape.cc(Replace existing one) , EventShape_vector.cc(Copy)& EventShape_vector.h(copy) **
  ```              
  cd test 
  ```
- ***In test 
-   put those .py files from the  git folder $Chargedparticle/QCDEventShape/test/
+ **In test 
+   put those .py files from the  git folder $Chargedparticle/QCDEventShape/test/ **
  ``` 
  cd QCDEventShape
  scramv1 b    **this will complie 
@@ -42,6 +42,7 @@ cd plugin
 
 
 # TO Do
+
 Reco distribution : Done
 
 
