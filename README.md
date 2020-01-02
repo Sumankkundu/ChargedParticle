@@ -43,7 +43,7 @@ cd plugin
 
 # TO Do List 
 
--[x]Reco distribution : Done
--[]Basic Kinematics  : not done
--[]Trigger           : not done 
--[]Unfolding         : not done
+-[x] Reco distribution : Done
+-[] Basic Kinematics  : not done
+-[] Trigger           : not done 
+-[] Unfolding         : not done
