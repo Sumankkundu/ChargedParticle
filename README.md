@@ -39,6 +39,20 @@ Flat Herwig++
 ### JetID    
 https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetID13TeVRun2017
 
+## 2018
+### Data Used
+```
+JetHT/Run2018A-17Sep2018-v1/MINIAOD
+/JetHT/Run2018B-17Sep2018-v1/MINIAOD
+/JetHT/Run2018C-17Sep2018-v1/MINIAOD
+/JetHT/Run2018D-PromptReco-v2/MINIAOD
+config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions18/13TeV/ReReco/Cert_314472-325175_13TeV_17SeptEarlyReReco2018ABC_PromptEraD_Collisions18_JSON.txt'
+```
+### MC Used
+```
+To be Update
+```
+### JetID
 https://twiki.cern.ch/twiki/bin/view/CMS/JetID13TeVRun2018
 ``
 ```
