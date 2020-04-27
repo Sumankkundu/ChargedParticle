@@ -10,18 +10,13 @@ Analysis code based on MINIAOD Format
 **Luminosity : 41.53 /fb**
 ### Data Used:
 ```
-~~/JetHT/Run2017F-17Nov2017-v1/MINIAOD
-/JetHT/Run2017E-17Nov2017-v1/MINIAOD
-/JetHT/Run2017D-17Nov2017-v1/MINIAOD
-/JetHT/Run2017C-17Nov2017-v1/MINIAOD
-/JetHT/Run2017B-17Nov2017-v1/MINIAOD ~~
-New Data
 /JetHT/Run2017F-31Mar2018-v1/MINIAOD
 /JetHT/Run2017E-31Mar2018-v1/MINIAOD
 /JetHT/Run2017D-31Mar2018-v1/MINIAOD
 /JetHT/Run2017C-31Mar2018-v1/MINIAOD
 /JetHT/Run2017B-31Mar2018-v1/MINIAOD
-We have plan to use UL DATA 
+ We have plan to use UL DATA 
+
 config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/ReReco/Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt'
 
 ```
