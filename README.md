@@ -1,13 +1,14 @@
 # ESVs with Charged particle
 Study of Event Shape Variables with the charged particles inside jets 
 
-# Trigger 
+## Trigger use 
 HLT_DiPFJetAve40_v, HLT_DiPFJetAve60_v ,HLT_DiPFJetAve80_v, HLT_DiPFJetAve140_v, HLT_DiPFJetAve200_v, HLT_DiPFJetAve260_v, HLT_DiPFJetAve320_v, HLT_DiPFJetAve400_v, HLT_DiPFJetAve500_v
 
 
 Analysis code based on MINIAOD Format
-# Data Used: 
-2017: Luminosity : 41.53 /fb
+## 2017 
+**Luminosity : 41.53 /fb**
+### Data Used:
 ```
 Old
 /JetHT/Run2017F-17Nov2017-v1/MINIAOD
@@ -25,7 +26,7 @@ We have plan to use UL DATA
 config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/ReReco/Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt'
 
 ```
-# MC Used :  
+### MC Used  
 Flat PYTHIA sample
 
 Global tag: 94X_mc2017_realistic_v14
@@ -36,7 +37,7 @@ Global tag: 94X_mc2017_realistic_v14
 Flat Herwig++
 
 ```
-# JetID    
+### JetID    
 https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetID13TeVRun2017
 https://twiki.cern.ch/twiki/bin/view/CMS/JetID13TeVRun2018
 ``
@@ -44,7 +45,7 @@ https://twiki.cern.ch/twiki/bin/view/CMS/JetID13TeVRun2018
 git clone https://github.com/Sumankkundu/Chargedparticle.git
 ```
 
-# How to run :
+### How to run :
 ```
 cmsrel  CMSSW_10_2_18
 cd  CMSSW_10_2_18/src
@@ -69,7 +70,7 @@ cd plugin
 ```
 
 
-# TO Do List 
+### TO Do List 
 
 - [x] Reco distribution : Done
 - [ ] Basic Kinematics  : not done
