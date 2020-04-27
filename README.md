@@ -1,10 +1,14 @@
 # ESVs with Charged particle
 Study of Event Shape Variables with the charged particles inside jets 
 
+# Trigger 
+HLT_DiPFJetAve40_v, HLT_DiPFJetAve60_v ,HLT_DiPFJetAve80_v, HLT_DiPFJetAve140_v, HLT_DiPFJetAve200_v, HLT_DiPFJetAve260_v, HLT_DiPFJetAve320_v, HLT_DiPFJetAve400_v, HLT_DiPFJetAve500_v
+
+
 Analysis code based on MINIAOD Format
 # Data Used: 
+2017: Luminosity : 41.53 /fb
 ```
-# 2017: Luminosity : 41.53 /fb
 Old
 /JetHT/Run2017F-17Nov2017-v1/MINIAOD
 /JetHT/Run2017E-17Nov2017-v1/MINIAOD
@@ -23,7 +27,8 @@ config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Coll
 ```
 # MC Used :  
 Flat PYTHIA sample
-Global 	tag: 94X_mc2017_realistic_v14
+
+Global tag: 94X_mc2017_realistic_v14
 ```
 /QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM
 /QCD_Pt-15to7000_TuneCP5_Flat2017_13TeV_pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM
@@ -31,9 +36,14 @@ Global 	tag: 94X_mc2017_realistic_v14
 Flat Herwig++
 
 ```
+# JetID    
+https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetID13TeVRun2017
+https://twiki.cern.ch/twiki/bin/view/CMS/JetID13TeVRun2018
+``
 ```
 git clone https://github.com/Sumankkundu/Chargedparticle.git
 ```
+
 # How to run :
 ```
 cmsrel  CMSSW_10_2_18
