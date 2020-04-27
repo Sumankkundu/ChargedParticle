@@ -1,0 +1,966 @@
+DEBUG 2020-03-16 20:55:00.226 UTC: 	 Running on: Linux lxplus792.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-16 20:55:00.240 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-03-16 20:55:00.241 UTC: 	 Executing command: 'submit'
+DEBUG 2020-03-16 20:55:00.241 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2020-03-16 20:55:00.247 UTC: 	 Checking credentials
+DEBUG 2020-03-16 20:55:00.248 UTC: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2020-03-16 20:55:00.248 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-16 20:55:00.851 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 43186
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-16 20:55:01.456 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 43185
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-16 20:55:01.456 UTC: 	 Proxy lifetime 43186 secs is different from voms extension lifetime 43185 secs for proxy: /tmp/x509up_u107261
+DEBUG 2020-03-16 20:55:01.456 UTC: 	 Proxy valid for 11:59:45 hours
+INFO 2020-03-16 20:55:01.456 UTC: 	 Will use CRAB configuration file crabConfig_Data_94x_analysis.py
+DEBUG 2020-03-16 20:55:01.456 UTC: 	 Loading CRAB configuration file.
+DEBUG 2020-03-16 20:55:03.728 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2020-03-16 20:55:03.730 UTC: 	 Working area '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW_10_2_18/Eventshape_variables/Data2017_31Mar2018_v1/CMSSW_10_2_18/src/Test/QCDEventShape/test/crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2017E-31Mar2018-v1_6Mar20' already exists 
+Please change the requestName in the config file
+ERROR 2020-03-16 20:55:03.730 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 324, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/ClientUtilities.py", line 418, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW_10_2_18/Eventshape_variables/Data2017_31Mar2018_v1/CMSSW_10_2_18/src/Test/QCDEventShape/test/crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2017E-31Mar2018-v1_6Mar20' already exists 
+Please change the requestName in the config file
+DEBUG 2020-03-17 07:53:03.990 UTC: 	 Running on: Linux lxplus783.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-17 07:53:04.010 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-03-17 07:53:04.011 UTC: 	 Executing command: 'submit'
+DEBUG 2020-03-17 07:53:04.011 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2020-03-17 07:53:04.019 UTC: 	 Checking credentials
+DEBUG 2020-03-17 07:53:04.019 UTC: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2020-03-17 07:53:04.019 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-17 07:53:04.624 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 43194
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 07:53:05.229 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 43193
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 07:53:05.230 UTC: 	 Proxy lifetime 43194 secs is different from voms extension lifetime 43193 secs for proxy: /tmp/x509up_u107261
+DEBUG 2020-03-17 07:53:05.230 UTC: 	 Proxy valid for 11:59:53 hours
+INFO 2020-03-17 07:53:05.230 UTC: 	 Will use CRAB configuration file crabConfig_Data_94x_analysis.py
+DEBUG 2020-03-17 07:53:05.230 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-03-17 07:53:09.764 UTC: 	 Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+Note: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-03-17 07:53:09.764 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 88, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+[1mNote[0m: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2020-03-17 07:57:04.822 UTC: 	 Running on: Linux lxplus783.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-17 07:57:04.839 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-03-17 07:57:04.839 UTC: 	 Executing command: 'submit'
+DEBUG 2020-03-17 07:57:04.839 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2020-03-17 07:57:04.847 UTC: 	 Checking credentials
+DEBUG 2020-03-17 07:57:04.848 UTC: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2020-03-17 07:57:04.848 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-17 07:57:05.454 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 42953
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 07:57:06.059 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 42952
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 07:57:06.059 UTC: 	 Proxy lifetime 42953 secs is different from voms extension lifetime 42952 secs for proxy: /tmp/x509up_u107261
+DEBUG 2020-03-17 07:57:06.059 UTC: 	 Proxy valid for 11:55:52 hours
+INFO 2020-03-17 07:57:06.059 UTC: 	 Will use CRAB configuration file crabConfig_Data_94x_analysis.py
+DEBUG 2020-03-17 07:57:06.059 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-03-17 07:57:10.533 UTC: 	 Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+Note: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-03-17 07:57:10.534 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 88, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+[1mNote[0m: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2020-03-17 07:58:19.750 UTC: 	 Running on: Linux lxplus783.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-17 07:58:19.763 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-03-17 07:58:19.764 UTC: 	 Executing command: 'submit'
+DEBUG 2020-03-17 07:58:19.764 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2020-03-17 07:58:19.771 UTC: 	 Checking credentials
+DEBUG 2020-03-17 07:58:19.771 UTC: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2020-03-17 07:58:19.771 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-17 07:58:20.375 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 43185
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 07:58:20.980 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 43185
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 07:58:20.980 UTC: 	 Proxy valid for 11:59:45 hours
+INFO 2020-03-17 07:58:20.981 UTC: 	 Will use CRAB configuration file crabConfig_Data_94x_analysis.py
+DEBUG 2020-03-17 07:58:20.981 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-03-17 07:58:25.329 UTC: 	 Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+Note: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-03-17 07:58:25.329 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 88, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+[1mNote[0m: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2020-03-17 08:00:17.475 UTC: 	 Running on: Linux lxplus738.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-17 08:00:17.746 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-03-17 08:00:17.747 UTC: 	 Executing command: 'submit'
+DEBUG 2020-03-17 08:00:17.748 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2020-03-17 08:00:17.758 UTC: 	 Checking credentials
+DEBUG 2020-03-17 08:00:17.759 UTC: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2020-03-17 08:00:17.759 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-17 08:00:18.566 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 43173
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 08:00:19.273 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 43172
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 08:00:19.273 UTC: 	 Proxy lifetime 43173 secs is different from voms extension lifetime 43172 secs for proxy: /tmp/x509up_u107261
+DEBUG 2020-03-17 08:00:19.274 UTC: 	 Proxy valid for 11:59:32 hours
+INFO 2020-03-17 08:00:19.274 UTC: 	 Will use CRAB configuration file crabConfig_Data_94x_analysis.py
+DEBUG 2020-03-17 08:00:19.275 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-03-17 08:00:24.122 UTC: 	 Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+Note: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-03-17 08:00:24.122 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 88, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+[1mNote[0m: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2020-03-17 08:05:48.883 UTC: 	 Running on: Linux lxplus719.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-17 08:05:48.973 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-03-17 08:05:48.974 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-17 08:05:48.975 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2020-03-17 08:05:48.976 UTC: 	 Error: crab_projects/rab_Event_Shape_Charge_Data_analysis_Run2017E-31Mar2018-v1_17Mar20/ is not a valid CRAB project directory.
+ERROR 2020-03-17 08:05:48.976 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 595, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/rab_Event_Shape_Charge_Data_analysis_Run2017E-31Mar2018-v1_17Mar20/ is not a valid CRAB project directory.
+DEBUG 2020-03-17 08:06:55.400 UTC: 	 Running on: Linux lxplus719.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-17 08:06:55.415 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-03-17 08:06:55.415 UTC: 	 Executing command: 'submit'
+DEBUG 2020-03-17 08:06:55.416 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2020-03-17 08:06:55.422 UTC: 	 Checking credentials
+DEBUG 2020-03-17 08:06:55.422 UTC: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2020-03-17 08:06:55.422 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-17 08:06:56.027 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 43046
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 08:06:56.632 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 43045
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 08:06:56.632 UTC: 	 Proxy lifetime 43046 secs is different from voms extension lifetime 43045 secs for proxy: /tmp/x509up_u107261
+DEBUG 2020-03-17 08:06:56.632 UTC: 	 Proxy valid for 11:57:25 hours
+INFO 2020-03-17 08:06:56.633 UTC: 	 Will use CRAB configuration file crabConfig_Data_94x_analysis.py
+DEBUG 2020-03-17 08:06:56.633 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-03-17 08:07:01.107 UTC: 	 Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+Note: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-03-17 08:07:01.107 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 88, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+[1mNote[0m: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2020-03-17 09:03:47.035 UTC: 	 Running on: Linux lxplus719.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-17 09:03:47.071 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-03-17 09:03:47.072 UTC: 	 Executing command: 'submit'
+DEBUG 2020-03-17 09:03:47.073 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2020-03-17 09:03:47.084 UTC: 	 Checking credentials
+DEBUG 2020-03-17 09:03:47.085 UTC: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2020-03-17 09:03:47.085 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-17 09:03:47.891 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 43149
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 09:03:48.698 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 43148
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 09:03:48.698 UTC: 	 Proxy lifetime 43149 secs is different from voms extension lifetime 43148 secs for proxy: /tmp/x509up_u107261
+DEBUG 2020-03-17 09:03:48.698 UTC: 	 Proxy valid for 11:59:08 hours
+INFO 2020-03-17 09:03:48.699 UTC: 	 Will use CRAB configuration file crabConfig_Data_94x_analysis.py
+DEBUG 2020-03-17 09:03:48.699 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-03-17 09:03:54.737 UTC: 	 Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+Note: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-03-17 09:03:54.737 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 88, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+[1mNote[0m: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2020-03-17 16:41:50.554 UTC: 	 Running on: Linux lxplus719.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-17 16:41:50.696 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-03-17 16:41:50.696 UTC: 	 Executing command: 'submit'
+DEBUG 2020-03-17 16:41:50.697 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2020-03-17 16:41:50.709 UTC: 	 Checking credentials
+DEBUG 2020-03-17 16:41:50.715 UTC: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2020-03-17 16:41:50.715 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-17 16:41:51.736 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 16681
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 16:41:52.772 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 16680
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-17 16:41:52.773 UTC: 	 Proxy lifetime 16681 secs is different from voms extension lifetime 16680 secs for proxy: /tmp/x509up_u107261
+DEBUG 2020-03-17 16:41:52.773 UTC: 	 Proxy valid for 04:38:00 hours
+INFO 2020-03-17 16:41:52.773 UTC: 	 Will use CRAB configuration file crabConfig_Data_94x_analysis.py
+DEBUG 2020-03-17 16:41:52.773 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-03-17 16:42:01.972 UTC: 	 Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+Note: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-03-17 16:42:01.972 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 88, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+[1mNote[0m: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2020-03-24 09:29:50.335 UTC: 	 Running on: Linux lxplus747.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-24 09:29:50.369 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-03-24 09:29:50.370 UTC: 	 Executing command: 'submit'
+DEBUG 2020-03-24 09:29:50.371 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+DEBUG 2020-03-24 09:29:50.407 UTC: 	 Checking credentials
+DEBUG 2020-03-24 09:29:50.407 UTC: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2020-03-24 09:29:50.407 UTC: 	 Getting proxy life time left
+DEBUG 2020-03-24 09:29:51.112 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 71630
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-24 09:29:51.717 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 71630
+
+ error: 
+ retcode : 0
+DEBUG 2020-03-24 09:29:51.717 UTC: 	 Proxy valid for 19:53:50 hours
+INFO 2020-03-24 09:29:51.717 UTC: 	 Will use CRAB configuration file crabConfig_Data_94x_analysis.py
+DEBUG 2020-03-24 09:29:51.718 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-03-24 09:29:57.006 UTC: 	 Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+Note: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-03-24 09:29:57.007 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 88, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+Failed to retrieve username from SiteDB. Your DN does not seem to be registered in SiteDB.
+Details follow:
+  Executed command: curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u107261 --key /tmp/x509up_u107261 'https://cmsweb.cern.ch/sitedb/data/prod/whoami'
+    Stdout:
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+       <head>
+       <title>CMSWEB Error: No such site</title>
+       <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+       <link rel="stylesheet" type="text/css" media="screen" href="/css/cmsweb.css" />
+      </head>
+      <body>
+       <div id="main">
+        <div id="top">
+         <div class="boxTitle"><img src="/img/title.gif" alt="CMSWEB (title)" /></div>
+        </div>
+        <div id="middle">
+         <div class="boxLinkContainer">
+          <h2>No such site</h2>
+          <p>The site you requested does not exist. Could we interest you in <a href='/'>anything else</a>?</p>
+         </div>
+        </div>
+        <div id="bottom">
+         <div class="boxFooter">&nbsp;</div>
+        </div>
+       </div>
+      </body>
+      </html>
+      
+    Parsed username: 
+[1mNote[0m: Make sure you have the correct certificate mapped in SiteDB (you can check what is the certificate you currently have mapped in SiteDB by searching for your name in https://cmsweb.cern.ch/sitedb/prod/people). For instructions on how to map a certificate in SiteDB, see https://twiki.cern.ch/twiki/bin/viewauth/CMS/SiteDBForCRAB.
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2020-04-13 16:22:05.042 UTC: 	 Running on: Linux lxplus788.cern.ch 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-13 16:22:05.061 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-04-13 16:22:05.061 UTC: 	 Executing command: 'report'
+DEBUG 2020-04-13 16:22:05.062 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2020-04-13 16:22:05.063 UTC: 	 Error: crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2017B-31Mar2018-v1_4Apr20_2 is not a valid CRAB project directory.
+ERROR 2020-04-13 16:22:05.063 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/report.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 595, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2017B-31Mar2018-v1_4Apr20_2 is not a valid CRAB project directory.
+DEBUG 2020-04-16 04:27:08.232 UTC: 	 Running on: Linux lxplus705.cern.ch 3.10.0-1062.18.1.el7.x86_64 #1 SMP Tue Mar 17 23:49:17 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-16 04:27:08.245 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-04-16 04:27:08.245 UTC: 	 Executing command: 'status'
+DEBUG 2020-04-16 04:27:08.246 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2020-04-16 04:27:08.247 UTC: 	 Error: crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2017B-31Mar2018-v1_16Apr20/ is not a valid CRAB project directory.
+ERROR 2020-04-16 04:27:08.247 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 595, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2017B-31Mar2018-v1_16Apr20/ is not a valid CRAB project directory.
+DEBUG 2020-04-16 04:29:30.181 UTC: 	 Running on: Linux lxplus705.cern.ch 3.10.0-1062.18.1.el7.x86_64 #1 SMP Tue Mar 17 23:49:17 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-04-16 04:29:30.198 UTC: 	 OpenSSl version: OpenSSL 1.0.2h  3 May 2016
+DEBUG 2020-04-16 04:29:30.198 UTC: 	 Executing command: 'status'
+DEBUG 2020-04-16 04:29:30.199 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2020-04-16 04:29:30.200 UTC: 	 Error: crab_projects/Event_Shape_Charge_Data_analysis_Run2017B-31Mar2018-v1_16Aar20 is not a valid CRAB project directory.
+ERROR 2020-04-16 04:29:30.200 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 595, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/Event_Shape_Charge_Data_analysis_Run2017B-31Mar2018-v1_16Aar20 is not a valid CRAB project directory.
