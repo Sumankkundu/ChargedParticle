@@ -82,6 +82,8 @@ cd plugin
 ### TO Do List 
 
 - [x] Reco distribution : Done
-- [ ] Basic Kinematics  : not done
-- [ ] Trigger           : not done 
-- [ ] Unfolding         : not done
+- [x] Basic Kinematics  : Done(17.04.2020)
+- [x] Trigger           : Done (17.04.2020)
+- [x] 1DUnfolding      :Partially done(10.07.19) 
+- [x] 1DUnfolding      : not done
+
