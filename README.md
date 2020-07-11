@@ -85,5 +85,5 @@ cd plugin
 - [x] Basic Kinematics  : Done(17.04.2020)
 - [x] Trigger           : Done (17.04.2020)
 - [x] 1DUnfolding      :Partially done(10.07.19) 
-- [x] 1DUnfolding      : not done
+- [x] 2DUnfolding      : not done
 
