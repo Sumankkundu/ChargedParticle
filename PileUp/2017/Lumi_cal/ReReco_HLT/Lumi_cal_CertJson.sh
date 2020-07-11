@@ -1,0 +1,8 @@
+brilcalc lumi --normtag /cvmfs/cms-bril.cern.ch/cms-lumi-pog/Normtags/normtag_PHYSICS.json -u /fb -i Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt --hltpath "HLT_DiPFJetAve60_v*"
+brilcalc lumi --normtag /cvmfs/cms-bril.cern.ch/cms-lumi-pog/Normtags/normtag_PHYSICS.json -u /fb -i Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt --hltpath "HLT_DiPFJetAve80_v*"
+brilcalc lumi --normtag /cvmfs/cms-bril.cern.ch/cms-lumi-pog/Normtags/normtag_PHYSICS.json -u /fb -i Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt --hltpath "HLT_DiPFJetAve140_v*"
+brilcalc lumi --normtag /cvmfs/cms-bril.cern.ch/cms-lumi-pog/Normtags/normtag_PHYSICS.json -u /fb -i Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt --hltpath "HLT_DiPFJetAve200_v*"
+brilcalc lumi --normtag /cvmfs/cms-bril.cern.ch/cms-lumi-pog/Normtags/normtag_PHYSICS.json -u /fb -i Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt --hltpath "HLT_DiPFJetAve260_v*"
+brilcalc lumi --normtag /cvmfs/cms-bril.cern.ch/cms-lumi-pog/Normtags/normtag_PHYSICS.json -u /fb -i Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt --hltpath "HLT_DiPFJetAve320_v*"
+brilcalc lumi --normtag /cvmfs/cms-bril.cern.ch/cms-lumi-pog/Normtags/normtag_PHYSICS.json -u /fb -i Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt --hltpath "HLT_DiPFJetAve400_v*"
+brilcalc lumi --normtag /cvmfs/cms-bril.cern.ch/cms-lumi-pog/Normtags/normtag_PHYSICS.json -u /fb -i Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt --hltpath "HLT_DiPFJetAve500_v*"
