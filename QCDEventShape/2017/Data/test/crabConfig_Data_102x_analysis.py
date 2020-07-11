@@ -11,7 +11,7 @@ config.General.transferOutputs = True
 config.General.transferLogs = True
 config.JobType.pluginName = 'Analysis'
 config.JobType.allowUndistributedCMSSW = True
-config.JobType.psetName = 'Run_QCD_test_94x_data_cfg.py'
+config.JobType.psetName = 'Run_QCD_test_102x_data_cfg.py'
 
 config.JobType.inputFiles= ["/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_V2_MC/Fall17_V2_MC_PtResolution_AK4PFchs.txt",
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_V2_MC/Fall17_V2_MC_SF_AK4PFchs.txt",
