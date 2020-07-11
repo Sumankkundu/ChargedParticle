@@ -1,0 +1,161 @@
+L Curve                       Scan Sure                   Scan Tau 
+[0,0,0] --->
+ibest =3/ Tau =1.66048e-09        Ibest : 17 //Tau = 1.99066e-09       ibest : 151 / Tau : 2.15224e-09
+[0,0,1] --->
+ibest =142/ Tau =9.99145e-09        Ibest : 42 //Tau = 7.60968e-09       ibest : 172 / Tau : 6.29981e-09
+[0,0,2] --->
+ibest =196/ Tau =1.5291e-07        Ibest : 67 //Tau = 2.8997e-08       ibest : 175 / Tau : 6.69288e-08
+[0,0,3] --->
+ibest =3/ Tau =9.01392e-08        Ibest : 95 //Tau = 1.42402e-07       ibest : 175 / Tau : 3.48721e-07
+[0,0,4] --->
+ibest =140/ Tau =2.04283e-06        Ibest : 119 //Tau = 4.99249e-07       ibest : 171 / Tau : 1.29448e-06
+[0,0,5] --->
+ibest =3/ Tau =1.45082e-06        Ibest : 141 //Tau = 3.04619e-06       ibest : 133 / Tau : 3.7007e-06
+[0,0,6] --->
+ibest =3/ Tau =3.96393e-06        Ibest : 146 //Tau = 5.23003e-06       ibest : 161 / Tau : 1.10483e-05
+[0,0,7] --->
+ibest =148/ Tau =6.06466e-05        Ibest : 157 //Tau = 1.58617e-05       ibest : 166 / Tau : 3.16372e-05
+[0,1,0] --->
+ibest =3/ Tau =2.05092e-09        Ibest : 30 //Tau = 3.85826e-09       ibest : 130 / Tau : 4.98188e-09
+[0,1,1] --->
+ibest =59/ Tau =1.96043e-08        Ibest : 51 //Tau = 1.19815e-08       ibest : 134 / Tau : 1.69163e-08
+[0,1,2] --->
+ibest =46/ Tau =2.04128e-07        Ibest : 89 //Tau = 1.01311e-07       ibest : 153 / Tau : 1.87754e-07
+[0,1,3] --->
+ibest =42/ Tau =1.21748e-06        Ibest : 119 //Tau = 5.21e-07       ibest : 142 / Tau : 9.52562e-07
+[0,1,4] --->
+ibest =7/ Tau =4.08155e-06        Ibest : 140 //Tau = 2.79083e-06       ibest : 135 / Tau : 3.65408e-06
+[0,1,5] --->
+ibest =3/ Tau =9.5355e-06        Ibest : 145 //Tau = 4.93013e-06       ibest : 132 / Tau : 8.9848e-06
+[0,1,6] --->
+ibest =3/ Tau =3.06862e-05        Ibest : 159 //Tau = 1.85168e-05       ibest : 128 / Tau : 2.59546e-05
+[0,1,7] --->
+ibest =196/ Tau =0.000260585        Ibest : 164 //Tau = 3.31051e-05       ibest : 118 / Tau : 6.28611e-05
+[0,2,0] --->
+ibest =3/ Tau =1.9317e-09        Ibest : 0 //Tau = 6.56602e-10       ibest : 196 / Tau : 5.76169e-09
+[0,2,1] --->
+ibest =3/ Tau =5.29644e-09        Ibest : 0 //Tau = 7.82204e-10       ibest : 196 / Tau : 1.54464e-08
+[0,2,2] --->
+ibest =3/ Tau =6.75027e-08        Ibest : 52 //Tau = 1.27374e-08       ibest : 196 / Tau : 1.96863e-07
+[0,2,3] --->
+ibest =3/ Tau =5.66871e-07        Ibest : 98 //Tau = 1.62922e-07       ibest : 171 / Tau : 1.06612e-06
+[0,2,4] --->
+ibest =196/ Tau =3.64076e-06        Ibest : 107 //Tau = 2.69156e-07       ibest : 196 / Tau : 3.55181e-06
+[0,2,5] --->
+ibest =129/ Tau =1.73214e-05        Ibest : 128 //Tau = 8.05186e-07       ibest : 168 / Tau : 1.09104e-05
+[0,2,6] --->
+ibest =150/ Tau =5.60588e-05        Ibest : 141 //Tau = 2.98384e-06       ibest : 171 / Tau : 3.18889e-05
+[0,2,7] --->
+ibest =161/ Tau =0.000165444        Ibest : 153 //Tau = 1.03765e-05       ibest : 145 / Tau : 8.85984e-05
+[0,3,0] --->
+ibest =196/ Tau =9.83412e-09        Ibest : 19 //Tau = 2.15741e-09       ibest : 151 / Tau : 2.59014e-09
+[0,3,1] --->
+ibest =169/ Tau =3.62319e-08        Ibest : 46 //Tau = 9.57666e-09       ibest : 134 / Tau : 7.74952e-09
+[0,3,2] --->
+ibest =17/ Tau =2.17544e-07        Ibest : 93 //Tau = 1.24562e-07       ibest : 77 / Tau : 7.34409e-08
+[0,3,3] --->
+ibest =60/ Tau =1.14689e-06        Ibest : 116 //Tau = 4.41447e-07       ibest : 125 / Tau : 3.35504e-07
+[0,3,4] --->
+ibest =53/ Tau =4.07958e-06        Ibest : 137 //Tau = 2.00715e-06       ibest : 126 / Tau : 1.30281e-06
+[0,3,5] --->
+ibest =60/ Tau =1.16261e-05        Ibest : 147 //Tau = 6.04199e-06       ibest : 98 / Tau : 3.77852e-06
+[0,3,6] --->
+ibest =109/ Tau =3.96974e-05        Ibest : 157 //Tau = 1.56242e-05       ibest : 137 / Tau : 1.16168e-05
+[0,3,7] --->
+ibest =43/ Tau =2.57914e-05        Ibest : 165 //Tau = 3.6971e-05       ibest : 155 / Tau : 2.65353e-05
+[0,4,0] --->
+ibest =162/ Tau =6.61121e-09        Ibest : 28 //Tau = 3.60763e-09       ibest : 127 / Tau : 2.5484e-09
+[0,4,1] --->
+ibest =149/ Tau =8.6156e-09        Ibest : 36 //Tau = 5.57214e-09       ibest : 184 / Tau : 7.91587e-09
+[0,4,2] --->
+ibest =196/ Tau =4.05738e-07        Ibest : 88 //Tau = 9.5156e-08       ibest : 139 / Tau : 8.49915e-08
+[0,4,3] --->
+ibest =196/ Tau =2.85521e-06        Ibest : 127 //Tau = 7.81021e-07       ibest : 124 / Tau : 4.51263e-07
+[0,4,4] --->
+ibest =196/ Tau =5.94836e-06        Ibest : 127 //Tau = 7.93218e-07       ibest : 157 / Tau : 1.71519e-06
+[0,4,5] --->
+ibest =196/ Tau =1.74055e-05        Ibest : 135 //Tau = 1.66754e-06       ibest : 154 / Tau : 4.78523e-06
+[0,4,6] --->
+ibest =196/ Tau =8.72037e-05        Ibest : 156 //Tau = 1.35128e-05       ibest : 126 / Tau : 1.42654e-05
+[0,4,7] --->
+ibest =196/ Tau =0.000380136        Ibest : 168 //Tau = 5.25532e-05       ibest : 103 / Tau : 4.13095e-05
+[1,0,0] --->
+ibest =3/ Tau =5.71128e-09        Ibest : 17 //Tau = 1.91631e-09       ibest : 136 / Tau : 9.68372e-09
+[1,0,1] --->
+ibest =3/ Tau =1.62532e-08        Ibest : 36 //Tau = 5.55813e-09       ibest : 129 / Tau : 2.42814e-08
+[1,0,2] --->
+ibest =3/ Tau =1.68977e-07        Ibest : 81 //Tau = 6.52414e-08       ibest : 122 / Tau : 2.33542e-07
+[1,0,3] --->
+ibest =5/ Tau =8.71098e-07        Ibest : 108 //Tau = 2.83323e-07       ibest : 121 / Tau : 1.1025e-06
+[1,0,4] --->
+ibest =29/ Tau =4.64558e-06        Ibest : 131 //Tau = 9.90392e-07       ibest : 124 / Tau : 4.03308e-06
+[1,0,5] --->
+ibest =3/ Tau =6.65974e-06        Ibest : 140 //Tau = 2.86877e-06       ibest : 132 / Tau : 1.09925e-05
+[1,0,6] --->
+ibest =3/ Tau =1.66479e-05        Ibest : 149 //Tau = 7.28876e-06       ibest : 140 / Tau : 3.13337e-05
+[1,0,7] --->
+ibest =3/ Tau =2.96647e-05        Ibest : 150 //Tau = 7.87775e-06       ibest : 162 / Tau : 8.28561e-05
+[1,1,0] --->
+ibest =67/ Tau =9.71458e-09        Ibest : 42 //Tau = 7.40858e-09       ibest : 174 / Tau : 1.07326e-08
+[1,1,1] --->
+ibest =112/ Tau =5.01314e-08        Ibest : 64 //Tau = 2.41231e-08       ibest : 123 / Tau : 2.88157e-08
+[1,1,2] --->
+ibest =129/ Tau =6.09889e-07        Ibest : 94 //Tau = 1.35109e-07       ibest : 135 / Tau : 2.66325e-07
+[1,1,3] --->
+ibest =3/ Tau =9.80181e-07        Ibest : 114 //Tau = 3.91992e-07       ibest : 154 / Tau : 1.34348e-06
+[1,1,4] --->
+ibest =3/ Tau =3.73631e-06        Ibest : 134 //Tau = 1.3638e-06       ibest : 151 / Tau : 4.90765e-06
+[1,1,5] --->
+ibest =3/ Tau =1.09731e-05        Ibest : 144 //Tau = 4.13644e-06       ibest : 146 / Tau : 1.30955e-05
+[1,1,6] --->
+ibest =196/ Tau =0.00013085        Ibest : 153 //Tau = 9.94801e-06       ibest : 121 / Tau : 3.34042e-05
+[1,1,7] --->
+ibest =196/ Tau =0.000321899        Ibest : 158 //Tau = 1.62868e-05       ibest : 153 / Tau : 8.61739e-05
+[1,2,0] --->
+ibest =3/ Tau =4.32931e-09        Ibest : 0 //Tau = 9.59066e-10       ibest : 177 / Tau : 2.29368e-08
+[1,2,1] --->
+ibest =4/ Tau =1.00986e-08        Ibest : 17 //Tau = 1.93087e-09       ibest : 190 / Tau : 5.84816e-08
+[1,2,2] --->
+ibest =3/ Tau =2.26372e-07        Ibest : 64 //Tau = 2.42788e-08       ibest : 181 / Tau : 5.11442e-07
+[1,2,3] --->
+ibest =3/ Tau =1.60572e-06        Ibest : 114 //Tau = 3.95914e-07       ibest : 149 / Tau : 2.39739e-06
+[1,2,4] --->
+ibest =3/ Tau =6.8651e-06        Ibest : 133 //Tau = 1.24032e-06       ibest : 148 / Tau : 8.40921e-06
+[1,2,5] --->
+ibest =3/ Tau =2.37126e-05        Ibest : 140 //Tau = 2.87779e-06       ibest : 133 / Tau : 2.19895e-05
+[1,2,6] --->
+ibest =29/ Tau =6.06789e-05        Ibest : 148 //Tau = 6.50039e-06       ibest : 126 / Tau : 6.12967e-05
+[1,2,7] --->
+ibest =82/ Tau =0.000206012        Ibest : 148 //Tau = 6.18847e-06       ibest : 165 / Tau : 0.000158296
+[1,3,0] --->
+ibest =3/ Tau =6.92363e-10        Ibest : 4 //Tau = 1.01857e-09       ibest : 196 / Tau : 2.01919e-09
+[1,3,1] --->
+ibest =3/ Tau =3.02407e-09        Ibest : 28 //Tau = 3.59746e-09       ibest : 196 / Tau : 8.97941e-09
+[1,3,2] --->
+ibest =22/ Tau =8.79674e-08        Ibest : 82 //Tau = 7.04151e-08       ibest : 187 / Tau : 1.61756e-07
+[1,3,3] --->
+ibest =23/ Tau =2.90181e-07        Ibest : 112 //Tau = 3.49566e-07       ibest : 196 / Tau : 6.51363e-07
+[1,3,4] --->
+ibest =170/ Tau =3.82693e-06        Ibest : 131 //Tau = 1.04218e-06       ibest : 164 / Tau : 2.47176e-06
+[1,3,5] --->
+ibest =63/ Tau =8.38448e-06        Ibest : 141 //Tau = 2.96825e-06       ibest : 146 / Tau : 5.8236e-06
+[1,3,6] --->
+ibest =3/ Tau =8.23634e-06        Ibest : 139 //Tau = 2.37602e-06       ibest : 163 / Tau : 2.36709e-05
+[1,3,7] --->
+ibest =3/ Tau =1.49109e-05        Ibest : 140 //Tau = 2.76222e-06       ibest : 178 / Tau : 6.28439e-05
+[1,4,0] --->
+ibest =116/ Tau =2.53403e-08        Ibest : 32 //Tau = 4.32324e-09       ibest : 126 / Tau : 1.00195e-08
+[1,4,1] --->
+ibest =118/ Tau =6.05339e-08        Ibest : 45 //Tau = 8.98622e-09       ibest : 151 / Tau : 2.63386e-08
+[1,4,2] --->
+ibest =82/ Tau =5.25167e-07        Ibest : 84 //Tau = 7.64359e-08       ibest : 138 / Tau : 2.34236e-07
+[1,4,3] --->
+ibest =100/ Tau =3.60573e-06        Ibest : 125 //Tau = 6.87642e-07       ibest : 89 / Tau : 1.10873e-06
+[1,4,4] --->
+ibest =196/ Tau =2.24061e-05        Ibest : 135 //Tau = 1.57918e-06       ibest : 129 / Tau : 3.9092e-06
+[1,4,5] --->
+ibest =196/ Tau =6.2091e-05        Ibest : 143 //Tau = 3.71774e-06       ibest : 125 / Tau : 1.02905e-05
+[1,4,6] --->
+ibest =196/ Tau =0.000140283        Ibest : 146 //Tau = 5.43609e-06       ibest : 135 / Tau : 2.88946e-05
+[1,4,7] --->
+ibest =196/ Tau =0.000394389        Ibest : 156 //Tau = 1.3172e-05       ibest : 133 / Tau : 7.52067e-05

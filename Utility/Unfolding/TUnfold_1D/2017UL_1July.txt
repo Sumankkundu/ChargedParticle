@@ -1,0 +1,1580 @@
+make: Nothing to be done for 'bin'.
+analyzeBasicPat/reco_typ_0_pt0_eta0_3
+Recobins = 32   Gen Bins = 32
+Eventshape histogram rebined
+final Bin :32
+Rebin Data Reco Bin : 32
+Eventshape histogram rebined
+final Bin :32
+Eventshape histogram rebined
+final Bin :32
+ Rebin MC Gen bin : 16
+Eventshape histogram rebined 2d
+ReBin REco Bin :32 Rebin Gen Bin : 16
+analyzeBasicPat/reco_typ_0_pt1_eta0_3
+Recobins = 32   Gen Bins = 32
+Eventshape histogram rebined
+final Bin :32
+Rebin Data Reco Bin : 32
+Eventshape histogram rebined
+final Bin :32
+Eventshape histogram rebined
+final Bin :32
+ Rebin MC Gen bin : 16
+Eventshape histogram rebined 2d
+ReBin REco Bin :32 Rebin Gen Bin : 16
+analyzeBasicPat/reco_typ_0_pt2_eta0_3
+Recobins = 32   Gen Bins = 32
+Eventshape histogram rebined
+final Bin :32
+Rebin Data Reco Bin : 32
+Eventshape histogram rebined
+final Bin :32
+Eventshape histogram rebined
+final Bin :32
+ Rebin MC Gen bin : 16
+Eventshape histogram rebined 2d
+ReBin REco Bin :32 Rebin Gen Bin : 16
+analyzeBasicPat/reco_typ_0_pt3_eta0_3
+Recobins = 32   Gen Bins = 32
+Eventshape histogram rebined
+final Bin :32
+Rebin Data Reco Bin : 32
+Eventshape histogram rebined
+final Bin :32
+Eventshape histogram rebined
+final Bin :32
+ Rebin MC Gen bin : 16
+Eventshape histogram rebined 2d
+ReBin REco Bin :32 Rebin Gen Bin : 16
+analyzeBasicPat/reco_typ_0_pt4_eta0_3
+Recobins = 32   Gen Bins = 32
+Eventshape histogram rebined
+final Bin :32
+Rebin Data Reco Bin : 32
+Eventshape histogram rebined
+final Bin :32
+Eventshape histogram rebined
+final Bin :32
+ Rebin MC Gen bin : 16
+Eventshape histogram rebined 2d
+ReBin REco Bin :32 Rebin Gen Bin : 16
+analyzeBasicPat/reco_typ_0_pt5_eta0_3
+Recobins = 32   Gen Bins = 32
+Eventshape histogram rebined
+final Bin :32
+Rebin Data Reco Bin : 32
+Eventshape histogram rebined
+final Bin :32
+Eventshape histogram rebined
+final Bin :32
+ Rebin MC Gen bin : 16
+Eventshape histogram rebined 2d
+ReBin REco Bin :32 Rebin Gen Bin : 16
+analyzeBasicPat/reco_typ_0_pt6_eta0_3
+Recobins = 32   Gen Bins = 32
+Eventshape histogram rebined
+final Bin :32
+Rebin Data Reco Bin : 32
+Eventshape histogram rebined
+final Bin :32
+Eventshape histogram rebined
+final Bin :32
+ Rebin MC Gen bin : 16
+Eventshape histogram rebined 2d
+ReBin REco Bin :32 Rebin Gen Bin : 16
+analyzeBasicPat/reco_typ_0_pt7_eta0_3
+Recobins = 32   Gen Bins = 32
+Eventshape histogram rebined
+final Bin :32
+Rebin Data Reco Bin : 32
+Eventshape histogram rebined
+final Bin :32
+Eventshape histogram rebined
+final Bin :32
+ Rebin MC Gen bin : 16
+Eventshape histogram rebined 2d
+ReBin REco Bin :32 Rebin Gen Bin : 16
+analyzeBasicPat/reco_typ_0_pt0_eta0_9
+Recobins = 30   Gen Bins = 30
+Eventshape histogram rebined
+final Bin :30
+Rebin Data Reco Bin : 30
+Eventshape histogram rebined
+final Bin :30
+Eventshape histogram rebined
+final Bin :30
+ Rebin MC Gen bin : 15
+Eventshape histogram rebined 2d
+ReBin REco Bin :30 Rebin Gen Bin : 15
+analyzeBasicPat/reco_typ_0_pt1_eta0_9
+Recobins = 30   Gen Bins = 30
+Eventshape histogram rebined
+final Bin :30
+Rebin Data Reco Bin : 30
+Eventshape histogram rebined
+final Bin :30
+Eventshape histogram rebined
+final Bin :30
+ Rebin MC Gen bin : 15
+Eventshape histogram rebined 2d
+ReBin REco Bin :30 Rebin Gen Bin : 15
+analyzeBasicPat/reco_typ_0_pt2_eta0_9
+Recobins = 30   Gen Bins = 30
+Eventshape histogram rebined
+final Bin :30
+Rebin Data Reco Bin : 30
+Eventshape histogram rebined
+final Bin :30
+Eventshape histogram rebined
+final Bin :30
+ Rebin MC Gen bin : 15
+Eventshape histogram rebined 2d
+ReBin REco Bin :30 Rebin Gen Bin : 15
+analyzeBasicPat/reco_typ_0_pt3_eta0_9
+Recobins = 30   Gen Bins = 30
+Eventshape histogram rebined
+final Bin :30
+Rebin Data Reco Bin : 30
+Eventshape histogram rebined
+final Bin :30
+Eventshape histogram rebined
+final Bin :30
+ Rebin MC Gen bin : 15
+Eventshape histogram rebined 2d
+ReBin REco Bin :30 Rebin Gen Bin : 15
+analyzeBasicPat/reco_typ_0_pt4_eta0_9
+Recobins = 30   Gen Bins = 30
+Eventshape histogram rebined
+final Bin :30
+Rebin Data Reco Bin : 30
+Eventshape histogram rebined
+final Bin :30
+Eventshape histogram rebined
+final Bin :30
+ Rebin MC Gen bin : 15
+Eventshape histogram rebined 2d
+ReBin REco Bin :30 Rebin Gen Bin : 15
+analyzeBasicPat/reco_typ_0_pt5_eta0_9
+Recobins = 30   Gen Bins = 30
+Eventshape histogram rebined
+final Bin :30
+Rebin Data Reco Bin : 30
+Eventshape histogram rebined
+final Bin :30
+Eventshape histogram rebined
+final Bin :30
+ Rebin MC Gen bin : 15
+Eventshape histogram rebined 2d
+ReBin REco Bin :30 Rebin Gen Bin : 15
+analyzeBasicPat/reco_typ_0_pt6_eta0_9
+Recobins = 30   Gen Bins = 30
+Eventshape histogram rebined
+final Bin :30
+Rebin Data Reco Bin : 30
+Eventshape histogram rebined
+final Bin :30
+Eventshape histogram rebined
+final Bin :30
+ Rebin MC Gen bin : 15
+Eventshape histogram rebined 2d
+ReBin REco Bin :30 Rebin Gen Bin : 15
+analyzeBasicPat/reco_typ_0_pt7_eta0_9
+ MC gen Bin is Zero for bin number :********** 30
+Recobins = 30   Gen Bins = 30
+Eventshape histogram rebined
+final Bin :30
+Rebin Data Reco Bin : 30
+Eventshape histogram rebined
+final Bin :30
+Eventshape histogram rebined
+final Bin :30
+ Rebin MC Gen bin : 15
+Eventshape histogram rebined 2d
+ReBin REco Bin :30 Rebin Gen Bin : 15
+ Data Reco Bin is Zero for bin number : ******** 1
+analyzeBasicPat/reco_typ_0_pt0_eta0_15
+ MC reco Bin is Zero for bin number :** 1  Bin lowedge -6.71
+ MC gen Bin is Zero for bin number :********** 1
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_0_pt1_eta0_15
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_0_pt2_eta0_15
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_0_pt3_eta0_15
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_0_pt4_eta0_15
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_0_pt5_eta0_15
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_0_pt6_eta0_15
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_0_pt7_eta0_15
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+ Data Reco Bin is Zero for bin number : ******** 1
+ Data Reco Bin is Zero for bin number : ******** 2
+ Data Reco Bin is Zero for bin number : ******** 3
+ Data Reco Bin is Zero for bin number : ******** 4
+ Data Reco Bin is Zero for bin number : ******** 5
+analyzeBasicPat/reco_typ_0_pt0_eta0_18
+ MC reco Bin is Zero for bin number :** 1  Bin lowedge -4.93
+ MC reco Bin is Zero for bin number :** 2  Bin lowedge -4.69
+ MC reco Bin is Zero for bin number :** 3  Bin lowedge -4.44
+ MC reco Bin is Zero for bin number :** 4  Bin lowedge -4.18
+ MC reco Bin is Zero for bin number :** 5  Bin lowedge -3.91
+ MC gen Bin is Zero for bin number :********** 1
+ MC gen Bin is Zero for bin number :********** 2
+ MC gen Bin is Zero for bin number :********** 3
+ MC gen Bin is Zero for bin number :********** 4
+ MC gen Bin is Zero for bin number :********** 5
+Recobins = 34   Gen Bins = 34
+Eventshape histogram rebined
+final Bin :34
+Rebin Data Reco Bin : 34
+Eventshape histogram rebined
+final Bin :34
+Eventshape histogram rebined
+final Bin :34
+ Rebin MC Gen bin : 17
+Eventshape histogram rebined 2d
+ReBin REco Bin :34 Rebin Gen Bin : 17
+ Data Reco Bin is Zero for bin number : ******** 1
+ Data Reco Bin is Zero for bin number : ******** 2
+ Data Reco Bin is Zero for bin number : ******** 3
+ Data Reco Bin is Zero for bin number : ******** 4
+analyzeBasicPat/reco_typ_0_pt1_eta0_18
+ MC reco Bin is Zero for bin number :** 1  Bin lowedge -4.93
+ MC reco Bin is Zero for bin number :** 2  Bin lowedge -4.69
+ MC reco Bin is Zero for bin number :** 3  Bin lowedge -4.44
+ MC reco Bin is Zero for bin number :** 4  Bin lowedge -4.18
+ MC gen Bin is Zero for bin number :********** 1
+ MC gen Bin is Zero for bin number :********** 2
+ MC gen Bin is Zero for bin number :********** 3
+ MC gen Bin is Zero for bin number :********** 4
+ MC gen Bin is Zero for bin number :********** 5
+Recobins = 34   Gen Bins = 34
+Eventshape histogram rebined
+final Bin :34
+Rebin Data Reco Bin : 34
+Eventshape histogram rebined
+final Bin :34
+Eventshape histogram rebined
+final Bin :34
+ Rebin MC Gen bin : 17
+Eventshape histogram rebined 2d
+ReBin REco Bin :34 Rebin Gen Bin : 17
+ Data Reco Bin is Zero for bin number : ******** 1
+ Data Reco Bin is Zero for bin number : ******** 2
+ Data Reco Bin is Zero for bin number : ******** 3
+analyzeBasicPat/reco_typ_0_pt2_eta0_18
+ MC reco Bin is Zero for bin number :** 1  Bin lowedge -4.93
+ MC reco Bin is Zero for bin number :** 2  Bin lowedge -4.69
+ MC reco Bin is Zero for bin number :** 3  Bin lowedge -4.44
+ MC gen Bin is Zero for bin number :********** 1
+ MC gen Bin is Zero for bin number :********** 2
+ MC gen Bin is Zero for bin number :********** 3
+Recobins = 34   Gen Bins = 34
+Eventshape histogram rebined
+final Bin :34
+Rebin Data Reco Bin : 34
+Eventshape histogram rebined
+final Bin :34
+Eventshape histogram rebined
+final Bin :34
+ Rebin MC Gen bin : 17
+Eventshape histogram rebined 2d
+ReBin REco Bin :34 Rebin Gen Bin : 17
+ Data Reco Bin is Zero for bin number : ******** 1
+ Data Reco Bin is Zero for bin number : ******** 2
+analyzeBasicPat/reco_typ_0_pt3_eta0_18
+ MC reco Bin is Zero for bin number :** 1  Bin lowedge -4.93
+ MC reco Bin is Zero for bin number :** 2  Bin lowedge -4.69
+ MC gen Bin is Zero for bin number :********** 1
+ MC gen Bin is Zero for bin number :********** 2
+ MC gen Bin is Zero for bin number :********** 3
+Recobins = 34   Gen Bins = 34
+Eventshape histogram rebined
+final Bin :34
+Rebin Data Reco Bin : 34
+Eventshape histogram rebined
+final Bin :34
+Eventshape histogram rebined
+final Bin :34
+ Rebin MC Gen bin : 17
+Eventshape histogram rebined 2d
+ReBin REco Bin :34 Rebin Gen Bin : 17
+ Data Reco Bin is Zero for bin number : ******** 1
+analyzeBasicPat/reco_typ_0_pt4_eta0_18
+ MC reco Bin is Zero for bin number :** 1  Bin lowedge -4.93
+ MC gen Bin is Zero for bin number :********** 1
+ MC gen Bin is Zero for bin number :********** 2
+Recobins = 34   Gen Bins = 34
+Eventshape histogram rebined
+final Bin :34
+Rebin Data Reco Bin : 34
+Eventshape histogram rebined
+final Bin :34
+Eventshape histogram rebined
+final Bin :34
+ Rebin MC Gen bin : 17
+Eventshape histogram rebined 2d
+ReBin REco Bin :34 Rebin Gen Bin : 17
+ Data Reco Bin is Zero for bin number : ******** 1
+analyzeBasicPat/reco_typ_0_pt5_eta0_18
+ MC reco Bin is Zero for bin number :** 1  Bin lowedge -4.93
+ MC gen Bin is Zero for bin number :********** 1
+Recobins = 34   Gen Bins = 34
+Eventshape histogram rebined
+final Bin :34
+Rebin Data Reco Bin : 34
+Eventshape histogram rebined
+final Bin :34
+Eventshape histogram rebined
+final Bin :34
+ Rebin MC Gen bin : 17
+Eventshape histogram rebined 2d
+ReBin REco Bin :34 Rebin Gen Bin : 17
+ Data Reco Bin is Zero for bin number : ******** 1
+analyzeBasicPat/reco_typ_0_pt6_eta0_18
+ MC reco Bin is Zero for bin number :** 1  Bin lowedge -4.93
+ MC gen Bin is Zero for bin number :********** 1
+Recobins = 34   Gen Bins = 34
+Eventshape histogram rebined
+final Bin :34
+Rebin Data Reco Bin : 34
+Eventshape histogram rebined
+final Bin :34
+Eventshape histogram rebined
+final Bin :34
+ Rebin MC Gen bin : 17
+Eventshape histogram rebined 2d
+ReBin REco Bin :34 Rebin Gen Bin : 17
+analyzeBasicPat/reco_typ_0_pt7_eta0_18
+Recobins = 34   Gen Bins = 34
+Eventshape histogram rebined
+final Bin :34
+Rebin Data Reco Bin : 34
+Eventshape histogram rebined
+final Bin :34
+Eventshape histogram rebined
+final Bin :34
+ Rebin MC Gen bin : 17
+Eventshape histogram rebined 2d
+ReBin REco Bin :34 Rebin Gen Bin : 17
+analyzeBasicPat/reco_typ_0_pt0_eta0_24
+Recobins = 26   Gen Bins = 26
+Eventshape histogram rebined
+final Bin :26
+Rebin Data Reco Bin : 26
+Eventshape histogram rebined
+final Bin :26
+Eventshape histogram rebined
+final Bin :26
+ Rebin MC Gen bin : 13
+Eventshape histogram rebined 2d
+ReBin REco Bin :26 Rebin Gen Bin : 13
+analyzeBasicPat/reco_typ_0_pt1_eta0_24
+Recobins = 26   Gen Bins = 26
+Eventshape histogram rebined
+final Bin :26
+Rebin Data Reco Bin : 26
+Eventshape histogram rebined
+final Bin :26
+Eventshape histogram rebined
+final Bin :26
+ Rebin MC Gen bin : 13
+Eventshape histogram rebined 2d
+ReBin REco Bin :26 Rebin Gen Bin : 13
+analyzeBasicPat/reco_typ_0_pt2_eta0_24
+Recobins = 26   Gen Bins = 26
+Eventshape histogram rebined
+final Bin :26
+Rebin Data Reco Bin : 26
+Eventshape histogram rebined
+final Bin :26
+Eventshape histogram rebined
+final Bin :26
+ Rebin MC Gen bin : 13
+Eventshape histogram rebined 2d
+ReBin REco Bin :26 Rebin Gen Bin : 13
+analyzeBasicPat/reco_typ_0_pt3_eta0_24
+Recobins = 26   Gen Bins = 26
+Eventshape histogram rebined
+final Bin :26
+Rebin Data Reco Bin : 26
+Eventshape histogram rebined
+final Bin :26
+Eventshape histogram rebined
+final Bin :26
+ Rebin MC Gen bin : 13
+Eventshape histogram rebined 2d
+ReBin REco Bin :26 Rebin Gen Bin : 13
+analyzeBasicPat/reco_typ_0_pt4_eta0_24
+Recobins = 26   Gen Bins = 26
+Eventshape histogram rebined
+final Bin :26
+Rebin Data Reco Bin : 26
+Eventshape histogram rebined
+final Bin :26
+Eventshape histogram rebined
+final Bin :26
+ Rebin MC Gen bin : 13
+Eventshape histogram rebined 2d
+ReBin REco Bin :26 Rebin Gen Bin : 13
+analyzeBasicPat/reco_typ_0_pt5_eta0_24
+Recobins = 26   Gen Bins = 26
+Eventshape histogram rebined
+final Bin :26
+Rebin Data Reco Bin : 26
+Eventshape histogram rebined
+final Bin :26
+Eventshape histogram rebined
+final Bin :26
+ Rebin MC Gen bin : 13
+Eventshape histogram rebined 2d
+ReBin REco Bin :26 Rebin Gen Bin : 13
+analyzeBasicPat/reco_typ_0_pt6_eta0_24
+Recobins = 26   Gen Bins = 26
+Eventshape histogram rebined
+final Bin :26
+Rebin Data Reco Bin : 26
+Eventshape histogram rebined
+final Bin :26
+Eventshape histogram rebined
+final Bin :26
+ Rebin MC Gen bin : 13
+Eventshape histogram rebined 2d
+ReBin REco Bin :26 Rebin Gen Bin : 13
+analyzeBasicPat/reco_typ_0_pt7_eta0_24
+Recobins = 26   Gen Bins = 26
+Eventshape histogram rebined
+final Bin :26
+Rebin Data Reco Bin : 26
+Eventshape histogram rebined
+final Bin :26
+Eventshape histogram rebined
+final Bin :26
+ Rebin MC Gen bin : 13
+Eventshape histogram rebined 2d
+ReBin REco Bin :26 Rebin Gen Bin : 13
+analyzeBasicPat/reco_typ_1_pt0_eta0_3
+Recobins = 22   Gen Bins = 22
+Eventshape histogram rebined
+final Bin :22
+Rebin Data Reco Bin : 22
+Eventshape histogram rebined
+final Bin :22
+Eventshape histogram rebined
+final Bin :22
+ Rebin MC Gen bin : 11
+Eventshape histogram rebined 2d
+ReBin REco Bin :22 Rebin Gen Bin : 11
+analyzeBasicPat/reco_typ_1_pt1_eta0_3
+Recobins = 22   Gen Bins = 22
+Eventshape histogram rebined
+final Bin :22
+Rebin Data Reco Bin : 22
+Eventshape histogram rebined
+final Bin :22
+Eventshape histogram rebined
+final Bin :22
+ Rebin MC Gen bin : 11
+Eventshape histogram rebined 2d
+ReBin REco Bin :22 Rebin Gen Bin : 11
+analyzeBasicPat/reco_typ_1_pt2_eta0_3
+Recobins = 22   Gen Bins = 22
+Eventshape histogram rebined
+final Bin :22
+Rebin Data Reco Bin : 22
+Eventshape histogram rebined
+final Bin :22
+Eventshape histogram rebined
+final Bin :22
+ Rebin MC Gen bin : 11
+Eventshape histogram rebined 2d
+ReBin REco Bin :22 Rebin Gen Bin : 11
+analyzeBasicPat/reco_typ_1_pt3_eta0_3
+Recobins = 22   Gen Bins = 22
+Eventshape histogram rebined
+final Bin :22
+Rebin Data Reco Bin : 22
+Eventshape histogram rebined
+final Bin :22
+Eventshape histogram rebined
+final Bin :22
+ Rebin MC Gen bin : 11
+Eventshape histogram rebined 2d
+ReBin REco Bin :22 Rebin Gen Bin : 11
+analyzeBasicPat/reco_typ_1_pt4_eta0_3
+Recobins = 22   Gen Bins = 22
+Eventshape histogram rebined
+final Bin :22
+Rebin Data Reco Bin : 22
+Eventshape histogram rebined
+final Bin :22
+Eventshape histogram rebined
+final Bin :22
+ Rebin MC Gen bin : 11
+Eventshape histogram rebined 2d
+ReBin REco Bin :22 Rebin Gen Bin : 11
+analyzeBasicPat/reco_typ_1_pt5_eta0_3
+Recobins = 22   Gen Bins = 22
+Eventshape histogram rebined
+final Bin :22
+Rebin Data Reco Bin : 22
+Eventshape histogram rebined
+final Bin :22
+Eventshape histogram rebined
+final Bin :22
+ Rebin MC Gen bin : 11
+Eventshape histogram rebined 2d
+ReBin REco Bin :22 Rebin Gen Bin : 11
+analyzeBasicPat/reco_typ_1_pt6_eta0_3
+Recobins = 22   Gen Bins = 22
+Eventshape histogram rebined
+final Bin :22
+Rebin Data Reco Bin : 22
+Eventshape histogram rebined
+final Bin :22
+Eventshape histogram rebined
+final Bin :22
+ Rebin MC Gen bin : 11
+Eventshape histogram rebined 2d
+ReBin REco Bin :22 Rebin Gen Bin : 11
+analyzeBasicPat/reco_typ_1_pt7_eta0_3
+Recobins = 22   Gen Bins = 22
+Eventshape histogram rebined
+final Bin :22
+Rebin Data Reco Bin : 22
+Eventshape histogram rebined
+final Bin :22
+Eventshape histogram rebined
+final Bin :22
+ Rebin MC Gen bin : 11
+Eventshape histogram rebined 2d
+ReBin REco Bin :22 Rebin Gen Bin : 11
+analyzeBasicPat/reco_typ_1_pt0_eta0_9
+Recobins = 20   Gen Bins = 20
+Eventshape histogram rebined
+final Bin :20
+Rebin Data Reco Bin : 20
+Eventshape histogram rebined
+final Bin :20
+Eventshape histogram rebined
+final Bin :20
+ Rebin MC Gen bin : 10
+Eventshape histogram rebined 2d
+ReBin REco Bin :20 Rebin Gen Bin : 10
+analyzeBasicPat/reco_typ_1_pt1_eta0_9
+Recobins = 20   Gen Bins = 20
+Eventshape histogram rebined
+final Bin :20
+Rebin Data Reco Bin : 20
+Eventshape histogram rebined
+final Bin :20
+Eventshape histogram rebined
+final Bin :20
+ Rebin MC Gen bin : 10
+Eventshape histogram rebined 2d
+ReBin REco Bin :20 Rebin Gen Bin : 10
+analyzeBasicPat/reco_typ_1_pt2_eta0_9
+Recobins = 20   Gen Bins = 20
+Eventshape histogram rebined
+final Bin :20
+Rebin Data Reco Bin : 20
+Eventshape histogram rebined
+final Bin :20
+Eventshape histogram rebined
+final Bin :20
+ Rebin MC Gen bin : 10
+Eventshape histogram rebined 2d
+ReBin REco Bin :20 Rebin Gen Bin : 10
+analyzeBasicPat/reco_typ_1_pt3_eta0_9
+Recobins = 20   Gen Bins = 20
+Eventshape histogram rebined
+final Bin :20
+Rebin Data Reco Bin : 20
+Eventshape histogram rebined
+final Bin :20
+Eventshape histogram rebined
+final Bin :20
+ Rebin MC Gen bin : 10
+Eventshape histogram rebined 2d
+ReBin REco Bin :20 Rebin Gen Bin : 10
+analyzeBasicPat/reco_typ_1_pt4_eta0_9
+Recobins = 20   Gen Bins = 20
+Eventshape histogram rebined
+final Bin :20
+Rebin Data Reco Bin : 20
+Eventshape histogram rebined
+final Bin :20
+Eventshape histogram rebined
+final Bin :20
+ Rebin MC Gen bin : 10
+Eventshape histogram rebined 2d
+ReBin REco Bin :20 Rebin Gen Bin : 10
+analyzeBasicPat/reco_typ_1_pt5_eta0_9
+Recobins = 20   Gen Bins = 20
+Eventshape histogram rebined
+final Bin :20
+Rebin Data Reco Bin : 20
+Eventshape histogram rebined
+final Bin :20
+Eventshape histogram rebined
+final Bin :20
+ Rebin MC Gen bin : 10
+Eventshape histogram rebined 2d
+ReBin REco Bin :20 Rebin Gen Bin : 10
+analyzeBasicPat/reco_typ_1_pt6_eta0_9
+Recobins = 20   Gen Bins = 20
+Eventshape histogram rebined
+final Bin :20
+Rebin Data Reco Bin : 20
+Eventshape histogram rebined
+final Bin :20
+Eventshape histogram rebined
+final Bin :20
+ Rebin MC Gen bin : 10
+Eventshape histogram rebined 2d
+ReBin REco Bin :20 Rebin Gen Bin : 10
+analyzeBasicPat/reco_typ_1_pt7_eta0_9
+Recobins = 20   Gen Bins = 20
+Eventshape histogram rebined
+final Bin :20
+Rebin Data Reco Bin : 20
+Eventshape histogram rebined
+final Bin :20
+Eventshape histogram rebined
+final Bin :20
+ Rebin MC Gen bin : 10
+Eventshape histogram rebined 2d
+ReBin REco Bin :20 Rebin Gen Bin : 10
+analyzeBasicPat/reco_typ_1_pt0_eta0_15
+Recobins = 8   Gen Bins = 8
+Eventshape histogram rebined
+final Bin :8
+Rebin Data Reco Bin : 8
+Eventshape histogram rebined
+final Bin :8
+Eventshape histogram rebined
+final Bin :8
+ Rebin MC Gen bin : 4
+Eventshape histogram rebined 2d
+ReBin REco Bin :8 Rebin Gen Bin : 4
+analyzeBasicPat/reco_typ_1_pt1_eta0_15
+Recobins = 8   Gen Bins = 8
+Eventshape histogram rebined
+final Bin :8
+Rebin Data Reco Bin : 8
+Eventshape histogram rebined
+final Bin :8
+Eventshape histogram rebined
+final Bin :8
+ Rebin MC Gen bin : 4
+Eventshape histogram rebined 2d
+ReBin REco Bin :8 Rebin Gen Bin : 4
+analyzeBasicPat/reco_typ_1_pt2_eta0_15
+Recobins = 8   Gen Bins = 8
+Eventshape histogram rebined
+final Bin :8
+Rebin Data Reco Bin : 8
+Eventshape histogram rebined
+final Bin :8
+Eventshape histogram rebined
+final Bin :8
+ Rebin MC Gen bin : 4
+Eventshape histogram rebined 2d
+ReBin REco Bin :8 Rebin Gen Bin : 4
+analyzeBasicPat/reco_typ_1_pt3_eta0_15
+Recobins = 8   Gen Bins = 8
+Eventshape histogram rebined
+final Bin :8
+Rebin Data Reco Bin : 8
+Eventshape histogram rebined
+final Bin :8
+Eventshape histogram rebined
+final Bin :8
+ Rebin MC Gen bin : 4
+Eventshape histogram rebined 2d
+ReBin REco Bin :8 Rebin Gen Bin : 4
+analyzeBasicPat/reco_typ_1_pt4_eta0_15
+Recobins = 8   Gen Bins = 8
+Eventshape histogram rebined
+final Bin :8
+Rebin Data Reco Bin : 8
+Eventshape histogram rebined
+final Bin :8
+Eventshape histogram rebined
+final Bin :8
+ Rebin MC Gen bin : 4
+Eventshape histogram rebined 2d
+ReBin REco Bin :8 Rebin Gen Bin : 4
+analyzeBasicPat/reco_typ_1_pt5_eta0_15
+Recobins = 8   Gen Bins = 8
+Eventshape histogram rebined
+final Bin :8
+Rebin Data Reco Bin : 8
+Eventshape histogram rebined
+final Bin :8
+Eventshape histogram rebined
+final Bin :8
+ Rebin MC Gen bin : 4
+Eventshape histogram rebined 2d
+ReBin REco Bin :8 Rebin Gen Bin : 4
+analyzeBasicPat/reco_typ_1_pt6_eta0_15
+Recobins = 8   Gen Bins = 8
+Eventshape histogram rebined
+final Bin :8
+Rebin Data Reco Bin : 8
+Eventshape histogram rebined
+final Bin :8
+Eventshape histogram rebined
+final Bin :8
+ Rebin MC Gen bin : 4
+Eventshape histogram rebined 2d
+ReBin REco Bin :8 Rebin Gen Bin : 4
+analyzeBasicPat/reco_typ_1_pt7_eta0_15
+Recobins = 8   Gen Bins = 8
+Eventshape histogram rebined
+final Bin :8
+Rebin Data Reco Bin : 8
+Eventshape histogram rebined
+final Bin :8
+Eventshape histogram rebined
+final Bin :8
+ Rebin MC Gen bin : 4
+Eventshape histogram rebined 2d
+ReBin REco Bin :8 Rebin Gen Bin : 4
+analyzeBasicPat/reco_typ_1_pt0_eta0_18
+Recobins = 24   Gen Bins = 24
+Eventshape histogram rebined
+final Bin :24
+Rebin Data Reco Bin : 24
+Eventshape histogram rebined
+final Bin :24
+Eventshape histogram rebined
+final Bin :24
+ Rebin MC Gen bin : 12
+Eventshape histogram rebined 2d
+ReBin REco Bin :24 Rebin Gen Bin : 12
+analyzeBasicPat/reco_typ_1_pt1_eta0_18
+Recobins = 24   Gen Bins = 24
+Eventshape histogram rebined
+final Bin :24
+Rebin Data Reco Bin : 24
+Eventshape histogram rebined
+final Bin :24
+Eventshape histogram rebined
+final Bin :24
+ Rebin MC Gen bin : 12
+Eventshape histogram rebined 2d
+ReBin REco Bin :24 Rebin Gen Bin : 12
+analyzeBasicPat/reco_typ_1_pt2_eta0_18
+Recobins = 24   Gen Bins = 24
+Eventshape histogram rebined
+final Bin :24
+Rebin Data Reco Bin : 24
+Eventshape histogram rebined
+final Bin :24
+Eventshape histogram rebined
+final Bin :24
+ Rebin MC Gen bin : 12
+Eventshape histogram rebined 2d
+ReBin REco Bin :24 Rebin Gen Bin : 12
+analyzeBasicPat/reco_typ_1_pt3_eta0_18
+Recobins = 24   Gen Bins = 24
+Eventshape histogram rebined
+final Bin :24
+Rebin Data Reco Bin : 24
+Eventshape histogram rebined
+final Bin :24
+Eventshape histogram rebined
+final Bin :24
+ Rebin MC Gen bin : 12
+Eventshape histogram rebined 2d
+ReBin REco Bin :24 Rebin Gen Bin : 12
+analyzeBasicPat/reco_typ_1_pt4_eta0_18
+Recobins = 24   Gen Bins = 24
+Eventshape histogram rebined
+final Bin :24
+Rebin Data Reco Bin : 24
+Eventshape histogram rebined
+final Bin :24
+Eventshape histogram rebined
+final Bin :24
+ Rebin MC Gen bin : 12
+Eventshape histogram rebined 2d
+ReBin REco Bin :24 Rebin Gen Bin : 12
+analyzeBasicPat/reco_typ_1_pt5_eta0_18
+Recobins = 24   Gen Bins = 24
+Eventshape histogram rebined
+final Bin :24
+Rebin Data Reco Bin : 24
+Eventshape histogram rebined
+final Bin :24
+Eventshape histogram rebined
+final Bin :24
+ Rebin MC Gen bin : 12
+Eventshape histogram rebined 2d
+ReBin REco Bin :24 Rebin Gen Bin : 12
+analyzeBasicPat/reco_typ_1_pt6_eta0_18
+Recobins = 24   Gen Bins = 24
+Eventshape histogram rebined
+final Bin :24
+Rebin Data Reco Bin : 24
+Eventshape histogram rebined
+final Bin :24
+Eventshape histogram rebined
+final Bin :24
+ Rebin MC Gen bin : 12
+Eventshape histogram rebined 2d
+ReBin REco Bin :24 Rebin Gen Bin : 12
+analyzeBasicPat/reco_typ_1_pt7_eta0_18
+Recobins = 24   Gen Bins = 24
+Eventshape histogram rebined
+final Bin :24
+Rebin Data Reco Bin : 24
+Eventshape histogram rebined
+final Bin :24
+Eventshape histogram rebined
+final Bin :24
+ Rebin MC Gen bin : 12
+Eventshape histogram rebined 2d
+ReBin REco Bin :24 Rebin Gen Bin : 12
+analyzeBasicPat/reco_typ_1_pt0_eta0_24
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_1_pt1_eta0_24
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_1_pt2_eta0_24
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_1_pt3_eta0_24
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_1_pt4_eta0_24
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_1_pt5_eta0_24
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_1_pt6_eta0_24
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+analyzeBasicPat/reco_typ_1_pt7_eta0_24
+Recobins = 16   Gen Bins = 16
+Eventshape histogram rebined
+final Bin :16
+Rebin Data Reco Bin : 16
+Eventshape histogram rebined
+final Bin :16
+Eventshape histogram rebined
+final Bin :16
+ Rebin MC Gen bin : 8
+Eventshape histogram rebined 2d
+ReBin REco Bin :16 Rebin Gen Bin : 8
+Histogram Read and Rebin oK 
+type 0 : Variables 0 HT2 Bin : 0
+ Tau Value = 8.8552e-09  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 2.33692e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.25443e-09
+type 0 : Variables 0 HT2 Bin : 1
+ Tau Value = 5.6949e-08  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 1.106e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.12057e-08
+type 0 : Variables 0 HT2 Bin : 2
+ Tau Value = 6.68343e-07  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 8.34142e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.08081e-07
+type 0 : Variables 0 HT2 Bin : 3
+ Tau Value = 3.81971e-06  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 184 Tau Value : 6.17523e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 4.76601e-07
+type 0 : Variables 0 HT2 Bin : 4
+ Tau Value = 1.20974e-05  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 1.90544e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.40026e-06
+type 0 : Variables 0 HT2 Bin : 5
+ Tau Value = 4.85451e-05  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 5.69196e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 4.99034e-06
+type 0 : Variables 0 HT2 Bin : 6
+ Tau Value = 0.000149552  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 1.37611e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.44809e-05
+type 0 : Variables 0 HT2 Bin : 7
+ Tau Value = 0.000681405  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 181 Tau Value : 6.58615e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 5.58095e-05
+type 0 : Variables 1 HT2 Bin : 0
+ Tau Value = 7.11309e-09  ibest =14
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 166 Tau Value : 4.59724e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 3.65427e-09
+type 0 : Variables 1 HT2 Bin : 1
+ Tau Value = 2.96161e-08  ibest =10
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 1.40233e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.70061e-08
+type 0 : Variables 1 HT2 Bin : 2
+ Tau Value = 4.48542e-07  ibest =15
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 162 Tau Value : 1.53883e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.02284e-07
+type 0 : Variables 1 HT2 Bin : 3
+ Tau Value = 2.35952e-06  ibest =22
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 179 Tau Value : 5.74028e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 7.78831e-07
+type 0 : Variables 1 HT2 Bin : 4
+ Tau Value = 9.37568e-06  ibest =14
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 179 Tau Value : 3.05148e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 3.16392e-06
+type 0 : Variables 1 HT2 Bin : 5
+ Tau Value = 4.00938e-05  ibest =47
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 174 Tau Value : 5.88827e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 9.12236e-06
+type 0 : Variables 1 HT2 Bin : 6
+ Tau Value = 0.000153411  ibest =73
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 174 Tau Value : 1.91051e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.64869e-05
+type 0 : Variables 1 HT2 Bin : 7
+ Tau Value = 0.000594548  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 171 Tau Value : 3.59938e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.64561e-05
+type 0 : Variables 2 HT2 Bin : 0
+ Tau Value = 9.33312e-10  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 174 Tau Value : 1.31831e-10
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 9.20762e-10
+type 0 : Variables 2 HT2 Bin : 1
+ Tau Value = 3.26276e-09  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 176 Tau Value : 5.30617e-10
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.6385e-09
+type 0 : Variables 2 HT2 Bin : 2
+ Tau Value = 8.33675e-08  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 2.29061e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 7.31999e-08
+type 0 : Variables 2 HT2 Bin : 3
+ Tau Value = 2.39462e-06  ibest =89
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 9.97709e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 9.46072e-07
+type 0 : Variables 2 HT2 Bin : 4
+ Tau Value = 2.6182e-06  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 185 Tau Value : 7.53889e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.07931e-06
+type 0 : Variables 2 HT2 Bin : 5
+ Tau Value = 5.58324e-05  ibest =88
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 184 Tau Value : 1.61955e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 5.34513e-06
+type 0 : Variables 2 HT2 Bin : 6
+ Tau Value = 0.000170822  ibest =79
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 184 Tau Value : 5.15334e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.81271e-05
+type 0 : Variables 2 HT2 Bin : 7
+ Tau Value = 9.45572e-05  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 184 Tau Value : 1.78558e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 5.45209e-05
+type 0 : Variables 3 HT2 Bin : 0
+ Tau Value = 8.3519e-10  ibest =28
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 174 Tau Value : 8.09143e-10
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 7.00063e-10
+type 0 : Variables 3 HT2 Bin : 1
+ Tau Value = 1.39225e-08  ibest =8
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 9.51274e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 7.85454e-09
+type 0 : Variables 3 HT2 Bin : 2
+ Tau Value = 5.56077e-07  ibest =54
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 177 Tau Value : 2.59227e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 9.50574e-08
+type 0 : Variables 3 HT2 Bin : 3
+ Tau Value = 2.00335e-06  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 174 Tau Value : 4.26419e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.08916e-07
+type 0 : Variables 3 HT2 Bin : 4
+ Tau Value = 1.39829e-05  ibest =39
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 177 Tau Value : 7.06627e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 8.54738e-07
+type 0 : Variables 3 HT2 Bin : 5
+ Tau Value = 2.35218e-06  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 166 Tau Value : 5.73642e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.14747e-06
+type 0 : Variables 3 HT2 Bin : 6
+ Tau Value = 2.2089e-05  ibest =61
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 176 Tau Value : 1.42803e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 5.0174e-06
+type 0 : Variables 3 HT2 Bin : 7
+ Tau Value = 7.41964e-05  ibest =63
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 173 Tau Value : 3.18035e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.69359e-05
+type 0 : Variables 4 HT2 Bin : 0
+ Tau Value = 9.82142e-09  ibest =88
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 186 Tau Value : 3.78462e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.05413e-09
+type 0 : Variables 4 HT2 Bin : 1
+ Tau Value = 2.89504e-08  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 4.65568e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 7.33013e-09
+type 0 : Variables 4 HT2 Bin : 2
+ Tau Value = 7.28539e-07  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 5.84119e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.1958e-07
+type 0 : Variables 4 HT2 Bin : 3
+ Tau Value = 4.29069e-06  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 172 Tau Value : 4.43224e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 6.06307e-07
+type 0 : Variables 4 HT2 Bin : 4
+ Tau Value = 1.79402e-05  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 184 Tau Value : 1.48818e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.29678e-06
+type 0 : Variables 4 HT2 Bin : 5
+ Tau Value = 8.10833e-05  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 171 Tau Value : 6.23954e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 8.28766e-06
+type 0 : Variables 4 HT2 Bin : 6
+ Tau Value = 0.000282448  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 185 Tau Value : 1.81529e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.63294e-05
+type 0 : Variables 4 HT2 Bin : 7
+ Tau Value = 0.000803106  ibest =71
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 5.44573e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 3.56838e-05
+type 1 : Variables 0 HT2 Bin : 0
+ Tau Value = 6.42977e-09  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 181 Tau Value : 8.62411e-10
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.36011e-09
+type 1 : Variables 0 HT2 Bin : 1
+ Tau Value = 2.42957e-08  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 181 Tau Value : 2.59025e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 6.63131e-09
+type 1 : Variables 0 HT2 Bin : 2
+ Tau Value = 2.36772e-07  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 179 Tau Value : 2.58309e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 6.21057e-08
+type 1 : Variables 0 HT2 Bin : 3
+ Tau Value = 1.07859e-06  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 1.93626e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.15227e-07
+type 1 : Variables 0 HT2 Bin : 4
+ Tau Value = 4.15691e-06  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 7.5297e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.29017e-06
+type 1 : Variables 0 HT2 Bin : 5
+ Tau Value = 1.05781e-05  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 181 Tau Value : 1.76565e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 6.34296e-06
+type 1 : Variables 0 HT2 Bin : 6
+ Tau Value = 2.983e-05  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 5.67464e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.72716e-05
+type 1 : Variables 0 HT2 Bin : 7
+ Tau Value = 7.20295e-05  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 177 Tau Value : 6.37787e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.25636e-05
+type 1 : Variables 1 HT2 Bin : 0
+ Tau Value = 4.412e-08  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 2.36825e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 9.07125e-09
+type 1 : Variables 1 HT2 Bin : 1
+ Tau Value = 1.54323e-07  ibest =85
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 181 Tau Value : 9.07053e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 4.28602e-08
+type 1 : Variables 1 HT2 Bin : 2
+ Tau Value = 5.55241e-07  ibest =19
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 1.17521e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 3.97491e-07
+type 1 : Variables 1 HT2 Bin : 3
+ Tau Value = 1.36347e-06  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 6.04495e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 7.72211e-07
+type 1 : Variables 1 HT2 Bin : 4
+ Tau Value = 5.33874e-06  ibest =4
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 168 Tau Value : 2.40117e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 6.19656e-06
+type 1 : Variables 1 HT2 Bin : 5
+ Tau Value = 1.52057e-05  ibest =4
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 180 Tau Value : 5.90525e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.7829e-05
+type 1 : Variables 1 HT2 Bin : 6
+ Tau Value = 5.59062e-05  ibest =7
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 182 Tau Value : 1.4824e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.62307e-05
+type 1 : Variables 1 HT2 Bin : 7
+ Tau Value = 0.000128435  ibest =4
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 179 Tau Value : 2.68468e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.18404e-05
+type 1 : Variables 2 HT2 Bin : 0
+ Tau Value = 6.91294e-09  ibest =4
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 184 Tau Value : 5.04213e-10
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 6.26801e-09
+type 1 : Variables 2 HT2 Bin : 1
+ Tau Value = 2.72832e-08  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 185 Tau Value : 2.10809e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.50135e-08
+type 1 : Variables 2 HT2 Bin : 2
+ Tau Value = 4.002e-07  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 187 Tau Value : 3.60818e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 7.13528e-07
+type 1 : Variables 2 HT2 Bin : 3
+ Tau Value = 5.50703e-06  ibest =17
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 189 Tau Value : 3.61652e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.95808e-06
+type 1 : Variables 2 HT2 Bin : 4
+ Tau Value = 5.74817e-06  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 186 Tau Value : 3.67895e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 3.68743e-06
+type 1 : Variables 2 HT2 Bin : 5
+ Tau Value = 1.56704e-05  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 185 Tau Value : 7.97876e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.22144e-05
+type 1 : Variables 2 HT2 Bin : 6
+ Tau Value = 3.80032e-05  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 169 Tau Value : 1.78536e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.2417e-05
+type 1 : Variables 2 HT2 Bin : 7
+ Tau Value = 9.21625e-05  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 181 Tau Value : 2.37885e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 5.00899e-05
+type 1 : Variables 3 HT2 Bin : 0
+ Tau Value = 6.55353e-10  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 8.06283e-10
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 8.14981e-10
+type 1 : Variables 3 HT2 Bin : 1
+ Tau Value = 4.05062e-09  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 185 Tau Value : 5.91953e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 3.87327e-09
+type 1 : Variables 3 HT2 Bin : 2
+ Tau Value = 2.62622e-07  ibest =67
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 173 Tau Value : 5.58905e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 7.69211e-08
+type 1 : Variables 3 HT2 Bin : 3
+ Tau Value = 3.07034e-06  ibest =95
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 185 Tau Value : 2.81162e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 5.67182e-07
+type 1 : Variables 3 HT2 Bin : 4
+ Tau Value = 2.1721e-05  ibest =94
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 186 Tau Value : 1.25076e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 3.44097e-06
+type 1 : Variables 3 HT2 Bin : 5
+ Tau Value = 9.19761e-05  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 185 Tau Value : 2.77118e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 4.07553e-06
+type 1 : Variables 3 HT2 Bin : 6
+ Tau Value = 0.000230828  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 184 Tau Value : 5.1551e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.50157e-05
+type 1 : Variables 3 HT2 Bin : 7
+ Tau Value = 0.000764018  ibest =96
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 167 Tau Value : 1.00997e-05
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.74673e-05
+type 1 : Variables 4 HT2 Bin : 0
+ Tau Value = 3.48475e-08  ibest =36
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 186 Tau Value : 2.33108e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.58399e-09
+type 1 : Variables 4 HT2 Bin : 1
+ Tau Value = 2.09155e-08  ibest =3
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 3.46564e-09
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 4.78195e-09
+type 1 : Variables 4 HT2 Bin : 2
+ Tau Value = 7.07269e-07  ibest =31
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 183 Tau Value : 4.33339e-08
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.57488e-07
+type 1 : Variables 4 HT2 Bin : 3
+ Tau Value = 3.1409e-06  ibest =32
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 185 Tau Value : 2.34714e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 5.99202e-07
+type 1 : Variables 4 HT2 Bin : 4
+ Tau Value = 1.08227e-05  ibest =31
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 184 Tau Value : 8.55253e-07
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.10806e-06
+type 1 : Variables 4 HT2 Bin : 5
+ Tau Value = 2.46657e-05  ibest =17
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 172 Tau Value : 2.85639e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 6.3166e-06
+type 1 : Variables 4 HT2 Bin : 6
+ Tau Value = 7.13764e-05  ibest =24
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 184 Tau Value : 5.15835e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 1.80164e-05
+type 1 : Variables 4 HT2 Bin : 7
+ Tau Value = 0.000251801  ibest =34
+L curve Scan  ok
+Ok 1 
+ Ibest Scan Sure : 180 Tau Value : 7.92902e-06
+Ok 1 
+ Ibest Scan Tau: 2 Tau Value : 2.71471e-05
