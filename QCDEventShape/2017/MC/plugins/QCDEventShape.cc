@@ -56,6 +56,7 @@
 #include "TMath.h"
 #include "CLHEP/Vector/LorentzVector.h"
 #include "TRandom.h"
+#include "TUnfoldBinning.h"
 
 #include "TH2F.h"
 #include "TProfile.h"
@@ -189,54 +190,169 @@ int nbinsxgen[nvar]={24, 24, 30, 24, 24, 24,
                     30, 30};
 
 
-
-//For Jet Reco
-
-const int nmxbins=34;
-int nbinsx0[nvar]={0,0,0,32,0,0,
-                   0,0,0,30,0,0,
-                   0,0,0,16,0,0,
-                   34,0,0,0,0,0,
-                   26,0,0,0,0,0,0,0};
+//--------------------------------------------------
+/*
+//For Gen Level
+//For Jet 
+const int nmxbins=32;
+int nbinsx0[nvar]={0,0,0,30,0,0,
+                   0,0,0,28,0,0,
+                   0,0,0,14,0,0,
+                   32,0,0,0,0,0,
+                   24,0,0,0,0,0,0,0};
 
 //For charge Particles
-int nbinsx1[nvar]={0,0,0,22,0,0,
-                   0,0,0,20,0,0,
+int nbinsx1[nvar]={0,0,0,20,0,0,
+                   0,0,0,18,0,0,
                    0,0,0,8,0,0,
-                   24,0,0,0,0,0,
-                   16,0,0,0,0,0,0,0};
-///////////////////Modify /////////////////////////////
+                   22,0,0,0,0,0,
+                   14,0,0,0,0,0,0,0};
+//-------------------------------------------------------
+*/
+//For Reco Level
+//For Jet 
+const int rnmxbins=26;
+int rnbinsx0[nvar]={0,0,0,26,0,0,
+                   0,0,0,20,0,0,
+                   0,0,0,12,0,0,
+                   20,0,0,0,0,0,
+                   22,0,0,0,0,0,0,0};
+
+
+//For charge Particles
+int rnbinsx1[nvar]={0,0,0,20,0,0,
+                   0,0,0,16,0,0,
+                   0,0,0,8,0,0,
+                   22,0,0,0,0,0,
+                   14,0,0,0,0,0,0,0};
+
+//For Gen Bins
+//For Jet
+const int nmxbins=13;
+int nbinsx0[nvar]={0,0,0,13,0,0,
+                   0,0,0,10,0,0,
+                   0,0,0,6,0,0,
+                   10,0,0,0,0,0,
+                   11,0,0,0,0,0,0,0};
+
+//For charge Particles
+int nbinsx1[nvar]={0,0,0,10,0,0,
+                   0,0,0,8,0,0,
+                   0,0,0,4,0,0,
+                   11,0,0,0,0,0,
+                   7,0,0,0,0,0,0,0};
+
+
+
+//for Reco bin same as gen
+//For Jet 
+/*
+const int rnmxbins=26;
+int rnbinsx0[nvar]={0,0,0,26,0,0,
+                   0,0,0,20,0,0,
+                   0,0,0,12,0,0,
+                   20,0,0,0,0,0,
+                   22,0,0,0,0,0,0,0};
+
+
+//For charge Particles
+int rnbinsx1[nvar]={0,0,0,20,0,0,
+                   0,0,0,16,0,0,
+                   0,0,0,8,0,0,
+                   22,0,0,0,0,0,
+                   14,0,0,0,0,0,0,0};
+*/
+
+//For Reco Level
+//for Jets
+double rbinrngs0[nvar][rnmxbins+1] ={{},{},{},
+                                  {-6.38, -6.08, -5.79, -5.52, -5.26, -5.01, -4.77, -4.53, -4.3, -4.07, -3.85, -3.64, -3.43, -3.23, -3.04, -2.85, -2.67, -2.5, -2.34, -2.19, -2.05, -1.92, -1.8, -1.68, -1.57, -1.47, -1.38},//, -1.3, -1.23, -1.17, -1.11 },//30
+                                  {},{},{},{},{},
+                                  {-4.69, -4.45, -4.22, -4, -3.78, -3.56, -3.35, -3.14, -2.93, -2.72, -2.52, -2.32, -2.13, -1.94, -1.76, -1.59, -1.42, -1.26, -1.11, -0.97, -0.85},// -0.74, -0.64, -0.55,-0.47, -0.4, -0.33, -0.27, -0.22 },   //28 bins
+                                  {},{},{},{},{},
+                                  {-5.68, -5.24, -4.83, -4.45, -4.1, -3.77, -3.45, -3.15, -2.86, -2.58, -2.31, -2.04, -1.78},// 12 Bins
+                                  {},{},
+                                  {-3.39, -3.14, -2.9, -2.67, -2.45, -2.25, -2.06, -1.88, -1.72, -1.57, -1.43, -1.3, -1.18, -1.07, -0.97, -0.88, -0.79, -0.71, -0.63, -0.56, -0.49}, //32 Bins
+                                  {},{},{},{},{},
+                                  {-5.58, -5.29, -5.01, -4.75, -4.5, -4.26, -4.03, -3.8, -3.58, -3.37, -3.16, -2.96, -2.77, -2.59, -2.41, -2.24, -2.08, -1.93, -1.8, -1.68, -1.57, -1.47, -1.37}, //24 bins
+                                  {},{},{},{},{},{},{}};
+
+
+//-----------------------------------------------------------------------------------
+//For charge particle
+double rbinrngs1[nvar][rnmxbins+1] ={{},{},{},
+                                  {-5.27, -5.02, -4.77, -4.53, -4.29, -4.05, -3.81, -3.57, -3.33, -3.09, -2.85, -2.62, -2.39, -2.17, -1.97, -1.78, -1.61, -1.46, -1.33, -1.22, -1.13}, //20 bins
+                                  {},{},{},{},{},
+                                  {-4.57, -4.21, -3.86, -3.52, -3.19, -2.87, -2.56, -2.26, -1.98, -1.71, -1.46, -1.23, -1.02, -0.83, -0.66, -0.51, -0.38},// -0.27, -0.18}, // 18 bins
+                                  {},{},{},{},{},
+                                  {-6.71, -6, -5.29, -4.62, -3.99, -3.39, -2.8, -2.18, -1.49},// 8 bins
+                                  {},{},
+                                  {-4.55, -4.25, -3.99, -3.76, -3.55, -3.35, -3.16, -2.97, -2.78, -2.59, -2.4, -2.21, -2.02, -1.83, -1.64, -1.45, -1.27, -1.09, -0.92, -0.76, -0.62, -0.49, -0.38},//22
+                                  {},{},{},{},{},
+                                  {-5.39, -4.96, -4.57, -4.21, -3.87, -3.54, -3.22, -2.91, -2.61, -2.33, -2.06, -1.81, -1.58, -1.37, -1.18},//14
+                                  {},{},{},{},{},{},{}};
+
+//For Gen Bins
 //for Jets
 double binrngs0[nvar][nmxbins+1] ={{},{},{},
-                                  {-6.71, -6.38, -6.08, -5.79, -5.52, -5.26, -5.01, -4.77, -4.53, -4.3, -4.07, -3.85, -3.64, -3.43, -3.23, -3.04, -2.85, -2.67, -2.5, -2.34, -2.19, -2.05, -1.92, -1.8, -1.68, -1.57, -1.47, -1.38, -1.3, -1.23, -1.17, -1.11, -1.06 },
+                                  {-6.38, -5.79, -5.26, -4.77, -4.3, -3.85, -3.43, -3.04, -2.67, -2.34, -2.05, -1.8, -1.57, -1.38}, //13 bins
                                   {},{},{},{},{},
-                                  {-4.93, -4.69, -4.45, -4.22, -4, -3.78, -3.56, -3.35, -3.14, -2.93, -2.72, -2.52, -2.32, -2.13, -1.94, -1.76, -1.59, -1.42, -1.26, -1.11, -0.97, -0.85, -0.74, -0.64, -0.55,-0.47, -0.4, -0.33, -0.27, -0.22, -0.15 },   //30 bins
+                                  {-4.69, -4.22, -3.78, -3.35, -2.93, -2.52, -2.13, -1.76,  -1.42, -1.11, -0.85}, // 10 bins
                                   {},{},{},{},{},
-                                  {-6.71, -6.17, -5.68, -5.24, -4.83, -4.45, -4.1, -3.77, -3.45, -3.15, -2.86, -2.58, -2.31, -2.04, -1.78, -1.52, -1.27 },
+                                  {-5.68, -4.83, -4.1, -3.45, -2.86, -2.31, -1.78}, // 6 bins
                                   {},{},
-                                  {-4.93, -4.69, -4.44, -4.18, -3.91, -3.65, -3.39, -3.14, -2.9, -2.67, -2.45, -2.25, -2.06, -1.88, -1.72, -1.57, -1.43, -1.3, -1.18, -1.07, -0.97, -0.88, -0.79, -0.71, -0.63, -0.56, -0.49, -0.43, -0.37, -0.32, -0.27, -0.22, -0.17, -0.13, -0.1 },
+                                  {-3.39, -2.9, -2.45, -2.06, -1.72, -1.43, -1.18, -0.97, -0.79, -0.63, -0.49}, //10 Bins
                                   {},{},{},{},{},
-                                  {-5.89, -5.58, -5.29, -5.01, -4.75, -4.5, -4.26, -4.03, -3.8, -3.58, -3.37, -3.16, -2.96, -2.77, -2.59, -2.41, -2.24, -2.08, -1.93, -1.8, -1.68, -1.57, -1.47, -1.37, -1.28, -1.2, -1.13 },                    
+                                  {-5.58, -5.01, -4.5, -4.03, -3.58,  -3.16,  -2.77, -2.41, -2.08, -1.8, -1.57,-1.37},// 11 bins
                                   {},{},{},{},{},{},{}};
 
 
 //-----------------------------------------------------------------------------------
 //For charge particle
 double binrngs1[nvar][nmxbins+1] ={{},{},{},
-                                  {-5.54, -5.27, -5.02, -4.77, -4.53, -4.29, -4.05, -3.81, -3.57, -3.33, -3.09, -2.85, -2.62, -2.39, -2.17, -1.97, -1.78, -1.61, -1.46, -1.33, -1.22, -1.13, -1.05 },
+                                  {-5.27, -4.77, -4.29, -3.81, -3.33, -2.85, -2.39, -1.97, -1.61, -1.33, -1.13}, //10 bins
                                   {},{},{},{},{},
-                                  {-4.93, -4.57, -4.21, -3.86, -3.52, -3.19, -2.87, -2.56, -2.26, -1.98, -1.71, -1.46, -1.23, -1.02, -0.83, -0.66, -0.51, -0.38, -0.27, -0.18, -0.1 }, // 20 bins
+                                  {-4.57, -3.86, -3.19, -2.56, -1.98, -1.46, -1.02, -0.66,-0.38},// 8 bins
                                   {},{},{},{},{},
-                                  {-6.71, -6, -5.29, -4.62, -3.99, -3.39, -2.8, -2.18, -1.49 },
+                                  {-6.71, -5.29,  -3.99, -2.8, -1.49},// 4 bins
                                   {},{},
-                                  {-4.93, -4.55, -4.25, -3.99, -3.76, -3.55, -3.35, -3.16, -2.97, -2.78, -2.59, -2.4, -2.21, -2.02, -1.83, -1.64, -1.45, -1.27, -1.09, -0.92, -0.76, -0.62, -0.49, -0.38, -0.29},
+                                  {-4.55, -3.99, -3.55, -3.16, -2.78, -2.4, -2.02, -1.64, -1.27, -0.92,  -0.62, -0.38},//11
                                   {},{},{},{},{},
-                                  {-5.89, -5.39, -4.96, -4.57, -4.21, -3.87, -3.54, -3.22, -2.91, -2.61, -2.33, -2.06, -1.81, -1.58, -1.37, -1.18, -1.02 },
+                                  {-5.39, -4.57, -3.87, -3.22, -2.61, -2.06, -1.58, -1.18},//7
                                   {},{},{},{},{},{},{}};
 
 
 
+/*
+//Reco binsame as Gen ..
+double rbinrngs0[nvar][nmxbins+1] ={{},{},{},
+                                  {-6.38, -6.08, -5.79, -5.52, -5.26, -5.01, -4.77, -4.53, -4.3, -4.07, -3.85, -3.64, -3.43, -3.23, -3.04, -2.85, -2.67, -2.5, -2.34, -2.19, -2.05, -1.92, -1.8, -1.68, -1.57, -1.47, -1.38},//, -1.3, -1.23, -1.17, -1.11 },//30
+                                  {},{},{},{},{},
+                                  {-4.69, -4.45, -4.22, -4, -3.78, -3.56, -3.35, -3.14, -2.93, -2.72, -2.52, -2.32, -2.13, -1.94, -1.76, -1.59, -1.42, -1.26, -1.11, -0.97, -0.85},// -0.74, -0.64, -0.55,-0.47, -0.4, -0.33, -0.27, -0.22 },   //28 bins
+                                  {},{},{},{},{},
+                                  { -5.68, -5.24, -4.83, -4.45, -4.1, -3.77, -3.45, -3.15, -2.86, -2.58, -2.31, -2.04, -1.78},//, -1.52}, //14 bin
+                                  {},{},
+                                  {-3.39, -3.14, -2.9, -2.67, -2.45, -2.25, -2.06, -1.88, -1.72, -1.57, -1.43, -1.3, -1.18, -1.07, -0.97, -0.88, -0.79, -0.71, -0.63, -0.56, -0.49},//, -0.43, -0.37, -0.32, -0.27, -0.22, -0.17, -0.13}, //32 Bins
+                                  {},{},{},{},{},
+                                  {-5.58, -5.29, -5.01, -4.75, -4.5, -4.26, -4.03, -3.8, -3.58, -3.37, -3.16, -2.96, -2.77, -2.59, -2.41, -2.24, -2.08, -1.93, -1.8, -1.68, -1.57, -1.47, -1.37},//, -1.28, -1.2},//24 bins
+                                  {},{},{},{},{},{},{}};
 
+
+//-----------------------------------------------------------------------------------
+//For charge particle
+double rbinrngs1[nvar][nmxbins+1] ={{},{},{},
+                                  {-5.27, -5.02, -4.77, -4.53, -4.29, -4.05, -3.81, -3.57, -3.33, -3.09, -2.85, -2.62, -2.39, -2.17, -1.97, -1.78, -1.61, -1.46, -1.33, -1.22, -1.13}, //20 bins
+                                  {},{},{},{},{},
+                                  {-4.57, -4.21, -3.86, -3.52, -3.19, -2.87, -2.56, -2.26, -1.98, -1.71, -1.46, -1.23, -1.02, -0.83, -0.66, -0.51, -0.38},// -0.27, -0.18}, // 18 bins
+                                  {},{},{},{},{},
+                                  {-6.71, -6, -5.29, -4.62, -3.99, -3.39, -2.8, -2.18, -1.49},// 6 bins
+                                  {},{},
+                                  {-4.55, -4.25, -3.99, -3.76, -3.55, -3.35, -3.16, -2.97, -2.78, -2.59, -2.4, -2.21, -2.02, -1.83, -1.64, -1.45, -1.27, -1.09, -0.92, -0.76, -0.62, -0.49, -0.38},//22
+                                  {},{},{},{},{},
+                                  {-5.39, -4.96, -4.57, -4.21, -3.87, -3.54, -3.22, -2.91, -2.61, -2.33, -2.06, -1.81, -1.58, -1.37, -1.18},//14
+                                  {},{},{},{},{},{},{}};
+
+*/
 
 int nbinsx[nvar]={120, 120, 120, 120, 120, 120, 
                    120, 120, 120, 120, 120, 120, 
@@ -629,7 +745,7 @@ class QCDEventShape : public edm::EDAnalyzer {
   float inslumi;
   int nsicls, ntottrk;
 //#ifdef FLAT 
-//  bool isFlat=1;
+  //bool isFlat=1;
 //#else 
   bool isFlat=0;
 //#endif
@@ -932,7 +1048,8 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
 	    if (isReconstruct) { 
 	      sprintf(name, "reco_typ_%i_pt%i_eta%i_%i", ityp, ipt, iet, ij);
 	      sprintf(title, "Reco %s %i %g %s", typname[ityp], int(leadingPtThreshold[ipt]), etarange[iet], vartitle[ij]);
-	     h_recoevtvar[ityp][ipt][iet][ij] = fs->make<TH1F>(name, title, (ityp==0) ? nbinsx0[ij] : nbinsx1[ij], (ityp==0) ? binrngs0[ij] : binrngs1[ij] );  
+	     h_recoevtvar[ityp][ipt][iet][ij] = fs->make<TH1F>(name, title, (ityp==0) ? rnbinsx0[ij] : rnbinsx1[ij], (ityp==0) ? rbinrngs0[ij] : rbinrngs1[ij] );  
+	     //h_recoevtvar[ityp][ipt][iet][ij] = fs->make<TH1F>(name, title, (ityp==0) ? nbinsx0[ij] : nbinsx1[ij], (ityp==0) ? binrngs0[ij] : binrngs1[ij] );  
            //h_recoevtvar[ityp][ipt][iet][ij] = fs->make<TH1F>(name, title, (ityp==0) ? nbinsx0[ij][ipt] : nbinsx1[ij][ipt], (ityp==0) ? binrngs0[ij][ipt] : binrngs1[ij][ipt] );  
            // h_recoevtvar[ityp][ipt][iet][ij] = fs->make<TH1F>(name, title, (ityp==0) ? nbinsx0[ij] : ((ityp==1 || ityp==3) ? nbinsx1[ij] : nbinsx2[ij]), (ityp==0) ? binrngs0[ij] : ((ityp==1 || ityp==3) ? binrngs1[ij] : binrngs2[ij]));
 	    //  h_recoevtvar[ityp][ipt][iet][ij] = fs->make<TH1F>(name, title, nbinsx[ij], -endx[ij], -startx[ij]);
@@ -942,7 +1059,8 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
 	    for (int ix=1; ix<nnnmx; ix++) {
 	      sprintf(name, "genpdf_typ_%i_pt%i_eta%i_%i_%i", ityp, ipt, iet, ij, ix);
 	      sprintf(title, "Genpdf %s %i %g %s %i", typname[ityp], int(leadingPtThreshold[ipt]), etarange[iet], vartitle[ij], ix);
-	      h_genevtvarpdf[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title,  (ityp==0) ? nbinsx0[ij] : nbinsx1[ij] , (ityp==0) ? binrngs0[ij] : binrngs1[ij]);
+	      h_genevtvarpdf[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title,  (ityp==0) ? rnbinsx0[ij] : rnbinsx1[ij] , (ityp==0) ? rbinrngs0[ij] : rbinrngs1[ij]);
+	      //h_genevtvarpdf[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title,  (ityp==0) ? nbinsx0[ij] : nbinsx1[ij] , (ityp==0) ? binrngs0[ij] : binrngs1[ij]);
               // h_genevtvarpdf[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title,  (ityp==0) ? nbinsx0[ij] : ((ityp==1 || ityp==3) ? nbinsx1[ij] : nbinsx2[ij]), (ityp==0) ? binrngs0[ij] : ((ityp==1 || ityp==3) ? binrngs1[ij] : binrngs2[ij]));
 	      h_genevtvarpdf[ityp][ipt][iet][ij][ix]->Sumw2();
 	    }
@@ -952,7 +1070,8 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
 	    for (int ix=1; ix<njecmx; ix++) {
 	      sprintf(name, "recojec_typ_%i_pt%i_eta%i_%i_%i", ityp, ipt, iet, ij, ix);
 	      sprintf(title, "Recojec %s %i %g %s %i", typname[ityp], int(leadingPtThreshold[ipt]), etarange[iet], vartitle[ij], ix);
-	      h_recoevtvarjec[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title,  (ityp==0) ? nbinsx0[ij] : nbinsx1[ij] , (ityp==0) ? binrngs0[ij] : binrngs1[ij]);
+	      h_recoevtvarjec[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title,  (ityp==0) ? rnbinsx0[ij] : rnbinsx1[ij] , (ityp==0) ? rbinrngs0[ij] : rbinrngs1[ij]);
+	      //h_recoevtvarjec[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title,  (ityp==0) ? nbinsx0[ij] : nbinsx1[ij] , (ityp==0) ? binrngs0[ij] : binrngs1[ij]);
              // h_recoevtvarjec[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title,  (ityp==0) ? nbinsx0[ij] : ((ityp==1 || ityp==3) ? nbinsx1[ij] : nbinsx2[ij]), (ityp==0) ? binrngs0[ij] : ((ityp==1 || ityp==3) ? binrngs1[ij] : binrngs2[ij]));
 	      h_recoevtvarjec[ityp][ipt][iet][ij][ix]->Sumw2();
 	    }
@@ -960,7 +1079,8 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
 	    for (int ix=1; ix<njecmx; ix++ ) {
 	      sprintf(name, "recoreso_typ_%i_pt%i_eta%i_%i_%i", ityp, ipt, iet, ij, ix);
 	      sprintf(title, "Recoreso %s %i %g %s %i", typname[ityp], int(leadingPtThreshold[ipt]), etarange[iet], vartitle[ij], ix);
-              h_recoevtvarres[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title, (ityp==0) ? nbinsx0[ij] : nbinsx1[ij] , (ityp==0) ? binrngs0[ij] : binrngs1[ij]);
+              h_recoevtvarres[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title, (ityp==0) ? rnbinsx0[ij] : rnbinsx1[ij] , (ityp==0) ? rbinrngs0[ij] : rbinrngs1[ij]);
+             // h_recoevtvarres[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title, (ityp==0) ? nbinsx0[ij] : nbinsx1[ij] , (ityp==0) ? binrngs0[ij] : binrngs1[ij]);
 // h_recoevtvarres[ityp][ipt][iet][ij][ix] = fs->make<TH1F>(name, title, (ityp==0) ? nbinsx0[ij] : ((ityp==1 || ityp==3) ? nbinsx1[ij] : nbinsx2[ij]), (ityp==0) ? binrngs0[ij] : ((ityp==1 || ityp==3) ? binrngs1[ij] : binrngs2[ij]));
 	      h_recoevtvarres[ityp][ipt][iet][ij][ix]->Sumw2();
 	    }
@@ -983,7 +1103,8 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
 	    if (isReconstruct) { 
 	      sprintf(name, "corr_typ_%i_pt%i_eta%i_%i", ityp , ipt, iet, ij);
 	      sprintf(title, "Gen_Reco %s %i %g %s", typname[ityp], int(leadingPtThreshold[ipt]), etarange[iet], vartitle[ij]);
-             h_2devtvar[ityp][ipt][iet][ij] = fs->make<TH2F>(name, title, (ityp==0) ? nbinsx0[ij] : nbinsx1[ij], (ityp==0) ? binrngs0[ij] : binrngs1[ij], (ityp==0) ? nbinsx0[ij] : nbinsx1[ij], (ityp==0) ? binrngs0[ij] : binrngs1[ij]);
+             h_2devtvar[ityp][ipt][iet][ij] = fs->make<TH2F>(name, title, (ityp==0) ? rnbinsx0[ij] : rnbinsx1[ij], (ityp==0) ? rbinrngs0[ij] : rbinrngs1[ij], (ityp==0) ? nbinsx0[ij] : nbinsx1[ij], (ityp==0) ? binrngs0[ij] : binrngs1[ij]);
+             //h_2devtvar[ityp][ipt][iet][ij] = fs->make<TH2F>(name, title, (ityp==0) ? nbinsx0[ij] : nbinsx1[ij], (ityp==0) ? binrngs0[ij] : binrngs1[ij], (ityp==0) ? nbinsx0[ij] : nbinsx1[ij], (ityp==0) ? binrngs0[ij] : binrngs1[ij]);
            // h_2devtvar[ityp][ipt][iet][ij] = fs->make<TH2F>(name, title, (ityp==0) ? rnbinsx0[ij][ipt] : rnbinsx1[ij][ipt], (ityp==0) ? rbinrngs0[ij][ipt] : rbinrngs1[ij][ipt], (ityp==0) ? nbinsx0[ij][ipt] : nbinsx1[ij][ipt], (ityp==0) ? binrngs0[ij][ipt] : binrngs1[ij][ipt]);
         //  h_2devtvar[ityp][ipt][iet][ij] = fs->make<TH2F>(name, title, (ityp==0) ? nbinsx0[ij] : ((ityp==1 || ityp==3) ? nbinsx1[ij] : nbinsx2[ij]), (ityp==0) ? binrngs0[ij] : ((ityp==1 || ityp==3) ? binrngs1[ij] : binrngs2[ij]), (ityp==0) ? nbinsx0[ij] : ((ityp==1 || ityp==3) ? nbinsx1[ij] : nbinsx2[ij]), (ityp==0) ? binrngs0[ij] : ((ityp==1 || ityp==3) ? binrngs1[ij] : binrngs2[ij]));
       //   h_2devtvar[ityp][ipt][iet][ij] = fs->make<TH2F>(name, title, nbinsxgen[ij], -endx[ij], -startx[ij], nbinsx[ij], -endx[ij], -startx[ij]);
@@ -2028,13 +2149,15 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
       // resolution file 
       JME::JetResolution resolution;
     //  resolution = JME::JetResolution("Fall17_V2_MC_PtResolution_AK4PFchs.txt");
-      resolution = JME::JetResolution("Fall17_V3b_MC_PtResolution_AK4PFchs.txt");
+      resolution = JME::JetResolution("Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt");
+      //resolution = JME::JetResolution("Fall17_V3b_MC_PtResolution_AK4PFchs.txt");
   //         resolution = JME::JetResolution("Fall15_25nsV2_MC_PtResolution_AK4PFchs.txt");
  
       // Scalefactor file
       JME::JetResolutionScaleFactor res_sf;
       //		cout<<"Filename="<<scalefile<<endl;
-    res_sf = JME::JetResolutionScaleFactor("Fall17_V3b_MC_SF_AK4PFchs.txt");
+    res_sf = JME::JetResolutionScaleFactor("Summer19UL17_JRV2_MC_SF_AK4PFchs.txt");
+    //res_sf = JME::JetResolutionScaleFactor("Fall17_V3b_MC_SF_AK4PFchs.txt");
     //res_sf = JME::JetResolutionScaleFactor("Fall17_V2_MC_SF_AK4PFchs.txt");
 //      res_sf = JME::JetResolutionScaleFactor("Fall15_25nsV2_MC_SF_AK4PFchs.txt");
       
@@ -3164,9 +3287,8 @@ QCDEventShape::beginJob() {
   for (int isrc = 0; isrc < nsrc; isrc++) {
     const char *name = srcnames[isrc];
 //    JetCorrectorParameters *p = new JetCorrectorParameters("Fall15_25nsV2_DATA_UncertaintySources_AK4PF.txt", name);
-//   JetCorrectorParameters *p = new JetCorrectorParameters("Fall17_17Nov2017F_V6_DATA_UncertaintySources_AK4PFchs.txt", name);
-//  JetCorrectorParameters *p = new JetCorrectorParameters("Fall17_17Nov2017_V6_MC_UncertaintySources_AK4PFchs.txt", name);    
-  JetCorrectorParameters *p = new JetCorrectorParameters("Fall17_17Nov2017_V32_MC_UncertaintySources_AK4PFchs.txt", name);    
+ // JetCorrectorParameters *p = new JetCorrectorParameters("Fall17_17Nov2017_V32_MC_UncertaintySources_AK4PFchs.txt", name);    
+  JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt", name);    
 //  JetCorrectorParameters *p = new JetCorrectorParameters("Fall17_17Nov2017F_V6_DATA_UncertaintySources_AK4PFchs.txt", name);    
 JetCorrectionUncertainty *unc = new JetCorrectionUncertainty(*p);
 		//    vsrc[isrc] = unc;

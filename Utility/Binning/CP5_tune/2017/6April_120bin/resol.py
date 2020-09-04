@@ -1,0 +1,23 @@
+import ROOT
+from ROOT import TCanvas, TPaveLabel, TPaveText, TPavesText, TText
+from ROOT import TArrow, TLine
+from ROOT import gROOT, gBenchmark
+
+nHT = 8
+nvar =5
+ntype = 2
+var=[3,9,15,18,24]
+
+f = ROOT.TFile.Open('PY8_2017_C5tune_Large_120bin_6April2020.root', 'read')
+ROOT.gROOT.LoadMacro("anal_jetqcd15_pl.C")
+for j in range(ntype):
+    for k in range(nvar):
+        for l in range(nHT):
+            if (j!=0 or l!=5 or k!=3 ):
+                if (j!=1 or l!=7 or k!=2 ):
+                 ROOT.resolution(j,var[k],l,0) 
+                 print "   "
+#dest.write(ROOT.resolution(0,3,0,0))
+f.Close()
+
+
