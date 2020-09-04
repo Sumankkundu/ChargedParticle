@@ -64,16 +64,16 @@ mkedanlzr QCDEventShape
 cd QCDEventShape
 cd plugin
 ```
-**In plugin put those files: 
-               QCDEventShape.cc(Replace existing one) , EventShape_vector.cc(Copy)& EventShape_vector.h(copy) **
- ```              
- cd test 
+**In QCDEventShape folder, put the code in plugin,test from the folders,
+https://github.com/Sumankkundu/ChargedParticle/tree/master/QCDEventShape/2017/MC
+
+ Plugin : QCDEventShape.cc(Replace existing one) , EventShape_vector.cc(Copy)& EventShape_vector.h(copy) 
+ test : All python files
+ **
+ 
  ```
- **In test 
-   put those .py files from the  git folder $Chargedparticle/QCDEventShape/test/ **
- ``` 
  cd QCDEventShape
- scramv1 b    **this will complie 
+ scramv1 b    
  cd test 
  cmsRun Run_QCD_test_miaod_v2_76x_mc_cfg.py
 ```
