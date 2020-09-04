@@ -1,1 +1,50 @@
 
+Trigger path used for this Analysis :
+HLT_DiPFJetAve40_v
+HLT_DiPFJetAve60_v
+HLT_DiPFJetAve80_v
+HLT_DiPFJetAve140_v
+HLT_DiPFJetAve200_v
+HLT_DiPFJetAve260_v
+HLT_DiPFJetAve320_v
+HLT_DiPFJetAve400_v
+HLT_DiPFJetAve500_v
+
+
+This Efficincy is based on emmulation method.
+
+Suggestions :
+
+- select events where one of the SingleMu triggers fires
+- select events with two reconstructed jets above a certain (low) threshold                 ( PT > 30 and Eta < 2.4)
+- match the two jets with the trigger objects in eta-phi space                       ( Delta R < .3 between two reconstructed Jet and Trigger object )
+- mimic the DijetPFJet trigger decision (average of the two trigger objects pT above a certain threshold)                         (See the code)
+- plot the efficiency (events where the diet emulation method fires divided by the total number of events) as a function of the average pT at the reconstruction level.
+
+I think that’s all..the only thing you should check is whether you have enough statistics applying this method.
+Cheers,
+Paolo
+
+
+
+Salverto 
+In the past I have used the emulation method. This requires that you still have access to the L1 objects in data. In that case, you select events that pass your HLT trigger at a lower threshold (say, Jet60), select your events, and then find the L1 object that passed the trigger. If the pt ALSO passes the higher threshold, it is counted in the efficiency. 
+
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookMiniAOD2017
+
+
+
+Trigger object twiki :
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuidePATTrigger#TriggerObjectStandAlone
+http://www.desy.de/~walsh/cmssw-analysis/desy-higgs/docs/html/files.html
+https://twiki.cern.ch/twiki/bin/view/Sandbox/SilvioNotes#Print_HLTriggerResults_from_edm
+
+https://twiki.cern.ch/twiki/bin/view/CMS/TriggerStudies#Run_2_menus
+Github Code : 
+https://github.com/bmahakud/cmssw/blob/TriggerMatchMonitorMINIAODSIM/DQMOffline/Muon/src/TriggerMatchMonitor.cc
+https://github.com/cms-sw/cmssw/blob/master/DQMOffline/JetMET/src/JetAnalyzer.cc
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEDMPathsAndTriggerBits
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideGlobalHLT
+
+https://github.com/cms-analysis/ZprimeDiLeptons/tree/master/Analyzer
+

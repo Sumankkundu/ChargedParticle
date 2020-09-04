@@ -13,24 +13,25 @@ process.load("PhysicsTools.PatAlgos.selectionLayer1.selectedPatCandidates_cff")
 # source
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(#'/store/mc/Spring14dr/TTJets_MSDecaysCKM_central_Tune4C_13TeV-madgraph-tauola/AODSIM/PU20bx25_POSTLS170_V5-v1/00000/00B6F8B6-90F1-E311-B72C-0025905A6092.root'
-'/store/data/Run2017F/JetHT/MINIAOD/17Nov2017-v1/70000/FEA2ED14-5CDF-E711-ACA6-02163E012AF0.root',
-'/store/data/Run2017F/JetHT/MINIAOD/17Nov2017-v1/70000/FAD0B094-CBDF-E711-8E6A-A0369FC5FBA4.root',
-'/store/data/Run2017F/JetHT/MINIAOD/17Nov2017-v1/50000/8261436C-85DF-E711-8BCA-02163E01A1EB.root',
-'/store/data/Run2017F/JetHT/MINIAOD/17Nov2017-v1/50000/8257B6C4-04E0-E711-82B7-02163E0137A0.root',
-'/store/data/Run2017F/JetHT/MINIAOD/17Nov2017-v1/50000/82335A18-C8DF-E711-8880-A4BF0112BD40.root',
-#'/store/data/Run2017F/JetHT/MINIAOD/17Nov2017-v1/70000/FEA2ED14-5CDF-E711-ACA6-02163E012AF0.root'
-#'/store/data/Run2017F/JetHT/MINIAOD/17Nov2017-v1/70000/FEE33912-EFDF-E711-91A9-02163E01351F.root',
-#'/store/data/Run2015D/JetHT/MINIAOD/PromptReco-v4/000/258/750/00000/28938773-BD72-E511-A479-02163E01432A.root'
-#'/store/data/Run2015D/JetHT/MINIAOD/16Dec2015-v1/00000/301A497D-70B0-E511-9630-002590D0AFA8.root',
-#'/store/data/Run2015D/JetHT/MINIAOD/16Dec2015-v1/00000/7210C351-67B0-E511-A34C-7845C4FC37AF.root',
-#'/store/data/Run2015D/JetHT/MINIAOD/16Dec2015-v1/00000/745E2A4F-67B0-E511-9DA3-0090FAA57620.root',
 #'/store/data/Run2015D/JetHT/MINIAOD/16Dec2015-v1/00000/7E46D250-67B0-E511-BB96-0025905C3E66.root'
+#'/store/data/Run2017F/JetHT/MINIAOD/31Mar2018-v1/30000/02EDD8BA-B037-E811-B399-001E67792768.root',
+#'/store/data/Run2017F/JetHT/MINIAOD/31Mar2018-v1/30000/02FDDB8F-F037-E811-98EF-001E67792884.root',
+#'/store/data/Run2017F/JetHT/MINIAOD/31Mar2018-v1/30000/02FFDBF4-C037-E811-85A9-001E67E6F4EF.root'
+#'/store/data/Run2017B/JetHT/MINIAOD/31Mar2018-v1/90000/E87B6957-7139-E811-86AC-0CC47A78A468.root',
+#'/store/data/Run2017B/JetHT/MINIAOD/31Mar2018-v1/90000/E6944CFD-8039-E811-BC15-0025905A606A.root',
+#'/store/data/Run2017B/JetHT/MINIAOD/31Mar2018-v1/90000/E42325FE-8839-E811-A0EC-0CC47A78A436.root',
+#'/store/data/Run2017C/JetHT/MINIAOD/31Mar2018-v1/30000/F019909F-4839-E811-A3BA-D4856445E5E2.root',
+#'/store/data/Run2017E/JetHT/MINIAOD/31Mar2018-v1/90001/F41B041E-9837-E811-BFD2-008CFAC941DC.root',
+'/store/data/Run2017B/JetHT/MINIAOD/09Aug2019_UL2017-v1/50000/FFEEECDB-9680-6749-976A-F2CF385F8489.root',
+#'/store/data/Run2017D/JetHT/MINIAOD/31Mar2018-v1/90000/E4402B21-F739-E811-BA23-0CC47A4C8E1E.root',
+#'/store/data/Run2017B/JetHT/MINIAOD/17Nov2017-v1/60000/DA587060-EED8-E711-80CC-0CC47A4D7678.root',
  )
 )
 
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) )
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(200) )
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5000) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(500) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(2000) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 #process.load("Configuration.StandardSequences.Geometry_cff")
@@ -42,8 +43,11 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 from Configuration.AlCa.GlobalTag import GlobalTag
 #process.GlobalTag = GlobalTag(process.GlobalTag,'GR_P_V56::All')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'GR_R_44_V11::All')
-#process.GlobalTag = GlobalTag(process.GlobalTag,'74X_dataRun2_Prompt_v1process.GlobalTag = GlobalTag(process.GlobalTag,'76X_dataRun2_v15')
-process.GlobalTag = GlobalTag(process.GlobalTag,'94X_dataRun2_ReReco_EOY17_v6')
+process.GlobalTag = GlobalTag(process.GlobalTag,'102X_dataRun2_v12')
+#process.GlobalTag = GlobalTag(process.GlobalTag,'94X_dataRun2_ReReco_EOY17_v6')
+#process.GlobalTag = GlobalTag(process.GlobalTag,'94X_dataRun2_ReReco_EOY17_v6')
+#process.GlobalTag = GlobalTag(process.GlobalTag,'94X_dataRun2_v6')
+#process.GlobalTag = GlobalTag(process.GlobalTag,'94X_dataRun2_v11')
 # produce PAT Layer 1
 process.load("PhysicsTools.PatAlgos.patSequences_cff")
 
