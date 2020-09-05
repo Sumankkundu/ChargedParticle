@@ -76,13 +76,14 @@ mkedanlzr QCDEventShape
 cd QCDEventShape
 cd plugin
 ```
-**In QCDEventShape folder, put the code in plugin,test from the folders,
+**In QCDEventShape folder, put the codes in plugin,test from those folders,
 https://github.com/Sumankkundu/ChargedParticle/tree/master/QCDEventShape/2017/MC
 
- Plugin : QCDEventShape.cc(Replace existing one) , EventShape_vector.cc(Copy)& EventShape_vector.h(copy) 
+ plugin : QCDEventShape.cc(Replace existing one) , EventShape_vector.cc(Copy)& EventShape_vector.h(copy) 
+ 
  test : All python files
  **
- 
+ ###To complile and Run
  ```
  cd QCDEventShape
  scramv1 b    
