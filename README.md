@@ -82,8 +82,8 @@ https://github.com/Sumankkundu/ChargedParticle/tree/master/QCDEventShape/2017/MC
  plugin : QCDEventShape.cc(Replace existing one) , EventShape_vector.cc(Copy)& EventShape_vector.h(copy) 
  
  test : All python files
- **
- ###To complile and Run
+
+ ### To complile and Run
  ```
  cd QCDEventShape
  scramv1 b    
