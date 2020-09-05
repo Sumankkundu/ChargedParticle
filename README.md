@@ -1,28 +1,38 @@
-# ESVs with Charged particle
+# ESVs with Charged particles inside jets
 Study of Event Shape Variables with the charged particles inside jets 
 
-## Trigger use 
+## Trigger used
 HLT_DiPFJetAve40_v, HLT_DiPFJetAve60_v ,HLT_DiPFJetAve80_v, HLT_DiPFJetAve140_v, HLT_DiPFJetAve200_v, HLT_DiPFJetAve260_v, HLT_DiPFJetAve320_v, HLT_DiPFJetAve400_v, HLT_DiPFJetAve500_v
 
 
 Analysis code based on MINIAOD Format
+https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookMiniAOD2017
 ## 2017 
 **Luminosity : 41.53 /fb**
 ### Data Used:
+# ReReco
 ```
 /JetHT/Run2017F-31Mar2018-v1/MINIAOD
 /JetHT/Run2017E-31Mar2018-v1/MINIAOD
 /JetHT/Run2017D-31Mar2018-v1/MINIAOD
 /JetHT/Run2017C-31Mar2018-v1/MINIAOD
 /JetHT/Run2017B-31Mar2018-v1/MINIAOD
- We have plan to use UL DATA 
 
 config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/ReReco/Cert_294927-306462_13TeV_EOY2017ReReco_Collisions17_JSON_v1.txt'
+````
+# UL17
+```
+ /JetHT/Run2017B-09Aug2019_UL2017-v1/MINIAOD
+/JetHT/Run2017C-09Aug2019_UL2017-v1/MINIAOD
+/JetHT/Run2017D-09Aug2019_UL2017-v1/MINIAOD
+/JetHT/Run2017E-09Aug2019_UL2017-v1/MINIAOD
+/JetHT/Run2017F-09Aug2019_UL2017-v1/MINIAOD
+
+config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions17/13TeV/Legacy_2017/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt'
 
 ```
 ### MC Used  
 Flat PYTHIA sample
-
 Global tag: 94X_mc2017_realistic_v14
 ```
 /QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM
@@ -32,10 +42,11 @@ Flat Herwig++
 
 ```
 ### JetID    
+Tight Jet 
 https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetID13TeVRun2017
 
 ## 2018
-### Data Used
+### Data Used(To be Updated)
 ```
 JetHT/Run2018A-17Sep2018-v1/MINIAOD
 /JetHT/Run2018B-17Sep2018-v1/MINIAOD
