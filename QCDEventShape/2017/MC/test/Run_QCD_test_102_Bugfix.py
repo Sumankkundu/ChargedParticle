@@ -12,34 +12,40 @@ process.load("PhysicsTools.PatAlgos.selectionLayer1.selectedPatCandidates_cff")
 
 # source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring(#'/store/mc/Spring14dr/TTJets_MSDecaysCKM_central_Tune4C_13TeV-madgraph-tauola/AODSIM/PU20bx25_POSTLS170_V5-v1/00000/00B6F8B6-90F1-E311-B72C-0025905A6092.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FEDF66BB-75F5-6746-A6E0-CE47C31F7F6C.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FE41CF02-0D7E-914E-B610-BE747691D499.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FE3755A8-7960-BB48-8B2C-31478A80E7C5.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_15to30_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/280000/00F73378-FCD0-6847-B007-C90878390A8A.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_80to120_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/20000/086E8B6F-28D0-AE47-A07B-AEF644006C7D.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_80to120_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/20000/3D81A6E0-C31E-254B-B49D-C264BA44C71A.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_80to120_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/20000/188FCC60-4351-0F4A-9FE0-9D4AE90546D5.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_80to120_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FFDCB325-AA00-ED43-A45A-EE4704788533.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_80to120_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FFD92D26-BC76-D54E-916D-3326443A581E.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_600to800_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/270000/0879FBF1-5326-F94C-B12A-8E88EEBF639C.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_600to800_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/270000/0859D23C-3B96-F94D-85C5-2A277F6704FE.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_600to800_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/270000/084EEF62-871E-1E49-A9FA-EEC55E72FE35.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/FB6B1B36-AF31-BB4F-8B24-37063D7D7CD9.root',
-'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/FA0DBDDB-4DC6-5A44-934B-B3100EB43C5E.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/F199462C-AD3F-CD41-A707-168EBF5BA2B9.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/E98B458E-FF8B-1F41-993E-05D6AC948556.root',
+    fileNames = cms.untracked.vstring(#'/store/mc/Spring14dr/TTJets_MSDecaysCKM_central_Tune4C_13TeV-madgraph-tauola/AODSIM/PU20bx25_POSTLS170_V5-v1/00000/00B6F8B6-90F1-E311-B72C-0025905A6092.root'
+#'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/NoPU_12Apr2018_94X_mc2017_realistic_v14-v1/120000/FE40878F-EDEA-E811-85E5-0025905A611C.root',
+'/store/relval/CMSSW_10_6_14_Pyt8240BugFix/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/F3A1AC28-A59D-A843-A675-33AE077F75F0.root',
+'/store/relval/CMSSW_10_6_14_Pyt8240BugFix/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/C6F0958E-BFB8-7C43-B7BD-02CAC1B592C1.root',
+'/store/relval/CMSSW_10_6_14_Pyt8240BugFix/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/A24FE704-61D8-BC4F-81EB-C32148AA7D90.root',
+'/store/relval/CMSSW_10_6_14_Pyt8240BugFix/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/3F3D177E-B73F-BF46-AAE9-6589D4476573.root',
+'/store/relval/CMSSW_10_6_14_Pyt8240BugFix/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/329292B7-ACB8-F144-ABA5-A7348ECB5B0E.root',
+'/store/relval/CMSSW_10_6_14_Pyt8240BugFix/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/1D7395E7-1A4C-9247-B0E1-5192C2B5FFBF.root',
+'/store/relval/CMSSW_10_6_14_Pyt8240BugFix/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/18A9FF14-EB08-1C4E-97A9-F9CC6CA7CEDE.root',
+'/store/relval/CMSSW_10_6_14_Pyt8240BugFix/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/0DFAB61C-8207-A74C-A348-5D11770C16EB.root',
 #'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/70000/7E86CBA6-9842-E811-B26F-0CC47AA53D6E.root',
 #'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/70000/7E65A585-9C42-E811-BA22-0025901ABB72.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/FADB5AF4-89AA-A54A-8203-DF285FCB5F5B.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/EAAD438A-5B7C-6C46-8D94-A3CBFF3FAC54.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/E5E1D2B5-FE94-6E4C-A00F-E7D49FF3CBCB.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/E3DC4BED-D9FE-AA42-B2EA-FE2016BCEEFB.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/E265A236-EC64-104F-8A38-614F7942AF12.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/C0D7C8F9-14EC-5840-8D5B-EA33167390DD.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/B7EFD98B-6DCF-B14F-A491-9C4F1A25E62E.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/AA98982C-15EB-7B43-BF1E-858C0F1E5A47.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/89A3A3C6-090A-4847-A324-4D4CAE0E8C02.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/72064DDF-4849-D94A-9B30-6BBCC549C572.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/6195B1D0-5C13-D840-A6A6-084477B0140D.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/44ACA960-FAAD-8A4B-8630-FE9A55BA8F89.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/4153783F-CAD2-134D-8EC7-18707038EB4A.root',
+#'/store/relval/CMSSW_10_6_14/RelValQCD_FlatPt_15_3000HS_13/MINIAODSIM/PU25ns_106X_mc2017_realistic_v7_HS-v1/10000/0BDE025E-81CB-D141-8A00-560212DCDC99.root',
  )
 #eventsToSkip = cms.untracked.VEventRange('1:1950-1:2000'),
 #eventsToSkip = cms.untracked.EventRange('1:1950-1:2000'),
 #eventRanges = cms.untracked.VEventRange('1:1000-1:2000'),
 )
 
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5000) )
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(2000) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000) )
 
 #process.load("Configuration.StandardSequences.Geometry_cff")
@@ -51,11 +57,7 @@ process.load("Configuration.Geometry.GeometryRecoDB_cff")
 process.load("Configuration.StandardSequences.MagneticField_cff")
 
 from Configuration.AlCa.GlobalTag import GlobalTag
-#process.GlobalTag = GlobalTag(process.GlobalTag,'94X_mc2017_realistic_v17')
-#process.GlobalTag = GlobalTag(process.GlobalTag,'94X_mc2017_realistic_v14')
 process.GlobalTag = GlobalTag(process.GlobalTag,'106X_mc2017_realistic_v7')
-#process.GlobalTag = GlobalTag(process.GlobalTag,'76X_mcRun2_asymptotic_RunIIFall15DR76_v1')
-#process.GlobalTag = GlobalTag(process.GlobalTag,'76X_mcRun2_asymptotic_v12')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'74X_mcRun2_asymptotic_realisticBS_v1')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'MCRUN2_74_V9')
 from PhysicsTools.PatAlgos.tools.coreTools import *
@@ -101,7 +103,8 @@ process.MessageLogger = cms.Service("MessageLogger",
 #process.ak5PFJetsCHS = ak5PFJets.clone(src = 'chs')
 
 process.TFileService=cms.Service("TFileService",
-    fileName=cms.string("Test_MC_QCD.root")
+    fileName=cms.string("Test_MC2017_PY8Bugfix.root")
+    #fileName=cms.string("Test_MC2017_PY8_old.root")
 )
 print "test1"
 # Produce PDF weights (maximum is 3)
