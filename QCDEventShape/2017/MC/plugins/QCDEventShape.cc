@@ -3628,12 +3628,12 @@ else {
 	  } // if (isReconstruct)
 	  //cout << "Time Diff to Run ="<< diff << endl;
 	  
-	  if(isMC) {
+//	  if(isMC) {
 	    for (int isrc=0; isrc<nGenReso; isrc++) {
 	      //	    for (int isrc=0; isrc<1; isrc++) { 
 	      genvar.clear();
 	      bool isGEN=false;
-	      if (igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1) { 
+	      if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1) { 
 		//						cout <<"itp "<< itp<<" "<<iet<<" "<<isrc<<" "<<genmom[isrc][0][iet].size()<<" "<<genmom[isrc][itp][iet].size()<<endl; 
 		EventShape_vector  genevtshape(genmom[isrc][itp][iet], 2.4, 0, 2, 1);
 		
@@ -3670,7 +3670,7 @@ else {
 		if (isrc==0) { 
 		  for(int ij=0; ij<nvar; ij++) {
 		    if (isItUsed(ij)) { 	
-		      if (isReconstruct && isRECO[itp][iet] && isGEN && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1) { 
+		      if (isMC && isReconstruct && isRECO[itp][iet] && isGEN && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) { 
 			naa++;
 			if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn) {
 	                  if (recovar[nvar]>=2 &&  genvar[nvar]>=2) {
@@ -3691,7 +3691,7 @@ else {
 			}
 			//  h_2devtvar[itp][0][iet][ij]->Fill(recovar[ij], genvar[ij], weighttrg);
 		      } else {
-			if (isReconstruct && isRECO[itp][iet]) {
+			if (isReconstruct && isRECO[itp][iet] && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) {
 			  nbb++;
 	//		  cout << " fAKE rECO COUNT = "<< nbb << endl;
 			  //if (irecoht>=0 && irecoht<nHLTmx && recovar[nvar]>=2) {
@@ -3706,7 +3706,7 @@ else {
 			   //}
 			  }
 			}
-			if (isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1) {
+			if ( isMC && isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1) {
 			  ncc++;
 			  if (igenht>=0 && igenht<nHLTmx && genvar[nvar]>=2) {
 			    //for (int irand=0; irand<10; irand++) {
@@ -3723,7 +3723,7 @@ else {
 		} // if (isrc==0 && isReconstruct)
 	      //} // if (igenht>=0 && igenht<njetptmn && genmom[isrc][itp][iet].size()>1)
 	    } // for (int isrc=0; isrc<nGenReso; isrc++)
-	  }//isMC
+//	  }//isMC
 	} // for (int iet=0; iet<njetetamn; iet++)
       } //for (int itp=0; itp<ntype; itp++) 
       
