@@ -3584,7 +3584,8 @@ else {
 //      for (int itp=0; itp<1; itp++) {
 	for (int iet=0; iet<njetetamn; iet++) {
 	  if (isReconstruct) { 
-	    for (int isrc=0; isrc<njecmx; isrc++) { 
+	    //for (int isrc=0; isrc<njecmx; isrc++) { 
+	    for (int isrc=0; isrc<1; isrc++) { 
 	      recovar.clear();
 	      recovar1.clear();
 	      if (isrc==0) {isRECO[itp][iet]=false;}
@@ -3593,6 +3594,7 @@ else {
 	      if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) {
 		EventShape_vector  recoevtshape(recomom[isrc][itp][iet], 2.4, 0, 2, 1);
 		recovar =  recoevtshape.getEventShapes();
+		if(isrc==0){recovar1 =  recoevtshape.getEventShapes();}
 		if (recovar[nvar]>=2) {
 		  if (isrc==0) {isRECO[itp][iet] = true;}
 		  for (int ij=0; ij<nvar; ij++) {
@@ -3600,7 +3602,8 @@ else {
 		      if (isrc==0) { 
 			if (int(recovar[nvar])>=2) {
 			nreco++;
-	//	cout<<"recovar "<<ievt<<" "<<"Type " << itp <<"recovar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size()<<endl;//" "<<genvar[3]<<" "<<genvar[9]<<" "<<genvar[18]<<" "<<genvar[24]<<endl;
+if(ij==3 && itp==0 ){cout<<"reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc];}
+if(itp==0){ cout <<" Var :  " << ij <<" : "<< recovar[ij];}
 		//		cout << "nreco = " << nreco << endl;
 				h_recoevtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
 			}
@@ -3609,7 +3612,7 @@ else {
 			  if(irand !=k ) h_recoevtvar[irand][itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
 			  //#ifdef LHAPDF
 			  //						   			for (int ix=1; ix<nnnmx; ix++) {
-			  //							  			h_recoevtvarpdf[itp][irecohtjec[isrc]][iet][ij][ix]->Fill(recovar[ij], weighttrg*pdfwt[ix]); 
+			 C //							  			h_recoevtvarpdf[itp][irecohtjec[isrc]][iet][ij][ix]->Fill(recovar[ij], weighttrg*pdfwt[ix]); 
 			  //								  	}
 			  //#endif
 			  }*/	
@@ -3627,7 +3630,7 @@ else {
 	    }
 	  } // if (isReconstruct)
 	  //cout << "Time Diff to Run ="<< diff << endl;
-	  
+	  cout << endl;
 //	  if(isMC) {
 	    for (int isrc=0; isrc<nGenReso; isrc++) {
 	      //	    for (int isrc=0; isrc<1; isrc++) { 
@@ -3647,6 +3650,9 @@ else {
 		      if (isrc==0) { 
 			if (int(genvar[nvar])>=2) {
 			  h_genevtvar[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
+if(ij==3 && itp==0 ){cout<<"Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc];}
+if(itp==0){ cout <<" Var :  " << ij <<" : "<< genvar[ij];}
+
           //                cout <<"gen Var " << ievt << " "<<genvar[ij]<<endl;
 			} //else {
 			  //h_genevtvar2[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
@@ -3666,7 +3672,9 @@ else {
 		  }
 		}
 	      }
-		//if (isrc==0 && isReconstruct)
+
+cout <<endl;	
+  	//if (isrc==0 && isReconstruct)
 		if (isrc==0) { 
 		  for(int ij=0; ij<nvar; ij++) {
 		    if (isItUsed(ij)) { 	
@@ -3674,7 +3682,12 @@ else {
 			naa++;
 			if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn) {
 	                  if (recovar[nvar]>=2 &&  genvar[nvar]>=2) {
-                               // cout <<"RecoVar" <<recovar[nvar] <<"GenVar" <<  genvar[nvar] << endl;
+if(ij==3 && itp==0 ){cout<<"Corr Reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc]<<endl;}
+if(ij==3 && itp==0 ){cout <<"Corr Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc]<<endl;}
+if(itp==0){ cout <<"Corr Reco Var :  " << ij <<" : "<< recovar[ij]<<endl; }
+if(itp==0){ cout <<"Corr Gen Var :  " << ij <<" : "<< genvar[ij]<<endl;}
+ 
+                // cout <<"RecoVar" <<recovar[nvar] <<"GenVar" <<  genvar[nvar] << endl;
 			  	h_2devtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], genvar[ij], weighttrg);
 	//	                     cout <<"ievt :" << ievt<<"  Reco & Gen >= 3 " << recovar[ij] << " : " <<genvar[ij] <<endl;  
                         }else if (recovar[nvar]>=2) {
@@ -3729,7 +3742,7 @@ else {
       
       //	if (nevt%1000==1) { std::cout <<"nevt "<<nevt<<" naa "<<naa<<" nbb "<<nbb<<" ncc "<<ncc<< std::endl;}
       
-      //cout << "Write test 33 = ok " << endl;
+      cout <<"end event" << endl;
     }
 
 // ------------ method called once each job just before starting event loop  ------------
