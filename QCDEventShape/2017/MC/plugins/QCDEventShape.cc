@@ -895,7 +895,7 @@ private:
 
   //HLTConfigProvider hltConfig_;
   HLTPrescaleProvider hltPrescaleProvider_;
-  int naa, nbb, ncc;
+  int nreco, naa, nbb, ncc;
   
   
   std::vector<JetCorrectionUncertainty*> vsrc; // (nsrc);
@@ -1619,6 +1619,7 @@ QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
      //=======================*****======================================
   vector<double> recovar;
+  vector<double> recovar1;
   vector<double> recovarnom;
   std::vector<HepLorentzVector> recomom[njecmx][ntype][njetetamn];
   std::vector<HepLorentzVector> tmpjt4v;
@@ -2127,7 +2128,7 @@ if (isMC) {
 		  TightJetID =false;
 		}
                 
-		if (abs((*ak4PFJets)[ireorjt].eta())>2.7) {TightJetID = false;}
+		if (abs((*ak4PFJets)[ireorjt].eta())>2.6) {TightJetID = false;}
 		if ((*ak4PFJets)[ireorjt].pt()<30.0) {TightJetID = false;}
 		
 		if( ireorjt<=1 && !TightJetID) break;
@@ -2716,151 +2717,136 @@ if (isMC) {
     } //isMC
      
 //**********************************Calculate And Fill the  EventShape Variables******************************
-    for (int itp=0; itp<ntype; itp++) {                     //---------------Jet, Charge Particle loop
-      for (int iet=0; iet<njetetamn; iet++) {               //-----------eta loop
-	//-----------------------------------------------For Reco
-	if (isReconstruct) { 
-	  recovarnom.clear();
-	  for (int isrc=0; isrc<1; isrc++) { 
-	  //for (int isrc=0; isrc<njecmx; isrc++) { 
-	    recovar.clear();
-	    if (isrc==0) {isRECO[itp][iet]=false;}
-	    
-	    if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) {
-	      EventShape_vector  recoevtshape(recomom[isrc][itp][iet], 2.4, 0, 2, 1);
-	      recovar =  recoevtshape.getEventShapes();
-	      if (recovar[nvar]>=2) {
-		if (isrc==0) {isRECO[itp][iet] = true; recovarnom = recovar;}
-		for (int ij=0; ij<nvar; ij++) {
-		  if (isItUsed(ij)) { 
-		    if (isrc==0) { 
-		      if (int(recovar[nvar])>=2) {
-                  	nreco++;	
-			// recovarnom = recovar;
-			 h_recoevtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
+  for (int itp=0; itp<ntype; itp++) {
+	for (int iet=0; iet<njetetamn; iet++) {
+	  if (isReconstruct) { 
+	      recovar1.clear();
+	   for (int isrc=0; isrc<njecmx; isrc++) { 
+	   // for (int isrc=0; isrc<1; isrc++) { 
+	      recovar.clear();
+	      //recovar1.clear();
+	      if (isrc==0) {isRECO[itp][iet]=false;}
+	      
+                 if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) {
+		EventShape_vector  recoevtshape(recomom[isrc][itp][iet], 2.4, 0, 2, 1);
+		recovar =  recoevtshape.getEventShapes();
+		if(isrc==0){recovar1 =  recoevtshape.getEventShapes();}
+		if (recovar[nvar]>=2) {
+		  if (isrc==0) {isRECO[itp][iet] = true;}
+		  for (int ij=0; ij<nvar; ij++) {
+		    if (isItUsed(ij)) { 
+		      if (isrc==0) { 
+			if (int(recovar[nvar])>=2) {
+			nreco++;
 if(ij==3 && itp==0 ){cout<<"reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc];}
-if(itp==0){cout <<" Var :  " << ij <<" : "<< recovar[ij];}		      
-if(ij==3 && itp==0){cout<<endl<<"reconom: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovarnom[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc];}
-if(itp==0){cout <<" Var :  " << ij <<" : "<< recovarnom[ij];}
-   
-}
-		      /*for (int irand=0; irand<10; irand++) {
-			if(irand !=k ) h_recoevtvar[irand][itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
-			//#ifdef LHAPDF
-			//for (int ix=1; ix<nnnmx; ix++) {
-			//h_recoevtvarpdf[itp][irecohtjec[isrc]][iet][ij][ix]->Fill(recovar[ij], weighttrg*pdfwt[ix]); 
-			//	}
-			//#endif
-			}*/	
-		    } else {
+if(itp==0){ cout <<" Var :  " << ij <<" : "<< recovar[ij];}
+		       h_recoevtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
+			}
+			/*for (int irand=0; irand<10; irand++) {
+			  if(irand !=k ) h_recoevtvar[irand][itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
+//#ifdef LHAPDF
+			  //for (int ix=1; ix<nnnmx; ix++) {
+			  //h_recoevtvarpdf[itp][irecohtjec[isrc]][iet][ij][ix]->Fill(recovar[ij], weighttrg*pdfwt[ix]); 
+			  //			 	}
+//#endif
+			  }*/	
+		      } else {
 #ifdef JETENERGY
-		      if (int(recovar[nvar])>=2) {h_recoevtvarjec[itp][irecohtjec[isrc]][iet][ij][isrc]->Fill(recovar[ij], weighttrg);}
+			if (int(recovar[nvar])>=2) {h_recoevtvarjec[itp][irecohtjec[isrc]][iet][ij][isrc]->Fill(recovar[ij], weighttrg);}
 #elif defined(JETRESO)
-		      if (int(recovar[nvar])>=2) {h_recoevtvarres[itp][irecohtjec[isrc]][iet][ij][isrc]->Fill(recovar[ij], weighttrg);}
+			if (int(recovar[nvar])>=2) {h_recoevtvarres[itp][irecohtjec[isrc]][iet][ij][isrc]->Fill(recovar[ij], weighttrg);}
 #endif
+		      }
 		    }
-		  } //if (isItUsed(ij))
-		} //for (int ij=0; ij<nvar; ij++)
-	      } //if (recovar[nvar]>=2)
-	    }//if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1)
-	  } //for (int isrc=0; isrc<njecmx; isrc++)
-	} // if (isReconstruct)
-	
-	
-cout <<endl;	
-	//---------------------------------------------For Gen
-	if(isMC) {
-	  for (int isrc=0; isrc<nGenReso; isrc++){
-	    genvar.clear();
-	    bool isGEN=false;
-	    if (igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1) { 
-	      //cout <<"itp "<< itp<<" "<<iet<<" "<<isrc<<" "<<genmom[isrc][0][iet].size()<<" "<<genmom[isrc][itp][iet].size()<<endl; 
-	      EventShape_vector  genevtshape(genmom[isrc][itp][iet], 2.4, 0, 2, 1);
-	      
-	      genvar =  genevtshape.getEventShapes();
-	      
-	      //cout<<"genvar "<<igenhtres[isrc]<<" "<<ievt<<" "<<"Type " << itp <<"genvar : "<<" "<<genvar[nvar];
-	      //cout <<" "<<genmom[isrc][itp][iet].size()<<" "<<genvar[3]<<" "<<genvar[9]<<" "<<genvar[18]<<" "<<genvar[24]<<endl;
-	      if (genvar[nvar]>=2) {
-		isGEN = true;
-		for (int ij=0; ij<nvar; ij++) {
-		  if (isItUsed(ij)) { 
-		    if (isrc==0) { 
-		      if (int(genvar[nvar])>=2) {
+		  }
+		}
+	      }
+	    }
+	  } // if (isReconstruct)
+	  cout << endl;
+	  if(isMC) {
+	    for (int isrc=0; isrc<nGenReso; isrc++) {
+	      //for (int isrc=0; isrc<1; isrc++) { 
+	      genvar.clear();
+	      bool isGEN=false;
+	      if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1) { 
+		EventShape_vector  genevtshape(genmom[isrc][itp][iet], 2.4, 0, 2, 1);
+		
+		genvar =  genevtshape.getEventShapes();
+		if (genvar[nvar]>=2) {
+		  isGEN = true;
+		  for (int ij=0; ij<nvar; ij++) {
+		    if (isItUsed(ij)) { 
+		      if (isrc==0) { 
+			if (int(genvar[nvar])>=2) {
 			h_genevtvar[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
-                       if(ij==3 && itp==0 ){cout<<"Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc];}
-                       if(itp==0){ cout <<" Var :  " << ij <<" : "<< genvar[ij];}
-
-                       } //else {
-		      //h_genevtvar2[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
-		      //}
-		      
+if(ij==3 && itp==0 ){cout<<"Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc];}
+if(itp==0){ cout <<" Var :  " << ij <<" : "<< genvar[ij];}
+			} //else {
+			  //h_genevtvar2[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
+			//}
 #ifdef JETRESO
-		      //} else {
-		      //h_genevtvarres[itp][igenhtres[isrc]][iet][ij][isrc]->Fill(genvar[ij], weighttrg);	
+			//	} else {
+			//    	h_genevtvarres[itp][igenhtres[isrc]][iet][ij][isrc]->Fill(genvar[ij], weighttrg);	
 #endif
 #ifdef LHAPDF
-		      for (int ix=1; ix<nnnmx; ix++) {
+			for (int ix=1; ix<nnnmx; ix++) {
 			if (int(genvar[nvar])>=2) {h_genevtvarpdf[itp][igenhtres[isrc]][iet][ij][ix]->Fill(genvar[ij], weighttrg*pdfwt[ix]);}
-		      }
+			}
 #endif
-		    }//if (isrc==0)
-		  }//if (isItUsed(ij))
-		}//for (int ij=0; ij<nvar; ij++)
-	      }//if (genvar[nvar]>=2)
-	    }//if (igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1)
+		      }
+		    }
+		  }
+		}
+	      }
 
-	      //----------------------------------------Fill RM and Fake, miss (Nominal isrc==0)
-	      //if (isrc==0 && isReconstruct) { 
-	      if (isrc==0) { 
-		for(int ij=0; ij<nvar; ij++) {
-		  if (isItUsed(ij)) { 	
-		    if( isReconstruct && isRECO[itp][iet] && isGEN && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) { 
-		      naa++;
-			if (recovarnom[nvar]>=2 &&  genvar[nvar]>=2) {
-			  h_2devtvar[itp][irecoht][iet][ij]->Fill(recovarnom[ij], genvar[ij], weighttrg);  //Fill RM
-                    
-                        if(ij==3 && itp==0){cout<<endl<<"Corr Reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovarnom[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc]<<endl;}
-                        if(ij==3 && itp==0){cout <<"Corr Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc]<<endl;}
-                        if(itp==0){ cout <<"Corr Reco Var :  " << ij <<" : "<< recovarnom[ij]<<endl; }
-                        if(itp==0){ cout <<"Corr Gen Var :  " << ij <<" : "<< genvar[ij]<<endl;}
-    
-			}else if (recovarnom[nvar]>=2) {
-			  //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg);	
-			  h_recoevtfake[itp][irecoht][iet][ij]->Fill(recovarnom[ij], weighttrg);  //Fill Kind of Fake
-			}else if (genvar[nvar]>=2) {
-			  //h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill in Reco Underflow
-			  h_genevtmiss[itp][igenht][iet][ij]->Fill(genvar[ij], weighttrg);	//Fill Kind of Miss
+cout <<endl;	
+  	      if(isrc==0 && isReconstruct){ 
+		  for(int ij=0; ij<nvar; ij++) {
+		    if (isItUsed(ij)) { 	
+		      if(isRECO[itp][iet] && isGEN && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) { 
+			naa++;
+	                if(recovar[nvar]>=2 &&  genvar[nvar]>=2){
+              if(ij==3 && itp==0){cout<<"Corr Reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc]<<endl;}
+              if(ij==3 && itp==0){cout <<"Corr Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc]<<endl;}
+              if(itp==0){ cout <<"Corr Reco Var :  " << ij <<" : "<< recovar1[ij]<<endl; }
+              if(itp==0){ cout <<"Corr Gen Var :  " << ij <<" : "<< genvar[ij]<<endl;}
+ 
+			 h_2devtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], genvar[ij], weighttrg);
+                        }else if (recovar[nvar]>=2) {
+			 
+                         //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg);	
+			  h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], weighttrg);
+                        }else if (genvar[nvar]>=2) {
+			//h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill in Reco Underflow
+			  h_genevtmiss[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);	
+                            }
+			//  h_2devtvar[itp][0][iet][ij]->Fill(recovar[ij], genvar[ij], weighttrg);
+		      } else {
+			if (isRECO[itp][iet] && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1 && recovar1[nvar]>=2) {
+			  nbb++;
+			  //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg); //Fill Fake in Gen Underflow
+			    h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], weighttrg);
 			}
-		      //  h_2devtvar[itp][0][iet][ij]->Fill(recovar[ij], genvar[ij], weighttrg);
-		    } else {
-		      if ( isReconstruct && isRECO[itp][iet] && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1 && recovar[nvar]>=2) {
-			nbb++;
-			if (recovarnom[nvar]>=2) {
-			  //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg); //Fill Fake in Gen Underflow	
-			  h_recoevtfake[itp][irecoht][iet][ij]->Fill(recovarnom[ij], weighttrg);  //Fill Fake
+			if (isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && genvar[nvar]>=2) {
+			  ncc++;
+                             
+			 //h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill Miss in Reco Underflow
+			   h_genevtmiss[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);	
 			}
 		      }
-		      if (isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && genvar[nvar]>=2) {
-			ncc++;
-			if (genvar[nvar]>=2) {
-			//  h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill Miss in Reco Underflow
-			  h_genevtmiss[itp][igenht][iet][ij]->Fill(genvar[ij], weighttrg);	 //fill Miss
-			}
-		      }
-
-		    } //if (isRECO[itp][iet] && isGEN && irecohtjec[isrc]==igenhtres[isrc] )
-		  } //if (isItUsed(ij)) 
-		} // for(int ij=0; ij<nvar; ij++)	
-	      } // if (isrc==0 && isReconstruct)
-	    // if (igenht>=0 && igenht<njetptmn && genmom[isrc][itp][iet].size()>1)   //Issue In Fake Entries
-	  } // for (int isrc=0; isrc<nGenReso; isrc++)
-	}//isMC
-      } // for (int iet=0; iet<njetetamn; iet++)
-    } //for (int itp=0; itp<ntype; itp++) 
-    
-      //if(nevt%1000==1){ std::cout <<"nevt "<<nevt<<" naa "<<naa<<" nbb "<<nbb<<" ncc "<<ncc<< std::endl;}
-    
+		    } //if (isItUsed(ij)) 
+		  } // for(int ij=0; ij<nvar; ij++)	
+		} // if (isrc==0 && isReconstruct)
+	      //} // if (igenht>=0 && igenht<njetptmn && genmom[isrc][itp][iet].size()>1)
+	    } // for (int isrc=0; isrc<nGenReso; isrc++)
+	  }//isMC
+	} // for (int iet=0; iet<njetetamn; iet++)
+      } //for (int itp=0; itp<ntype; itp++) 
+      
+      //if (nevt%1000==1) { std::cout <<"nevt "<<nevt<<" naa "<<naa<<" nbb "<<nbb<<" ncc "<<ncc<< std::endl;}
+     cout <<igenht <<endl;
+     cout <<"end event" << endl;  
     
   cout << " End Event " <<endl;  
     
