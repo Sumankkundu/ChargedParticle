@@ -2806,14 +2806,14 @@ cout <<endl;
 		    if (isItUsed(ij)) { 	
 		      if(isRECO[itp][iet] && isGEN && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) { 
 			naa++;
-	                if(recovar[nvar]>=2 &&  genvar[nvar]>=2){
+	                if(recovar1[nvar]>=2 &&  genvar[nvar]>=2){
               if(ij==3 && itp==0){cout<<"Corr Reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc]<<endl;}
               if(ij==3 && itp==0){cout <<"Corr Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc]<<endl;}
               if(itp==0){ cout <<"Corr Reco Var :  " << ij <<" : "<< recovar1[ij]<<endl; }
               if(itp==0){ cout <<"Corr Gen Var :  " << ij <<" : "<< genvar[ij]<<endl;}
  
 			 h_2devtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], genvar[ij], weighttrg);
-                        }else if (recovar[nvar]>=2) {
+                        }else if (recovar1[nvar]>=2) {
 			 
                          //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg);	
 			  h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], weighttrg);
