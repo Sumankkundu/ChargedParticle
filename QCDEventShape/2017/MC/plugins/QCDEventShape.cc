@@ -3579,19 +3579,18 @@ else {
       int k = rand/0.1;
 //      cout << "Rand Number " << k << endl;*/
   
-      
-      for (int itp=0; itp<ntype; itp++) {
-//      for (int itp=0; itp<1; itp++) {
+//-----------------------------------------------Calculate And Fill the  EventShape Variables--------------------------------
+  for (int itp=0; itp<ntype; itp++) {
 	for (int iet=0; iet<njetetamn; iet++) {
 	  if (isReconstruct) { 
-	    //for (int isrc=0; isrc<njecmx; isrc++) { 
-	    for (int isrc=0; isrc<1; isrc++) { 
-	      recovar.clear();
 	      recovar1.clear();
+	   for (int isrc=0; isrc<njecmx; isrc++) { 
+	   // for (int isrc=0; isrc<1; isrc++) { 
+	      recovar.clear();
+	      //recovar1.clear();
 	      if (isrc==0) {isRECO[itp][iet]=false;}
-	      //				if (iet==0 && isrc==0) 
-	     // cout <<"reco "<< itp<<" "<<iet<<" "<<isrc<<" "<<irecohtjec[isrc]<<" "<<recomom[isrc][itp][iet].size()<<endl;
-	      if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) {
+	      
+                 if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) {
 		EventShape_vector  recoevtshape(recomom[isrc][itp][iet], 2.4, 0, 2, 1);
 		recovar =  recoevtshape.getEventShapes();
 		if(isrc==0){recovar1 =  recoevtshape.getEventShapes();}
@@ -3602,19 +3601,17 @@ else {
 		      if (isrc==0) { 
 			if (int(recovar[nvar])>=2) {
 			nreco++;
-if(ij==3 && itp==0 ){cout<<"reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc];}
-if(itp==0){ cout <<" Var :  " << ij <<" : "<< recovar[ij];}
-		//		cout << "nreco = " << nreco << endl;
-				h_recoevtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
+//if(ij==3 && itp==0 ){cout<<"reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc];}
+//if(itp==0){ cout <<" Var :  " << ij <<" : "<< recovar[ij];}
+		       h_recoevtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
 			}
-			//else {h_recoevtfake[itp][irecoht][iet][ij]->Fill(recovar[ij], weighttrg);}
 			/*for (int irand=0; irand<10; irand++) {
 			  if(irand !=k ) h_recoevtvar[irand][itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
-			  //#ifdef LHAPDF
-			  //						   			for (int ix=1; ix<nnnmx; ix++) {
-			 C //							  			h_recoevtvarpdf[itp][irecohtjec[isrc]][iet][ij][ix]->Fill(recovar[ij], weighttrg*pdfwt[ix]); 
-			  //								  	}
-			  //#endif
+//#ifdef LHAPDF
+			  //for (int ix=1; ix<nnnmx; ix++) {
+			  //h_recoevtvarpdf[itp][irecohtjec[isrc]][iet][ij][ix]->Fill(recovar[ij], weighttrg*pdfwt[ix]); 
+			  //			 	}
+//#endif
 			  }*/	
 		      } else {
 #ifdef JETENERGY
@@ -3629,42 +3626,35 @@ if(itp==0){ cout <<" Var :  " << ij <<" : "<< recovar[ij];}
 	      }
 	    }
 	  } // if (isReconstruct)
-	  //cout << "Time Diff to Run ="<< diff << endl;
-	  cout << endl;
+//	  cout << endl;
 	  if(isMC) {
 	    for (int isrc=0; isrc<nGenReso; isrc++) {
-	      //	    for (int isrc=0; isrc<1; isrc++) { 
+	      //for (int isrc=0; isrc<1; isrc++) { 
 	      genvar.clear();
 	      bool isGEN=false;
 	      if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1) { 
-		//						cout <<"itp "<< itp<<" "<<iet<<" "<<isrc<<" "<<genmom[isrc][0][iet].size()<<" "<<genmom[isrc][itp][iet].size()<<endl; 
 		EventShape_vector  genevtshape(genmom[isrc][itp][iet], 2.4, 0, 2, 1);
 		
 		genvar =  genevtshape.getEventShapes();
-		
-	//	cout<<"genvar "<<igenhtres[isrc]<<" "<<ievt<<" "<<"Type " << itp <<"genvar : "<<" "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size()<<" "<<genvar[3]<<" "<<genvar[9]<<" "<<genvar[18]<<" "<<genvar[24]<<endl;
 		if (genvar[nvar]>=2) {
 		  isGEN = true;
 		  for (int ij=0; ij<nvar; ij++) {
 		    if (isItUsed(ij)) { 
 		      if (isrc==0) { 
 			if (int(genvar[nvar])>=2) {
-			  h_genevtvar[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
-if(ij==3 && itp==0 ){cout<<"Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc];}
-if(itp==0){ cout <<" Var :  " << ij <<" : "<< genvar[ij];}
-
-          //                cout <<"gen Var " << ievt << " "<<genvar[ij]<<endl;
+			h_genevtvar[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
+//if(ij==3 && itp==0 ){cout<<"Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc];}
+//if(itp==0){ cout <<" Var :  " << ij <<" : "<< genvar[ij];}
 			} //else {
 			  //h_genevtvar2[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
 			//}
-			
 #ifdef JETRESO
-			//									} else {
-			//										h_genevtvarres[itp][igenhtres[isrc]][iet][ij][isrc]->Fill(genvar[ij], weighttrg);	
+			//	} else {
+			//    	h_genevtvarres[itp][igenhtres[isrc]][iet][ij][isrc]->Fill(genvar[ij], weighttrg);	
 #endif
 #ifdef LHAPDF
 			for (int ix=1; ix<nnnmx; ix++) {
-			  if (int(genvar[nvar])>=2) {h_genevtvarpdf[itp][igenhtres[isrc]][iet][ij][ix]->Fill(genvar[ij], weighttrg*pdfwt[ix]);}
+			if (int(genvar[nvar])>=2) {h_genevtvarpdf[itp][igenhtres[isrc]][iet][ij][ix]->Fill(genvar[ij], weighttrg*pdfwt[ix]);}
 			}
 #endif
 		      }
@@ -3673,50 +3663,39 @@ if(itp==0){ cout <<" Var :  " << ij <<" : "<< genvar[ij];}
 		}
 	      }
 
-cout <<endl;	
-  	      if (isrc==0 && isReconstruct){ 
+///cout <<endl;	
+  	      if(isrc==0 && isReconstruct){ 
 		  for(int ij=0; ij<nvar; ij++) {
 		    if (isItUsed(ij)) { 	
 		      if(isRECO[itp][iet] && isGEN && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) { 
 			naa++;
-	      if(recovar[nvar]>=2 &&  genvar[nvar]>=2){
-              if(ij==3 && itp==0){cout<<"Corr Reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc]<<endl;}
-              if(ij==3 && itp==0){cout <<"Corr Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc]<<endl;}
-              if(itp==0){ cout <<"Corr Reco Var :  " << ij <<" : "<< recovar[ij]<<endl; }
-              if(itp==0){ cout <<"Corr Gen Var :  " << ij <<" : "<< genvar[ij]<<endl;}
+	                if(recovar1[nvar]>=2 &&  genvar[nvar]>=2){
+//             if(ij==3 && itp==0){cout<<"Corr Reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc]<<endl;}
+//              if(ij==3 && itp==0){cout <<"Corr Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc]<<endl;}
+//              if(itp==0){ cout <<"Corr Reco Var :  " << ij <<" : "<< recovar1[ij]<<endl; }
+///              if(itp==0){ cout <<"Corr Gen Var :  " << ij <<" : "<< genvar[ij]<<endl;}
  
-                         //cout <<"RecoVar" <<recovar[nvar] <<"GenVar" <<  genvar[nvar] << endl;
-			 h_2devtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], genvar[ij], weighttrg);
-	                 //cout <<"ievt :" << ievt<<"  Reco & Gen >= 3 " << recovar[ij] << " : " <<genvar[ij] <<endl;  
-                        }else if (recovar[nvar]>=2) {
-                         //h_2devtvar[itp][irecoht][iet][ij]->Fill(recovar[ij], 1.1, weighttrg);
-			 //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg);	
-			  h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg);
+			 h_2devtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], genvar[ij], weighttrg);
+                        }else if (recovar1[nvar]>=2) {
+			 
+                         //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg);	
+			  h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], weighttrg);
                         }else if (genvar[nvar]>=2) {
-                        //h_2devtvar[itp][irecoht][iet][ij]->Fill(1.1, genvar[ij], weighttrg);
 			//h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill in Reco Underflow
 			  h_genevtmiss[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);	
                             }
 			//  h_2devtvar[itp][0][iet][ij]->Fill(recovar[ij], genvar[ij], weighttrg);
 		      } else {
-			if (isRECO[itp][iet] && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1 && recovar[nvar]>=2) {
+			if (isRECO[itp][iet] && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1 && recovar1[nvar]>=2) {
 			  nbb++;
-			    //for (int irand=0; irand<10; irand++) {
-			    //h_2devtvar[itp][irecoht][iet][ij]->Fill(recovar[ij], 1.1, weighttrg);
-			    //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg); //Fill Fake in Gen Underflow
-			      h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg);
-			    //if(irand !=k ) h_2devtvar[irand][itp][irecoht][iet][ij]->Fill(recovar[ij], 1.1, weighttrg);
-			   //}
+			  //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg); //Fill Fake in Gen Underflow
+			    h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], weighttrg);
 			}
 			if (isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && genvar[nvar]>=2) {
 			  ncc++;
                              
-                              //for (int irand=0; irand<10; irand++) {
-			      //h_2devtvar[itp][igenht][iet][ij]->Fill(1.1, genvar[ij], weighttrg);	
-			      //h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill Miss in Reco Underflow
-			        h_genevtmiss[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);	
-			      //if(irand !=k ) h_2devtvar[irand][itp][igenht][iet][ij]->Fill(1.1, genvar[ij], weighttrg);	
-			    //}
+			 //h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill Miss in Reco Underflow
+			   h_genevtmiss[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);	
 			}
 		      }
 		    } //if (isItUsed(ij)) 
@@ -3728,9 +3707,10 @@ cout <<endl;
 	} // for (int iet=0; iet<njetetamn; iet++)
       } //for (int itp=0; itp<ntype; itp++) 
       
-      //	if (nevt%1000==1) { std::cout <<"nevt "<<nevt<<" naa "<<naa<<" nbb "<<nbb<<" ncc "<<ncc<< std::endl;}
-     cout <<igenht <<endl;
-      cout <<"end event" << endl;
+      //if (nevt%1000==1) { std::cout <<"nevt "<<nevt<<" naa "<<naa<<" nbb "<<nbb<<" ncc "<<ncc<< std::endl;}
+if(nevt==100){   cout <<igenht <<endl;}
+
+   // cout <<"end event" << endl;
     }
 
 // ------------ method called once each job just before starting event loop  ------------
