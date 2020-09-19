@@ -64,7 +64,6 @@ using namespace std;
 
 static const auto feps = numeric_limits<float>::epsilon();
 
-
 void testUnfold2c()
 {
   // switch on histogram errors
@@ -73,39 +72,43 @@ void testUnfold2c()
   
   //Input Data and MC histogram
   //TFile *inputData=new TFile("PY8_Flat_UL17_Newbin_22Aug20.root");
- // TFile *inputData=new TFile("PY8_Flat_UL17_MissRM_22Aug20.root");
+  //TFile *inputData=new TFile("PY8_Flat_UL17_MissRM_22Aug20.root");
   //TFile *inputData=new TFile("Test_MC_QCD.root");
-  TFile *inputData=new TFile("PY8_UL17_binned_22Aug20.root");
+  //TFile *inputData=new TFile("PY8_UL17_binned_22Aug20.root");
   //TFile *inputData=new TFile("PY8_UL17_Binnned_MissRM_22Aug20.root");
   //TFile *inputData=new TFile("MG_UL17_MissRM_23Aug20.root");
   //TFile *inputData=new TFile("PY8_UL17_Flat_25Aug20.root");
-  //TFile *inputData=new TFile("PY8_UL17_Binned_25Aug20.root");
-  //TFile *inputData=new TFile("PY8_UL17_Flat_31Aug20.root");
-  //TFile *inputData=new TFile("PY8_UL17_Flat_supoff_31Aug20.root");
-  //TFile *inputData=new TFile("PY8_UL17_Binned_17Aug20_1.root");
-  //TFile *inputData=new TFile("PY8_UL17_Binned_20Aug20.root");
-  //TFile *inputData=new TFile("PY_UL17_Flat_header_31Aug20.root");
+   TFile *inputData=new TFile("MG_UL17_Binned_13Sep20.root");
+  //TFile *inputData=new TFile("HW7_UL17_Flat_13Sep20.root");
+ // TFile *inputData=new TFile("PY8_UL17_Flat_11Sep20.root");
+ // TFile *inputData=new TFile("PY8_UL17_Flat_11Sep20.root");
+ // TFile *inputData=new TFile("PY8_UL17_binned_Bugfixed_10Sep20.root");
+ //TFile *inputData=new TFile("PY8_UL17_Flat_12Sep20.root");
+ //TFile *inputData=new TFile("PY8_UL17_binned_11Sep20.root");
+// TFile *inputData=new TFile("PY8_UL17_Flat_MissInUF_16Sep20.root");
   //TFile *inputData=new TFile("Data_UL2017_JetHT_24Aug20.root");
   
   //TFile *inputMC=new TFile("Test_MC_QCD.root");
   //TFile *inputMC=new TFile("PY8_Flat_UL17_Newbin_22Aug20.root");
   //TFile *inputMC=new TFile("PY8_UL17_Binnned_MissRM_22Aug20.root");
-  TFile *inputMC=new TFile("PY8_UL17_binned_22Aug20.root");
-  //TFile *inputMC=new TFile("MG_UL17_MissRM_23Aug20.root");
+  //TFile *inputMC=new TFile("PY8_UL17_binned_22Aug20.root");
+  //TFile *inputMC=new TFile("HW7_UL17_Flat_13Sep20.root");
   //TFile *inputMC=new TFile("PY8_CP5_UL_Reco2Gen_30July20.root");
   //TFile *inputMC=new TFile("PY8_UL17_Binned_25Aug20.root");
-  //TFile *inputMC=new TFile("PY8_UL17_Flat_31Aug20.root");
-  //TFile *inputMC=new TFile("PY8_UL17_Flat_supoff_31Aug20.root");
-  //TFile *inputMC=new TFile("PY8_UL17_Binned_27Aug20.root");
+  //TFile *inputMC=new TFile("PY8_UL17_Flat_12Sep20.root");
+  //TFile *inputMC=new TFile("PY8_UL17_Flat_11Sep20.root");
+  TFile *inputMC=new TFile("MG_UL17_Binned_13Sep20.root");
   //TFile *inputMC=new TFile("PY8_UL17_Binned_20Aug20.root");
-  //TFile *inputMC=new TFile("PY8_UL17_Binned_17Aug20_2.root");
-  //TFile *inputMC=new TFile("PY_UL17_Flat_header_31Aug20.root");
+  //TFile *inputMC=new TFile("PY8_UL17_binned_Bugfixed_10Sep20.root");
+  //TFile *inputMC=new TFile("PY8_UL_Flat_BugFiexed_10Sep20.root");
+  //TFile *inputMC=new TFile("PY8_UL17_binned_11Sep20.root");
+  //TFile *inputMC=new TFile("PY8_UL17_Flat_MissInUF_16Sep20.root");
   //TFile *inputMC=new TFile("PY8_Binned_UL17_14Aug20_Fake0bins.root");
   
   //TFile *inputMC1=new TFile("MG_UL17_binned_6July20.root");
-  TFile *inputMC1=new TFile("MG_UL17_MissRM_23Aug20.root");
+  TFile *inputMC1=new TFile("PY8_UL17_binned_Bugfixed_10Sep20.root");
   //TFile *inputMC1=new TFile("PY8_UL17_ULbinned_1July20.root");
-  TFile *inputMC2=new TFile("HW7_UL17_Flat_23Aug20.root");
+  TFile *inputMC2=new TFile("PY8_UL_Flat_BugFiexed_10Sep20.root");
   //TFile *inputMC2=new TFile("HW7_Flat_Binned_8July20.root");
   
   //Unfolded Data and Covarince matrix, efficincy,fake rate, purity, stability
@@ -145,59 +148,6 @@ void testUnfold2c()
   int rnbinsx[type][nusedvar][nHLTmx];
   int gnbinsx[type][nusedvar][nHLTmx];
   
-/*  // define the number of bin excluded form lower end
-  int arrayvar_first[type][nusedvar][nHLTmx] = {{
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0}},
-						{{0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0}}};
-  
-  // define the number of bin excluded from higher end
-  int arrayvar_last[type][nusedvar][nHLTmx] =  {{
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0}},
-						{{0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0}}};
-  //gen bin 
-  // define the number of bin excluded form lower end
-int arrayvar_firstG[type][nusedvar][nHLTmx] = {{
-                                               {0,0,0,0,0,0,0,0},
-                                               {0,0,0,0,0,0,0,0},
-                                               {0,0,0,0,0,0,0,0},
-                                               {0,0,0,0,0,0,0,0},
-                                               {0,0,0,0,0,0,0,0}},
-					       {{0,0,0,0,0,0,0,0},
-						{0,0,0,0,0,0,0,0},
-						{0,0,0,0,0,0,0,0},
-						{0,0,0,0,0,0,0,0},
-						{0,0,0,0,0,0,0,0}}};
- 
-// define the number of bin excluded from higher end
- int arrayvar_lastG[type][nusedvar][nHLTmx] =  {{
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0},
-                                                {0,0,0,0,0,0,0,0}},
-						{{0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0},
-						 {0,0,0,0,0,0,0,0}}};
- 
- */
  TH1D *MC_Reco[type][nusedvar][njetptmn];  //Reconstructed MC
  TH1D *MC_fake[type][nusedvar][njetptmn];  //Fake :  Reco but No Gen
  TH1D *MC_Gen[type][nusedvar][njetptmn];   //Generator MC
@@ -345,6 +295,7 @@ int arrayvar_firstG[type][nusedvar][nHLTmx] = {{
        inputDir0->cd();
        sprintf(histname, "analyzeBasicPat/reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]); //reco_typ_1_pt4_eta0_24
        Data_Reco1[ity][ivar][ipt] = (TH1D*) inputData->Get(histname);
+       
        //Data_Reco1[ity][ivar][ipt]->Write();
        //if(ity ==0){Data_Reco1[ity][ivar][ipt]->Rebin(2);}
        for (int ibin =1 ; ibin <  Data_Reco1[ity][ivar][ipt]->GetNbinsX()+1; ibin++ ){
@@ -361,7 +312,8 @@ int arrayvar_firstG[type][nusedvar][nHLTmx] = {{
        MC_Reco1[ity][ivar][ipt] = (TH1D*) inputMC->Get(histname);
        //if(ity ==0){MC_Reco1[ity][ivar][ipt] ->Rebin(2);}
        //MC_Reco1[ity][ivar][ipt]->Write();
-       cout << histname << endl;
+       
+       cout << histname <<  "  Reco =" << MC_Reco1[ity][ivar][ipt]->GetEntries();
        int recobins = MC_Reco1[ity][ivar][ipt]->GetNbinsX();
        rnbinsx[ity][ivar][ipt]=MC_Reco1[ity][ivar][ipt]->GetNbinsX();
        if(recobins !=Data_Reco1[ity][ivar][ipt]->GetNbinsX()) {cout << "reco Bin miss Match, Check bins"<<endl;}
@@ -369,9 +321,11 @@ int arrayvar_firstG[type][nusedvar][nHLTmx] = {{
        //MC Fake
        sprintf(histname, "analyzeBasicPat/fake_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]); //reco_typ_1_pt4_eta0_24
        MC_fake1[ity][ivar][ipt] = (TH1D*) inputMC->Get(histname);
+       
+       cout << " Fake= " <<MC_fake1[ity][ivar][ipt]->GetEntries() <<" Reco-fake: " <<(MC_Reco1[ity][ivar][ipt]->GetEntries() - MC_fake1[ity][ivar][ipt]->GetEntries());
        //MC_fake1[ity][ivar][ipt]->Write();
        //if(ity ==0){MC_fake1[ity][ivar][ipt]->Rebin(2);}
-       cout << histname << endl;
+  //     cout << histname << endl;
        
        //Gen MC
        sprintf(histname, "analyzeBasicPat/gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]); //reco_typ_1_pt4_eta0_24
@@ -382,16 +336,21 @@ int arrayvar_firstG[type][nusedvar][nHLTmx] = {{
        gnbinsx[ity][ivar][ipt]=MC_Gen1[ity][ivar][ipt]->GetNbinsX();
        for(int ibin = 1; ibin < MC_Gen1[ity][ivar][ipt]->GetNbinsX()+1; ibin++ ){
        if (MC_Gen1[ity][ivar][ipt]->GetBinContent(ibin) == 0) { cout << " MC gen Bin is Zero for bin number :********** "<<  ibin  << endl; }}
-       
+       cout <<" Gen; " << MC_Gen1[ity][ivar][ipt]->GetEntries();
+
        //MC miss 
        sprintf(histname, "analyzeBasicPat/miss_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]); //reco_typ_1_pt4_eta0_24
        MC_miss1[ity][ivar][ipt] = (TH1D*) inputMC->Get(histname);
+       
+       int GenMiss= ((MC_Gen1[ity][ivar][ipt]->GetEntries()) - (MC_miss1[ity][ivar][ipt]->GetEntries()));
+       cout << " Miss= " << MC_miss1[ity][ivar][ipt]->GetEntries() <<" Gen-Miss: " << GenMiss;
        // if(ity ==0){MC_miss1[ity][ivar][ipt]->Rebin(2);}
        
        
        //Response Matrix
        sprintf(histname, "analyzeBasicPat/corr_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]); //corr_typ_0_pt2_eta0_3
        h2dGenDetMC1[ity][ivar][ipt] = (TH2D*) inputMC->Get(histname);   //Xgen(coarse) , Yreco(fine)
+       cout << " Corr = "  << h2dGenDetMC1[ity][ivar][ipt]->GetEntries() <<endl;
        //h2dGenDetMC1[ity][ivar][ipt]->Write();   //Xgen(coarse) , Yreco(fine)
        //if(recobins !=h2dGenDetMC1[ity][ivar][ipt]->GetNbinsX()){cout << "Reco Bin missmatch in response Matrix " << endl;}
        //if(genbins !=h2dGenDetMC1[ity][ivar][ipt]->GetNbinsY()){cout << "Gen Bin missmatch in response Matrix " << endl;}
@@ -399,13 +358,13 @@ int arrayvar_firstG[type][nusedvar][nHLTmx] = {{
 
       //-------------------Replace Fake by Reco - RMx Projection------------------
       //-----------------------------------------------------------------------
-       TH1D* RMxx= h2dGenDetMC1[ity][ivar][ipt]->ProjectionX();
+/*       TH1D* RMxx= h2dGenDetMC1[ity][ivar][ipt]->ProjectionX();
        for (int i = 1; i <= MC_fake1[ity][ivar][ipt]->GetNbinsX(); ++i) {
          double content = MC_Reco1[ity][ivar][ipt]->GetBinContent(i);
          double factor = RMxx->GetBinContent(i);
          content -= factor;
          MC_fake1[ity][ivar][ipt]->SetBinContent(i, content);
-       }
+       }*/
 
 
        Data_Reco2[ity][ivar][ipt] = (TH1D*)Data_Reco1[ity][ivar][ipt]->Clone();
@@ -444,40 +403,53 @@ int arrayvar_firstG[type][nusedvar][nHLTmx] = {{
 	 NewData->SetBinError(ix, sqrt(Data_Reco1[ity][ivar][ipt]->GetBinError(ix)* Data_Reco1[ity][ivar][ipt]->GetBinError(ix)));
        }
        
-       for(int ix=0; ix < NbinxR+2 ; ix++){
+       for(int ix=1; ix < NbinxR+1 ; ix++){
 	 NewReco->SetBinContent(ix,MC_Reco1[ity][ivar][ipt]->GetBinContent(ix));
 	 NewReco->SetBinError(ix, sqrt(MC_Reco1[ity][ivar][ipt]->GetBinError(ix)* MC_Reco1[ity][ivar][ipt]->GetBinError(ix)));
        }
-       for(int ix=0; ix < NbinxG+2 ; ix++){
+       for(int ix=1; ix < NbinxG+1 ; ix++){
 	 NewGen->SetBinContent(ix,MC_Gen1[ity][ivar][ipt]->GetBinContent(ix));
 	 NewGen->SetBinError(ix, sqrt(MC_Gen1[ity][ivar][ipt]->GetBinError(ix)* MC_Gen1[ity][ivar][ipt]->GetBinError(ix)));
        }       
-       for(int ix=0; ix < NbinMx+2 ; ix++){
-	 for(int iy=0; iy < NbinMy+2 ; iy++){
+       for(int ix=1; ix < NbinMx+1 ; ix++){
+	 for(int iy=1; iy < NbinMy+1 ; iy++){
 	   NewRecoGen->SetBinContent(ix, iy, h2dGenDetMC1[ity][ivar][ipt]->GetBinContent(ix,iy));
 	   NewRecoGen->SetBinError(ix, iy, sqrt(h2dGenDetMC1[ity][ivar][ipt]->GetBinError(ix,iy)* h2dGenDetMC1[ity][ivar][ipt]->GetBinError(ix,iy)));
 	 }
        }
        //NewRecoGen->SetBinContent(0, 0,0.0); NewRecoGen->SetBinError(0,0,0.0);
-       for(int ix=0; ix < NbinxR+2 ; ix++){
+       for(int ix=1; ix < NbinxR+1 ; ix++){
 	 Newfake->SetBinContent(ix,MC_fake1[ity][ivar][ipt]->GetBinContent(ix));
 	 Newfake->SetBinError(ix, sqrt(MC_fake1[ity][ivar][ipt]->GetBinError(ix)* MC_fake1[ity][ivar][ipt]->GetBinError(ix)));
        }
-       for(int ix=0; ix < NbinxG+2 ; ix++){
+       for(int ix=1; ix < NbinxG+1 ; ix++){
 	 Newmiss->SetBinContent(ix,MC_miss1[ity][ivar][ipt]->GetBinContent(ix));
 	 Newmiss->SetBinError(ix, sqrt(MC_miss1[ity][ivar][ipt]->GetBinError(ix)* MC_miss1[ity][ivar][ipt]->GetBinError(ix)));
        }
        
        //Fill the MISS at reco underflow and gen underflow
        for(int iy=0; iy < NbinMy+2 ; iy++){
+       
+     //    NewRecoGen->SetBinContent(0, iy, Newmiss->GetBinContent(iy)+ h2dGenDetMC1[ity][ivar][ipt]->GetBinContent(0,iy));
+       //  NewRecoGen->SetBinError(0,iy, Newmiss->GetBinError(iy)* h2dGenDetMC1[ity][ivar][ipt]->GetBinError(0,iy));
+
+       
        }
        
        //if(ity==0){
        //Fill the fake in gen underflow
        for(int ix=0; ix < NbinMx+2 ; ix++){
+       //NewRecoGen->SetBinContent(0,ix, Newfake->GetBinContent(ix));
+       //NewRecoGen->SetBinError(0,ix, sqrt(Newfake->GetBinError(ix)* Newfake->GetBinError(ix)));
+       //NewRecoGen->SetBinContent(ix, 0, MC_fake1[ity][ivar][ipt]->GetBinContent(ix)+h2dGenDetMC1[ity][ivar][ipt]->GetBinContent(ix,0));
+       //NewRecoGen->SetBinContent(0, ix, MC_fake1[ity][ivar][ipt]->GetBinContent(ix)+h2dGenDetMC1[ity][ivar][ipt]->GetBinContent(0,ix));
+       //NewRecoGen->SetBinContent(ix, 0, 0.0);
+       //NewRecoGen->SetBinError(ix, 0, sqrt(MC_fake1[ity][ivar][ipt]->GetBinError(ix)* MC_fake1[ity][ivar][ipt]->GetBinError(ix)));
        //NewRecoGen->SetBinError(ix, 0, MC_fake1[ity][ivar][ipt]->GetBinError(ix)* h2dGenDetMC1[ity][ivar][ipt]->GetBinError(ix,0));
-  //     NewRecoGen->SetBinError(0, ix, MC_fake1[ity][ivar][ipt]->GetBinError(ix)* h2dGenDetMC1[ity][ivar][ipt]->GetBinError(0,ix));
+       //NewRecoGen->SetBinError(0, ix, MC_fake1[ity][ivar][ipt]->GetBinError(ix)* h2dGenDetMC1[ity][ivar][ipt]->GetBinError(0,ix));
        //NewRecoGen->SetBinError(ix, 0, 0.0);
+
+	       
        }
        //}
        
@@ -502,6 +474,7 @@ int arrayvar_firstG[type][nusedvar][nHLTmx] = {{
 
        sprintf(name,"Recominusfake_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
        TH1* RecoFakeCorrect = (TH1D*)MC_Reco1[ity][ivar][ipt]->Clone();
+       RecoFakeCorrect->Reset();
        RecoFakeCorrect->SetNameTitle(name,name);
        
 
@@ -511,13 +484,14 @@ int arrayvar_firstG[type][nusedvar][nHLTmx] = {{
        
        sprintf(name,"Genminusmiss_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
        TH1* GenMissCorrect = (TH1D*)MC_Gen1[ity][ivar][ipt]->Clone();
+       GenMissCorrect->Reset();
        GenMissCorrect->SetNameTitle(name,name);
 
         for (int i = 1; i <= RecoFakeCorrect->GetNbinsX(); ++i) {
-         double content = RecoFakeCorrect->GetBinContent(i);
+         double content = MC_Reco1[ity][ivar][ipt]->GetBinContent(i);
          double factor = MC_fake1[ity][ivar][ipt]->GetBinContent(i);
          content -= factor;
-	 cout << " fake Factor " << factor <<endl;
+//	 cout << " fake Factor " << factor <<endl;
          RecoFakeCorrect->SetBinContent(i, content);
        }
          //RecoFakeCorrect->Divide(RMx);
@@ -525,10 +499,10 @@ int arrayvar_firstG[type][nusedvar][nHLTmx] = {{
 
         RecoFakeCorrect->Write();
         for (int i = 1; i <= GenMissCorrect->GetNbinsX(); ++i) {
-         double content = GenMissCorrect->GetBinContent(i);
+         double content = MC_Gen1[ity][ivar][ipt]->GetBinContent(i);
          double factor = MC_miss1[ity][ivar][ipt]->GetBinContent(i);
          content -= factor;
-	 cout << " Miss Factor " << factor << endl;
+//	 cout << " Miss Factor " << factor << endl;
          GenMissCorrect->SetBinContent(i, content);
        }
          //GenMissCorrect->Divide(RMy);
@@ -1032,7 +1006,7 @@ double bias[5]={0.0,0.0,0.0,0.0,0.0};
        
        // TUnfoldDensity::kDensityModeBinWidthAndUser);//,0,0,REGULARISATION_DISTRIBUTION,REGULARISATION_AXISSTEERING);//,binningCoarseGen, binningFineReco);
        
-       tunfoldNoRegularisation.SubtractBackground(mcbackground, "Background", 1.0, 0.0); // hist,name,scale, scale error 
+       tunfoldNoRegularisation.SubtractBackground(mcbackground, "Background", 1.0, 0.03); // hist,name,scale, scale error 
        int status = tunfoldNoRegularisation.SetInput(input,biasScale,0,covarianceM);
        
        int nBadErrors = status%10000, nUnconstrOutBins = status/10000;
@@ -1145,11 +1119,11 @@ double bias[5]={0.0,0.0,0.0,0.0,0.0};
        file << "ibest ="<< iBest << "/ Tau =" << tauBest_TikhonovLCurve <<"       ";
        
        TH1 *hist_PTunfolded_TikhonovLCurve = tunfoldTikhonovLCurve.GetOutput(unfoldhist, title,0,"*[UO]" ,true);
-       //           TH1 *hist_PTunfolded_TikhonovLCurve = tunfoldTikhonovLCurve.GetOutput(unfoldhist, title);
+       //TH1 *hist_PTunfolded_TikhonovLCurve = tunfoldTikhonovLCurve.GetOutput(unfoldhist, title);
        TH1 *hist_Rho_TikhonovLCurve = tunfoldTikhonovLCurve.GetRhoItotal(Rhoname, Rhotitle);//,"signal");
        TH2 *hist_RhoIJ_TikhonovLCurve = tunfoldTikhonovLCurve.GetRhoIJtotal(Rhoname2d, Rhotitle2d);//,"signal");
        TH2 *hist_Ematrix_TikhonovLCurve = tunfoldTikhonovLCurve.GetEmatrixTotal(Ematrix, Ematrixtitle);//"*[UO]");//,"signal");
-       //  TH2 *hist_Ematrix_TikhonovLCurve = tunfoldTikhonovLCurve.GetEmatrix(EmatrixL, EmatrixtitleL);//,"signal");
+       //TH2 *hist_Ematrix_TikhonovLCurve = tunfoldTikhonovLCurve.GetEmatrix(EmatrixL, EmatrixtitleL);//,"signal");
        TH2 *hist_prob_TikhonovLCurve = tunfoldTikhonovLCurve.GetProbabilityMatrix(probMat, probmat_title,TUnfold::kHistMapOutputVert);//,"signal");
        TH1 *hist_foldedback_Lcurve= tunfoldTikhonovLCurve.GetFoldedOutput(foldback, foldback_title);//,"signal");
        
@@ -1642,28 +1616,30 @@ for(int ii=0; ii < nxmod2+1 ; ii++){ xmod3[ii]=xmod2[ii]; }
 
 void Fold(TH2D* HistoMatrix, TH1D* HistReco, TH1D* HistGen, TH1D* miss, TH1D* fake, TH1D* HistoCorrect){
 
+TH2D* Histprob = (TH2D*) HistoMatrix->Clone(); Histprob->Reset();
 //calculate Probability Matrix
-for(int ij=1; ij<(HistoMatrix->GetNbinsY()+1); ij++){
+for(int ij=0; ij<(HistoMatrix->GetNbinsY()+2); ij++){
 double row_sum = 0.;
-for(int jk=1; jk<(HistoMatrix->GetNbinsX()+1); jk++){
+for(int jk=0; jk<(HistoMatrix->GetNbinsX()+2); jk++){
   row_sum+=HistoMatrix->GetBinContent(jk,ij);
 }//jk
 if(row_sum>1.e-10){
- for(int jk=1; jk<(HistoMatrix->GetNbinsX()+1); jk++){
-   HistoMatrix->SetBinContent(jk,ij,HistoMatrix->GetBinContent(jk,ij)*1./row_sum) ; //Probability
+ for(int jk=0; jk<(HistoMatrix->GetNbinsX()+2); jk++){
+   Histprob->SetBinContent(jk,ij,(HistoMatrix->GetBinContent(jk,ij)*1./row_sum)) ; //Probability
   }//jk
 }
 }//ij
 
+
 //folding gen level to Reco
-for(int i=1;i<HistReco->GetNbinsX()+1;i++){
+for(int i=0;i<Histprob->GetNbinsX()+2;i++){
      double sum=0.; double Err =0.;
-       for(int j=1;j<HistGen->GetNbinsX()+1;j++){
+       for(int j=0;j<HistGen->GetNbinsX()+2;j++){
        double misscorr = (HistGen->GetBinContent(j))-(miss->GetBinContent(j)); //Miss correction
-       sum += HistoMatrix->GetBinContent(i,j)*misscorr;
-       Err += (HistoMatrix->GetBinContent(i,j)*HistGen->GetBinError(j))*(HistoMatrix->GetBinContent(i,j)*(HistGen->GetBinError(j)));
+       sum += Histprob->GetBinContent(i,j)*misscorr;
+       Err += (Histprob->GetBinContent(i,j)*HistGen->GetBinError(j))*(Histprob->GetBinContent(i,j)*(HistGen->GetBinError(j)));
            }
-      sum = sum +(fake->GetBinContent(i)); //fake correction
+   //    sum = sum +(fake->GetBinContent(i)); //fake correction
       HistoCorrect->SetBinContent(i,sum);
       HistoCorrect->SetBinError(i,sqrt(Err));
     	}
