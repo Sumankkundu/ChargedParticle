@@ -5,7 +5,7 @@
 #include <vector>
 #include <TArrayC.h>
 #include <string>
-#include "TH1.h"                               // for histrograming
+#include "TH1.h"                                 // for histrograming
 #include "TH2D.h"
 #include "TH1F.h"
 #include "TH2F.h"
@@ -58,13 +58,13 @@ int getbinid(double val, int nbmx, double* array) {
   return -3;
 }
 
-void testUnfold5b(){  
+void testrootmake(const char* arg1, const char* arg2){  
   TH1::SetDefaultSumw2(); TH2::SetDefaultSumw2();
   
   //TFile *filentuple = new TFile("ESV_Ntuple.root");
   TFile *filentuple = new TFile("/home/suman/Paradox/Charged_ESV/Working/ESV_dist/MC/PYTHIA8_2017/CP5_Flat_PY2017/Legacy/NTuple/16Sep20/PY8_UL17_Flat_NTuple_16Sep20.root");
   
-  TFile *outputFile=new TFile("TUnfold_Ready_test.root","recreate");
+  TFile *outputFile=new TFile("TUnfold_Ready_roottest.root","recreate");
  
   TDirectoryFile *Bining1D =new TDirectoryFile("Binning1D","Binning");
   TDirectoryFile *Bining2D =new TDirectoryFile("Binning2D","Binning");
@@ -99,8 +99,8 @@ void testUnfold5b(){
 
    double leadingPtThreshold[njetptmn+1] = {83, 109, 172, 241, 309, 377, 462, 570, 3000.0}; //Fit Value dijet trigger
    double htbins[nHLTmx+1] = {83, 109, 172, 241, 309, 377, 462, 570, 3000.0};
-   int rhtnbins[nHLTmx] = {6,12,12,12,12,16,20,20};
-   int htnbins[nHLTmx] = {3,6,6,6,6,8,10,10};
+   int rhtnbins[nHLTmx] = {6,12,12,12,12,16,20,50};
+   int htnbins[nHLTmx] = {3,6,6,6,6,8,10,25};
 
       TTree *TEsv = (TTree*)filentuple->Get("analyzeBasicPat/TEsv");
    //Define the Variable for branch
@@ -500,51 +500,24 @@ double binrngs1[nvar][nHLTmx][nmxbins+1] ={
 //--------------------------------------------------------------------------------------
 
 
-   TH1* h_recovar[type][nusedvar][nHLTmx]; //Reco
-   TH1* h_recofake[type][nusedvar][nHLTmx];//For fake
-   TH1* h_recofakeOutE[type][nusedvar][nHLTmx];//For fake
-   TH1* h_recofakeOutHT[type][nusedvar][nHLTmx];//For fake
-   
-   TH1* h_genvar[type][nusedvar][nHLTmx]; //Gen
-   TH1* h_genmiss[type][nusedvar][nHLTmx]; //For Miss
-   TH1* h_genmissOutE[type][nusedvar][nHLTmx]; //For Miss
-   TH1* h_genmissOutHT[type][nusedvar][nHLTmx]; //For Miss
-   
+   TH1* h_recoevtvar[type][nusedvar][nHLTmx]; //Reco
+   TH1* h_recoevtfake[type][nusedvar][nHLTmx];//For fake
+   TH1* h_genevtmiss[type][nusedvar][nHLTmx]; //For Miss
+   TH1* h_genevtvar[type][nusedvar][nHLTmx]; //Gen
    TH2  *RM[type][nusedvar][nHLTmx];
   
   //-----------------------1D
-   TH1* h_recovar_1D[type][nusedvar][nHLTmx]; //Reco
-   TH1* h_recofake_1D[type][nusedvar][nHLTmx];//For fake
-   TH1* h_recofakeOutE_1D[type][nusedvar][nHLTmx];//For fake
-   TH1* h_recofakeOutHT_1D[type][nusedvar][nHLTmx];//For fake
- 
-   
-   TH1* h_genvar_1D[type][nusedvar][nHLTmx]; //Gen
-   TH1* h_genmiss_1D[type][nusedvar][nHLTmx]; //For Miss
-   TH1* h_genmissOutE_1D[type][nusedvar][nHLTmx]; //For Miss
-   TH1* h_genmissOutHT_1D[type][nusedvar][nHLTmx]; //For Miss
-
-
+   TH1* h_recoevtvar_1D[type][nusedvar][nHLTmx]; //Reco
+   TH1* h_recoevtfake_1D[type][nusedvar][nHLTmx];//For fake
+   TH1* h_genevtmiss_1D[type][nusedvar][nHLTmx]; //For Miss
+   TH1* h_genevtvar_1D[type][nusedvar][nHLTmx]; //Gen
    TH2  *RM_1D[type][nusedvar][nHLTmx];
 
   //-------------------------2D
-   TH1* h_recovar_2D[type][nusedvar][nHLTmx]; //Reco
-   TH1* h_recofake_2D[type][nusedvar][nHLTmx];//For fake
-   TH1* h_recofakeOutE_2D[type][nusedvar][nHLTmx];//For fake
-   TH1* h_recofakeOutHT_2D[type][nusedvar][nHLTmx];//For fake
-
-
-   TH1* h_genvar_2D[type][nusedvar][nHLTmx]; //Gen
-   TH1* h_genmiss_2D[type][nusedvar][nHLTmx]; //For Miss
-   TH1* h_genmissOutE_2D[type][nusedvar][nHLTmx]; //For Miss
-   TH1* h_genmissOutHT_2D[type][nusedvar][nHLTmx]; //For Miss
-
-
-   TH1* h_recovar_2D1[type][nusedvar][nHLTmx]; //Reco
-   TH1* h_recofake_2D1[type][nusedvar][nHLTmx];//For fake
-   TH1* h_genmiss_2D1[type][nusedvar][nHLTmx]; //For Miss
-   TH1* h_genvar_2D1[type][nusedvar][nHLTmx]; //Gen
-
+  TH1* h_recoevtvar_2D[type][nusedvar][nHLTmx]; //Reco
+   TH1* h_recoevtfake_2D[type][nusedvar][nHLTmx];//For fake
+   TH1* h_genevtmiss_2D[type][nusedvar][nHLTmx]; //For Miss
+   TH1* h_genevtvar_2D[type][nusedvar][nHLTmx]; //Gen
    TH2  *RM_2D[type][nusedvar][nHLTmx];
  
    //----------------------------------1D Binning using TUnfoldBinning 
@@ -559,7 +532,7 @@ double binrngs1[nvar][nHLTmx][nmxbins+1] ={
    TUnfoldBinning *binsGen2D[type][nusedvar][nHLTmx];
    TUnfoldBinning *GenBinning2D[type][nusedvar][nHLTmx];
    
-   //--------------------------------------------Define TUnfoldBinning--------------------------
+   //Read Input Data MC and Response matrix
    for(int ity=0; ity <type; ity++){
      for(int ivar=0; ivar < nusedvar ; ivar++){
        for(int ipt = 0 ; ipt < njetptmn ; ipt++){
@@ -572,7 +545,8 @@ double binrngs1[nvar][nHLTmx][nmxbins+1] ={
          
 	 sprintf(Axisname, "var_%i", var[ivar]);
          RecoBinning1D[ity][ivar][ipt]->AddAxis(Axisname,(ity==0) ? rnbinsx0[var[ivar]][ipt] : rnbinsx1[var[ivar]][ipt],(ity==0) ? rbinrngs0[var[ivar]][ipt]: rbinrngs1[var[ivar]][ipt],false, false);
-//-----------------------------------2D Binning--------------------------------------------------------
+
+         //----------------------------------------------------------------------------------------------
 	 sprintf(RecoBinName, "Detector2d_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
 	 binsRec2D[ity][ivar][ipt] = new TUnfoldBinning(RecoBinName);
 	 
@@ -614,7 +588,7 @@ double binrngs1[nvar][nHLTmx][nmxbins+1] ={
        }
      }
    }
-//-------------------------------------------------------------------------------------------------------- 
+ 
    //Create and book histograms for reco  and gen
    for(int ity=0; ity <type; ity++){
      for(int ivar=0; ivar < nusedvar ; ivar++){
@@ -631,81 +605,55 @@ double binrngs1[nvar][nHLTmx][nmxbins+1] ={
 	 //-----------------------------------------------------------Root Histogram 
 	 sprintf(histname, "reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
          sprintf(title, "reco type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-         h_recovar[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? rnbinsx0[var[ivar]][ipt] : rnbinsx1[var[ivar]][ipt], (ity==0) ? rbinrngs0[var[ivar]][ipt] : rbinrngs1[var[ivar]][ipt]);
+         h_recoevtvar[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? rnbinsx0[var[ivar]][ipt] : rnbinsx1[var[ivar]][ipt], (ity==0) ? rbinrngs0[var[ivar]][ipt] : rbinrngs1[var[ivar]][ipt]);
          sprintf(histname, "fake_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
          sprintf(title, "fake reco type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-         h_recofake[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? rnbinsx0[var[ivar]][ipt]: rnbinsx1[var[ivar]][ipt], (ity==0) ? rbinrngs0[var[ivar]][ipt] : rbinrngs1[var[ivar]][ipt]);
-	 sprintf(histname, "fake_OutE_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);    sprintf(title, "fake_OutE reco type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-	 h_recofakeOutE[ity][ivar][ipt] =(TH1*)h_recofake[ity][ivar][ipt]->Clone(); h_recofakeOutE[ity][ivar][ipt]->Reset(); h_recofakeOutE[ity][ivar][ipt]->SetNameTitle(histname,title);
-
-	 sprintf(histname, "fake_OutH_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);    sprintf(title, "fake_LowH reco type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-	 h_recofakeOutHT[ity][ivar][ipt] = (TH1*)h_recofake[ity][ivar][ipt]->Clone(); h_recofakeOutHT[ity][ivar][ipt]->Reset(); h_recofakeOutHT[ity][ivar][ipt]->SetNameTitle(histname,title);
-         
-	 //--------------------------------------------------------------------
-	 sprintf(histname, "gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);    sprintf(title, "gen type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-         h_genvar[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? nbinsx0[var[ivar]][ipt] : nbinsx1[var[ivar]][ipt], (ity==0) ? binrngs0[var[ivar]][ipt] : binrngs1[var[ivar]][ipt] );
-         
-         sprintf(histname, "miss_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);   sprintf(title, "miss gen type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-         h_genmiss[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? nbinsx0[var[ivar]][ipt] : nbinsx1[var[ivar]][ipt], (ity==0) ? binrngs0[var[ivar]][ipt] : binrngs1[var[ivar]][ipt]);
-         
-         sprintf(histname, "miss_OutE_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);   sprintf(title, "miss OutE gen type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-	 h_genmissOutE[ity][ivar][ipt] = (TH1*)h_genmiss[ity][ivar][ipt]->Clone(); h_genmissOutE[ity][ivar][ipt]->Reset(); h_genmissOutE[ity][ivar][ipt]->SetNameTitle(histname,title);
-	 
-	 sprintf(histname, "miss_OutH_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);   sprintf(title, "miss OutH gen type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-         h_genmissOutHT[ity][ivar][ipt] = (TH1*)h_genmiss[ity][ivar][ipt]->Clone(); h_genmissOutHT[ity][ivar][ipt]->Reset(); h_genmissOutHT[ity][ivar][ipt]->SetNameTitle(histname,title);
-
-	 sprintf(histname, "corr_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);        sprintf(title, "corr type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-	 RM[ity][ivar][ipt] = new TH2D(histname, title, (ity==0) ? rnbinsx0[var[ivar]][ipt]: rnbinsx1[var[ivar]][ipt], (ity==0) ? rbinrngs0[var[ivar]][ipt] : rbinrngs1[var[ivar]][ipt], (ity==0) ? nbinsx0[var[ivar]][ipt] : nbinsx1[var[ivar]][ipt], (ity==0) ? binrngs0[var[ivar]][ipt] : binrngs1[var[ivar]][ipt]);
+         h_recoevtfake[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? rnbinsx0[var[ivar]][ipt]: rnbinsx1[var[ivar]][ipt], (ity==0) ? rbinrngs0[var[ivar]][ipt] : rbinrngs1[var[ivar]][ipt]);
+         sprintf(histname, "gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
+         sprintf(title, "gen type %i pt%i eta0 %i", ity, ipt, var[ivar]);
+         h_genevtvar[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? nbinsx0[var[ivar]][ipt] : nbinsx1[var[ivar]][ipt], (ity==0) ? binrngs0[var[ivar]][ipt] : binrngs1[var[ivar]][ipt] );
+         sprintf(histname, "miss_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
+         sprintf(title, "miss gen type %i pt%i eta0 %i", ity, ipt, var[ivar]);
+         h_genevtmiss[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? nbinsx0[var[ivar]][ipt] : nbinsx1[var[ivar]][ipt], (ity==0) ? binrngs0[var[ivar]][ipt] : binrngs1[var[ivar]][ipt]);
+         sprintf(histname, "corr_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
+         sprintf(title, "corr type %i pt%i eta0 %i", ity, ipt, var[ivar]);
+         RM[ity][ivar][ipt] = new TH2D(histname, title, (ity==0) ? rnbinsx0[var[ivar]][ipt]: rnbinsx1[var[ivar]][ipt], (ity==0) ? rbinrngs0[var[ivar]][ipt] : rbinrngs1[var[ivar]][ipt], (ity==0) ? nbinsx0[var[ivar]][ipt] : nbinsx1[var[ivar]][ipt], (ity==0) ? binrngs0[var[ivar]][ipt] : binrngs1[var[ivar]][ipt]);
 
         //------------------------------------------------------------1D TunfoldBinning --------------------
 
+
+
+
 	 sprintf(histname, "d_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
-	 h_recovar_1D[ity][ivar][ipt] = binsRec1D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
+	 h_recoevtvar_1D[ity][ivar][ipt] = binsRec1D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
 	 
 	 sprintf(histname, "d_fake_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
-	 h_recofake_1D[ity][ivar][ipt] = binsRec1D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
-	
-	 sprintf(histname, "d_fake_OutE_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);  h_recofakeOutE_1D[ity][ivar][ipt] = binsRec1D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
-	 sprintf(histname, "d_fake_OutH_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);  h_recofakeOutHT_1D[ity][ivar][ipt] = binsRec1D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
- 
+	 h_recoevtfake_1D[ity][ivar][ipt] = binsRec1D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
+	 
 	 
 	 sprintf(histname, "d_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
-	 h_genvar_1D[ity][ivar][ipt] = binsGen1D[ity][ivar][ipt]->CreateHistogram(histname);// true);
+	 h_genevtvar_1D[ity][ivar][ipt] = binsGen1D[ity][ivar][ipt]->CreateHistogram(histname);// true);
 	 
 	 sprintf(histname, "d_miss_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
-	 h_genmiss_1D[ity][ivar][ipt] = binsGen1D[ity][ivar][ipt]->CreateHistogram(histname);// true);
+	 h_genevtmiss_1D[ity][ivar][ipt] = binsGen1D[ity][ivar][ipt]->CreateHistogram(histname);// true);
 	 
-	 sprintf(histname, "d_miss_OutE_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);   h_genmissOutE_1D[ity][ivar][ipt] = binsGen1D[ity][ivar][ipt]->CreateHistogram(histname);// true);
-
-	 sprintf(histname, "d_miss_OutH_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);  h_genmissOutHT_1D[ity][ivar][ipt] = binsGen1D[ity][ivar][ipt]->CreateHistogram(histname);// true);
-
 	 sprintf(histname, "d_corr_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
 	 sprintf(Axisname, "%s", vartitle[var[ivar]]);
 	 RM_1D[ity][ivar][ipt] = TUnfoldBinning::CreateHistogramOfMigrations(binsRec1D[ity][ivar][ipt], binsGen1D[ity][ivar][ipt], histname ,0,0, Axisname); 
         //----------------------------------------------------------------2D TUnfoldBinng ----------------
         
          sprintf(histname, "dd_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
-         h_recovar_2D[ity][ivar][ipt] = binsRec2D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
+         h_recoevtvar_2D[ity][ivar][ipt] = binsRec2D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
 
          sprintf(histname, "dd_fake_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
-         h_recofake_2D[ity][ivar][ipt] = binsRec2D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
-
-	 sprintf(histname, "dd_fake_OutE_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]); h_genmissOutE_2D[ity][ivar][ipt] = binsRec2D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
-	 sprintf(histname, "dd_fake_OutH_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]); h_genmissOutHT_2D[ity][ivar][ipt] = binsRec2D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
+         h_recoevtfake_2D[ity][ivar][ipt] = binsRec2D[ity][ivar][ipt]->CreateHistogram(histname);//, true);
 
 
          sprintf(histname, "dd_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
-         h_genvar_2D[ity][ivar][ipt] = binsGen2D[ity][ivar][ipt]->CreateHistogram(histname);// true);
+         h_genevtvar_2D[ity][ivar][ipt] = binsGen2D[ity][ivar][ipt]->CreateHistogram(histname);// true);
 
          sprintf(histname, "dd_miss_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
-         h_genmiss_2D[ity][ivar][ipt] = binsGen2D[ity][ivar][ipt]->CreateHistogram(histname);// true);
-
-        //--------------------------------------------------------------------------------
-        //sprintf(histname, "dd_reco_typ_%i_pt%i_eta0_%i_1", ity, ipt, var[ivar]);  h_recovar_2D1[ity][ivar][ipt] = binsRec2D[ity][ivar][ipt]->CreateHistogram(histname,true);//, true);
-        //sprintf(histname, "dd_fake_reco_typ_%i_pt%i_eta0_%i_1", ity, ipt, var[ivar]);  h_recofake_2D1[ity][ivar][ipt] = binsRec2D[ity][ivar][ipt]->CreateHistogram(histname,true);//, true);
-        //sprintf(histname, "dd_gen_typ_%i_pt%i_eta0_%i_1", ity, ipt, var[ivar]);   h_genvar_2D1[ity][ivar][ipt] = binsGen2D[ity][ivar][ipt]->CreateHistogram(histname,true);// true);
-        //sprintf(histname, "dd_miss_gen_typ_%i_pt%i_eta0_%i_1", ity, ipt, var[ivar]);   h_genmiss_2D1[ity][ivar][ipt] = binsGen2D[ity][ivar][ipt]->CreateHistogram(histname,true);// true);
-      //------------------------------------------
+         h_genevtmiss_2D[ity][ivar][ipt] = binsGen2D[ity][ivar][ipt]->CreateHistogram(histname);// true);
 
          sprintf(histname, "dd_corr_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
          sprintf(Axisname, "%s", vartitle[var[ivar]]);
@@ -761,11 +709,10 @@ double binrngs1[nvar][nHLTmx][nmxbins+1] ={
        if(isRECO && irecovar[ity]==nusedvar){
 	 for(int ivar=0; ivar < nusedvar ; ivar++){
 	   int igobbin1d =  RecoBinning1D[ity][ivar][irecoht]->GetGlobalBinNumber(recovar[ity][ivar]);
-	   h_recovar_1D[ity][ivar][irecoht]->Fill(igobbin1d, weight);
+	   h_recoevtvar_1D[ity][ivar][irecoht]->Fill(igobbin1d, weight);
 	   int igobbin =  RecoBinning2D[ity][ivar][irecoht]->GetGlobalBinNumber(recovar[ity][ivar],HT2);
-	   h_recovar_2D[ity][ivar][irecoht]->Fill(igobbin, weight);
-	  //h_recovar_2D1[ity][ivar][irecoht]->Fill(recovar[ity][ivar],HT2);
-	   h_recovar[ity][ivar][irecoht]->Fill(recovar[ity][ivar],weight);
+	   h_recoevtvar_2D[ity][ivar][irecoht]->Fill(igobbin, weight);
+	   h_recoevtvar[ity][ivar][irecoht]->Fill(recovar[ity][ivar],weight);
 	 }
        }
 
@@ -773,12 +720,11 @@ double binrngs1[nvar][nHLTmx][nmxbins+1] ={
        if(isGEN && igenvar[ity]==nusedvar){
 	 for(int ivar=0; ivar < nusedvar ; ivar++){
 	   int igobbin1d = GenBinning1D[ity][ivar][igenht]->GetGlobalBinNumber(genvar[ity][ivar]);
-           h_genvar_1D[ity][ivar][igenht]->Fill(igobbin1d, weight);
+           h_genevtvar_1D[ity][ivar][igenht]->Fill(igobbin1d, weight);
            
            int igobbin = GenBinning2D[ity][ivar][igenht]->GetGlobalBinNumber(genvar[ity][ivar],HT2gen);
-	   h_genvar_2D[ity][ivar][igenht]->Fill(igobbin, weight);
-	  // h_genvar_2D1[ity][ivar][igenht]->Fill(genvar[ity][ivar],HT2gen);
-	   h_genvar[ity][ivar][igenht]->Fill(genvar[ity][ivar], weight);
+	   h_genevtvar_2D[ity][ivar][igenht]->Fill(igobbin, weight);
+	   h_genevtvar[ity][ivar][igenht]->Fill(genvar[ity][ivar], weight);
 	 }
        }
        
@@ -796,26 +742,24 @@ for(int ivar=0; ivar < nusedvar ; ivar++){
        }else {
 	if(isRECO &&  irecovar[ity]==nusedvar) {
 	   int igobbin1d =  RecoBinning1D[ity][ivar][irecoht]->GetGlobalBinNumber(recovar[ity][ivar]);
-           h_recofake_1D[ity][ivar][irecoht]->Fill(igobbin1d, weight);
+           h_recoevtfake_1D[ity][ivar][irecoht]->Fill(igobbin1d, weight);
 
 	   int igobbin2d =  RecoBinning2D[ity][ivar][irecoht]->GetGlobalBinNumber(recovar[ity][ivar],HT2);
-	   h_recofake_2D[ity][ivar][irecoht]->Fill(igobbin2d, weight);    
-	   //h_recofake_2D1[ity][ivar][irecoht]->Fill(recovar[ity][ivar],HT2);    
-	   h_recofake[ity][ivar][irecoht]->Fill(recovar[ity][ivar],weight);
-           //if(ity==0 && ivar==0){cout << " Reco fake : " << recovar[ity][ivar] << " " << HT2 ;} 
+	   h_recoevtfake_2D[ity][ivar][irecoht]->Fill(igobbin2d, weight);    
+	   h_recoevtfake[ity][ivar][irecoht]->Fill(recovar[ity][ivar],weight);
+    //      if(ity==0 && ivar==0){cout << " Reco fake : " << recovar[ity][ivar] << " " << HT2 ;} 
        }
        	if (isGEN && igenvar[ity]==nusedvar){
 	   int igobbin1d = GenBinning1D[ity][ivar][igenht]->GetGlobalBinNumber(genvar[ity][ivar]);
-           h_genmiss_1D[ity][ivar][igenht]->Fill(igobbin1d, weight);
+           h_genevtmiss_1D[ity][ivar][igenht]->Fill(igobbin1d, weight);
            
 	   int igobbin2d = GenBinning2D[ity][ivar][igenht]->GetGlobalBinNumber(genvar[ity][ivar],HT2gen);
-	   h_genmiss_2D[ity][ivar][igenht]->Fill(igobbin2d, weight);
-	 //  h_genmiss_2D1[ity][ivar][igenht]->Fill(genvar[ity][ivar],HT2gen);
-	   h_genmiss[ity][ivar][igenht]->Fill(genvar[ity][ivar], weight);
-           //if(ity==0 && ivar==0){cout << " Gen miss : " << genvar[ity][ivar] << " " << HT2gen << endl;} 
+	   h_genevtmiss_2D[ity][ivar][igenht]->Fill(igobbin2d, weight);
+	   h_genevtmiss[ity][ivar][igenht]->Fill(genvar[ity][ivar], weight);
+  //        if(ity==0 && ivar==0){cout << " Gen miss : " << genvar[ity][ivar] << " " << HT2gen << endl;} 
          }
        }
-}// for(int ivar=0; ivar < nusedvar ; ivar++) 
+} 
 //cout << endl;
      } // for(int ity =0; ity< type ; ity++)
      
@@ -826,10 +770,10 @@ RootHist->cd();
 for(int ity=0; ity <type; ity++){
    for(int ivar=0; ivar < nusedvar ; ivar++){
      for(int ipt = 0 ; ipt < njetptmn ; ipt++){
-        h_recovar[ity][ivar][ipt]->Write();
-        h_recofake[ity][ivar][ipt]->Write();
-        h_genvar[ity][ivar][ipt]->Write();
-        h_genmiss[ity][ivar][ipt]->Write();
+        h_recoevtvar[ity][ivar][ipt]->Write();
+        h_recoevtfake[ity][ivar][ipt]->Write();
+        h_genevtvar[ity][ivar][ipt]->Write();
+        h_genevtmiss[ity][ivar][ipt]->Write();
         RM[ity][ivar][ipt]->Write();
        }
      }
@@ -839,10 +783,10 @@ TUnfoldBinng1D->cd();
 for(int ity=0; ity <type; ity++){
    for(int ivar=0; ivar < nusedvar ; ivar++){
      for(int ipt = 0 ; ipt < njetptmn ; ipt++){
-        h_recovar_1D[ity][ivar][ipt]->Write();
-        h_recofake_1D[ity][ivar][ipt]->Write();
-        h_genvar_1D[ity][ivar][ipt]->Write();
-        h_genmiss_1D[ity][ivar][ipt]->Write();
+        h_recoevtvar_1D[ity][ivar][ipt]->Write();
+        h_recoevtfake_1D[ity][ivar][ipt]->Write();
+        h_genevtvar_1D[ity][ivar][ipt]->Write();
+        h_genevtmiss_1D[ity][ivar][ipt]->Write();
         RM_1D[ity][ivar][ipt]->Write();
        }
      }
@@ -852,20 +796,18 @@ TUnfoldBinng2D->cd();
 for(int ity=0; ity <type; ity++){
    for(int ivar=0; ivar < nusedvar ; ivar++){
      for(int ipt = 0 ; ipt < njetptmn ; ipt++){
-        h_recovar_2D[ity][ivar][ipt]->Write();
-        h_recofake_2D[ity][ivar][ipt]->Write();
-        h_genvar_2D[ity][ivar][ipt]->Write();
-        h_genmiss_2D[ity][ivar][ipt]->Write();
-
-//	h_ecoevtvar_2D1[ity][ivar][ipt]->Write();
-//        h_recofake_2D1[ity][ivar][ipt]->Write();
- //       h_genvar_2D1[ity][ivar][ipt]->Write();
- //       h_genmiss_2D1[ity][ivar][ipt]->Write();
-
-	RM_2D[ity][ivar][ipt]->Write();
+        h_recoevtvar_2D[ity][ivar][ipt]->Write();
+        h_recoevtfake_2D[ity][ivar][ipt]->Write();
+        h_genevtvar_2D[ity][ivar][ipt]->Write();
+        h_genevtmiss_2D[ity][ivar][ipt]->Write();
+        RM_2D[ity][ivar][ipt]->Write();
        }
      }
    }
+
+
+
+   
    
    outputFile->Close();
    delete outputFile;

@@ -22,25 +22,28 @@
 #include <TProfile.h>
 #include <TStyle.h>
 #include "TPostScript.h"
+
+
+
 #include "CMS_lumi.C"
+
 
 #define PYTHIA
 #define MADGRAPH
 #define Herwig
 //#define REBIN
 #define CLOUSER
-void Unfoldplot(){
+using namespace std;
+int main(){
   
   static const int unfold_ty =1; //Unfold method to be plots 
   static const int nHLTmx=8; //HT2 Range
   static const int nusedvar = 5;   //Event Shape variables used
   static const int ntype =2;
   static const int nmc = 3;
-  static const int ndd = 3; //0 : root Hist, 1: 1D , 2: 2D
-
   bool isstat =1;
   int irbin=1;
-/*  
+  
   TH1D *MC_gen[nmc][ntype][nusedvar][nHLTmx];
   TH1D *MC_reco[nmc][ntype][nusedvar][nHLTmx];
   TH2D *MC_Res[nmc][ntype][nusedvar][nHLTmx];
@@ -57,8 +60,7 @@ void Unfoldplot(){
   TH2D *Corr[unfold_ty][ntype][nusedvar][nHLTmx];
   TH2D *Prob[unfold_ty][ntype][nusedvar][nHLTmx];
   TH2D *Ematrix[unfold_ty][ntype][nusedvar][nHLTmx];
-  */
-
+  
   char histname[100],Title[100], Xaxis[100], Yaxis[100], ratioXaxis[100], ratioYaxis[100],pdfname[100],pdfname1[100],pdfname2[100],LegName[100];
   bool Reco, Gen;
   Int_t color[10] ={1,2,4,5,6,46,3,28,38,42};  // define the color for different histograms
@@ -68,11 +70,6 @@ void Unfoldplot(){
   const int njetetamn=1;  //eta value used 2.4
   static const int nvar=32;  // Total number of eventshape variables
   
-  const  char* ddtag[3]={"","d_","dd_"};
-  const  char* histtag[3]={"","d_","dd_"};
-  const  char* Datadirtag[3]={"Data","Data1D","Data2D"};
-  const  char* foldtag[3]={"Folded","Folded1D","Folded2D"};
-  const  char* dirtag[3]={"Unfold","Unfold1D","Unfold2D"};
   
   const char* Esvsym[5] = {"#tau_{_{#perp} }", "#rho_{Tot}","Y_{2,3}","B_{ T}","#rho^{T}_{Tot}"};  
   const char* Esvname[5] = {"Complement of transverse thrust", "Total jet mass","Three-jet resolution ","Total Jet broadening","Total transverse jet mass"};
@@ -80,11 +77,11 @@ void Unfoldplot(){
   const char* Esvlogx[5] ={"ln(#tau_{ _{#perp } })","ln(#rho_{Tot})","ln(Y_{2,3})", "ln(B_{ T})","ln(#rho^{T}_{Tot})"};
   const char* Esvlogy[5] = {"1/N dN/dln(#tau_{ _{#perp } })","1/N dN/dln(#rho_{Tot})","1/N dN/dln(Y_{2,3})","1/N dN/dln(B_{ T})","1/N dN/dln(#rho^{T}_{Tot})"};
   
-  const  char* regN[4]={"TUnfold_NoReg_typ_","Tunfold_lscan_typ_","Tunfold_scantau_typ_","Tunfold_SURE_typ_"};
-  const  char* reg_refold[4]={"Refold_NoReg_typ_","Tunfold_lscan_Refold_typ_","Tunfold_scantau_Refold_typ_","Tunfold_SURE_Refold_typ_"};
-  const  char* CORR[4]={"corr_NoReg_typ_","Tunfold_lscan_corr_typ_","Tunfold_scantau_corr_typ_","Tunfold_SURE_corr_typ_"};
-  const  char* COVN[4]={"Emat_NoReg_typ_","Tunfold_lscan_Emat_typ_","Tunfold_scantau_Emat_typ_","Tunfold_SURE_Emat_typ_"};
-  const  char* ProbN[4]={"Prob_NoReg_typ_","Tunfold_lscan_probM_typ_","Tunfold_scantau_probM_typ_","Tunfold_SURE_probM_typ_"};
+  const  char* regN[4]={"Tunfold_Noreg_typ_","Tunfold_lscan_typ_","Tunfold_scantau_typ_","Tunfold_SURE_typ_"};
+  const  char* reg_refold[4]={"Tunfold_NoReg_Refold_typ_","Tunfold_lscan_Refold_typ_","Tunfold_scantau_Refold_typ_","Tunfold_SURE_Refold_typ_"};
+  const  char* CORR[4]={"Tunfold_Noreg_corr_typ_","Tunfold_lscan_corr_typ_","Tunfold_scantau_corr_typ_","Tunfold_SURE_corr_typ_"};
+  const  char* COVN[4]={"Tunfold_Noreg_Emat_typ_","Tunfold_lscan_Emat_typ_","Tunfold_scantau_Emat_typ_","Tunfold_SURE_Emat_typ_"};
+  const  char* ProbN[4]={"Tunfold_Noreg_probM_typ_","Tunfold_lscan_probM_typ_","Tunfold_scantau_probM_typ_","Tunfold_SURE_probM_typ_"};
   const  char* dirname[3]={"Pythia8","MG8","HW7"};
   const  char* rebindirname[3]={"RebinPythia8","RebinMG8","RebinHW7"};
 
@@ -108,8 +105,7 @@ void Unfoldplot(){
   int iPeriod = 0;  int iPos=10 ;
   
   //******************************************************************************
-//TFile *Unfoldroot = TFile::Open("/home/suman/Paradox/Charged_ESV/Working/Unfolding/Tunfold_1D/TUnfolding/testunfold2c_unfolded.root");  // Unfolded data 
-TFile *Unfoldroot = TFile::Open("/home/suman/Paradox/Charged_ESV/Working/Unfolding/Tunfold_2D/TUnfolding/Unfolded_Result.root");  // Unfolded data 
+  TFile *Unfoldroot = TFile::Open("/home/suman/Paradox/Charged_ESV/Working/Unfolding/Tunfold_1D/TUnfolding/testunfold2c_unfolded.root");  // Unfolded data 
 //TFile *Unfoldroot = TFile::Open("testunfold2c_unfolded.root");  // Unfolded data 
  
 
@@ -123,35 +119,13 @@ TFile *Unfoldroot = TFile::Open("/home/suman/Paradox/Charged_ESV/Working/Unfoldi
   TCanvas *ratio_can(int Nplot[2],float plegend[7], TH1D* data, TH1D* MC[Nplot[0]], char* lowpadx,const  char* modnam[Nplot[0]],const  char* datanm[1]);
   TCanvas *ratio_can1(int Nplot[3],float plegend[7], TH1D* data, TH1D* MC[Nplot[0]], char* lowpadx, const char* modnam[Nplot[0]], const  char* datanm[3]);
 
-
-for(int idd=0; idd <ndd; idd++){
-
-
-  TH1D *MC_gen[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *MC_reco[nmc][ntype][nusedvar][nHLTmx];
-  TH2D *MC_Res[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *Data_reco[ntype][nusedvar][nHLTmx];
-  TH1D *Psudo_Data_gen[ntype][nusedvar][nHLTmx];
-
-  TH1D *hist_eff[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *hist_fake[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *hist_purity[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *hist_stbl[nmc][ntype][nusedvar][nHLTmx];
-
-  TH1D *Unfold[unfold_ty][ntype][nusedvar][nHLTmx];
-  TH1D *Refold[unfold_ty][ntype][nusedvar][nHLTmx];
-  TH2D *Corr[unfold_ty][ntype][nusedvar][nHLTmx];
-  TH2D *Prob[unfold_ty][ntype][nusedvar][nHLTmx];
-  TH2D *Ematrix[unfold_ty][ntype][nusedvar][nHLTmx];
-
-
 for(int ity=0; ity <ntype; ity++){
       for(int ivar =0 ; ivar < nusedvar ; ivar++){
         for(Int_t ipt =0; ipt < nHLTmx ; ipt++){     
 #ifdef CLOUSER
-          sprintf(histname, "%s/%sgen_typ_%i_pt%i_eta0_%i",Datadirtag[idd],ddtag[idd],ity, ipt, var[ivar]);
+          sprintf(histname, "Data/gen_typ_%i_pt%i_eta0_%i",ity, ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
 #else
-          sprintf(histname, "%s/%sgen_typ_%i_pt%i_eta0_%i",dirname[0],ddtag[idd], ity, ipt, var[ivar]); 
+          sprintf(histname, "%s/gen_typ_%i_pt%i_eta0_%i",dirname[0],ity, ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
 #endif
           Psudo_Data_gen[ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);
           Psudo_Data_gen[ity][ivar][ipt]->Rebin(irbin);
@@ -164,7 +138,9 @@ for(int ity=0; ity <ntype; ity++){
 	  for(int ix=1; ix < NbinxD+1 ; ix++){
 	  NewData->SetBinContent(ix,Psudo_Data_gen[ity][ivar][ipt]->GetBinContent(ix));
 	  NewData->SetBinError(ix, sqrt(Psudo_Data_gen[ity][ivar][ipt]->GetBinError(ix)*Psudo_Data_gen[ity][ivar][ipt]->GetBinError(ix)));
-          }
+       }
+
+
 	}
       }
     }
@@ -174,29 +150,41 @@ for(int ity=0; ity <ntype; ity++){
     for(int ity=0; ity <ntype; ity++){
       for(int ivar =0 ; ivar < nusedvar ; ivar++){
 	for(Int_t ipt =0; ipt < nHLTmx ; ipt++){     
-	  sprintf(histname, "%s/%sgen_typ_%i_pt%i_eta0_%i",dirname[imc],ddtag[idd], ity, ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
+#ifdef REBIN
+	  sprintf(histname, "%s/rebin_gen_typ_%i_pt%i_eta0_%i",rebindirname[imc], ity, ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
+#else
+	  sprintf(histname, "%s/gen_typ_%i_pt%i_eta0_%i",dirname[imc],ity, ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
+#endif
 	  MC_gen[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);
 	  MC_gen[imc][ity][ivar][ipt]->Rebin(irbin);
 
 	  
-	  sprintf(histname, "%s/%sreco_typ_%i_pt%i_eta0_%i", dirname[imc], ddtag[idd], ity,  ipt, var[ivar]); 
+#ifdef REBIN
+	  sprintf(histname, "%s/rebin_reco_typ_%i_pt%i_eta0_%i",rebindirname[imc],ity, ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
+#else
+	  sprintf(histname, "%s/reco_typ_%i_pt%i_eta0_%i", dirname[imc], ity,  ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
+#endif
 	  MC_reco[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);
 	  cout << histname << endl;
 	  //--------------------------------------------
 	  //Read Reso
-	  sprintf(histname, "%s/%scorr_typ_%i_pt%i_eta0_%i",dirname[imc], ddtag[idd],ity,  ipt, var[ivar]); 
+#ifdef REBIN
+	  sprintf(histname, "%s/Rebin_corr_typ_%i_pt%i_eta0_%i", rebindirname[imc],ity, ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
+#else
+	  sprintf(histname, "%s/corr_typ_%i_pt%i_eta0_%i",dirname[imc], ity,  ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
+#endif
 	  MC_Res[imc][ity][ivar][ipt] = (TH2D*) Unfoldroot->Get(histname);
 	  cout << histname << endl;
 	  
 	  //------------------------------------------------------
-	  sprintf(histname,"%s/%smiss_gen_typ_%i_pt%i_eta0_%i",dirname[imc],ddtag[idd], ity, ipt, var[ivar]);
-	  hist_eff[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);  cout << histname << endl;
-	  sprintf(histname,"%s/%sfake_reco_typ_%i_pt%i_eta0_%i",dirname[imc],ddtag[idd], ity, ipt, var[ivar]);
-	  hist_fake[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname); cout << histname << endl;
-	  sprintf(histname,"%s/%sPurity_%i_pt%i_eta0_%i", dirname[imc],ddtag[idd], ity, ipt, var[ivar]);
-	  hist_purity[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname); cout << histname << endl;
-	  sprintf(histname,"%s/%sstability_%i_pt%i_eta0_%i", dirname[imc],ddtag[idd], ity, ipt, var[ivar]);
-	  hist_stbl[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname); cout << histname << endl;
+	  sprintf(histname,"Unfold/miss_gen_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
+	  hist_eff[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);
+	  sprintf(histname,"Unfold/fake_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
+	  hist_fake[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);
+	  sprintf(histname,"Unfold/Purity1_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
+	  hist_purity[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);
+	  sprintf(histname,"Unfold/stability_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
+	  hist_stbl[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);
 	  
 	}
       }
@@ -207,11 +195,17 @@ for(int ity=0; ity <ntype; ity++){
   for(int ity=0; ity <ntype; ity++){
     for(int ivar =0 ; ivar < nusedvar ; ivar++){
       for(Int_t ipt =0; ipt < nHLTmx ; ipt++){
-	sprintf(histname, "%s/%sreco_typ_%i_pt%i_eta0_%i",Datadirtag[idd], ddtag[idd], ity, ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
+#ifdef REBIN
+	sprintf(histname, "RebinData/rebin_Data_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
+#else
+	sprintf(histname, "Data/reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]); //reco_typ_1_pt6_eta0_15
+#endif
 	Data_reco[ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);
 	cout << histname << endl;     
       }
+      
     }
+    
   }
   
   //---------------------------------------------------------//Read Unfolded
@@ -219,7 +213,7 @@ for(int ity=0; ity <ntype; ity++){
     for(int ity=0; ity <ntype; ity++){
       for(int ivar=0; ivar < nusedvar ; ivar ++){
 	for(int ipt = 0 ; ipt < nHLTmx ; ipt++){
-	  sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",dirtag[idd] ,ddtag[idd],regN[iun],ity,ipt, var[ivar]); 
+	  sprintf(histname, "Unfold/%s%i_pt%i_eta0_%i",regN[iun],ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
 	  Unfold[iun][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);
 	  cout << histname << endl;
           
@@ -232,11 +226,12 @@ for(int ity=0; ity <ntype; ity++){
           NewData->SetBinContent(ix, Unfold[iun][ity][ivar][ipt]->GetBinContent(ix));
           NewData->SetBinError(ix, sqrt( Unfold[iun][ity][ivar][ipt]->GetBinError(ix)* Unfold[iun][ity][ivar][ipt]->GetBinError(ix)));
        }
-	  sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",dirtag[idd] ,ddtag[idd],CORR[iun],ity,ipt, var[ivar]); 
+	 
+	  sprintf(histname, "Unfold/%s%i_pt%i_eta0_%i",CORR[iun],ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
           Corr[iun][ity][ivar][ipt]=(TH2D*) Unfoldroot->Get(histname);
-	  sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",dirtag[idd] ,ddtag[idd],COVN[iun],ity,ipt, var[ivar]); 
+	  sprintf(histname, "Unfold/%s%i_pt%i_eta0_%i",COVN[iun],ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
            Ematrix[iun][ity][ivar][ipt]= (TH2D*) Unfoldroot->Get(histname);
-	  sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",dirtag[idd] ,ddtag[idd],ProbN[iun],ity,ipt, var[ivar]); 
+	  sprintf(histname, "Unfold/%s%i_pt%i_eta0_%i",ProbN[iun],ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
 	   Prob[iun][ity][ivar][ipt] = (TH2D*) Unfoldroot->Get(histname);
 	}
       }
@@ -248,9 +243,10 @@ for(int ity=0; ity <ntype; ity++){
     for(int ity=0; ity <ntype; ity++){
       for(int ivar=0; ivar < nusedvar ; ivar ++){
 	for(int ipt = 0 ; ipt < nHLTmx ; ipt++){
-	  sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",dirtag[idd] ,ddtag[idd],reg_refold[iun],ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
+	  sprintf(histname, "Unfold/%s%i_pt%i_eta0_%i",reg_refold[iun],ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
 	  Refold[iun][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);
 	  cout << histname << endl;
+	  
 	}
       }
     } //unfolded histUnfold
@@ -303,7 +299,7 @@ for(int ity=0; ity <ntype; ity++){
 	cpt0 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle, MCinput_index,data_index));
 	CMS_lumi( cpt0, iPeriod, iPos ); cpt0->Update();
 	
-	sprintf(pdfname, "%sRecoEVS_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sRecoEVS_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sRecoEVS_Plot.pdf)",ddtag[idd]); //TData_recoed_typ_0_pt0_eta0_3
+	sprintf(pdfname, "RecoEVS_Plot.pdf("); sprintf(pdfname1, "RecoEVS_Plot.pdf"); sprintf(pdfname2, "RecoEVS_Plot.pdf)"); //TData_recoed_typ_0_pt0_eta0_3
 	if(ity==0 && ivar==0 && ipt ==0){cpt0->Print(pdfname,"pdf");
 	}else if(ity==1 && ivar==4 && ipt==7) {cpt0->Print(pdfname2,"pdf");
 	}else{  cpt0->Print(pdfname1,"pdf");};
@@ -320,9 +316,9 @@ for(int ity=0; ity <ntype; ity++){
     for(int ivar =0 ; ivar < nusedvar ; ivar++){
       for(int ipt = 0 ; ipt <nHLTmx; ipt++){
       
-      sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"ProjectX_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
+      sprintf(histname, "Pythia8/%s%i_pt%i_eta0_%i","ProjectX_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
       TH1* RMx=(TH1D*) Unfoldroot->Get(histname);
-      sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"Recominusfake_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
+      sprintf(histname, "Pythia8/%s%i_pt%i_eta0_%i","Recominusfake_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
       TH1* RecoFake=(TH1D*) Unfoldroot->Get(histname);
       cpt9->cd();
       SetMycanvas(cpt9,0,0.1,0.15,0.05,0.12);
@@ -362,7 +358,7 @@ for(int ity=0; ity <ntype; ity++){
         cpt9 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle, MCinput_index,data_index));
         CMS_lumi( cpt9, iPeriod, iPos ); cpt9->Update();
 
-      sprintf(pdfname, "%sRM_ProjectX_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sRM_ProjectX_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sRM_ProjectX_Plot.pdf)",ddtag[idd]); //TData_recoed_typ_0_pt0_eta0_3
+      sprintf(pdfname, "RM_ProjectX_Plot.pdf("); sprintf(pdfname1, "RM_ProjectX_Plot.pdf"); sprintf(pdfname2, "RM_ProjectX_Plot.pdf)"); //TData_recoed_typ_0_pt0_eta0_3
         if(ity==0 && ivar==0 && ipt ==0){cpt9->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 && ipt==7) {cpt9->Print(pdfname2,"pdf");
         }else{  cpt9->Print(pdfname1,"pdf");};
@@ -376,9 +372,9 @@ for(int ity=0; ity <ntype; ity++){
     for(int ivar =0 ; ivar < nusedvar ; ivar++){
       for(int ipt = 0 ; ipt <nHLTmx; ipt++){
 
-      sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"ProjectY_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
+      sprintf(histname, "Pythia8/%s%i_pt%i_eta0_%i","ProjectY_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
       TH1* RMx=(TH1D*) Unfoldroot->Get(histname);
-      sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"Genminusmiss_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
+      sprintf(histname, "Pythia8/%s%i_pt%i_eta0_%i","Genminusmiss_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
       TH1* GenMiss=(TH1D*) Unfoldroot->Get(histname);
       cpt9->cd();
       SetMycanvas(cpt9,0,0.1,0.15,0.05,0.12);
@@ -420,7 +416,7 @@ for(int ity=0; ity <ntype; ity++){
 
 
 
-        sprintf(pdfname, "%sRM_ProjectY_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sRM_ProjectY_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sRM_ProjectY_Plot.pdf)",ddtag[idd]); //TData_recoed_typ_0_pt0_eta0_3
+        sprintf(pdfname, "RM_ProjectY_Plot.pdf("); sprintf(pdfname1, "RM_ProjectY_Plot.pdf"); sprintf(pdfname2, "RM_ProjectY_Plot.pdf)"); //TData_recoed_typ_0_pt0_eta0_3
         if(ity==0 && ivar==0 && ipt ==0){cpt9->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 && ipt==7) {cpt9->Print(pdfname2,"pdf");
         }else{  cpt9->Print(pdfname1,"pdf");};
@@ -435,7 +431,7 @@ for(int ity=0; ity <ntype; ity++){
     for(int ivar =0 ; ivar < nusedvar ; ivar++){
       for(int ipt = 0 ; ipt <nHLTmx; ipt++){
 
-      sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",foldtag[idd],ddtag[idd],"Fold_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
+      sprintf(histname, "fold/%s%i_pt%i_eta0_%i","Fold_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
       TH1D* GenFold=(TH1D*)Unfoldroot->Get(histname);
         
         TH1D *MyHist  = (TH1D*)GenFold->Clone();
@@ -454,7 +450,7 @@ for(int ity=0; ity <ntype; ity++){
         const char *MCinput_index[imc+1];
         const char *data_index[1];
         for(int iout = 0 ; iout < imc ; iout++){
-         sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"Recominusfake_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
+         sprintf(histname, "Pythia8/%s%i_pt%i_eta0_%i","Recominusfake_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
          //MC_input[iout]=(TH1D*) Unfoldroot->Get(histname);
           MC_input[iout] = (TH1D*) MC_reco[iout][ity][ivar][ipt]->Clone();
           Integralhist(MC_input[iout]);
@@ -475,7 +471,7 @@ for(int ity=0; ity <ntype; ity++){
         cpt9 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle, MCinput_index,data_index));
         CMS_lumi( cpt9, iPeriod, iPos ); cpt9->Update();
 
-        sprintf(pdfname, "%sGenfold_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sGenfold_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sGenfold_Plot.pdf)",ddtag[idd]); //TData_recoed_typ_0_pt0_eta0_3
+        sprintf(pdfname, "Genfold_Plot.pdf("); sprintf(pdfname1, "Genfold_Plot.pdf"); sprintf(pdfname2, "Genfold_Plot.pdf)"); //TData_recoed_typ_0_pt0_eta0_3
         if(ity==0 && ivar==0 && ipt ==0){cpt9->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 && ipt==7) {cpt9->Print(pdfname2,"pdf");
         }else{  cpt9->Print(pdfname1,"pdf");};
@@ -509,7 +505,7 @@ for(int  imc =0; imc < nmc ; imc++){
 	TLegend *leg1 = new TLegend(0.05,0.7,0.4,0.8);     
 	CTLegend(leg1,Modelnm[imc],Title); leg1->AddEntry((TObject*)0,itypeN[ity] , "");leg1->SetTextColor(-8);leg1->Draw();
         CMS_lumi( cpt8, iPeriod, iPos ); cpt8->Update();
-	sprintf(pdfname, "%sResponse_Mat%i.pdf(",ddtag[idd],imc); sprintf(pdfname1, "%sResponse_Mat%i.pdf",ddtag[idd],imc); sprintf(pdfname2, "%sResponse_Mat%i.pdf)",ddtag[idd],imc); //TData_recoed_typ_0_pt0_eta0_3
+	sprintf(pdfname, "Response_Mat%i.pdf(",imc); sprintf(pdfname1, "Response_Mat%i.pdf",imc); sprintf(pdfname2, "Response_Mat%i.pdf)",imc); //TData_recoed_typ_0_pt0_eta0_3
         if(ity==0 && ivar==0 && ipt ==0){cpt8->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 && ipt==7) {cpt8->Print(pdfname2,"pdf");
         }else{  cpt8->Print(pdfname1,"pdf");};
@@ -581,31 +577,29 @@ for(int  imc =0; imc < nmc ; imc++){
         if(ipt==7){leg2->Draw();}
    	 cpt4->Update();
     }
-    sprintf(pdfname, "%seffi_plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%seffi_plot.pdf",ddtag[idd]); sprintf(pdfname2, "%seffi_plot.pdf)",ddtag[idd]);
+    sprintf(pdfname, "effi_plot.pdf("); sprintf(pdfname1, "effi_plot.pdf"); sprintf(pdfname2, "effi_plot.pdf)");
         if(ity==0 && ivar==0 ){cpt1->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 ) {cpt1->Print(pdfname2,"pdf");
         }else{  cpt1->Print(pdfname1,"pdf");};
 	cpt1->Clear();
-    sprintf(pdfname, "%spuri_plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%spuri_plot.pdf",ddtag[idd]); sprintf(pdfname2, "%spuri_plot.pdf)",ddtag[idd]); 
+    sprintf(pdfname, "puri_plot.pdf("); sprintf(pdfname1, "puri_plot.pdf"); sprintf(pdfname2, "puri_plot.pdf)"); 
         if(ity==0 && ivar==0 ){cpt2->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 ) {cpt2->Print(pdfname2,"pdf");
         }else{  cpt2->Print(pdfname1,"pdf");};
 	cpt2->Clear();
-     sprintf(pdfname, "%sfake_plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sfake_plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sfake_plot.pdf)",ddtag[idd]); 
+     sprintf(pdfname, "fake_plot.pdf("); sprintf(pdfname1, "fake_plot.pdf"); sprintf(pdfname2, "fake_plot.pdf)"); 
         if(ity==0 && ivar==0 ){cpt3->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4) {cpt3->Print(pdfname2,"pdf");
         }else{  cpt3->Print(pdfname1,"pdf");};
 	cpt3->Clear();
-     sprintf(pdfname, "%sstab_plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sstab_plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sstab_plot.pdf)",ddtag[idd]); 
+     sprintf(pdfname, "stab_plot.pdf("); sprintf(pdfname1, "stab_plot.pdf"); sprintf(pdfname2, "stab_plot.pdf)"); 
         if(ity==0 && ivar==0 ){cpt4->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 ) {cpt4->Print(pdfname2,"pdf");
         }else{  cpt4->Print(pdfname1,"pdf");};
 	cpt4->Clear();
     
      }
-  }   
-
-cout << "Effi, Stabilty, fake, purity " <<endl;
+  }    
   
   //Unfold comparisoin
   for(int iun=0; iun < unfold_ty; iun++){
@@ -650,7 +644,7 @@ cout << "Effi, Stabilty, fake, purity " <<endl;
 	  cpt0 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle,MCinput_index,data_index));
 	  CMS_lumi( cpt0, iPeriod, iPos ); cpt0->Update();
 	  
-	  sprintf(pdfname, "%sTUnfold_plot_%i.pdf(" ,ddtag[idd],iun); sprintf(pdfname1, "%sTUnfold_plot_%i.pdf" ,ddtag[idd],iun);sprintf(pdfname2, "%sTUnfold_plot_%i.pdf)" ,ddtag[idd],iun); //Tunfolded_typ_0_pt0_eta0_3
+	  sprintf(pdfname, "TUnfold_plot_%i.pdf(" ,iun); sprintf(pdfname1, "TUnfold_plot_%i.pdf" ,iun);sprintf(pdfname2, "TUnfold_plot_%i.pdf)" ,iun); //Tunfolded_typ_0_pt0_eta0_3
 	  if(ity==0 && ivar==0 && ipt ==0){cpt0->Print(pdfname,"pdf");
 	  }else if(ity==1 && ivar==4 && ipt==7) {cpt0->Print(pdfname2,"pdf");
 	  }else{cpt0->Print(pdfname,"pdf");};
@@ -670,7 +664,7 @@ cout << "Effi, Stabilty, fake, purity " <<endl;
         CTLegend(leg1,"Unfolded with Pythia8",Title); leg1->AddEntry((TObject*)0,itypeN[ity] , ""); leg1->AddEntry((TObject*)0,Unfoldtype[iun] , "");leg1->SetTextColor(-8);leg1->Draw();
        
        CMS_lumi( cpt5, iPeriod, iPos ); cpt5->Update();       
-       sprintf(pdfname, "%sTUnfold_corr_%i.pdf(" ,ddtag[idd],iun); sprintf(pdfname1, "%sTUnfold_corr_%i.pdf" ,ddtag[idd],iun);sprintf(pdfname2, "%sTUnfold_corr_%i.pdf)" ,ddtag[idd],iun); //Tunfolded_typ_0_pt0_eta0_3
+       sprintf(pdfname, "TUnfold_corr_%i.pdf(" ,iun); sprintf(pdfname1, "TUnfold_corr_%i.pdf" ,iun);sprintf(pdfname2, "TUnfold_corr_%i.pdf)" ,iun); //Tunfolded_typ_0_pt0_eta0_3
           if(ity==0 && ivar==0 && ipt ==0){cpt5->Print(pdfname,"pdf");
           }else if(ity==1 && ivar==4 && ipt==7) {cpt5->Print(pdfname2,"pdf");
           }else{cpt5->Print(pdfname,"pdf");};
@@ -680,7 +674,7 @@ cout << "Effi, Stabilty, fake, purity " <<endl;
        Set2dHist(Prob[iun][ity][ivar][ipt],lplot_xtitle, lplot_xtitle,"Probability",titoff1, titsize1);
        Prob[iun][ity][ivar][ipt]->Draw("colz"); leg1->Draw();
        CMS_lumi( cpt6, iPeriod, iPos ); cpt6->Update();
-       sprintf(pdfname, "%sTUnfold_prob_%i.pdf(" ,ddtag[idd],iun); sprintf(pdfname1, "%sTUnfold_prob_%i.pdf" ,ddtag[idd],iun);sprintf(pdfname2, "%sTUnfold_prob_%i.pdf)" ,ddtag[idd],iun); //Tunfolded_typ_0_pt0_eta0_3
+       sprintf(pdfname, "TUnfold_prob_%i.pdf(" ,iun); sprintf(pdfname1, "TUnfold_prob_%i.pdf" ,iun);sprintf(pdfname2, "TUnfold_prob_%i.pdf)" ,iun); //Tunfolded_typ_0_pt0_eta0_3
           if(ity==0 && ivar==0 && ipt ==0){cpt6->Print(pdfname,"pdf");
           }else if(ity==1 && ivar==4 && ipt==7) {cpt6->Print(pdfname2,"pdf");
           }else{cpt6->Print(pdfname,"pdf");};
@@ -690,7 +684,7 @@ cout << "Effi, Stabilty, fake, purity " <<endl;
        Set2dHist(Ematrix[iun][ity][ivar][ipt],lplot_xtitle, lplot_xtitle,"",titoff1, titsize1);
        Ematrix[iun][ity][ivar][ipt]->Draw("colz"); leg1->Draw();
        CMS_lumi( cpt7, iPeriod, iPos ); cpt7->Update();
-       sprintf(pdfname, "%sTUnfold_COV_%i.pdf(" ,ddtag[idd],iun); sprintf(pdfname1, "%sTUnfold_COV_%i.pdf" ,ddtag[idd],iun);sprintf(pdfname2, "%sTUnfold_COV_%i.pdf)" ,ddtag[idd], iun); //Tunfolded_typ_0_pt0_eta0_3
+       sprintf(pdfname, "TUnfold_COV_%i.pdf(" ,iun); sprintf(pdfname1, "TUnfold_COV_%i.pdf" ,iun);sprintf(pdfname2, "TUnfold_COV_%i.pdf)" ,iun); //Tunfolded_typ_0_pt0_eta0_3
           if(ity==0 && ivar==0 && ipt ==0){cpt7->Print(pdfname,"pdf");
           }else if(ity==1 && ivar==4 && ipt==7) {cpt7->Print(pdfname2,"pdf");
           }else{cpt7->Print(pdfname,"pdf");};
@@ -708,9 +702,7 @@ int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
         for(int ipt = 0 ; ipt <nHLTmx; ipt++){
           
 	  TH1D *MyHist  = (TH1D*) Unfold[0][ity][ivar][ipt]->Clone();
-    	  cout << MyHist->GetName() << endl;
-
-	  Integralhist(MyHist);
+    	  Integralhist(MyHist);
          // divBybinWidth(MyHist);
           Myplotset(MyHist,0,0);
 
@@ -736,15 +728,14 @@ int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
           //MC_input[iout]->Rebin(2);
             Integralhist(unfold_input[iout]);
           //divBybinWidth(unfold_input[iout]);
-          //MCinput_index[iout]= Unfoldtype[iout]; 
-          //MCinput_index[iout]= closuretype[iout];
+          //MCinput_index[iout]= Unfoldtype[iout]; }
+          //MCinput_index[iout]= closuretype[iout]; }
 
            MCinput_index[iout]= mcnamegen[iout];
       }
 
       for(int iout = 0 ; iout < unfold_ty ; iout++){
             cout << unfold_input[iout]->GetTitle()<< endl;
-            cout << unfold_input[iout]->GetName()<< endl;
             cout <<  MCinput_index[iout] << endl;
           }
 
@@ -766,7 +757,7 @@ int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
           cpt0 =(TCanvas*)(ratio_can1(num1, lpos1, MyHist, unfold_input, lplot_xtitle,MCinput_index,data_index));
           CMS_lumi( cpt0, iPeriod, iPos ); cpt0->Update();
 
-          sprintf(pdfname, "%sunfold_plot_%i.pdf(", ddtag[idd],1234); sprintf(pdfname1, "%sunfold_plot_%i.pdf" ,ddtag[idd],1234);sprintf(pdfname2, "%sunfold_plot_%i.pdf)",ddtag[idd],1234); //TRefolded_typ_0_pt0_eta0_3
+          sprintf(pdfname, "unfold_plot_%i.pdf(", 1234); sprintf(pdfname1, "unfold_plot_%i.pdf" ,1234);sprintf(pdfname2, "unfold_plot_%i.pdf)",1234); //TRefolded_typ_0_pt0_eta0_3
           if(ity==0 && ivar==0 && ipt ==0){cpt0->Print(pdfname,"pdf");
           }else if(ity==1 && ivar==4 && ipt==7) {cpt0->Print(pdfname2,"pdf");
           }else{cpt0->Print(pdfname,"pdf");};
@@ -818,7 +809,7 @@ int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
 	  cpt0 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle,MCinput_index,data_index));
 	  CMS_lumi( cpt0, iPeriod, iPos ); cpt0->Update();
 	  
-	  sprintf(pdfname, "%sRefold_plot_%i.pdf(" ,ddtag[idd],iun); sprintf(pdfname1, "%sRefold_plot_%i.pdf" ,ddtag[idd],iun);sprintf(pdfname2, "%sRefold_plot_%i.pdf)" ,ddtag[idd],iun); //TRefolded_typ_0_pt0_eta0_3
+	  sprintf(pdfname, "Refold_plot_%i.pdf(" ,iun); sprintf(pdfname1, "Refold_plot_%i.pdf" ,iun);sprintf(pdfname2, "Refold_plot_%i.pdf)" ,iun); //TRefolded_typ_0_pt0_eta0_3
 	  if(ity==0 && ivar==0 && ipt ==0){cpt0->Print(pdfname,"pdf");
 	  }else if(ity==1 && ivar==4 && ipt==7) {cpt0->Print(pdfname2,"pdf");
 	  }else{cpt0->Print(pdfname,"pdf");};
@@ -872,7 +863,7 @@ int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
           cpt0 =(TCanvas*)(ratio_can1(num1, lpos1, MyHist, Refold_input, lplot_xtitle,MCinput_index,data_index));
           CMS_lumi( cpt0, iPeriod, iPos ); cpt0->Update();
 
-          sprintf(pdfname, "%sRefold_plot_%i.pdf(",ddtag[idd], 1234); sprintf(pdfname1, "%sRefold_plot_%i.pdf" ,ddtag[idd],1234);sprintf(pdfname2, "%sRefold_plot_%i.pdf)",ddtag[idd],1234); //TRefolded_typ_0_pt0_eta0_3
+          sprintf(pdfname, "Refold_plot_%i.pdf(", 1234); sprintf(pdfname1, "Refold_plot_%i.pdf" ,1234);sprintf(pdfname2, "Refold_plot_%i.pdf)",1234); //TRefolded_typ_0_pt0_eta0_3
           if(ity==0 && ivar==0 && ipt ==0){cpt0->Print(pdfname,"pdf");
           }else if(ity==1 && ivar==4 && ipt==7) {cpt0->Print(pdfname2,"pdf");
           }else{cpt0->Print(pdfname,"pdf");};
@@ -882,8 +873,8 @@ int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
   } 
  
 
-} 
   
+ return 0;
 }  // end of main program
 
 

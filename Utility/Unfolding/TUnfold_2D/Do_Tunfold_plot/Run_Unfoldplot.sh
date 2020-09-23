@@ -1,1 +1,1 @@
-root -l -q -b Unfoldplot.C
+root -l -q -b -t  Unfoldplot.C

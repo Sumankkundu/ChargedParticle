@@ -1,0 +1,6 @@
+<class name="TUnfoldV17"/>
+<class name="TUnfoldIterativeEMV17"/>
+<class name="TUnfoldSysV17"/>
+<class name="TUnfoldDensityV17"/>
+<class name="TUnfoldBinningV17"/>
+<class name="TUnfoldBinningXMLV17"/>
