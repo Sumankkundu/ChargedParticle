@@ -145,26 +145,22 @@ void testUnfold2c(){
 
 //----------------------------------Different Binning ----------------------------------------------
 for(int idd=0; idd <3; idd++){  //0 : Root Hist 1: 1D TunfoldBinning 2: 2D TUnfoldBinning
-
-//----------------------for reco and gen bin number
-//  int rnbinsx[type][nusedvar][nHLTmx];
-//  int gnbinsx[type][nusedvar][nHLTmx];
-
-  //-------------------------Input Histograms, RM 
   TH1D *MC_Reco[nmc][type][nusedvar][njetptmn];  //Reconstructed MC
   TH1D *MC_fake[nmc][type][nusedvar][njetptmn];  //Fake :  Reco but No Gen
   TH1D *MC_fakerate[nmc][type][nusedvar][njetptmn];  //Fake :  Reco but No Gen
   TH1D *MC_background[nmc][type][nusedvar][njetptmn];  //Fake :  Reco but No Gen
+  TH1D *MC_reco_fake[nmc][type][nusedvar][njetptmn];  //Fake :  Reco but No Gen
 
   TH1D *MC_Gen[nmc][type][nusedvar][njetptmn];   //Generator MC
   TH1D *MC_miss[nmc][type][nusedvar][njetptmn];   //Miss:  No Reco but in Gen
+  TH1D *MC_Gen_miss[nmc][type][nusedvar][njetptmn];   //Miss:  No Reco but in Gen
   TH1D *MC_missrate[nmc][type][nusedvar][njetptmn];   //Miss:  No Reco but in Gen
   TH1D *MC_misscorr[nmc][type][nusedvar][njetptmn];   //Miss:  No Reco but in Gen
 
-  TH1D *PsudoData_Gen[nmc][type][nusedvar][njetptmn];    //Gen Level Psudo Data
-  TH2D *h2dGenDetMC[nmc][type][nusedvar][njetptmn];   // MC generator Vs Reco
-  TH1D *RMX[nmc][type][nusedvar][njetptmn];  //Reconstructed MC
-  TH1D *RMY[nmc][type][nusedvar][njetptmn];  //Reconstructed MC
+  TH1D *PsudoData_Gen[nmc][type][nusedvar][njetptmn];    //Gen Level Psudo Data Only for Closure
+  TH2D *h2dGenDetMC[nmc][type][nusedvar][njetptmn];   // MC Response Matrix
+  TH1D *RMX[nmc][type][nusedvar][njetptmn];  //Response Matrix ProjectionX
+  TH1D *RMY[nmc][type][nusedvar][njetptmn];  //RM projetcion
 
   TH1D *Data_Reco[type][nusedvar][njetptmn];    //Reconstructed Data
 
@@ -176,8 +172,8 @@ for(int idd=0; idd <3; idd++){  //0 : Root Hist 1: 1D TunfoldBinning 2: 2D TUnfo
   TUnfoldBinning *binsRec[type][nusedvar][njetptmn]; //Binning Name 
   TUnfoldBinning *RecoBinning[type][nusedvar][njetptmn]; //Node Name
 
-  TUnfoldBinning *binsGen[type][nusedvar][njetptmn];
-  TUnfoldBinning *GenBinning[type][nusedvar][njetptmn];
+  TUnfoldBinning *binsGen[type][nusedvar][njetptmn];  //Gen Binning
+  TUnfoldBinning *GenBinning[type][nusedvar][njetptmn];  //Gen Node 
 
 //---------------------------------------------Binning-------------------------------------
 if(idd>0){
@@ -187,7 +183,7 @@ for(int ity=0; ity <type; ity++){
         sprintf(histname, "%s/Detector%s_typ_%i_pt%i_eta0_%i", Dirbin[idd], bintag[idd], ity, ipt, var[ivar]);
         cout << histname <<endl;
         inputbinning->GetObject(histname, binsRec[ity][ivar][ipt]);
-         binsRec[ity][ivar][ipt]->PrintStream(cout);
+        binsRec[ity][ivar][ipt]->PrintStream(cout);
         
 	sprintf(histname, "%s/Generator%s_typ_%i_pt%i_eta0_%i", Dirbin[idd], bintag[idd], ity, ipt, var[ivar]);
         inputbinning->GetObject(histname, binsGen[ity][ivar][ipt]);
@@ -205,12 +201,11 @@ for(int ity=0; ity <type; ity++){
 	sprintf(histname, "%s/%sreco_typ_%i_pt%i_eta0_%i", Dirhist[idd],histtag[idd], ity, ipt, var[ivar]); 
 	TH1D *RecoData =(TH1D*) inputData->Get(histname);
 	//for(int i=1 ; i< RecoData->GetNbinsX()+1; i++){ if(RecoData->GetBinContent(i) == 0) {cout << " Data Bin entry Nil : bin no : "<< i << endl;}}
-
-#ifdef CLOUSER
 	sprintf(histname, "%s/%sgen_typ_%i_pt%i_eta0_%i", Dirhist[idd],histtag[idd], ity, ipt, var[ivar]); 
+#ifdef CLOUSER
 	TH1D *PsudoDataGen= (TH1D*)inputData->Get(histname);
 #else
-	TH1D *PsudoDataGen = (TH1D*)inputMC[0]->Get(histname);
+	TH1D *PsudoDataGen = (TH1D*)inputMC[umc]->Get(histname);
 #endif
 
 for (int imc=0; imc<nmc ; imc++){
@@ -219,7 +214,6 @@ for (int imc=0; imc<nmc ; imc++){
        TH1D *RecoMC = (TH1D*)inputMC[imc]->Get(histname);      cout << histname ;
       
        //if(recobins!=Data_Reco[ity][ivar][ipt]->GetNbinsX()) {cout << "reco Bin miss Match, Check bins"<<endl;}
-       
        //-----------------------------------MC Fake
        sprintf(histname, "%s/%sfake_reco_typ_%i_pt%i_eta0_%i", Dirhist[idd],histtag[idd], ity, ipt, var[ivar]); 
        TH1D *RecoMC_Fake = (TH1D*)inputMC[imc]->Get(histname);
@@ -306,26 +300,39 @@ for (int imc=0; imc<nmc ; imc++){
          double content = RecoMC->GetBinContent(i); double factor = RecoMC_Fake->GetBinContent(i);
          content -= factor;  RecoFakeCorrect->SetBinContent(i, content);
        }
+       MC_reco_fake[imc][ity][ivar][ipt]= (TH1D*)RecoFakeCorrect->Clone();
 
        for (int i = 1; i <= GenMissCorrect->GetNbinsX(); ++i) {
         double content = GenMC->GetBinContent(i); double factor = GenMC_Miss->GetBinContent(i);
          content -= factor;  GenMissCorrect->SetBinContent(i, content);
        }
+      
+       MC_Gen_miss[imc][ity][ivar][ipt]= (TH1D*)GenMissCorrect->Clone();
+       TH1* RecoFakecorrEx; TH1* GenMisscorrEx; 
+     outputDir[imc]->cd(); //..........................MC directory .......................................
+       if(idd>=1){
+       sprintf(histname,"Recobin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+       sprintf(name,"E%s", MC_reco_fake[imc][ity][ivar][ipt]->GetName());  sprintf(Axisname,"var_%i[UO]",var[ivar]);
+       RecoFakecorrEx =binsRec[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name,  MC_reco_fake[imc][ity][ivar][ipt], 0, true, Axisname);
+     
+       sprintf(histname,"Genbin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+       sprintf(name,"E%s", MC_Gen_miss[imc][ity][ivar][ipt]->GetName());   sprintf(Axisname,"var_%i[UO]",var[ivar]);
+       GenMisscorrEx =binsGen[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, MC_Gen_miss[imc][ity][ivar][ipt], 0, true, Axisname);
+       
+       GenMisscorrEx->Write(); RecoFakecorrEx->Write();   
+       }
 //-------------------------------------------Extact Hist----------------------------- 
-     outputDir[imc]->cd();
      if(idd>=1){
        cout<<" ok  "<<endl;
        sprintf(histname,"Recobin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]); 
        sprintf(name,"E%sreco_typ_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]); 
        sprintf(Axisname,"var_%i[UO]",var[ivar]);
        TH1* RecoExtact =binsRec[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, RecoMC, 0, true, Axisname);
-        
 
        sprintf(histname,"Genbin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
        sprintf(name,"E%sgen_typ_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]);
        sprintf(Axisname,"var_%i[UO]",var[ivar]);
        TH1* GenExtact =binsGen[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, GenMC , 0, true, Axisname);
-
       
        RecoExtact->Write(); GenExtact->Write();
      
@@ -363,7 +370,6 @@ for (int imc=0; imc<nmc ; imc++){
 //------------------------------------------------------Stability and Purity -----------------------------------------
 /*
        hist_purity[imc][ity][ivar][ipt] = (TH1D*)MC_fake[imc][ity][ivar][ipt]->Clone(); hist_purity[imc][ity][ivar][ipt]->Reset();
-       
        for(int binRec=0; binRec<= hist_purity[imc][ity][ivar][ipt]->GetNbinsX()+1; binRec++) {
           double sum=0.;
           for(int binGen=0; binGen<=hist_purity[imc][ity][ivar][ipt]->GetNbinsX()+1; binGen++) {
@@ -376,7 +382,6 @@ for (int imc=0; imc<nmc ; imc++){
           }
           hist_purity[imc][ity][ivar][ipt]->SetBinContent(binRec,p);
         }
-
         hist_purity[imc][ity][ivar][ipt]->SetMinimum(-0.05); hist_purity[imc][ity][ivar][ipt]->SetMaximum(1.01);
         hist_purity[imc][ity][ivar][ipt]->Write();
 */
@@ -384,7 +389,7 @@ for (int imc=0; imc<nmc ; imc++){
 	TH1D *h_st = (TH1D*)fakerate->Clone(); h_st->Reset();
 	int ir = h_pu->GetNbinsX(); int ig = missrate->GetNbinsX();
         double fk[ir]; double ef[ig]; double pu[ir]; double st[ir];
-       subtract_background(RM_RecoGen, RecoMC, GenMC, RecoData, fk, ef, pu, st);
+        subtract_background(RM_RecoGen, RecoMC, GenMC, RecoData, fk, ef, pu, st);
         
 	for(int i =1; i<h_pu->GetNbinsX()+1; i++){
 	h_pu->SetBinContent(i,pu[i]);
@@ -403,8 +408,6 @@ for (int imc=0; imc<nmc ; imc++){
 
 	hist_purity[imc][ity][ivar][ipt]->Write();
 	hist_stbl[imc][ity][ivar][ipt]->Write();
-
-
 } //for (int imc=0;imc<nmc;imc++)
        
 //--------------------------------------------A kind of way to remove underflow and overlow bins
@@ -416,36 +419,48 @@ for (int imc=0; imc<nmc ; imc++){
          NewData->SetBinError(ix, sqrt(NewData->GetBinError(ix)* NewData->GetBinError(ix))); }
          RecoData = (TH1D*)NewData->Clone();
 #endif
-         DirData[idd]->cd(); 
-	if(idd>=1){ 
+        DirData[idd]->cd(); 
+         if(idd>=1){ 
          sprintf(histname,"Recobin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
 	 sprintf(name, "E%sreco_typ_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]);
          sprintf(Axisname,"var_%i[UO]",var[ivar]);
-         TH1* DataRecoExtact =binsRec[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, RecoData, 0, true, Axisname);
+         TH1* DataRecoExtact = binsRec[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, RecoData, 0, true, Axisname);
 	 DataRecoExtact->Write();
-
-	}
-
+	}//if(idd>=1)
          RecoData->Write(); 
          Data_Reco[ity][ivar][ipt] = (TH1D*)RecoData->Clone();
 #ifdef CLOUSER
 	 if(idd>=1){
-       sprintf(histname,"Genbin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
-       sprintf(name,"E%sgen_typ_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]);
-       sprintf(Axisname,"var_%i[UO]",var[ivar]);
-       TH1* GenExtactPsudo =binsGen[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, PsudoDataGen , 0, true, Axisname);
-	GenExtactPsudo->Write();}
-        PsudoDataGen->Write();
-#endif
+         sprintf(histname,"Genbin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+         sprintf(name,"E%sgen_typ_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]);
+         sprintf(Axisname,"var_%i[UO]",var[ivar]);
+         TH1* GenExtactPsudo =binsGen[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, PsudoDataGen , 0, true, Axisname); 
+ 	 GenExtactPsudo->Write();
+	 }//if(idd>=1)
+  	 PsudoDataGen->Write();
 
-      }
-    }
-  }
+       TH1* RecoFakecorrExD; TH1* GenMisscorrExD;
+       if(idd>=1){
+       sprintf(histname,"Recobin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+       sprintf(name,"E%s", MC_reco_fake[umc][ity][ivar][ipt]->GetName());  sprintf(Axisname,"var_%i[UO]",var[ivar]);
+       RecoFakecorrExD =binsRec[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name,  MC_reco_fake[umc][ity][ivar][ipt], 0, true, Axisname);
+
+       sprintf(histname,"Genbin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+       sprintf(name,"E%s", MC_Gen_miss[umc][ity][ivar][ipt]->GetName());   sprintf(Axisname,"var_%i[UO]",var[ivar]);
+       GenMisscorrExD =binsGen[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, MC_Gen_miss[umc][ity][ivar][ipt], 0, true, Axisname);
+
+       GenMisscorrExD->Write(); RecoFakecorrExD->Write();
+       }
+
+        
+#endif
+      }//for(int ipt = 0 ; ipt < njetptmn ; ipt++)
+    }//for(int ivar=0; ivar < nusedvar ; ivar ++)
+  }//for(int ity=0; ity <type; ity++)
   cout << "Histogram Read Data and MC Done " <<endl;
   
   //------------------Fold check : Patrick 1 Sep 20
   //Get Probability Matrix  (gen-miss)*probability = (reco-fake). Of course, don't forget to account for miss and fake entries (if applicable).
-
   folddir[idd]->cd();
   for(int ity=0; ity <type; ity++){
     for(int ivar=0; ivar < nusedvar ; ivar ++){
@@ -459,8 +474,13 @@ for (int imc=0; imc<nmc ; imc++){
 	RM->RebinY(irbin);Gen->Rebin(irbin);miss->Rebin(irbin);
 	
 	TH1D* Folded = (TH1D*)MC_Reco[umc][ity][ivar][ipt]->Clone(); Folded->Reset();
-	
 	Fold(RM, Reco, Gen, miss, fake, Folded);
+	
+	if(idd>=1){
+        sprintf(histname,"Recobin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+        sprintf(name, "E%sFold_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]);   sprintf(Axisname,"var_%i[UO]",var[ivar]);
+	TH1* TrueFold = binsRec[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, Folded, 0, true, Axisname);   TrueFold->Write();
+	}
 	sprintf(name,"%sFold_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]);
 	Folded->SetNameTitle(name,name);
 	

@@ -631,10 +631,10 @@ double binrngs1[nvar][nHLTmx][nmxbins+1] ={
 	 //-----------------------------------------------------------Root Histogram 
 	 sprintf(histname, "reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
          sprintf(title, "reco type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-         h_recovar[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? rnbinsx0[var[ivar]][ipt] : rnbinsx1[var[ivar]][ipt], (ity==0) ? rbinrngs0[var[ivar]][ipt] : rbinrngs1[var[ivar]][ipt]);
+         h_recovar[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? rnbinsx0[var[ivar]][ipt]:rnbinsx1[var[ivar]][ipt],(ity==0)?rbinrngs0[var[ivar]][ipt] : rbinrngs1[var[ivar]][ipt]);
          sprintf(histname, "fake_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
          sprintf(title, "fake reco type %i pt%i eta0 %i", ity, ipt, var[ivar]);
-         h_recofake[ity][ivar][ipt] = new TH1D(histname, title, (ity==0) ? rnbinsx0[var[ivar]][ipt]: rnbinsx1[var[ivar]][ipt], (ity==0) ? rbinrngs0[var[ivar]][ipt] : rbinrngs1[var[ivar]][ipt]);
+         h_recofake[ity][ivar][ipt] = new TH1D(histname,title,(ity==0) ? rnbinsx0[var[ivar]][ipt]: rnbinsx1[var[ivar]][ipt],(ity==0) ? rbinrngs0[var[ivar]][ipt] : rbinrngs1[var[ivar]][ipt]);
 	 sprintf(histname, "fake_OutE_reco_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);    sprintf(title, "fake_OutE reco type %i pt%i eta0 %i", ity, ipt, var[ivar]);
 	 h_recofakeOutE[ity][ivar][ipt] =(TH1*)h_recofake[ity][ivar][ipt]->Clone(); h_recofakeOutE[ity][ivar][ipt]->Reset(); h_recofakeOutE[ity][ivar][ipt]->SetNameTitle(histname,title);
 
