@@ -89,7 +89,7 @@ void testUnfold2c(){
   const char* bintag[3] = {"", "1d", "2d"};
   const char* histtag[3] = {"", "d_", "dd_"};
 
-  char histname[100], name[100], title[100];
+  char histname[100], name[100], title[100], Axisname[100];
   const int nHLTmx=8; //HT2 Range
   const int njetetamn=1;  //eta value used 2.4
   //double etarange[njetetamn] ={2.4}; //
@@ -313,20 +313,22 @@ for (int imc=0; imc<nmc ; imc++){
        }
 //-------------------------------------------Extact Hist----------------------------- 
      outputDir[imc]->cd();
-     if(idd==2){
-/*
-	     cout<<" ok  "<<endl;
-       sprintf(histname, "Recobin2d_typ_%i_pt%i_eta0_%i", ity, ipt, var[ivar]);
-       sprintf(name,"var_%i[UO15]",var[ivar]);
+     if(idd>=1){
+       cout<<" ok  "<<endl;
+       sprintf(histname,"Recobin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]); 
+       sprintf(name,"E%sreco_typ_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]); 
+       sprintf(Axisname,"var_%i[UO]",var[ivar]);
+       TH1* RecoExtact =binsRec[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, RecoMC, 0, true, Axisname);
+        
 
-       TH1* RecoExtact =binsRec[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, Hist, 0, true, axis);
-       TH1* GenExtact = GetLocalBinnedHist(GenMC, binsGen[ity][ivar][ipt], histname,name);
-       
-       //TH1* RecoExtact = GetLocalBinnedHist(RecoMC, binsRec[ity][ivar][ipt], histname,name);
-       //TH1* GenExtact = GetLocalBinnedHist(GenMC, binsGen[ity][ivar][ipt], histname,name);
+       sprintf(histname,"Genbin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+       sprintf(name,"E%sgen_typ_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]);
+       sprintf(Axisname,"var_%i[UO]",var[ivar]);
+       TH1* GenExtact =binsGen[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, GenMC , 0, true, Axisname);
+
       
        RecoExtact->Write(); GenExtact->Write();
-  */    
+     
        //RecoMC =(TH1*) RecoExtact->Clone();
        //GenMC =(TH1*) GenExtact->Clone();
       
@@ -414,11 +416,26 @@ for (int imc=0; imc<nmc ; imc++){
          NewData->SetBinError(ix, sqrt(NewData->GetBinError(ix)* NewData->GetBinError(ix))); }
          RecoData = (TH1D*)NewData->Clone();
 #endif
-         DirData[idd]->cd();       
-         RecoData->Write();
+         DirData[idd]->cd(); 
+	if(idd>=1){ 
+         sprintf(histname,"Recobin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+	 sprintf(name, "E%sreco_typ_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]);
+         sprintf(Axisname,"var_%i[UO]",var[ivar]);
+         TH1* DataRecoExtact =binsRec[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, RecoData, 0, true, Axisname);
+	 DataRecoExtact->Write();
+
+	}
+
+         RecoData->Write(); 
          Data_Reco[ity][ivar][ipt] = (TH1D*)RecoData->Clone();
 #ifdef CLOUSER
-         PsudoDataGen->Write();
+	 if(idd>=1){
+       sprintf(histname,"Genbin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+       sprintf(name,"E%sgen_typ_%i_pt%i_eta0_%i",histtag[idd], ity, ipt, var[ivar]);
+       sprintf(Axisname,"var_%i[UO]",var[ivar]);
+       TH1* GenExtactPsudo =binsGen[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, PsudoDataGen , 0, true, Axisname);
+	GenExtactPsudo->Write();}
+        PsudoDataGen->Write();
 #endif
 
       }
@@ -575,6 +592,19 @@ for (int imc=0; imc<nmc ; imc++){
 
         Unfolded->Write(); Hist_RhoIJ->Write(); hist_Emat->Write(); hist_folded->Write(); hist_prob->Write();
 
+if(idd>=1){
+         sprintf(histname,"Recobin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+         sprintf(name, "E%s",hist_folded->GetName()); sprintf(Axisname,"var_%i[UO]",var[ivar]);
+         TH1* foldedExtact =binsRec[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, hist_folded, 0, true, Axisname);
+         
+	 sprintf(histname,"Genbin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
+         sprintf(name,"E%s",Unfolded->GetName()); sprintf(Axisname,"var_%i[UO]",var[ivar]);
+         TH1* UnfoldedExtact =binsGen[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, Unfolded , 0, true, Axisname);
+          
+	 foldedExtact->Write(); UnfoldedExtact->Write();
+
+
+          }
        //-----------------------------------------End of Variables loop
      }
    }
