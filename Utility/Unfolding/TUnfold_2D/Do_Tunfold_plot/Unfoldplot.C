@@ -39,6 +39,7 @@ void Unfoldplot(){
   static const int ntype =2;
   static const int nmc = 3;
   static const int ndd = 3; //0 : root Hist, 1: 1D , 2: 2D
+  static const int umc = 0; //0 for Py8, 1 for MG , 2 for Herwig : which MC have used in Unfolding
 
   bool isstat =1;  int irbin=1;
 
@@ -96,7 +97,7 @@ void Unfoldplot(){
 TFile *Unfoldroot = TFile::Open("/home/suman/Paradox/Charged_ESV/Working/Unfolding/Tunfold_2D/TUnfolding/Unfolded_Result.root");  // Unfolded data 
 //TFile *Unfoldroot = TFile::Open("testunfold2c_unfolded.root");  // Unfolded data 
 
-  //--------------------------------------Function declear
+  //--------------------------------------Function declearation
   void Integralhist(TH1D *hist);
   void divBybinWidth(TH1D *hist);
   void Myplotset(TH1D *Myhist,const char* XTitle, const char* YTitle);
@@ -107,26 +108,29 @@ TFile *Unfoldroot = TFile::Open("/home/suman/Paradox/Charged_ESV/Working/Unfoldi
   TCanvas *ratio_can1(int Nplot[3],float plegend[7], TH1D* data, TH1D* MC[Nplot[0]], char* lowpadx, const char* modnam[Nplot[0]], const  char* datanm[3]);
 
 
-for(int idd=1; idd <ndd; idd++){
-  TH1D *MC_gen[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *MC_gen_miss[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *MC_reco[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *MC_reco_fake[nmc][ntype][nusedvar][nHLTmx];
-  TH2D *MC_Res[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *Data_reco[ntype][nusedvar][nHLTmx];
-  TH1D *Psudo_Data_gen[ntype][nusedvar][nHLTmx];
-
-  TH1D *Ex_MC_gen[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *Ex_MC_gen_miss[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *Ex_MC_reco[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *Ex_MC_reco_fake[nmc][ntype][nusedvar][nHLTmx];
-  TH1D *Ex_Data_reco[ntype][nusedvar][nHLTmx];
-  TH1D *Ex_Psudo_Data_gen[ntype][nusedvar][nHLTmx];
+for(int idd=0; idd <ndd; idd++){
+  TH1D *MC_gen[nmc][ntype][nusedvar][nHLTmx];   //MC gen
+  TH1D *MC_gen_miss[nmc][ntype][nusedvar][nHLTmx]; //MC Gen-miss
+  TH1D *Ex_MC_gen[nmc][ntype][nusedvar][nHLTmx]; //Truth Dist Gen
+  TH1D *Ex_MC_gen_miss[nmc][ntype][nusedvar][nHLTmx];  //Truth Gen-miss
   
+  TH1D *MC_reco[nmc][ntype][nusedvar][nHLTmx];   //MC Reco 
+  TH1D *MC_reco_fake[nmc][ntype][nusedvar][nHLTmx]; //MC Reco -Fake
+  TH1D *Ex_MC_reco[nmc][ntype][nusedvar][nHLTmx];   //Truth Dist Reco
+  TH1D *Ex_MC_reco_fake[nmc][ntype][nusedvar][nHLTmx];  //Truth Reco -Fake
+  
+  TH2D *MC_Res[nmc][ntype][nusedvar][nHLTmx];   //RM
+#ifdef CLOUSER  
+  TH1D *Psudo_Data_gen[ntype][nusedvar][nHLTmx];  
+  TH1D *Psudo_Data_reco_fake[ntype][nusedvar][nHLTmx];  
+  TH1D *Ex_Psudo_Data_gen[ntype][nusedvar][nHLTmx];
   TH1D *Ex_Psudo_Data_gen_miss[ntype][nusedvar][nHLTmx];
   TH1D *Ex_Psudo_Data_reco_fake[ntype][nusedvar][nHLTmx];
+#endif
 
-
+  TH1D *Data_reco[ntype][nusedvar][nHLTmx];
+  TH1D *Ex_Data_reco[ntype][nusedvar][nHLTmx];
+  
   TH1D *hist_eff[nmc][ntype][nusedvar][nHLTmx];
   TH1D *hist_fake[nmc][ntype][nusedvar][nHLTmx];
   TH1D *hist_purity[nmc][ntype][nusedvar][nHLTmx];
@@ -144,51 +148,36 @@ for(int idd=1; idd <ndd; idd++){
 
 
 for(int ity=0; ity <ntype; ity++){
-      for(int ivar =0 ; ivar < nusedvar ; ivar++){
-        for(Int_t ipt =0; ipt < nHLTmx ; ipt++){     
+      for(int ivar =0;ivar < nusedvar; ivar++){
+           for(Int_t ipt =0; ipt < nHLTmx ; ipt++){     
 #ifdef CLOUSER
           sprintf(histname, "%s/%sgen_typ_%i_pt%i_eta0_%i",Datadirtag[idd],ddtag[idd],ity, ipt, var[ivar]);
-#else
-          sprintf(histname, "%s/%sgen_typ_%i_pt%i_eta0_%i",dirname[0],ddtag[idd], ity, ipt, var[ivar]); 
-#endif
           Psudo_Data_gen[ity][ivar][ipt] =(TH1D*)Unfoldroot->Get(histname);    Psudo_Data_gen[ity][ivar][ipt]->Rebin(irbin);
           cout << histname << endl;
 #ifdef TRUEAXIS
-
 if(idd >=1){
-#ifdef CLOUSER
 	  sprintf(histname, "%s/%s%sgen_typ_%i_pt%i_eta0_%i",Datadirtag[idd],trueAxis[idd],ddtag[idd],ity, ipt, var[ivar]);
-#else
-          sprintf(histname, "%s/%s%sgen_typ_%i_pt%i_eta0_%i",dirname[0],trueAxis[idd],ddtag[idd], ity, ipt, var[ivar]);
-#endif
 	  cout << histname << endl;
           if(idd==1){Ex_Psudo_Data_gen[ity][ivar][ipt] =(TH1D*)Unfoldroot->Get(histname); }
           if(idd==2){TH2D* temp_Psudo_Data_gen =(TH2D*)Unfoldroot->Get(histname); Ex_Psudo_Data_gen[ity][ivar][ipt] = temp_Psudo_Data_gen->ProjectionX();}
 	  Ex_Psudo_Data_gen[ity][ivar][ipt]->Rebin(irbin);          cout << histname << endl;
 
-#ifdef CLOUSER
           sprintf(histname, "%s/%s%sRecominusfake_%i_pt%i_eta0_%i",Datadirtag[idd],trueAxis[idd],ddtag[idd],ity, ipt, var[ivar]);
-#else
-          sprintf(histname, "%s/%s%sreco_typ_%i_pt%i_eta0_%i",dirname[0],trueAxis[idd],ddtag[idd], ity, ipt, var[ivar]);
-#endif
           cout << histname << endl;
           if(idd==1){Ex_Psudo_Data_reco_fake[ity][ivar][ipt] =(TH1D*)Unfoldroot->Get(histname); }
           if(idd==2){TH2D* temp_Psudo_reco_fake =(TH2D*)Unfoldroot->Get(histname); Ex_Psudo_Data_reco_fake[ity][ivar][ipt] = temp_Psudo_reco_fake->ProjectionX();}
           Ex_Psudo_Data_reco_fake[ity][ivar][ipt]->Rebin(irbin);          cout << histname << endl;
 
-#ifdef CLOUSER
           sprintf(histname, "%s/%s%sGenminusmiss_%i_pt%i_eta0_%i",Datadirtag[idd],trueAxis[idd],ddtag[idd],ity, ipt, var[ivar]);
-#else
-          sprintf(histname, "%s/%s%sgen_typ_%i_pt%i_eta0_%i",dirname[0],trueAxis[idd],ddtag[idd], ity, ipt, var[ivar]);
-#endif
           cout << histname << endl;
           if(idd==1){Ex_Psudo_Data_gen_miss[ity][ivar][ipt] =(TH1D*)Unfoldroot->Get(histname); }
           if(idd==2){TH2D* temp_Psudo_gen_miss =(TH2D*)Unfoldroot->Get(histname); Ex_Psudo_Data_gen_miss[ity][ivar][ipt] = temp_Psudo_gen_miss->ProjectionX();}
           Ex_Psudo_Data_gen_miss[ity][ivar][ipt]->Rebin(irbin);          cout << histname << endl;
 }
 #endif
+#endif
 
- //Exclude Underflow overlow
+//Exclude Underflow overlow
 #ifdef UFAxis
           TH1D *NewData;          NewData = (TH1D*)Psudo_Data_gen[ity][ivar][ipt]->Clone();
 	  int NbinxD = NewData->GetNbinsX();          NewData->Reset();
@@ -218,9 +207,6 @@ if(idd >=1){
 
           sprintf(histname, "%s/%sRecominusfake_%i_pt%i_eta0_%i", dirname[imc],ddtag[idd], ity,  ipt, var[ivar]);
           MC_reco_fake[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);       cout << histname << endl;
-
-
-
 #ifdef TRUEAXIS
 if(idd>=1){
           sprintf(histname, "%s/%s%sgen_typ_%i_pt%i_eta0_%i",dirname[imc],trueAxis[idd],ddtag[idd], ity, ipt, var[ivar]); 
@@ -241,19 +227,16 @@ if(idd>=1){
           sprintf(histname, "%s/%s%sRecominusfake_%i_pt%i_eta0_%i", dirname[imc], trueAxis[idd],ddtag[idd], ity,  ipt, var[ivar]);
           if(idd==1){Ex_MC_reco_fake[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname); cout << histname << endl;}
           if(idd==2){TH2D* temp_MC_reco_fake = (TH2D*) Unfoldroot->Get(histname);   Ex_MC_reco_fake[imc][ity][ivar][ipt] = temp_MC_reco_fake->ProjectionX();  cout << histname << endl;}
-
           }
 #endif
-	  //--------------------------------------------
-	  //Read Reso
+	  //-------------------------------------Read Reso--------------------------------------
 	  sprintf(histname, "%s/%scorr_typ_%i_pt%i_eta0_%i",dirname[imc], ddtag[idd],ity,  ipt, var[ivar]); 
-	  MC_Res[imc][ity][ivar][ipt] = (TH2D*) Unfoldroot->Get(histname);
-	  cout << histname << endl;
+	  MC_Res[imc][ity][ivar][ipt] = (TH2D*) Unfoldroot->Get(histname);	  cout << histname << endl;
 	  
 	  //------------------------------------------------------
-	  sprintf(histname,"%s/%smiss_gen_typ_%i_pt%i_eta0_%i",dirname[imc],ddtag[idd], ity, ipt, var[ivar]);
+	  sprintf(histname,"%s/%smiss_rate_%i_pt%i_eta0_%i",dirname[imc],ddtag[idd], ity, ipt, var[ivar]);
 	  hist_eff[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname);  cout << histname << endl;
-	  sprintf(histname,"%s/%sfake_reco_typ_%i_pt%i_eta0_%i",dirname[imc],ddtag[idd], ity, ipt, var[ivar]);
+	  sprintf(histname,"%s/%sfake_rate_%i_pt%i_eta0_%i",dirname[imc],ddtag[idd], ity, ipt, var[ivar]);
 	  hist_fake[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname); cout << histname << endl;
 	  sprintf(histname,"%s/%sPurity_%i_pt%i_eta0_%i", dirname[imc],ddtag[idd], ity, ipt, var[ivar]);
 	  hist_purity[imc][ity][ivar][ipt] = (TH1D*) Unfoldroot->Get(histname); cout << histname << endl;
@@ -297,9 +280,6 @@ if(idd>=1){
           if(idd==2){TH2D* temp_Unfold = (TH2D*) Unfoldroot->Get(histname); Ex_Unfold[iun][ity][ivar][ipt] = temp_Unfold->ProjectionX();  cout << histname << endl;}
 	}
 #endif
-
-
-
 //Exclude Underflow and overflow bins
 #ifdef UFAxis
 	  TH1D *NewData;   NewData = (TH1D*) Unfold[iun][ity][ivar][ipt]->Clone(); int NbinxD = NewData->GetNbinsX();  NewData->Reset();
@@ -383,29 +363,20 @@ if(idd>=1){
 	cpt0 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle, MCinput_index,data_index));
 	CMS_lumi( cpt0, iPeriod, iPos ); cpt0->Update();
 	
-	sprintf(pdfname, "%sRecoEVS_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sRecoEVS_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sRecoEVS_Plot.pdf)",ddtag[idd]); //TData_recoed_typ_0_pt0_eta0_3
+	sprintf(pdfname, "%sRecoEVS_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sRecoEVS_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sRecoEVS_Plot.pdf)",ddtag[idd]); 
 	if(ity==0 && ivar==0 && ipt ==0){cpt0->Print(pdfname,"pdf");
 	}else if(ity==1 && ivar==4 && ipt==7) {cpt0->Print(pdfname2,"pdf");
 	}else{  cpt0->Print(pdfname1,"pdf");};
-
       }
-    }  //end of phase space cut and variable loop
-  }
-  //-------------------end of RECO PLOT    
-  
-
+    }  
+  }//-------------------end of RECO PLOT    
 //------------------------- Reco Projection comparison-----------------------
-//-------------------------------------------------------------------------
   for(int ity=0; ity <ntype; ity++){
-    for(int ivar =0 ; ivar < nusedvar ; ivar++){
-      for(int ipt = 0 ; ipt <nHLTmx; ipt++){
-      
-      sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"ProjectX_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
-      TH1* RMx=(TH1D*) Unfoldroot->Get(histname);
-      sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"Recominusfake_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
-      TH1* RecoFake=(TH1D*) Unfoldroot->Get(histname);
-      cpt9->cd();
-      SetMycanvas(cpt9,0,0.1,0.15,0.05,0.12);
+    for(int ivar =0;ivar < nusedvar; ivar++){
+         for(int ipt = 0 ; ipt <nHLTmx; ipt++){
+      sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",dirname[umc],ddtag[idd],"ProjectX_",ity,ipt, var[ivar]);    TH1* RMx=(TH1D*) Unfoldroot->Get(histname);
+      sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",dirname[umc],ddtag[idd],"Recominusfake_",ity,ipt, var[ivar]);    TH1* RecoFake=(TH1D*) Unfoldroot->Get(histname);
+      cpt9->cd();      SetMycanvas(cpt9,0,0.1,0.15,0.05,0.12);
       
       TH1D *MyHist  = (TH1D*)RMx->Clone();
       Integralhist(MyHist);
@@ -435,19 +406,15 @@ if(idd>=1){
         int num1[2]={imc,1} ;
         float lpos1[7] ={.32,0.2,0.55,0.38, .04, 1.1,0.9};
 
-        cpt9->Clear();
-        cpt9->cd();
+        cpt9->Clear();  cpt9->cd();
         SetMycanvas(cpt9,0,0,0,0,0);
 
         cpt9 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle, MCinput_index,data_index));
         CMS_lumi( cpt9, iPeriod, iPos ); cpt9->Update();
-
-      sprintf(pdfname, "%sRM_ProjectX_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sRM_ProjectX_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sRM_ProjectX_Plot.pdf)",ddtag[idd]); //TData_recoed_typ_0_pt0_eta0_3
+        sprintf(pdfname, "%sRM_ProjectX_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sRM_ProjectX_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sRM_ProjectX_Plot.pdf)",ddtag[idd]); 
         if(ity==0 && ivar==0 && ipt ==0){cpt9->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 && ipt==7) {cpt9->Print(pdfname2,"pdf");
         }else{  cpt9->Print(pdfname1,"pdf");};
-
-      
       }
     }
   }
@@ -455,11 +422,8 @@ if(idd>=1){
   for(int ity=0; ity <ntype; ity++){
     for(int ivar =0 ; ivar < nusedvar ; ivar++){
       for(int ipt = 0 ; ipt <nHLTmx; ipt++){
-
-      sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"ProjectY_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
-      TH1* RMx=(TH1D*) Unfoldroot->Get(histname);
-      sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"Genminusmiss_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
-      TH1* GenMiss=(TH1D*) Unfoldroot->Get(histname);
+      sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",dirname[umc],ddtag[idd],"ProjectY_",ity,ipt, var[ivar]);  TH1* RMx=(TH1D*) Unfoldroot->Get(histname);
+      sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",dirname[umc],ddtag[idd],"Genminusmiss_",ity,ipt, var[ivar]); TH1* GenMiss=(TH1D*) Unfoldroot->Get(histname);
       cpt9->cd();
       SetMycanvas(cpt9,0,0.1,0.15,0.05,0.12);
 
@@ -491,21 +455,17 @@ if(idd>=1){
         int num1[2]={imc,1} ;
         float lpos1[7] ={.32,0.2,0.55,0.38, .04, 1.15,0.85};
 
-        cpt9->Clear();
-        cpt9->cd();
+        cpt9->Clear();        
+	cpt9->cd();
         SetMycanvas(cpt9,0,0,0,0,0);
 
         cpt9 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle, MCinput_index,data_index));
         CMS_lumi( cpt9, iPeriod, iPos ); cpt9->Update();
 
-
-
-        sprintf(pdfname, "%sRM_ProjectY_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sRM_ProjectY_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sRM_ProjectY_Plot.pdf)",ddtag[idd]); //TData_recoed_typ_0_pt0_eta0_3
+        sprintf(pdfname, "%sRM_ProjectY_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sRM_ProjectY_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sRM_ProjectY_Plot.pdf)",ddtag[idd]); 
         if(ity==0 && ivar==0 && ipt ==0){cpt9->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 && ipt==7) {cpt9->Print(pdfname2,"pdf");
         }else{  cpt9->Print(pdfname1,"pdf");};
-
-
       }
     }
   }
@@ -515,8 +475,7 @@ if(idd>=1){
     for(int ivar =0 ; ivar < nusedvar ; ivar++){
       for(int ipt = 0 ; ipt <nHLTmx; ipt++){
 
-      sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",foldtag[idd],ddtag[idd],"Fold_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
-      TH1D* GenFold=(TH1D*)Unfoldroot->Get(histname);
+      sprintf(histname, "%s/%s%s%i_pt%i_eta0_%i",foldtag[idd],ddtag[idd],"Fold_",ity,ipt, var[ivar]);  TH1D* GenFold=(TH1D*)Unfoldroot->Get(histname);
         
         TH1D *MyHist  = (TH1D*)GenFold->Clone();
         Integralhist(MyHist);
@@ -534,9 +493,9 @@ if(idd>=1){
         const char *MCinput_index[imc+1];
         const char *data_index[1];
         for(int iout = 0 ; iout < imc ; iout++){
-         sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"Recominusfake_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
-         //MC_input[iout]=(TH1D*) Unfoldroot->Get(histname);
-          MC_input[iout] = (TH1D*) MC_reco[iout][ity][ivar][ipt]->Clone();
+        //sprintf(histname, "Pythia8/%s%s%i_pt%i_eta0_%i",ddtag[idd],"Recominusfake_",ity,ipt, var[ivar]); //Tunfolded_typ_0_pt0_eta0_3
+        //MC_input[iout]=(TH1D*) Unfoldroot->Get(histname);   //Genfold  are already corrected for fake 
+          MC_input[iout] = (TH1D*) MC_reco[umc][ity][ivar][ipt]->Clone(); 
           Integralhist(MC_input[iout]);
          // divBybinWidth(MC_input[iout]);
           MCinput_index[iout]= "Pythia RECO"; }
@@ -555,7 +514,7 @@ if(idd>=1){
         cpt9 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle, MCinput_index,data_index));
         CMS_lumi( cpt9, iPeriod, iPos ); cpt9->Update();
 
-        sprintf(pdfname, "%sGenfold_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sGenfold_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sGenfold_Plot.pdf)",ddtag[idd]); //TData_recoed_typ_0_pt0_eta0_3
+        sprintf(pdfname,"%sGenfold_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%sGenfold_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%sGenfold_Plot.pdf)",ddtag[idd]); 
         if(ity==0 && ivar==0 && ipt ==0){cpt9->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 && ipt==7) {cpt9->Print(pdfname2,"pdf");
         }else{  cpt9->Print(pdfname1,"pdf");};
@@ -563,13 +522,14 @@ if(idd>=1){
       }
     }  //end of phase space cut and variable loop
   }
+#ifdef TRUEAXIS
 if(idd>=1){
 //--------------------------------------------------------------
   for(int ity=0; ity <ntype; ity++){
     for(int ivar =0 ; ivar < nusedvar ; ivar++){
       for(int ipt = 0 ; ipt <nHLTmx; ipt++){
 
-     TH1D *GenFold;
+      TH1D *GenFold;
       sprintf(histname, "%s/E%s%s%i_pt%i_eta0_%i",foldtag[idd],ddtag[idd],"Fold_",ity,ipt, var[ivar]); cout <<histname<< endl; 
       if(idd==1){GenFold = (TH1D*)Unfoldroot->Get(histname); }
       if(idd==2){TH2D* GenFold2D=(TH2D*)Unfoldroot->Get(histname); GenFold = GenFold2D->ProjectionX();}
@@ -610,17 +570,15 @@ if(idd>=1){
 
         cpt9 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle, MCinput_index,data_index));
         CMS_lumi( cpt9, iPeriod, iPos ); cpt9->Update();
-
-        sprintf(pdfname, "%s_TrueGenfold_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%s_TrueGenfold_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%s_TrueGenfold_Plot.pdf)",ddtag[idd]); //TData_recoed_typ_0_pt0_eta0_3
+        sprintf(pdfname, "%s_TrueGenfold_Plot.pdf(",ddtag[idd]); sprintf(pdfname1, "%s_TrueGenfold_Plot.pdf",ddtag[idd]); sprintf(pdfname2, "%s_TrueGenfold_Plot.pdf)",ddtag[idd]);
         if(ity==0 && ivar==0 && ipt ==0){cpt9->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 && ipt==7) {cpt9->Print(pdfname2,"pdf");
         }else{  cpt9->Print(pdfname1,"pdf");};
-
       }
     }  
   }
 }//if(idd>=0)
-
+#endif
  
  
 //Response Matrix------------------------------------------------------
@@ -629,7 +587,7 @@ for(int  imc =0; imc < nmc ; imc++){
     for(int ivar =0 ; ivar < nusedvar ; ivar++){
       for(int ipt = 0 ; ipt <nHLTmx; ipt++){
 	cpt8->cd();
-//	MC_Res[imc][ity][ivar][ipt]->RebinY(2);
+//	MC_Res[imc][ity][ivar][ipt]->RebinY(irbin);
         char lplot_xtitle[100]; char lplot_ytitle[100];
         sprintf(lplot_xtitle, "RECO     %s",Esvlogx[ivar]); sprintf(lplot_ytitle, "GEN      %s",Esvlogx[ivar]);	
 	double titoff1[3]={1.2,1.3,1.0};
@@ -646,7 +604,7 @@ for(int  imc =0; imc < nmc ; imc++){
 	TLegend *leg1 = new TLegend(0.05,0.7,0.4,0.8);     
 	CTLegend(leg1,Modelnm[imc],Title); leg1->AddEntry((TObject*)0,itypeN[ity] , "");leg1->SetTextColor(-8);leg1->Draw();
         CMS_lumi( cpt8, iPeriod, iPos ); cpt8->Update();
-	sprintf(pdfname, "%sResponse_Mat%i.pdf(",ddtag[idd],imc); sprintf(pdfname1, "%sResponse_Mat%i.pdf",ddtag[idd],imc); sprintf(pdfname2, "%sResponse_Mat%i.pdf)",ddtag[idd],imc); //TData_recoed_typ_0_pt0_eta0_3
+	sprintf(pdfname, "%sResponse_Mat%i.pdf(",ddtag[idd],imc); sprintf(pdfname1, "%sResponse_Mat%i.pdf",ddtag[idd],imc); sprintf(pdfname2, "%sResponse_Mat%i.pdf)",ddtag[idd],imc);
         if(ity==0 && ivar==0 && ipt ==0){cpt8->Print(pdfname,"pdf");
         }else if(ity==1 && ivar==4 && ipt==7) {cpt8->Print(pdfname2,"pdf");
         }else{  cpt8->Print(pdfname1,"pdf");};
@@ -655,10 +613,7 @@ for(int  imc =0; imc < nmc ; imc++){
   }
 }
   cout <<" RECO PLOT OK " << endl;
-
- 
 //------------------------------------------------------Efficiency, Purity,Fake rate, stability
-
   for(int ity=0; ity <ntype; ity++){
     for(int ivar =0 ; ivar < nusedvar ; ivar++){
   TCanvas *cpt1 = new TCanvas("cpt1", "canvas1", 600,600 );  //for 
@@ -671,25 +626,23 @@ for(int  imc =0; imc < nmc ; imc++){
 	TLegend *leg1 = new TLegend(0.1,0.6,0.4,0.8);
         CTLegend(leg1,"", itypeN[ity]); 
 
-	
 	for(int ipt = 0 ; ipt <nHLTmx; ipt++){
         cpt1->cd();
 	
 	if(ipt<=6){sprintf(Title,"%i < H_{T,2} < %i %s", HT2range[ipt] , HT2range[ipt+1] ,"GeV/c" );}
         else if(ipt==7){ sprintf(Title," H_{T,2} > %i %s", HT2range[ipt] ,"GeV/c" );}
 
-
-        for (int i = 1; i <= hist_eff[0][ity][ivar][ipt]->GetNbinsX(); ++i) {
-         double content = 1 - hist_eff[0][ity][ivar][ipt]->GetBinContent(i);
-         hist_eff[0][ity][ivar][ipt]->SetBinContent(i, content);
+        for (int i = 1; i <= hist_eff[umc][ity][ivar][ipt]->GetNbinsX(); ++i) {
+         double content = 1 - hist_eff[umc][ity][ivar][ipt]->GetBinContent(i);
+         hist_eff[umc][ity][ivar][ipt]->SetBinContent(i, content);
        }
-         hist_eff[0][ity][ivar][ipt]->SetMinimum(-0.01); hist_eff[0][ity][ivar][ipt]->SetMaximum(1.01);
-         hist_fake[0][ity][ivar][ipt]->SetMinimum(-0.01); hist_fake[0][ity][ivar][ipt]->SetMaximum(1.01);
+         hist_eff[umc][ity][ivar][ipt]->SetMinimum(-0.01); hist_eff[umc][ity][ivar][ipt]->SetMaximum(1.01);
+         hist_fake[umc][ity][ivar][ipt]->SetMinimum(-0.01); hist_fake[umc][ity][ivar][ipt]->SetMaximum(1.01);
 
         SetMycanvas(cpt1,0,0.1,0.15,0.05,0.12);
-        Myplotset(hist_eff[0][ity][ivar][ipt],Esvlogx[ivar],"Efficiency");
-        hist_eff[0][ity][ivar][ipt]->SetLineColor(color[ipt]);
-	hist_eff[0][ity][ivar][ipt]->Draw("same"); leg1->Draw();
+        Myplotset(hist_eff[umc][ity][ivar][ipt],Esvlogx[ivar],"Efficiency");
+        hist_eff[umc][ity][ivar][ipt]->SetLineColor(color[ipt]);
+	hist_eff[umc][ity][ivar][ipt]->Draw("same e1"); leg1->Draw();
    
         leg2->AddEntry(hist_eff[0][ity][ivar][ipt], Title ,"lp");
 	if(ipt==7){leg2->Draw();}
@@ -697,24 +650,24 @@ for(int  imc =0; imc < nmc ; imc++){
         cpt2->cd();
 //	SetMycanvas(cpt2);
         SetMycanvas(cpt2,0,0.1,0.15,0.05,0.12);
- 	Myplotset(hist_purity[0][ity][ivar][ipt],Esvlogx[ivar],"Purity");
- 	hist_purity[0][ity][ivar][ipt]->SetLineColor(color[ipt]);
-        hist_purity[0][ity][ivar][ipt]->Draw("same"); leg1->Draw();
+ 	Myplotset(hist_purity[umc][ity][ivar][ipt],Esvlogx[ivar],"Purity");
+ 	hist_purity[umc][ity][ivar][ipt]->SetLineColor(color[ipt]);
+        hist_purity[umc][ity][ivar][ipt]->Draw("same"); leg1->Draw();
 	 if(ipt==7){leg2->Draw();}
 	cpt2->Update();
 
         cpt3->cd();
         SetMycanvas(cpt3,0,0.1,0.1,0.05,0.12);
-        Myplotset(hist_fake[0][ity][ivar][ipt],Esvlogx[ivar],"Fake rate");
-        hist_fake[0][ity][ivar][ipt]->SetLineColor(color[ipt]);
-        hist_fake[0][ity][ivar][ipt]->Draw("same");leg1->Draw();
+        Myplotset(hist_fake[umc][ity][ivar][ipt],Esvlogx[ivar],"Fake rate");
+        hist_fake[umc][ity][ivar][ipt]->SetLineColor(color[ipt]);
+        hist_fake[umc][ity][ivar][ipt]->Draw("same e1");leg1->Draw();
         if(ipt==7){leg2->Draw();}
          cpt3->Update();
 	cpt4->cd();
         SetMycanvas(cpt4,0,0.1,0.1,0.05,0.12);
-        Myplotset(hist_stbl[0][ity][ivar][ipt],Esvlogx[ivar],"Stability");
-        hist_stbl[0][ity][ivar][ipt]->SetLineColor(color[ipt]); 
-        hist_stbl[0][ity][ivar][ipt]->Draw("same"); leg1->Draw();
+        Myplotset(hist_stbl[umc][ity][ivar][ipt],Esvlogx[ivar],"Stability");
+        hist_stbl[umc][ity][ivar][ipt]->SetLineColor(color[ipt]); 
+        hist_stbl[umc][ity][ivar][ipt]->Draw("same"); leg1->Draw();
         if(ipt==7){leg2->Draw();}
    	 cpt4->Update();
     }
@@ -770,11 +723,7 @@ cout << "Effi, Stabilty, fake, purity " <<endl;
 	    
 	    MCinput_index[iout]= mcnamegen[iout]; }
 	 
-#ifdef CLOUSER
-	  data_index[0]= closuretype[iun]; 
-#else
 	  data_index[0]= Unfoldtype[iun]; 
-#endif	 
 	  //data_index[0]= UndoldEra[1]; 
 	  char lplot_xtitle[100];
 	  sprintf(lplot_xtitle, "%s",Esvlogx[ivar]);
@@ -787,7 +736,7 @@ cout << "Effi, Stabilty, fake, purity " <<endl;
 	  cpt0 =(TCanvas*)(ratio_can(num1, lpos1, MyHist, MC_input, lplot_xtitle,MCinput_index,data_index));
 	  CMS_lumi( cpt0, iPeriod, iPos ); cpt0->Update();
 	  
-	  sprintf(pdfname, "%sTUnfold_plot_%i.pdf(" ,ddtag[idd],iun); sprintf(pdfname1, "%sTUnfold_plot_%i.pdf" ,ddtag[idd],iun);sprintf(pdfname2, "%sTUnfold_plot_%i.pdf)" ,ddtag[idd],iun); //Tunfolded_typ_0_pt0_eta0_3
+	  sprintf(pdfname, "%sTUnfold_plot_%i.pdf(" ,ddtag[idd],iun); sprintf(pdfname1, "%sTUnfold_plot_%i.pdf" ,ddtag[idd],iun);sprintf(pdfname2, "%sTUnfold_plot_%i.pdf)" ,ddtag[idd],iun);
 	  if(ity==0 && ivar==0 && ipt ==0){cpt0->Print(pdfname,"pdf");
 	  }else if(ity==1 && ivar==4 && ipt==7) {cpt0->Print(pdfname2,"pdf");
 	  }else{cpt0->Print(pdfname,"pdf");};
@@ -827,17 +776,14 @@ cout << "Effi, Stabilty, fake, purity " <<endl;
        Set2dHist(Ematrix[iun][ity][ivar][ipt],lplot_xtitle, lplot_xtitle,"",titoff1, titsize1);
        Ematrix[iun][ity][ivar][ipt]->Draw("colz"); leg1->Draw();
        CMS_lumi( cpt7, iPeriod, iPos ); cpt7->Update();
-       sprintf(pdfname, "%sTUnfold_COV_%i.pdf(" ,ddtag[idd],iun); sprintf(pdfname1, "%sTUnfold_COV_%i.pdf" ,ddtag[idd],iun);sprintf(pdfname2, "%sTUnfold_COV_%i.pdf)" ,ddtag[idd], iun); //Tunfolded_typ_0_pt0_eta0_3
+       sprintf(pdfname, "%sTUnfold_COV_%i.pdf(" ,ddtag[idd],iun); sprintf(pdfname1, "%sTUnfold_COV_%i.pdf" ,ddtag[idd],iun);sprintf(pdfname2, "%sTUnfold_COV_%i.pdf)" ,ddtag[idd], iun);
           if(ity==0 && ivar==0 && ipt ==0){cpt7->Print(pdfname,"pdf");
           }else if(ity==1 && ivar==4 && ipt==7) {cpt7->Print(pdfname2,"pdf");
           }else{cpt7->Print(pdfname,"pdf");};
-
 	}
       }  //end of phase space cut and variable loop
     }
   }//End of Unfolded plot
-
-int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
 
 //----------------------------------------All Unfold in one plot(Closure Test)
     for(int ity=0; ity <ntype; ity++){
@@ -864,7 +810,7 @@ int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
 #ifdef CLOUSER
           unfold_input[iout]  = (TH1D*) Psudo_Data_gen[ity][ivar][ipt]->Clone();
 #else
-          unfold_input[iout] = (TH1D*) MC_gen[tmc][ity][ivar][ipt]->Clone();
+          unfold_input[iout] = (TH1D*) MC_gen[umc][ity][ivar][ipt]->Clone();
 #endif
           //unfold_input[iout] = (TH1D*) Unfold[iout][ity][ivar][ipt]->Clone();
           //MC_input[iout]->Rebin(2);
@@ -872,7 +818,6 @@ int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
           //divBybinWidth(unfold_input[iout]);
           //MCinput_index[iout]= Unfoldtype[iout]; 
           //MCinput_index[iout]= closuretype[iout];
-
            MCinput_index[iout]= mcnamegen[iout];
       }
 
@@ -881,7 +826,6 @@ int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
             cout << unfold_input[iout]->GetName()<< endl;
             cout <<  MCinput_index[iout] << endl;
           }
-
           data_index[0]= closuretype[0];
           data_index[1]= "Unfolded";
           data_index[2]= "MC";
@@ -909,7 +853,7 @@ int tmc = 0; //0 for Py8, 1 for MG , 2 for Herwig
   }
 
 
-//----------------------------------------All Unfold in one plot(Closure Test) True distibution--------------------------
+//----------------------------------------All Unfold in one plot(Closure Test) True distibution only for 1D and 2D TUNfolding--------------------------
 if(idd>=1){
 for(int ity=0; ity <ntype; ity++){
       for(int ivar =0 ; ivar < nusedvar ; ivar++){
@@ -934,7 +878,7 @@ for(int ity=0; ity <ntype; ity++){
 #ifdef CLOUSER
           unfold_input[iout]  = (TH1D*) Ex_Psudo_Data_gen[ity][ivar][ipt]->Clone();
 #else
-          unfold_input[iout] = (TH1D*) Ex_MC_gen[tmc][ity][ivar][ipt]->Clone();
+          unfold_input[iout] = (TH1D*) Ex_MC_gen[umc][ity][ivar][ipt]->Clone();
 #endif
           //unfold_input[iout] = (TH1D*) Unfold[iout][ity][ivar][ipt]->Clone();
           //MC_input[iout]->Rebin(2);
@@ -979,7 +923,7 @@ for(int ity=0; ity <ntype; ity++){
   }
   }//if(idd>=1)
 
-  //Refold comparisoin
+  //-----------------------------------------Refold comparisoin
   for(int iun=0; iun < unfold_ty; iun++){
     for(int ity=0; ity <ntype; ity++){
       for(int ivar =0 ; ivar < nusedvar ; ivar++){
@@ -1001,7 +945,7 @@ for(int ity=0; ity <ntype; ity++){
 	  TH1D *MC_input[nmc];
 	  const char *MCinput_index[nmc], *data_index[1];
 	  for(int iout = 0 ; iout < nmc ; iout++){
-	    MC_input[iout] = (TH1D*) MC_reco[iout][ity][ivar][ipt]->Clone();
+	    MC_input[iout] = (TH1D*) MC_reco_fake[iout][ity][ivar][ipt]->Clone();
 	   // MC_input[iout]->Rebin(2);
 	    Integralhist(MC_input[iout]);
 	   // divBybinWidth(MC_input[iout]);
@@ -1037,7 +981,7 @@ for(int ity=0; ity <ntype; ity++){
       for(int ivar =0 ; ivar < nusedvar ; ivar++){
         for(int ipt = 0 ; ipt <nHLTmx; ipt++){
           
-          TH1D *MyHist  = (TH1D*) MC_reco_fake[tmc][ity][ivar][ipt]->Clone();
+          TH1D *MyHist  = (TH1D*) MC_reco_fake[umc][ity][ivar][ipt]->Clone();
           Integralhist(MyHist);
          // divBybinWidth(MyHist);
           Myplotset(MyHist,0,0);
@@ -1060,7 +1004,7 @@ for(int ity=0; ity <ntype; ity++){
            // divBybinWidth(Refold_input[iout]);
             MCinput_index[iout]= RefoldEra[iout]; }
 
-          data_index[0]= mcnamerco[tmc];
+          data_index[0]= mcnamerco[umc];
           data_index[1]= "MC";
           data_index[2]= "Refolded";
           char lplot_xtitle[100];
@@ -1113,7 +1057,7 @@ for(int ity=0; ity <ntype; ity++){
            // divBybinWidth(Refold_input[iout]);
             MCinput_index[iout]= RefoldEra[iout]; }
 
-          data_index[0]= mcnamerco[tmc];
+          data_index[0]= mcnamerco[umc];
           data_index[1]= "MC";
           data_index[2]= "Refolded";
           char lplot_xtitle[100];

@@ -274,23 +274,23 @@ for (int imc=0; imc<nmc ; imc++){
 #endif 
 //--------------------------------------Calculate Fake rate and Miss Rate
        TH1D* fakerate = (TH1D*)RecoMC_Fake->Clone();
+       fakerate->Divide(fakerate, RecoMC, 1, 1, "b");
        sprintf(name,"%sfake_rate_%i_pt%i_eta0_%i", histtag[idd], ity, ipt, var[ivar]); fakerate->SetNameTitle(name,name);
-       fakerate->Divide(RecoMC_Fake, RecoMC, 1, 1, "b");
        TH1D* missrate = (TH1D*)GenMC_Miss->Clone();
+       missrate->Divide(missrate, GenMC, 1, 1, "b");
        sprintf(name,"%smiss_rate_%i_pt%i_eta0_%i", histtag[idd],ity, ipt, var[ivar]); missrate->SetNameTitle(name,name);
-       missrate->Divide(missrate, GenMC_Miss, 1, 1, "b");
+       fakerate->SetMinimum(-0.05); fakerate->SetMaximum(1.01);
+       missrate->SetMinimum(-0.05); missrate->SetMaximum(1.01);
 
 
 //--------------------------------------Check RM Projection with Reco(gen)-Fake(miss)  : Patrick 1 Sep20
        TH1* RMx = RM_RecoGen->ProjectionX(); TH1* RMy = RM_RecoGen->ProjectionY();
-        
        sprintf(name,"%sProjectX_%i_pt%i_eta0_%i", histtag[idd], ity, ipt, var[ivar]); RMx->SetNameTitle(name,name);
+       sprintf(name,"%sProjectY_%i_pt%i_eta0_%i", histtag[idd],ity, ipt, var[ivar]); RMy->SetNameTitle(name,name);
 
        sprintf(name,"%sRecominusfake_%i_pt%i_eta0_%i",histtag[idd] ,ity, ipt, var[ivar]);
        TH1* RecoFakeCorrect = (TH1D*)RecoMC->Clone(); RecoFakeCorrect->Reset();
        RecoFakeCorrect->SetNameTitle(name,name);
-
-       sprintf(name,"%sProjectY_%i_pt%i_eta0_%i", histtag[idd],ity, ipt, var[ivar]); RMy->SetNameTitle(name,name);
 
        sprintf(name,"%sGenminusmiss_%i_pt%i_eta0_%i",histtag[idd] ,ity, ipt, var[ivar]);
        TH1* GenMissCorrect = (TH1D*)GenMC->Clone(); GenMissCorrect->Reset();
@@ -299,12 +299,14 @@ for (int imc=0; imc<nmc ; imc++){
        for (int i = 1; i <= RecoFakeCorrect->GetNbinsX(); ++i) {
          double content = RecoMC->GetBinContent(i); double factor = RecoMC_Fake->GetBinContent(i);
          content -= factor;  RecoFakeCorrect->SetBinContent(i, content);
+	 RecoFakeCorrect->SetBinError(i, RecoMC_Fake->GetBinError(i)+ RecoMC->GetBinError(i));
        }
        MC_reco_fake[imc][ity][ivar][ipt]= (TH1D*)RecoFakeCorrect->Clone();
 
        for (int i = 1; i <= GenMissCorrect->GetNbinsX(); ++i) {
         double content = GenMC->GetBinContent(i); double factor = GenMC_Miss->GetBinContent(i);
          content -= factor;  GenMissCorrect->SetBinContent(i, content);
+	 GenMissCorrect->SetBinError(i, GenMC_Miss->GetBinError(i)+ GenMC->GetBinError(i));
        }
       
        MC_Gen_miss[imc][ity][ivar][ipt]= (TH1D*)GenMissCorrect->Clone();
@@ -452,7 +454,7 @@ for (int imc=0; imc<nmc ; imc++){
        GenMisscorrExD->Write(); RecoFakecorrExD->Write();
        }
 
-        
+       MC_reco_fake[umc][ity][ivar][ipt]->Write();    MC_Gen_miss[umc][ity][ivar][ipt]->Write();
 #endif
       }//for(int ipt = 0 ; ipt < njetptmn ; ipt++)
     }//for(int ivar=0; ivar < nusedvar ; ivar ++)
@@ -611,7 +613,7 @@ for (int imc=0; imc<nmc ; imc++){
         TH2 *hist_prob = density.GetProbabilityMatrix(histname,title,TUnfold::kHistMapOutputVert);//,"signal");
 
         Unfolded->Write(); Hist_RhoIJ->Write(); hist_Emat->Write(); hist_folded->Write(); hist_prob->Write();
-
+//----------------------Extract The True Distrubuntions 
 if(idd>=1){
          sprintf(histname,"Recobin%s_typ_%i_pt%i_eta0_%i", bintag[idd], ity, ipt, var[ivar]);
          sprintf(name, "E%s",hist_folded->GetName()); sprintf(Axisname,"var_%i[UO]",var[ivar]);
@@ -622,9 +624,7 @@ if(idd>=1){
          TH1* UnfoldedExtact =binsGen[ity][ivar][ipt]->FindNode(histname)->ExtractHistogram(name, Unfolded , 0, true, Axisname);
           
 	 foldedExtact->Write(); UnfoldedExtact->Write();
-
-
-          }
+          }if(idd>=1)
        //-----------------------------------------End of Variables loop
      }
    }
@@ -859,9 +859,3 @@ void setgstyle(){
   gStyle->SetLabelOffset(0.012,"xy");
 }
 
-TH1* GetLocalBinnedHist(TH1* Hist,  TUnfoldBinning* bin, const char* node, const char* axis){
-    const char* name = Hist->GetName();
-    TH1* localhist = bin->FindNode(node)->ExtractHistogram(name, Hist, 0, true, axis);
-    localhist->SetNameTitle(name,name);
-return localhist;
-}
