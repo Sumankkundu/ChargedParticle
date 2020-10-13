@@ -26,14 +26,14 @@
 //#define TRIGGER
 
 // //for Madgraph
-#define LHAPDF
-#define JETRESO
-#define TRACKSYS
-#define TRIGGER
+//#define LHAPDF
+//#define JETRESO
+//#define TRACKSYS
+//#define TRIGGER
 
 ////for Pythia8
-//#define JETRESO
-//#define TRIGGER
+#define JETRESO
+#define TRIGGER
 
 //For Flat
 #define FLAT
@@ -148,7 +148,6 @@
 #include "HLTrigger/HLTcore/interface/HLTPrescaleProvider.h"
 #include "HLTrigger/HLTcore/interface/HLTConfigProvider.h"
 #include "PhysicsTools/Utilities/interface/LumiReWeighting.h"
-
 using namespace edm;
 using namespace reco;
 using namespace std;
@@ -360,6 +359,8 @@ double binrngs1[nvar][nmxbins+1] ={{},{},{},
 //For Jets
 
 const int nmxbins=32;
+//const int nmxbins=22; //Max bin in Charged
+
 int nbinsx0[nvar][nHLTmx]={{},{},{},
                    {22,24,26,26,28,28,30,32},//3
                    {},{},{},{},{},
@@ -371,7 +372,20 @@ int nbinsx0[nvar][nHLTmx]={{},{},{},
                    {},{},{},{},{},
                    {14,16,18,20,22,24,26,26},//24
                    {},{},{},{},{},{},{}};
-
+/*
+//Jets Binning same as Charge Particles
+int nbinsx0[nvar][nHLTmx]={{},{},{},
+                   {20,20,20,20,18,18,18,14},//3
+                   {},{},{},{},{},
+                   {16,18,20,20,18,18,18,14},//9
+                   {},{},{},{},{},
+                   {8,8,8,8,8,8,8,8},//15
+                   {},{},
+                   {22,22,22,22,22,22,16,12},//18
+                   {},{},{},{},{},
+                   {12,12,14,14,14,14,14,12},//24
+                   {},{},{},{},{},{},{}};
+*/
 //For charge Particles
 int nbinsx1[nvar][nHLTmx]={{},{},{},
                    {20,20,20,20,18,18,18,14},//3
@@ -461,6 +475,83 @@ double binrngs0[nvar][nHLTmx][nmxbins+1] ={
         {{},{},{},{},{},{},{},{}},
         {{},{},{},{},{},{},{},{}}};
 
+/*
+//Jet Binning Same as Charged Particles //25Aug20 Meeting  Sir suggestion
+double binrngs0[nvar][nHLTmx][nmxbins+1] ={
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        //Thrust 3
+        {{-5.08, -4.74, -4.46, -4.22, -4, -3.79, -3.59, -3.39, -3.19, -2.99, -2.79, -2.59, -2.39, -2.19, -1.99, -1.8, -1.62, -1.45, -1.3, -1.17, -1.06},//20
+{-5.19, -4.87, -4.61, -4.37, -4.15, -3.94, -3.74, -3.54, -3.34, -3.13, -2.92, -2.71, -2.49, -2.28, -2.07, -1.87, -1.68, -1.51, -1.36, -1.23, -1.13}, //20
+{-5.31, -5.03, -4.78, -4.55, -4.33, -4.11, -3.9, -3.69, -3.47, -3.25, -3.03, -2.81, -2.59, -2.37, -2.15, -1.94, -1.75, -1.57, -1.41, -1.27, -1.16},//20
+{-5.54, -5.26, -5, -4.76, -4.52, -4.29, -4.06, -3.83, -3.6, -3.37, -3.14, -2.91, -2.68, -2.45, -2.23, -2.02, -1.82, -1.64, -1.48, -1.34, -1.22}, //20
+{-5.54, -5.26, -4.99, -4.73, -4.47, -4.22, -3.97, -3.71, -3.45, -3.19, -2.94, -2.69, -2.45, -2.22, -2, -1.8, -1.62, -1.46, -1.32}, //18
+{-5.54, -5.25, -4.97, -4.69, -4.42, -4.15, -3.88, -3.61, -3.34, -3.07, -2.8, -2.54, -2.29, -2.06, -1.85, -1.66, -1.49, -1.34, -1.22}, //18
+{-5.66, -5.36, -5.06, -4.76, -4.46, -4.16, -3.86, -3.56, -3.27, -2.98, -2.7, -2.44, -2.19, -1.96, -1.75, -1.56, -1.4, -1.26, -1.14}, //18
+{-5.43, -5.08, -4.73, -4.37, -4.01, -3.66, -3.32, -2.99, -2.67, -2.37, -2.1, -1.85, -1.63, -1.43, -1.26}},//14
+	{{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        //RhoT 9
+        {{-5.75, -5.15, -4.62, -4.15, -3.72, -3.32, -2.95, -2.6, -2.27, -1.96, -1.67, -1.4, -1.15, -0.91, -0.69, -0.49, -0.31},//16
+{-5.75, -5.17, -4.69, -4.26, -3.87, -3.5, -3.15, -2.81, -2.49, -2.18, -1.88, -1.59, -1.32, -1.07, -0.84, -0.63, -0.45, -0.29, -0.15 },//18
+{-5.75, -5.24, -4.8, -4.41, -4.05, -3.7, -3.37, -3.05, -2.73, -2.42, -2.12, -1.83, -1.55, -1.29, -1.05, -0.84, -0.65, -0.48, -0.34, -0.22, -0.13 }, //20
+{-5.75, -5.28, -4.87, -4.49, -4.13, -3.79, -3.46, -3.14, -2.82, -2.51, -2.21, -1.92, -1.64, -1.38, -1.14, -0.92, -0.72, -0.55, -0.4, -0.27, -0.16}, //20
+{-5.75, -5.28, -4.86, -4.46, -4.08, -3.72, -3.37, -3.03, -2.7, -2.38, -2.07, -1.78, -1.5, -1.24, -1.01, -0.8, -0.62, -0.46, -0.33}, //18
+{-5.75, -5.3, -4.88, -4.48, -4.1, -3.73, -3.37, -3.02, -2.68, -2.35, -2.03, -1.73, -1.45, -1.19, -0.95, -0.74, -0.55, -0.39, -0.25 }, //18
+{-5.75, -5.3, -4.87, -4.45, -4.04, -3.65, -3.27, -2.9, -2.54, -2.2, -1.87, -1.56, -1.28, -1.02, -0.79, -0.59, -0.41, -0.26, -0.13 }, //18
+{-5.75, -5.23, -4.73, -4.24, -3.77, -3.31, -2.87, -2.45, -2.05, -1.68, -1.34, -1.03, -0.76, -0.52, -0.31}}, //14
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        //Y23 15
+        {{-6.71, -5.96, -5.28, -4.66, -4.09, -3.56, -3.05, -2.54, -2.02},//8   //1.4 sigma
+{-6.71, -5.96, -5.28, -4.66, -4.09, -3.56, -3.05, -2.54, -2.02},//8    //1.4 sigma
+{-6.71, -6, -5.29, -4.62, -3.99, -3.39, -2.8, -2.19, -1.51 }, //8
+{-6.71, -6, -5.33, -4.7, -4.1, -3.51, -2.93, -2.34, -1.71 }, //8
+{-6.71, -5.99, -5.31, -4.67, -4.06, -3.47, -2.88, -2.28, -1.64 }, //8
+{-6.71, -6.03, -5.37, -4.73, -4.11, -3.5, -2.89, -2.26, -1.58 }, //8
+{-6.71, -6.04, -5.36, -4.69, -4.04, -3.41, -2.79, -2.15, -1.58 }, //8
+{-6.71, -6.04, -5.36, -4.69, -4.04, -3.41, -2.79, -2.15, -1.58 }},//8
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        //BT
+        {{-4.83, -4.24, -3.85, -3.55, -3.3, -3.08, -2.88, -2.69, -2.51, -2.33, -2.16, -1.99, -1.82, -1.64, -1.46, -1.28, -1.1, -0.92, -0.75, -0.58, -0.42, -0.27, -0.14 }, //22
+{-4.64, -4.17, -3.84, -3.57, -3.34, -3.13, -2.93, -2.74, -2.56, -2.38, -2.2, -2.02, -1.84, -1.66, -1.48, -1.29, -1.11, -0.93, -0.76, -0.6, -0.45, -0.31, -0.19 }, //22
+{-4.83, -4.37, -4.04, -3.77, -3.54, -3.33, -3.13, -2.94, -2.75, -2.56, -2.37, -2.18, -1.99, -1.8, -1.6, -1.4, -1.21, -1.02, -0.84, -0.68, -0.53, -0.4, -0.29}, //22
+{-4.93, -4.53, -4.21, -3.94, -3.7, -3.48, -3.27, -3.06, -2.86, -2.66, -2.46, -2.26, -2.06, -1.85, -1.65, -1.45, -1.25, -1.06, -0.88, -0.72, -0.57, -0.44, -0.33}, //22
+{-4.93, -4.58, -4.28, -4.01, -3.75, -3.51, -3.27, -3.04, -2.81, -2.58, -2.35, -2.12, -1.89, -1.66, -1.44, -1.23, -1.03, -0.85, -0.69, -0.55, -0.43, -0.32, -0.23 }, //22
+{-4.93, -4.62, -4.34, -4.07, -3.81, -3.56, -3.31, -3.07, -2.83, -2.59, -2.35, -2.11, -1.87, -1.64, -1.42, -1.21, -1.01, -0.83, -0.66, -0.51, -0.38, -0.27, -0.17 }, //23
+{-3.77, -3.49, -3.21, -2.93, -2.66, -2.39, -2.13, -1.87, -1.62, -1.39, -1.17, -0.97, -0.79, -0.62, -0.47, -0.34, -0.23 }, //16
+{-3.48, -3.14, -2.8, -2.47, -2.16, -1.86, -1.58, -1.32, -1.08, -0.86, -0.65, -0.46, -0.29}}, //12
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        //RhoTT 24
+        {{-5.89, -5.18, -4.59, -4.08, -3.63, -3.23, -2.87, -2.53, -2.21, -1.91, -1.62, -1.34, -1.07}, //12
+{-5.89, -5.2, -4.66, -4.2, -3.79, -3.42, -3.07, -2.74, -2.42, -2.12, -1.83, -1.56, -1.31}, //12 
+{-5.89, -5.27, -4.79, -4.38, -4.01, -3.66, -3.33, -3.01, -2.7, -2.4, -2.11, -1.84, -1.59, -1.36, -1.16}, //14
+{-5.89, -5.33, -4.88, -4.49, -4.13, -3.79, -3.46, -3.14, -2.83, -2.53, -2.24, -1.96, -1.71, -1.48, -1.28},//14
+{-5.89, -5.35, -4.89, -4.48, -4.1, -3.74, -3.39, -3.06, -2.74, -2.43, -2.14, -1.86, -1.61, -1.38, -1.18},//14
+{-5.89, -5.39, -4.95, -4.54, -4.15, -3.78, -3.42, -3.07, -2.73, -2.41, -2.11, -1.83, -1.58, -1.36, -1.17},//14
+{-5.89, -5.4, -4.95, -4.52, -4.11, -3.72, -3.35, -2.99, -2.65, -2.33, -2.03, -1.75, -1.49, -1.25, -1.04},//14
+{-5.89, -5.42, -4.95, -4.49, -4.05, -3.63, -3.23, -2.86, -2.51, -2.18, -1.86, -1.55, -1.25}},//12
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}},
+        {{},{},{},{},{},{},{},{}}};
+*/
+
 
 //-----------------------------------------------------------------------------------
 //For charge particle
@@ -546,8 +637,8 @@ double binrngs1[nvar][nHLTmx][nmxbins+1] ={
 int tnbins =26;
 double trbinrngs0[tnbins+1]={-6.38, -6.08, -5.79, -5.52, -5.26, -5.01, -4.77, -4.53, -4.3, -4.07, -3.85, -3.64, -3.43, -3.23, -3.04, -2.85, -2.67, -2.5, -2.34, -2.19, -2.05, -1.92, -1.8, -1.68, -1.57, -1.47, -1.38};
 */
-static int const tnbins =10;
-double const  trbinrngs0[tnbins+1]={0,2,4,6,8,10,12,14,16,18,20};
+#define tnbins 10
+Double_t trbinrngs0[tnbins+1]={0.0,2.0,4.0,6.0,8.0,10.0,12.0,14.0,16.0,18.0,20.0};
 //double const trbinrngs0[tnbins+1]={-20,-18,-16,-14,-12,-10};//-8,-6,-4,-2,0};
 
 
@@ -968,23 +1059,31 @@ class QCDEventShape : public edm::EDAnalyzer {
   float inslumi;
   int nsicls, ntottrk;
 //#ifdef FLAT 
- //bool isFlat=1;
+  bool isFlat=1;
 //#else 
- bool isFlat=0;
+  //bool isFlat=0;
 //#endif
 
     float defweight=1.0, weighttrg=1., qlow=-10., qhigh=100000.;
   //=============****=========================
-
-
+/*
 //=================**====================================
 //TunfoldBinning Test
+  TUnfoldBinning *binsRec[ntype][njetptmn][njetetamn][nvar];
+  TUnfoldBinning *RecoBinning[ntype][njetptmn][njetetamn][nvar];
+
+  TUnfoldBinning *binsGen[ntype][njetptmn][njetetamn][nvar];
+  TUnfoldBinning *GenBinning[ntype][njetptmn][njetetamn][nvar];
 
 //
-//TUnfoldBinning *binsRec = new TUnfoldBinning("detector");
+  TUnfoldBinning *RecoBins;
+  TUnfoldBinning *Recobinning;
+//TUnfoldBinning *Recobinning = RecoBins->AddBinning("detectordistribution");
+*/
+//RecoBins = new TUnfoldBinning("detector");
 //TUnfoldBinning *detectorDistribution = binsRec->AddBinning("detectordistribution");
 
-  // detectorDistribution->AddAxis("Pt", tnbins, trbinrngs0, false, false);
+//detectorDistribution->AddAxis("Pt", tnbins, trbinrngs0, false, false);
   // binsRec->AddAxis("Pt", tnbins, trbinrngs0, false, false);
 //   TH1* MC_TestBin;
 //   TUnfoldBinning* binsRec;
@@ -992,7 +1091,8 @@ class QCDEventShape : public edm::EDAnalyzer {
 // For unfolding with TUnfold
  //  TUnfoldBinning * detector, * generator;
 
-
+  //TUnfoldBinning *RecoBins;
+  //TUnfoldBinning *detectorDistribution;
 
 //=================**====================================
 
@@ -1193,7 +1293,7 @@ class QCDEventShape : public edm::EDAnalyzer {
 
   //HLTConfigProvider hltConfig_;
    HLTPrescaleProvider hltPrescaleProvider_;
-  int naa, nbb, ncc;
+  int nreco, naa, nbb, ncc;
 
 	std::vector<JetCorrectionUncertainty*> vsrc; // (nsrc);
 reweight::PoissonMeanShifter PShiftUp_;
@@ -1283,8 +1383,34 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
 
 //====================TunfoldBinning Test
 //
-//TUnfoldBinning *binsRec = new TUnfoldBinning("detector");
-//TUnfoldBinning *detectorDistribution = binsRec->AddBinning("detectordistribution");
+/*
+char binname[200];
+for (int ityp=0; ityp<ntype; ityp++) {
+    for (int ipt=0; ipt<njetptmn; ipt++) {
+      for (int iet=0; iet<njetetamn; iet++) {
+        for (int ij=0; ij<nvar; ij++) {
+          if (isItUsed(ij)) {
+            if (isReconstruct) {
+              sprintf(binname, "Binning_reco_typ_%i_pt%i_eta%i_%i", ityp, ipt, iet, ij);
+//              sprintf(title, "Reco %s %i %g %s", typname[ityp], int(leadingPtThreshold[ipt]), etarange[iet], vartitle[ij]);
+//              binsRec[ityp][ipt][iet][ij] = fs->make<TUnfoldBinning>(binname);
+              //binsRec[ityp][ipt][iet][ij] = fs->make<TUnfoldBinning>("TestName");
+//              binsRec[ityp][ipt][iet][ij] =  new TUnfoldBinning(binname);
+ //             GenBinning[ityp][ipt][iet][ij]= binsGen[ityp][ipt][iet][ij]->AddBinning(binname);
+
+               }
+             }
+            }
+          }
+        }
+      }
+*/
+// RecoBins = new TUnfoldBinning("detector");
+ //Recobinning = RecoBins->AddBinning("detectordistribution");
+ //TUnfoldBinning *binsRec = new TUnfoldBinning("detector");
+ //detectorDistribution = binsRec->AddBinning("detectordistribution");
+ //detectorDistribution->AddAxis("Pt", tnbins, trbinrngs0, true, true);
+ //TUnfoldBinning *detectorBinning=new TUnfoldBinning("detector");
 
 //    detector->AddAxis("Pt", tnbins, trbinrngs0, false, false);
  // detector = ;
@@ -1919,7 +2045,7 @@ MC_TestBin->Fill(2);
   // irun_old=-1;
   //trig_init=0;
 
-  naa= nbb= ncc=0;
+  nreco=naa= nbb= ncc=0;
 
 }
 
@@ -2094,20 +2220,24 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
       double NHF = (*ak4PFJets)[ij].neutralHadronEnergyFraction();
       double NEMF = (*ak4PFJets)[ij].neutralEmEnergyFraction();
       double CHF = (*ak4PFJets)[ij].chargedHadronEnergyFraction();
-//      double MUF = (*ak4PFJets)[ij].muonEnergyFraction();
-  //    double CEMF = (*ak4PFJets)[ij].chargedEmEnergyFraction();
+      //double MUF = (*ak4PFJets)[ij].muonEnergyFraction();
+      //double CEMF = (*ak4PFJets)[ij].chargedEmEnergyFraction();
       int NumConst = (*ak4PFJets)[ij].chargedMultiplicity()+(*ak4PFJets)[ij].neutralMultiplicity();
       //int NumNeutralParticles =(*ak4PFJets)[ij].neutralMultiplicity();
       int CHM = (*ak4PFJets)[ij].chargedMultiplicity();
 
       bool TightJetID =false;
-      if(abs((*ak4PFJets)[ij].eta())<=2.7){
-       if( (NHF<0.90 && NEMF<0.90 && NumConst>1) && (abs((*ak4PFJets)[ij].eta())<=2.4 && CHF>0 && CHM>0) ) TightJetID =true;
-             } else {
+      //if(abs((*ak4PFJets)[ij].eta())<=2.7){  //Updated for ReReco 17
+      // if( (NHF<0.90 && NEMF<0.90 && NumConst>1) && (abs((*ak4PFJets)[ij].eta())<=2.4 && CHF>0 && CHM>0) ) TightJetID =true;
+      //      } else {
+      //                           TightJetID =false;}
+      //Updated for UL17 : 27Aug20
+      if(abs((*ak4PFJets)[ij].eta())<=2.6){
+      if(NHF<0.90 && NEMF<0.90 && NumConst>1 && CHF>0 && CHM>0)  TightJetID =true;
+                      } else {
                                  TightJetID =false;
-          }
-
-      if (abs((*ak4PFJets)[ij].eta())>2.7) {TightJetID = false;}
+                                 }
+      if (abs((*ak4PFJets)[ij].eta())>2.6) {TightJetID = false;}
       if ((*ak4PFJets)[ij].pt()<30.0) {TightJetID = false;}
 
       if (TightJetID) {
@@ -2204,6 +2334,7 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
     }
   }
 */
+
   //Calcualte Trigger Efficiency for dijet events
   bool trg_prev=false;
 
@@ -2440,10 +2571,10 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 #if defined(JETRESO)&&(!defined(JETENERGY))
       // resolution file 
       JME::JetResolution resolution;
-    //  resolution = JME::JetResolution("Fall17_V2_MC_PtResolution_AK4PFchs.txt");
+    //resolution = JME::JetResolution("Fall17_V2_MC_PtResolution_AK4PFchs.txt");
       resolution = JME::JetResolution("Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt");
-      //resolution = JME::JetResolution("Fall17_V3b_MC_PtResolution_AK4PFchs.txt");
-  //         resolution = JME::JetResolution("Fall15_25nsV2_MC_PtResolution_AK4PFchs.txt");
+    //resolution = JME::JetResolution("Fall17_V3b_MC_PtResolution_AK4PFchs.txt");
+    //resolution = JME::JetResolution("Fall15_25nsV2_MC_PtResolution_AK4PFchs.txt");
  
       // Scalefactor file
       JME::JetResolutionScaleFactor res_sf;
@@ -2451,7 +2582,7 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
     res_sf = JME::JetResolutionScaleFactor("Summer19UL17_JRV2_MC_SF_AK4PFchs.txt");
     //res_sf = JME::JetResolutionScaleFactor("Fall17_V3b_MC_SF_AK4PFchs.txt");
     //res_sf = JME::JetResolutionScaleFactor("Fall17_V2_MC_SF_AK4PFchs.txt");
-//      res_sf = JME::JetResolutionScaleFactor("Fall15_25nsV2_MC_SF_AK4PFchs.txt");
+    //res_sf = JME::JetResolutionScaleFactor("Fall15_25nsV2_MC_SF_AK4PFchs.txt");
       
       edm::Handle<double> rho;
       iEvent.getByToken(m_rho_token, rho);
@@ -2533,7 +2664,8 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 	irecohtjec[isrc] = -1;
       }
     }
-    
+   
+ 
     //GMA Need the corection on aveleadingpt
     if (ak4PFJets.isValid() && ak4PFJets->size() >=2) { //  && aveleadingpt >leadingPtThreshold[0]) { //GMA look on this
       
@@ -2564,7 +2696,7 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 		double abseta = abs((*ak4PFJets)[ireorjt].eta());
 	        if (pt<30.0 || abseta >etarange[iet]) continue;	
 		//							if (iet==0 && isrc==0) cout <<"pteta "<<pt<<" "<<abseta<<endl;
-		bool isEta = (abseta<3.0) ? true : false;
+		bool isEta = (abseta<2.4) ? true : false;
 		
 		if (isEta && pt>30.0) { njets++;}
 		if (abseta>5.0) continue;
@@ -2572,7 +2704,6 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 		if (isEta && isPt) {ncount++;}
 		
 		//cout<< "ncount = " << ncount << endl;
-		
 		//Jet ID ================= Tight ID 2017 Recomendation  check for 2018
 		double NHF = (*ak4PFJets)[ireorjt].neutralHadronEnergyFraction();
 		double NEMF = (*ak4PFJets)[ireorjt].neutralEmEnergyFraction();
@@ -2582,23 +2713,24 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 		int NumConst = (*ak4PFJets)[ireorjt].chargedMultiplicity()+(*ak4PFJets)[ireorjt].neutralMultiplicity();
 		//int NumNeutralParticles =(*ak4PFJets)[ireorjt].neutralMultiplicity();
 		int CHM = (*ak4PFJets)[ireorjt].chargedMultiplicity();
-		
-		//	  cout<<"NHF== "<< NHF << "; NEF== " << NEMF <<" ; CHF==" <<CHF <<" ;cef==" << CEMF <<"; no= " << NumConst <<" ; nch==" << CHM <<" ; NO of part==" << NumNeutralParticles <<endl;
-		
+                //cout<<"NHF== "<< NHF << "; NEF== " << NEMF <<" ; CHF==" <<CHF <<" ;cef==" << CEMF <<"; no= " << NumConst <<" ; nch==" << CHM <<" ; NO of part==" << NumNeutralParticles <<endl;
 		bool TightJetID =false;
-		if(abs((*ak4PFJets)[ireorjt].eta())<=2.7){
-               if( (NHF<0.90 && NEMF<0.90 && NumConst>1 ) && (abs((*ak4PFJets)[ireorjt].eta())<=2.4 && CHF>0 && CHM>0 ) ) TightJetID =true;
-                       } else {
-                                           TightJetID =false;
-                      }
-
-                       if (abs((*ak4PFJets)[ireorjt].eta())>2.7) {TightJetID = false;}
-                      if ((*ak4PFJets)[ireorjt].pt()<30.0) {TightJetID = false;}
-
+		//if(abs((*ak4PFJets)[ireorjt].eta())<=2.7){       //Update for ReReco 2017 
+                //if( (NHF<0.90 && NEMF<0.90 && NumConst>1 ) && (abs((*ak4PFJets)[ireorjt].eta())<=2.4 && CHF>0 && CHM>0 ) ) TightJetID =true;
+                //       } else {
+                //                           TightJetID =false; }
+                //Update for UL17 : 27Aug20
+                if(abs((*ak4PFJets)[ireorjt].eta())<=2.6){
+                if(NHF<0.90 && NEMF<0.90 && NumConst>1 && CHF>0 && CHM>0)  TightJetID =true;
+                      } else {
+                                 TightJetID =false;
+                                 }
+                
+                 if (abs((*ak4PFJets)[ireorjt].eta())>2.6) {TightJetID = false;}
+                 if ((*ak4PFJets)[ireorjt].pt()<30.0) {TightJetID = false;}
 		
 		if( ireorjt<=1 && !TightJetID) break;
 		if (!TightJetID) continue;
-		
 		//JetID ================
 	/*	
 		if (ncount <=2 && ncount !=ijet+1) {
@@ -2971,8 +3103,37 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 	for (int iet=0; iet<njetetamn; iet++) {
 	  if (abs((*genjets)[ij].eta())>etarange[iet]) { isInEtaRange[iet] = false;}
 	}
+
+  /*     //--------------------------------Jet ID for Gen Jet
+      double NHF = (*genjets)[ij].neutralHadronEnergyFraction();
+      double NEMF = (*genjets)[ij].neutralEmEnergyFraction();
+      double CHF = (*genjets)[ij].chargedHadronEnergyFraction();
+      //double MUF = (*genjets)[ij].muonEnergyFraction();
+      //double CEMF = (*genjets)[ij].chargedEmEnergyFraction();
+      int NumConst = (*genjets)[ij].chargedMultiplicity()+(*ak4PFJets)[ij].neutralMultiplicity();
+      //int NumNeutralParticles = (*genjets)[ij].neutralMultiplicity();
+      int CHM = (*genjets)[ij].chargedMultiplicity();
+
+            auto CHF          = jet.chargedHadronEnergy() / jet.correctedP4(0).E()  ;  
+            auto NHF          = jet.neutralHadronEnergy() / jet.correctedP4(0).E()  ;  
+            auto CHM           = jet.chargedMultiplicity()  ;                  
+           // auto NM           = jet.neutralMultiplicity()  ;                  
+            auto NEF          = jet.neutralEmEnergy() / jet.correctedP4(0).E()  ;      
+          //  auto CEF          = jet.chargedEmEnergy() / jet.correctedP4(0).E()  ;      
+            //auto MUF          = jet.muonEnergy() / jet.correctedP4(0).E()  ;           
+            auto NumConst = jet.numberOfDaughters() ;   
+
+      bool TightJetID =false;
+      //Edit for UL17
+      if(abs((*genjets)[ij].eta())<=2.6){
+       if(NHF<0.90 && NEMF<0.90 && NumConst>1 && CHF>0 && CHM>0)  TightJetID =true;
+             } else {
+                                 TightJetID =false;
+          }
+	if (abs((*genjets)[ij].eta())<3.0 && (*genjets)[ij].pt()>30.0 && TightJetID) { //Jet ID 
+*/        //-------------------------------Jet ID for Gen Jet
 	
-	if (abs((*genjets)[ij].eta())<3.0 && (*genjets)[ij].pt()>30.0) {
+	if (abs((*genjets)[ij].eta())<2.4 && (*genjets)[ij].pt()>30.0 ) { 
 	  avegenpt +=(*genjets)[ij].pt();
 	} else {
 	  avegenpt -=100000;
@@ -3100,7 +3261,7 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 		//								if (iet==0 && isrc==0) 
 		//		cout <<"MC:pteta "<<ijet<<" "<<pt<<" "<<abseta<<endl;
 		if (abseta>5.0) continue;
-		bool isEta = (abseta<3.0) ? true : false;
+		bool isEta = (abseta<2.4) ? true : false;
 		
 		HepLorentzVector tmp4v((*genjets)[igenjt].px(), (*genjets)[igenjt].py(), (*genjets)[igenjt].pz(), (*genjets)[igenjt].energy());
 		tmp4v *=sup;
@@ -3418,36 +3579,39 @@ else {
       int k = rand/0.1;
 //      cout << "Rand Number " << k << endl;*/
   
-      
-      for (int itp=0; itp<ntype; itp++) {
-//      for (int itp=0; itp<1; itp++) {
+//-----------------------------------------------Calculate And Fill the  EventShape Variables--------------------------------
+  for (int itp=0; itp<ntype; itp++) {
 	for (int iet=0; iet<njetetamn; iet++) {
 	  if (isReconstruct) { 
-	    for (int isrc=0; isrc<njecmx; isrc++) { 
-	      recovar.clear();
 	      recovar1.clear();
+	   for (int isrc=0; isrc<njecmx; isrc++) { 
+	   // for (int isrc=0; isrc<1; isrc++) { 
+	      recovar.clear();
+	      //recovar1.clear();
 	      if (isrc==0) {isRECO[itp][iet]=false;}
-	      //				if (iet==0 && isrc==0) 
-	     // cout <<"reco "<< itp<<" "<<iet<<" "<<isrc<<" "<<irecohtjec[isrc]<<" "<<recomom[isrc][itp][iet].size()<<endl;
-	      if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) {
+	      
+                 if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) {
 		EventShape_vector  recoevtshape(recomom[isrc][itp][iet], 2.4, 0, 2, 1);
 		recovar =  recoevtshape.getEventShapes();
+		if(isrc==0){recovar1 =  recoevtshape.getEventShapes();}
 		if (recovar[nvar]>=2) {
 		  if (isrc==0) {isRECO[itp][iet] = true;}
 		  for (int ij=0; ij<nvar; ij++) {
 		    if (isItUsed(ij)) { 
 		      if (isrc==0) { 
 			if (int(recovar[nvar])>=2) {
-	//	cout<<"recovar "<<ievt<<" "<<"Type " << itp <<"recovar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size()<<endl;//" "<<genvar[3]<<" "<<genvar[9]<<" "<<genvar[18]<<" "<<genvar[24]<<endl;
-				h_recoevtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
+			nreco++;
+//if(ij==3 && itp==0 ){cout<<"reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc];}
+//if(itp==0){ cout <<" Var :  " << ij <<" : "<< recovar[ij];}
+		       h_recoevtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
 			}
 			/*for (int irand=0; irand<10; irand++) {
 			  if(irand !=k ) h_recoevtvar[irand][itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
-			  //#ifdef LHAPDF
-			  //						   			for (int ix=1; ix<nnnmx; ix++) {
-			  //							  			h_recoevtvarpdf[itp][irecohtjec[isrc]][iet][ij][ix]->Fill(recovar[ij], weighttrg*pdfwt[ix]); 
-			  //								  	}
-			  //#endif
+//#ifdef LHAPDF
+			  //for (int ix=1; ix<nnnmx; ix++) {
+			  //h_recoevtvarpdf[itp][irecohtjec[isrc]][iet][ij][ix]->Fill(recovar[ij], weighttrg*pdfwt[ix]); 
+			  //			 	}
+//#endif
 			  }*/	
 		      } else {
 #ifdef JETENERGY
@@ -3462,105 +3626,91 @@ else {
 	      }
 	    }
 	  } // if (isReconstruct)
-	  //cout << "Time Diff to Run ="<< diff << endl;
-	  
+//	  cout << endl;
 	  if(isMC) {
 	    for (int isrc=0; isrc<nGenReso; isrc++) {
-	      //	    for (int isrc=0; isrc<1; isrc++) { 
+	      //for (int isrc=0; isrc<1; isrc++) { 
 	      genvar.clear();
 	      bool isGEN=false;
-	      if (igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1) { 
-		//						cout <<"itp "<< itp<<" "<<iet<<" "<<isrc<<" "<<genmom[isrc][0][iet].size()<<" "<<genmom[isrc][itp][iet].size()<<endl; 
+	      if (isMC && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1) { 
 		EventShape_vector  genevtshape(genmom[isrc][itp][iet], 2.4, 0, 2, 1);
 		
 		genvar =  genevtshape.getEventShapes();
-		
-	//	cout<<"genvar "<<igenhtres[isrc]<<" "<<ievt<<" "<<"Type " << itp <<"genvar : "<<" "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size()<<" "<<genvar[3]<<" "<<genvar[9]<<" "<<genvar[18]<<" "<<genvar[24]<<endl;
 		if (genvar[nvar]>=2) {
 		  isGEN = true;
 		  for (int ij=0; ij<nvar; ij++) {
 		    if (isItUsed(ij)) { 
 		      if (isrc==0) { 
 			if (int(genvar[nvar])>=2) {
-			  h_genevtvar[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
-          //                cout <<"gen Var " << ievt << " "<<genvar[ij]<<endl;
+			h_genevtvar[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
+//if(ij==3 && itp==0 ){cout<<"Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc];}
+//if(itp==0){ cout <<" Var :  " << ij <<" : "<< genvar[ij];}
 			} //else {
 			  //h_genevtvar2[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);
 			//}
-			
 #ifdef JETRESO
-			//									} else {
-			//										h_genevtvarres[itp][igenhtres[isrc]][iet][ij][isrc]->Fill(genvar[ij], weighttrg);	
+			//	} else {
+			//    	h_genevtvarres[itp][igenhtres[isrc]][iet][ij][isrc]->Fill(genvar[ij], weighttrg);	
 #endif
 #ifdef LHAPDF
 			for (int ix=1; ix<nnnmx; ix++) {
-			  if (int(genvar[nvar])>=2) {h_genevtvarpdf[itp][igenhtres[isrc]][iet][ij][ix]->Fill(genvar[ij], weighttrg*pdfwt[ix]);}
+			if (int(genvar[nvar])>=2) {h_genevtvarpdf[itp][igenhtres[isrc]][iet][ij][ix]->Fill(genvar[ij], weighttrg*pdfwt[ix]);}
 			}
 #endif
 		      }
 		    }
 		  }
 		}
-		if (isrc==0 && isReconstruct) { 
+	      }
+
+///cout <<endl;	
+  	      if(isrc==0 && isReconstruct){ 
 		  for(int ij=0; ij<nvar; ij++) {
 		    if (isItUsed(ij)) { 	
-		      if (isRECO[itp][iet] && isGEN && irecoht==igenht) { 
+		      if(isRECO[itp][iet] && isGEN && irecohtjec[isrc]==igenhtres[isrc] && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) { 
 			naa++;
-			if (irecoht>=0 && irecoht<nHLTmx) {
-	                  if (recovar[nvar]>=2 &&  genvar[nvar]>=2) {
-                               // cout <<"RecoVar" <<recovar[nvar] <<"GenVar" <<  genvar[nvar] << endl;
-			  	h_2devtvar[itp][irecoht][iet][ij]->Fill(recovar[ij], genvar[ij], weighttrg);
-	//	                     cout <<"ievt :" << ievt<<"  Reco & Gen >= 3 " << recovar[ij] << " : " <<genvar[ij] <<endl;  
-                        }else if (recovar[nvar]>=2) {
-                        //   h_2devtvar[itp][irecoht][iet][ij]->Fill(recovar[ij], 1.1, weighttrg);
-			 //      h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg);	
-			       h_recoevtfake[itp][irecoht][iet][ij]->Fill(recovar[ij], weighttrg);
-	//	                     cout << "Reco Var >= 3 " << recovar[ij] << " : " <<genvar[ij] <<endl;  
-                           }else if (genvar[nvar]>=2) {
-                        //     h_2devtvar[itp][irecoht][iet][ij]->Fill(1.1, genvar[ij], weighttrg);
-			       h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill in Reco Underflow
-			       h_genevtmiss[itp][igenht][iet][ij]->Fill(genvar[ij], weighttrg);	
-	//	                     cout << "Gen Var >= 3 " << recovar[ij] << " : " <<genvar[ij] <<endl;  
+	                if(recovar1[nvar]>=2 &&  genvar[nvar]>=2){
+//             if(ij==3 && itp==0){cout<<"Corr Reco: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<recovar[nvar]<<" "<<recomom[isrc][itp][iet].size() << " Ht2 Bins :" <<irecohtjec[isrc]<<endl;}
+//              if(ij==3 && itp==0){cout <<"Corr Gen: "<<ievt<<" "<<"Ty:" << itp  << " Nvar : "<<genvar[nvar]<<" "<<genmom[isrc][itp][iet].size() << " Ht2 Bins :" <<igenhtres[isrc]<<endl;}
+//              if(itp==0){ cout <<"Corr Reco Var :  " << ij <<" : "<< recovar1[ij]<<endl; }
+///              if(itp==0){ cout <<"Corr Gen Var :  " << ij <<" : "<< genvar[ij]<<endl;}
+ 
+			 h_2devtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], genvar[ij], weighttrg);
+                        }else if (recovar1[nvar]>=2) {
+			 
+                         //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg);	
+			  h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], weighttrg);
+                        }else if (genvar[nvar]>=2) {
+			//h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill in Reco Underflow
+			  h_genevtmiss[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);	
                             }
-			}
 			//  h_2devtvar[itp][0][iet][ij]->Fill(recovar[ij], genvar[ij], weighttrg);
 		      } else {
-			if (isRECO[itp][iet]) {
+			if (isRECO[itp][iet] && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1 && recovar1[nvar]>=2) {
 			  nbb++;
-			  if (irecoht>=0 && irecoht<nHLTmx && recovar[nvar]>=2) {
-			    //for (int irand=0; irand<10; irand++) {
-			 //     h_2devtvar[itp][irecoht][iet][ij]->Fill(recovar[ij], 1.1, weighttrg);
-			 //       h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg); //Fill Fake in Gen Underflow
-			  //   cout << "Var Value " << recovar[ij] <<endl;
-			        h_recoevtfake[itp][irecoht][iet][ij]->Fill(recovar[ij], weighttrg);
-			      //if(irand !=k ) h_2devtvar[irand][itp][irecoht][iet][ij]->Fill(recovar[ij], 1.1, weighttrg);
-			    //}
-			  }
+			  //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg); //Fill Fake in Gen Underflow
+			    h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], weighttrg);
 			}
-			if (isGEN) {
+			if (isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && genvar[nvar]>=2) {
 			  ncc++;
-			  if (igenht>=0 && igenht<nHLTmx && genvar[nvar]>=2) {
-			    //for (int irand=0; irand<10; irand++) {
-			   //   h_2devtvar[itp][igenht][iet][ij]->Fill(1.1, genvar[ij], weighttrg);	
-			        h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill Miss in Reco Underflow
-			        h_genevtmiss[itp][igenht][iet][ij]->Fill(genvar[ij], weighttrg);	
-			      //if(irand !=k ) h_2devtvar[irand][itp][igenht][iet][ij]->Fill(1.1, genvar[ij], weighttrg);	
-			    //}
-			  }
+                             
+			   h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill Miss in Reco Underflow
+			   h_genevtmiss[itp][igenhtres[isrc]][iet][ij]->Fill(genvar[ij], weighttrg);	
 			}
 		      }
 		    } //if (isItUsed(ij)) 
 		  } // for(int ij=0; ij<nvar; ij++)	
 		} // if (isrc==0 && isReconstruct)
-	      } // if (igenht>=0 && igenht<njetptmn && genmom[isrc][itp][iet].size()>1)
+	      //} // if (igenht>=0 && igenht<njetptmn && genmom[isrc][itp][iet].size()>1)
 	    } // for (int isrc=0; isrc<nGenReso; isrc++)
 	  }//isMC
 	} // for (int iet=0; iet<njetetamn; iet++)
       } //for (int itp=0; itp<ntype; itp++) 
       
-      //	if (nevt%1000==1) { std::cout <<"nevt "<<nevt<<" naa "<<naa<<" nbb "<<nbb<<" ncc "<<ncc<< std::endl;}
-      
-      //cout << "Write test 33 = ok " << endl;
+      //if (nevt%1000==1) { std::cout <<"nevt "<<nevt<<" naa "<<naa<<" nbb "<<nbb<<" ncc "<<ncc<< std::endl;}
+if(nevt==100){   cout <<igenht <<endl;}
+
+   // cout <<"end event" << endl;
     }
 
 // ------------ method called once each job just before starting event loop  ------------
