@@ -2,7 +2,7 @@
 from CRABClient.UserUtilities import config
 config = config()
 
-#config.General.requestName ='ESVQCD_MG_50to100_tuneCP5_bin_26Aug20'
+config.General.requestName ='ESVQCD_MG_50to100_tuneCP5_bin_26Aug20'
 #config.General.requestName ='ESVQCD_MG_100to200_tuneCP5_bin_26Aug20'
 #config.General.requestName ='ESVQCD_MG_200to300_tuneCP5_bin_26Aug20'
 #config.General.requestName ='ESVQCD_MG_300to500_tuneCP5_bin_26Aug20'
@@ -10,7 +10,7 @@ config = config()
 #config.General.requestName ='ESVQCD_MG_700to1000_tuneCP5_bin_26Aug20'
 #config.General.requestName ='ESVQCD_MG_1000to1500_tuneCP5_bin_26Aug20'
 #config.General.requestName ='ESVQCD_MG_1500to2000_tuneCP5_bin_26Aug20'
-config.General.requestName ='ESVQCD_MG_2000toinf_tuneCP5_bin_26Aug20'
+#config.General.requestName ='ESVQCD_MG_2000toinf_tuneCP5_bin_26Aug20'
 
 #config.General.requestName ='ESV_Pt_C5_PY82017_1523_OLPU_GT94x_23Apr'
 #config.General.requestName ='ESV_Pt_C5_PY82017_249_14PU94X_20APr_CMSSW94X'
@@ -22,6 +22,11 @@ config.General.transferLogs = True
 
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'Run_QCD_test_miaod_v2_94x_mc_cfg.py'
+
+#config.JobType.maxMemoryMB = 9000 # Default is 2500 : Max I have used is 13000
+#config.JobType.maxJobRuntimeMin = 2750 #Default is 1315; 2750 minutes guaranteed to be available; Max I have used is 9000
+#config.JobType.numCores = 4
+
 
 config.JobType.inputFiles= [
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_17Nov2017F_V6_DATA/Fall17_17Nov2017F_V6_DATA_UncertaintySources_AK4PFchs.txt",
@@ -39,7 +44,7 @@ config.JobType.inputFiles= [
 
 
 
-#config.Data.inputDataset ='/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'
+config.Data.inputDataset ='/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'
 #config.Data.inputDataset ='/QCD_HT100to200_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'
 #config.Data.inputDataset ='/QCD_HT200to300_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'
 #config.Data.inputDataset ='/QCD_HT300to500_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'
@@ -47,7 +52,7 @@ config.JobType.inputFiles= [
 #config.Data.inputDataset ='/QCD_HT700to1000_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'
 #config.Data.inputDataset ='/QCD_HT1000to1500_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'
 #config.Data.inputDataset ='/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'
-config.Data.inputDataset ='/QCD_HT2000toInf_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'
+#config.Data.inputDataset ='/QCD_HT2000toInf_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'
 
 
 
@@ -66,6 +71,6 @@ config.Data.unitsPerJob = 1  #For Filebased or Lumibased
 #config.Data.outLFNDirBase = '/store/user/%s/' % (getUsernameFromSiteDB())
 #config.Data.outLFNDirBase = '/store/user/%s/' % (sukundu)
 config.Data.publication = True
-config.Data.outputDatasetTag = 'MC_MG_UL_2017'
+config.Data.outputDatasetTag = 'MC_MG_UL_2017_15oct'
 config.JobType.allowUndistributedCMSSW = True
 config.Site.storageSite ='T2_IN_TIFR'

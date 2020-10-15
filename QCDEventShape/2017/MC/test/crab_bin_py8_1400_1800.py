@@ -2,7 +2,7 @@
 from CRABClient.UserUtilities import config
 config = config()
 
-config.General.requestName ='ESVQCD_UL_Ptbinned_1400to1800_tuneCP5_bin_27Aug20'
+config.General.requestName ='ESVQCD_UL_Ptbinned_1400to1800_tuneCP5_bin_12Sep20'
 
 #config.General.requestName ='ESV_Pt_C5_PY82017_1523_OLPU_GT94x_23Apr'
 #config.General.requestName ='ESV_Pt_C5_PY82017_249_14PU94X_20APr_CMSSW94X'
@@ -14,6 +14,11 @@ config.General.transferLogs = True
 
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'Run_QCD_test_miaod_v2_94x_mc_cfg.py'
+
+#config.JobType.maxMemoryMB = 9000 # Default is 2500 : Max I have used is 13000
+#config.JobType.maxJobRuntimeMin = 2750 #Default is 1315; 2750 minutes guaranteed to be available; Max I have used is 9000
+#config.JobType.numCores = 4
+
 
 config.JobType.inputFiles= [
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_17Nov2017F_V6_DATA/Fall17_17Nov2017F_V6_DATA_UncertaintySources_AK4PFchs.txt",

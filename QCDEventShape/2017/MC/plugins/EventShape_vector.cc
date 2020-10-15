@@ -1,5 +1,5 @@
-#include "Test/QCDEventShape/plugins/EventShape_vector.h"
-
+#include "EventShape_vector.h"
+#include <iostream>
 using namespace std;
 
 using std::vector;
@@ -37,9 +37,12 @@ void EventShape_vector::SetThrustDir(std::vector<double> var, double val){
   iniDir = var;
   mncosthe=val;
 }
-
 int EventShape_vector::calculate(){
-  unsigned int length = (unsigned int) Object_4v.size();
+//cout << "jet input number form esv code :" << Object_4v.size() << endl;
+//for (int ijet =0; ijet <4 ; ijet++){
+//     cout << ijet <<": " << Object_4v[ijet].px() << ";  " << Object_4v[ijet].py() << "; " <<Object_4v[ijet].pz() <<";" << Object_4v[ijet].e() << endl; }
+ 
+ unsigned int length = (unsigned int) Object_4v.size();
   if (!Object_P.empty()){
     Object_P.clear();
     Object_Pt.clear();

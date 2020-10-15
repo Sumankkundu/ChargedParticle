@@ -10,7 +10,6 @@ process.load("PhysicsTools.PatAlgos.producersLayer1.patCandidates_cff")
 process.load("PhysicsTools.PatAlgos.selectionLayer1.selectedPatCandidates_cff")
 
 
-# source
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(#'/store/mc/Spring14dr/TTJets_MSDecaysCKM_central_Tune4C_13TeV-madgraph-tauola/AODSIM/PU20bx25_POSTLS170_V5-v1/00000/00B6F8B6-90F1-E311-B72C-0025905A6092.root',
 #'/store/mc/RunIISummer19UL17MiniAOD/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FEDF66BB-75F5-6746-A6E0-CE47C31F7F6C.root',
@@ -27,8 +26,8 @@ process.source = cms.Source("PoolSource",
 #'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_600to800_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/270000/084EEF62-871E-1E49-A9FA-EEC55E72FE35.root',
 #'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/FB6B1B36-AF31-BB4F-8B24-37063D7D7CD9.root',
 '/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/FA0DBDDB-4DC6-5A44-934B-B3100EB43C5E.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/F199462C-AD3F-CD41-A707-168EBF5BA2B9.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/E98B458E-FF8B-1F41-993E-05D6AC948556.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/F199462C-AD3F-CD41-A707-168EBF5BA2B9.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/E98B458E-FF8B-1F41-993E-05D6AC948556.root',
 #'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/70000/7E86CBA6-9842-E811-B26F-0CC47AA53D6E.root',
 #'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/70000/7E65A585-9C42-E811-BA22-0025901ABB72.root',
  )
@@ -37,8 +36,8 @@ process.source = cms.Source("PoolSource",
 #eventRanges = cms.untracked.VEventRange('1:1000-1:2000'),
 )
 
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000) )
 
@@ -63,6 +62,16 @@ from PhysicsTools.PatAlgos.tools.coreTools import *
 process.load("PhysicsTools.PatAlgos.patSequences_cff")
 
 #process.load("HLTrigger.HLTcore.hltPrescaleRecorder_cfi")
+
+
+process.options = cms.untracked.PSet(
+
+)
+
+#Setup FWK for multithreaded
+process.options.numberOfThreads=cms.untracked.uint32(4)
+process.options.numberOfStreams=cms.untracked.uint32(0)
+
 
 
 process.MessageLogger = cms.Service("MessageLogger",  

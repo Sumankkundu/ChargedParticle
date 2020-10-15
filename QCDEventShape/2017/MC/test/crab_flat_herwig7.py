@@ -2,7 +2,7 @@
 from CRABClient.UserUtilities import config
 config = config()
 
-config.General.requestName ='ESV_CH3_herwig7_Flat_23Aug20'
+config.General.requestName ='ESV_CH3_herwig7_Flat'
 
 config.General.workArea = 'crab_projects'
 config.General.transferOutputs = True
@@ -10,6 +10,11 @@ config.General.transferLogs = True
 
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'Run_QCD_test_miaod_v2_94x_mc_cfg.py'
+#config.JobType.psetName = options.cfg
+config.JobType.maxMemoryMB = 9000 # Default is 2500 : Max I have used is 13000
+config.JobType.maxJobRuntimeMin = 2750 #Default is 1315; 2750 minutes guaranteed to be available; Max I have used is 9000
+config.JobType.numCores = 4
+
 
 config.JobType.inputFiles= [
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_17Nov2017F_V6_DATA/Fall17_17Nov2017F_V6_DATA_UncertaintySources_AK4PFchs.txt",
@@ -44,6 +49,6 @@ config.Data.unitsPerJob = 1  #For Filebased or Lumibased
 #config.Data.outLFNDirBase = '/store/user/%s/' % (getUsernameFromSiteDB())
 #config.Data.outLFNDirBase = '/store/user/%s/' % (sukundu)
 config.Data.publication = True
-config.Data.outputDatasetTag = 'MC_UL2017_Herwig7_flat'
+config.Data.outputDatasetTag = 'MC_UL2017_Herwig7_flat_15oct'
 config.JobType.allowUndistributedCMSSW = True
 config.Site.storageSite ='T2_IN_TIFR'
