@@ -16,13 +16,13 @@ process.source = cms.Source("PoolSource",
 #'/store/data/Run2015D/JetHT/MINIAOD/16Dec2015-v1/00000/7E46D250-67B0-E511-BB96-0025905C3E66.root'
 #'/store/data/Run2017F/JetHT/MINIAOD/31Mar2018-v1/30000/02EDD8BA-B037-E811-B399-001E67792768.root',
 #'/store/data/Run2017F/JetHT/MINIAOD/31Mar2018-v1/30000/02FDDB8F-F037-E811-98EF-001E67792884.root',
-#'/store/data/Run2017F/JetHT/MINIAOD/31Mar2018-v1/30000/02FFDBF4-C037-E811-85A9-001E67E6F4EF.root'
+'/store/data/Run2017F/JetHT/MINIAOD/31Mar2018-v1/30000/02FFDBF4-C037-E811-85A9-001E67E6F4EF.root'
 #'/store/data/Run2017B/JetHT/MINIAOD/31Mar2018-v1/90000/E87B6957-7139-E811-86AC-0CC47A78A468.root',
 #'/store/data/Run2017B/JetHT/MINIAOD/31Mar2018-v1/90000/E6944CFD-8039-E811-BC15-0025905A606A.root',
 #'/store/data/Run2017B/JetHT/MINIAOD/31Mar2018-v1/90000/E42325FE-8839-E811-A0EC-0CC47A78A436.root',
 #'/store/data/Run2017C/JetHT/MINIAOD/31Mar2018-v1/30000/F019909F-4839-E811-A3BA-D4856445E5E2.root',
 #'/store/data/Run2017E/JetHT/MINIAOD/31Mar2018-v1/90001/F41B041E-9837-E811-BFD2-008CFAC941DC.root',
-'/store/data/Run2017B/JetHT/MINIAOD/09Aug2019_UL2017-v1/50000/FFEEECDB-9680-6749-976A-F2CF385F8489.root',
+#'/store/data/Run2017B/JetHT/MINIAOD/09Aug2019_UL2017-v1/50000/FFEEECDB-9680-6749-976A-F2CF385F8489.root',
 #'/store/data/Run2017D/JetHT/MINIAOD/31Mar2018-v1/90000/E4402B21-F739-E811-BA23-0CC47A4C8E1E.root',
 #'/store/data/Run2017B/JetHT/MINIAOD/17Nov2017-v1/60000/DA587060-EED8-E711-80CC-0CC47A4D7678.root',
  )
@@ -31,8 +31,8 @@ process.source = cms.Source("PoolSource",
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(500) )
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(2000) )
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(2000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 #process.load("Configuration.StandardSequences.Geometry_cff")
 #process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")

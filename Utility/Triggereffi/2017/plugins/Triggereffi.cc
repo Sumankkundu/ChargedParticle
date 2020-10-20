@@ -520,7 +520,7 @@ Triggereffi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
  cout << "Ok 4 " << endl;
   
 
-  //Preslace Factor Calculation
+  //Prescale Factor Calculation
   int preL1(-1), preHLT(-1), prescale(-1);
 
   // trgpas[nDiJetHLTmx]={false};
@@ -533,11 +533,11 @@ Triggereffi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
            const std::pair<std::vector<std::pair<std::string,int> >,int> prescalesInDetail(hltPrescaleProvider_.prescaleValuesInDetail(iEvent,iSetup,variab1));
             preL1 = prescalesInDetail.first[0].second;  //acesses the L1 prescale
             preHLT = prescalesInDetail.second;     // acesses the HLT prescale
-           if(preL1<=0){preL1=1;}      //skip the l1 prescale if it give negative or zero
+//           if(preL1<=0){preL1=1;}      //skip the l1 prescale if it give negative or zero
              prescale = preL1 * preHLT;
              compres[jk] = prescale;
      cout << " By index " << triggerPrescales->getPrescaleForIndex(ij) << "  L1 : "<< preL1 << "  HLT :" << preHLT << "  L1*HLT "  << compres[jk] <<endl;
-   cout << "prescale check " <<   compres[jk] << endl; 
+     cout << "prescale check " <<   compres[jk] << endl; 
      }
     }
   }//calculation of prescale

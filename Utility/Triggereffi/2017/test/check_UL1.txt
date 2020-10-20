@@ -1,0 +1,4568 @@
+test1
+test2
+10-Mar-2020 18:19:27 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2017B/JetHT/MINIAOD/09Aug2019_UL2017-v1/50000/FFEEECDB-9680-6749-976A-F2CF385F8489.root
+10-Mar-2020 18:19:28 CET  Fallback request to file root://xrootd-cms.infn.it//store/data/Run2017B/JetHT/MINIAOD/09Aug2019_UL2017-v1/50000/FFEEECDB-9680-6749-976A-F2CF385F8489.root
+10-Mar-2020 18:19:31 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2017B/JetHT/MINIAOD/09Aug2019_UL2017-v1/50000/FFEEECDB-9680-6749-976A-F2CF385F8489.root
+HLTConfigData::dump: Triggers: 280
+  0 HLTriggerFirstPath
+  1 HLT_CaloJet500_NoJetID_v7
+  2 HLT_CaloJet550_NoJetID_v2
+  3 HLT_Trimuon2_Upsilon5_Muon_v2
+  4 HLT_DoubleEle33_CaloIdL_MW_v11
+  5 HLT_DoubleMu4_3_Bs_v9
+  6 HLT_DoubleMu4_3_Jpsi_Displaced_v10
+  7 HLT_DoubleMu4_JpsiTrk_Displaced_v9
+  8 HLT_DoubleMu4_LowMassNonResonantTrk_Displaced_v9
+  9 HLT_DoubleMu3_Trk_Tau3mu_v6
+  10 HLT_DoubleMu4_PsiPrimeTrk_Displaced_v9
+  11 HLT_Mu7p5_Track2_Jpsi_v6
+  12 HLT_Mu7p5_Track3p5_Jpsi_v6
+  13 HLT_Mu7p5_Track7_Jpsi_v6
+  14 HLT_Mu7p5_Track2_Upsilon_v6
+  15 HLT_Mu7p5_Track3p5_Upsilon_v6
+  16 HLT_Mu7p5_Track7_Upsilon_v6
+  17 HLT_DoublePhoton33_CaloIdL_v2
+  18 HLT_DoublePhoton70_v2
+  19 HLT_DoublePhoton85_v10
+  20 HLT_Ele27_WPTight_Gsf_v10
+  21 HLT_Ele35_WPTight_Gsf_v3
+  22 HLT_Ele38_WPTight_Gsf_v3
+  23 HLT_Ele40_WPTight_Gsf_v3
+  24 HLT_Ele32_WPTight_Gsf_L1DoubleEG_v3
+  25 HLT_HT450_Beamspot_v2
+  26 HLT_HT300_Beamspot_v2
+  27 HLT_IsoMu20_eta2p1_LooseChargedIsoPFTau27_eta2p1_CrossL1_v3
+  28 HLT_IsoMu20_eta2p1_MediumChargedIsoPFTau27_eta2p1_CrossL1_v3
+  29 HLT_IsoMu20_eta2p1_TightChargedIsoPFTau27_eta2p1_CrossL1_v3
+  30 HLT_IsoMu20_eta2p1_LooseChargedIsoPFTau27_eta2p1_TightID_CrossL1_v3
+  31 HLT_IsoMu20_eta2p1_MediumChargedIsoPFTau27_eta2p1_TightID_CrossL1_v3
+  32 HLT_IsoMu20_eta2p1_TightChargedIsoPFTau27_eta2p1_TightID_CrossL1_v3
+  33 HLT_IsoMu24_eta2p1_LooseChargedIsoPFTau20_SingleL1_v3
+  34 HLT_IsoMu24_eta2p1_MediumChargedIsoPFTau20_SingleL1_v3
+  35 HLT_IsoMu24_eta2p1_TightChargedIsoPFTau20_SingleL1_v3
+  36 HLT_IsoMu24_eta2p1_LooseChargedIsoPFTau20_TightID_SingleL1_v3
+  37 HLT_IsoMu24_eta2p1_MediumChargedIsoPFTau20_TightID_SingleL1_v3
+  38 HLT_IsoMu24_eta2p1_TightChargedIsoPFTau20_TightID_SingleL1_v3
+  39 HLT_IsoMu20_v9
+  40 HLT_IsoMu24_v7
+  41 HLT_IsoMu24_eta2p1_v9
+  42 HLT_IsoMu27_v10
+  43 HLT_UncorrectedJetE30_NoBPTX_v2
+  44 HLT_UncorrectedJetE30_NoBPTX3BX_v2
+  45 HLT_UncorrectedJetE60_NoBPTX3BX_v2
+  46 HLT_UncorrectedJetE70_NoBPTX3BX_v2
+  47 HLT_L1SingleMu18_v2
+  48 HLT_L1SingleMu25_v1
+  49 HLT_L2Mu10_v4
+  50 HLT_L2Mu10_NoVertex_NoBPTX3BX_v3
+  51 HLT_L2Mu10_NoVertex_NoBPTX_v4
+  52 HLT_L2Mu45_NoVertex_3Sta_NoBPTX3BX_v2
+  53 HLT_L2Mu40_NoVertex_3Sta_NoBPTX3BX_v3
+  54 HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v9
+  55 HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v10
+  56 HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8_v8
+  57 HLT_Mu30_TkMu0_Onia_v2
+  58 HLT_Mu20_TkMu0_Phi_v2
+  59 HLT_Mu20_v7
+  60 HLT_Mu27_v8
+  61 HLT_Mu50_v8
+  62 HLT_DiPFJet15_NoCaloMatched_v8
+  63 HLT_DiPFJet25_NoCaloMatched_v8
+  64 HLT_DiPFJet15_FBEta3_NoCaloMatched_v9
+  65 HLT_DiPFJet25_FBEta3_NoCaloMatched_v9
+  66 HLT_DiPFJetAve15_HFJEC_v9
+  67 HLT_DiPFJetAve25_HFJEC_v9
+  68 HLT_DiPFJetAve35_HFJEC_v9
+  69 HLT_AK8PFJet40_v7
+  70 HLT_AK8PFJet60_v6
+  71 HLT_AK8PFJet80_v6
+  72 HLT_AK8PFJet140_v6
+  73 HLT_AK8PFJet200_v6
+  74 HLT_AK8PFJet260_v7
+  75 HLT_AK8PFJet320_v7
+  76 HLT_AK8PFJet400_v7
+  77 HLT_AK8PFJet450_v7
+  78 HLT_AK8PFJet500_v7
+  79 HLT_AK8PFJet550_v2
+  80 HLT_PFJet40_v12
+  81 HLT_PFJet60_v12
+  82 HLT_PFJet80_v11
+  83 HLT_PFJet140_v10
+  84 HLT_PFJet200_v10
+  85 HLT_PFJet260_v11
+  86 HLT_PFJet320_v11
+  87 HLT_PFJet400_v11
+  88 HLT_PFJet450_v12
+  89 HLT_PFJet500_v12
+  90 HLT_PFJet550_v2
+  91 HLT_PFHT180_v8
+  92 HLT_PFHT250_v8
+  93 HLT_PFHT370_v8
+  94 HLT_PFHT430_v8
+  95 HLT_PFHT510_v8
+  96 HLT_PFHT590_v8
+  97 HLT_PFHT680_v8
+  98 HLT_PFHT780_v8
+  99 HLT_PFHT890_v8
+  100 HLT_PFHT1050_v9
+  101 HLT_PFHT500_PFMET100_PFMHT100_IDTight_v3
+  102 HLT_PFHT500_PFMET110_PFMHT110_IDTight_v3
+  103 HLT_PFHT700_PFMET85_PFMHT85_IDTight_v3
+  104 HLT_PFHT700_PFMET95_PFMHT95_IDTight_v3
+  105 HLT_PFHT800_PFMET75_PFMHT75_IDTight_v3
+  106 HLT_PFHT800_PFMET85_PFMHT85_IDTight_v3
+  107 HLT_PFMET110_PFMHT110_IDTight_v11
+  108 HLT_PFMET120_PFMHT120_IDTight_v11
+  109 HLT_PFMET130_PFMHT130_IDTight_v11
+  110 HLT_PFMET140_PFMHT140_IDTight_v11
+  111 HLT_PFMETTypeOne110_PFMHT110_IDTight_v3
+  112 HLT_PFMETTypeOne120_PFMHT120_IDTight_v3
+  113 HLT_PFMETTypeOne130_PFMHT130_IDTight_v3
+  114 HLT_PFMETTypeOne140_PFMHT140_IDTight_v2
+  115 HLT_PFMETNoMu110_PFMHTNoMu110_IDTight_v11
+  116 HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_v11
+  117 HLT_MonoCentralPFJet80_PFMETNoMu110_PFMHTNoMu110_IDTight_v11
+  118 HLT_MonoCentralPFJet80_PFMETNoMu120_PFMHTNoMu120_IDTight_v11
+  119 HLT_Photon300_NoHE_v9
+  120 HLT_Mu8_TrkIsoVVL_v7
+  121 HLT_Mu8_DiEle12_CaloIdL_TrackIdL_DZ_v11
+  122 HLT_Mu8_DiEle12_CaloIdL_TrackIdL_v11
+  123 HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v6
+  124 HLT_Mu17_TrkIsoVVL_v7
+  125 HLT_BTagMu_AK4DiJet20_Mu5_v6
+  126 HLT_BTagMu_AK4DiJet40_Mu5_v6
+  127 HLT_BTagMu_AK4DiJet70_Mu5_v6
+  128 HLT_BTagMu_AK4DiJet110_Mu5_v6
+  129 HLT_BTagMu_AK4DiJet170_Mu5_v5
+  130 HLT_BTagMu_AK4Jet300_Mu5_v6
+  131 HLT_BTagMu_AK8DiJet170_Mu5_v2
+  132 HLT_BTagMu_AK8Jet300_Mu5_v6
+  133 HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v12
+  134 HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v8
+  135 HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v8
+  136 HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_v12
+  137 HLT_Photon33_v2
+  138 HLT_Photon50_v9
+  139 HLT_Photon75_v9
+  140 HLT_Photon90_v9
+  141 HLT_Photon120_v9
+  142 HLT_Photon150_v2
+  143 HLT_Photon175_v10
+  144 HLT_Photon200_v9
+  145 HLT_Photon50_R9Id90_HE10_IsoM_v10
+  146 HLT_Photon75_R9Id90_HE10_IsoM_v10
+  147 HLT_Photon90_R9Id90_HE10_IsoM_v10
+  148 HLT_Photon120_R9Id90_HE10_IsoM_v10
+  149 HLT_Photon165_R9Id90_HE10_IsoM_v11
+  150 HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass90_v8
+  151 HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass95_v8
+  152 HLT_Diphoton30PV_18PV_R9Id_AND_IsoCaloId_AND_HE_R9Id_PixelVeto_Mass55_v9
+  153 HLT_Diphoton30PV_18PV_R9Id_AND_IsoCaloId_AND_HE_R9Id_NoPixelVeto_Mass55_v8
+  154 HLT_Diphoton30EB_18EB_R9Id_OR_IsoCaloId_AND_HE_R9Id_NoPixelVeto_Mass55_v8
+  155 HLT_Diphoton30EB_18EB_R9Id_OR_IsoCaloId_AND_HE_R9Id_PixelVeto_Mass55_v9
+  156 HLT_Dimuon0_LowMass_L1_0er1p5R_v2
+  157 HLT_Dimuon0_LowMass_L1_4R_v2
+  158 HLT_TripleMu_10_5_5_DZ_v5
+  159 HLT_TripleMu_12_10_5_v5
+  160 HLT_DoubleMu4_Jpsi_Displaced_v2
+  161 HLT_DoubleMu4_Jpsi_NoVertexing_v2
+  162 HLT_DoubleMu20_7_Mass0to30_L1_DM4EG_v2
+  163 HLT_Ele30_eta2p1_WPTight_Gsf_CentralPFJet35_EleCleaned_v4
+  164 HLT_Ele28_eta2p1_WPTight_Gsf_HT150_v4
+  165 HLT_DoubleMu20_7_Mass0to30_Photon23_v2
+  166 HLT_Dimuon10_PsiPrime_Barrel_Seagulls_v2
+  167 HLT_Dimuon20_Jpsi_Barrel_Seagulls_v2
+  168 HLT_Dimuon12_Upsilon_eta1p5_v9
+  169 HLT_Dimuon14_Phi_Barrel_Seagulls_v2
+  170 HLT_Dimuon18_PsiPrime_v9
+  171 HLT_Dimuon25_Jpsi_v9
+  172 HLT_DiMu9_Ele9_CaloIdL_TrackIdL_DZ_v10
+  173 HLT_DiMu9_Ele9_CaloIdL_TrackIdL_v10
+  174 HLT_Mu8_v7
+  175 HLT_Mu17_v7
+  176 HLT_HT300PT30_QuadJet_75_60_45_40_v3
+  177 HLT_HT300PT30_QuadJet_75_60_45_40_TripeCSV_p07_v3
+  178 HLT_PFHT380_SixJet32_DoubleBTagCSV_p075_v2
+  179 HLT_PFHT430_SixJet40_BTagCSV_p080_v2
+  180 HLT_PFHT350_v10
+  181 HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT350MinPFJet15_v3
+  182 HLT_FullTrack_Multiplicity85_v1
+  183 HLT_FullTrack_Multiplicity105_v1
+  184 HLT_FullTrack_Multiplicity135_v1
+  185 HLT_FullTrack_Multiplicity155_v1
+  186 HLT_ECALHT800_v7
+  187 HLT_DiSC30_18_EIso_AND_HE_Mass70_v8
+  188 HLT_Physics_v6
+  189 DST_Physics_v6
+  190 HLT_Random_v2
+  191 HLT_ZeroBias_v5
+  192 DST_ZeroBias_v1
+  193 HLT_AK4CaloJet30_v7
+  194 HLT_AK4CaloJet40_v6
+  195 HLT_AK4CaloJet50_v6
+  196 HLT_AK4CaloJet80_v6
+  197 HLT_AK4CaloJet100_v6
+  198 HLT_AK4CaloJet120_v5
+  199 HLT_AK4PFJet30_v10
+  200 HLT_AK4PFJet50_v10
+  201 HLT_AK4PFJet80_v10
+  202 HLT_AK4PFJet100_v10
+  203 HLT_AK4PFJet120_v9
+  204 HLT_HISinglePhoton10_Eta3p1ForPPRef_v5
+  205 HLT_HISinglePhoton20_Eta3p1ForPPRef_v5
+  206 HLT_HISinglePhoton30_Eta3p1ForPPRef_v5
+  207 HLT_HISinglePhoton40_Eta3p1ForPPRef_v5
+  208 HLT_HISinglePhoton50_Eta3p1ForPPRef_v5
+  209 HLT_HISinglePhoton60_Eta3p1ForPPRef_v5
+  210 HLT_Photon20_HoverELoose_v7
+  211 HLT_Photon30_HoverELoose_v7
+  212 HLT_Photon40_HoverELoose_v7
+  213 HLT_Photon50_HoverELoose_v7
+  214 HLT_Photon60_HoverELoose_v7
+  215 HLT_EcalCalibration_v3
+  216 HLT_HcalCalibration_v4
+  217 AlCa_EcalPhiSym_v7
+  218 HLT_L1UnpairedBunchBptxMinus_v1
+  219 HLT_L1UnpairedBunchBptxPlus_v1
+  220 HLT_L1NotBptxOR_v2
+  221 HLT_L1MinimumBiasHF_OR_v1
+  222 HLT_L1MinimumBiasHF0OR_v2
+  223 HLT_HcalNZS_v11
+  224 HLT_HcalPhiSym_v12
+  225 HLT_ZeroBias_FirstCollisionAfterAbortGap_v4
+  226 HLT_ZeroBias_IsolatedBunches_v4
+  227 HLT_ZeroBias_FirstCollisionInTrain_v2
+  228 HLT_ZeroBias_LastCollisionInTrain_v2
+  229 HLT_ZeroBias_FirstBXAfterTrain_v2
+  230 AlCa_RPCMuonNormalisation_v12
+  231 AlCa_LumiPixels_Random_v3
+  232 AlCa_LumiPixels_ZeroBias_v7
+  233 AlCa_EcalPi0EBonly_v9
+  234 AlCa_EcalPi0EEonly_v9
+  235 AlCa_EcalEtaEBonly_v9
+  236 AlCa_EcalEtaEEonly_v9
+  237 HLT_Ele24_eta2p1_WPTight_Gsf_LooseChargedIsoPFTau30_eta2p1_CrossL1_v4
+  238 HLT_Ele24_eta2p1_WPTight_Gsf_MediumChargedIsoPFTau30_eta2p1_CrossL1_v4
+  239 HLT_Ele24_eta2p1_WPTight_Gsf_TightChargedIsoPFTau30_eta2p1_CrossL1_v4
+  240 HLT_Ele24_eta2p1_WPTight_Gsf_LooseChargedIsoPFTau30_eta2p1_TightID_CrossL1_v4
+  241 HLT_Ele24_eta2p1_WPTight_Gsf_MediumChargedIsoPFTau30_eta2p1_TightID_CrossL1_v4
+  242 HLT_Ele24_eta2p1_WPTight_Gsf_TightChargedIsoPFTau30_eta2p1_TightID_CrossL1_v4
+  243 HLT_DoubleLooseChargedIsoPFTau35_Trk1_eta2p1_Reg_v3
+  244 HLT_DoubleLooseChargedIsoPFTau40_Trk1_eta2p1_Reg_v3
+  245 HLT_DoubleMediumChargedIsoPFTau35_Trk1_eta2p1_Reg_v3
+  246 HLT_DoubleMediumChargedIsoPFTau40_Trk1_eta2p1_Reg_v3
+  247 HLT_DoubleTightChargedIsoPFTau35_Trk1_eta2p1_Reg_v3
+  248 HLT_DoubleTightChargedIsoPFTau40_Trk1_eta2p1_Reg_v3
+  249 HLT_DoubleLooseChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v3
+  250 HLT_DoubleLooseChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v3
+  251 HLT_DoubleMediumChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v3
+  252 HLT_DoubleMediumChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v3
+  253 HLT_DoubleTightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v3
+  254 HLT_DoubleTightChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v3
+  255 HLT_IsoMu24_eta2p1_MediumChargedIsoPFTau50_Trk30_eta2p1_1pr_v3
+  256 HLT_MediumChargedIsoPFTau50_Trk30_eta2p1_1pr_MET90_v3
+  257 HLT_MediumChargedIsoPFTau50_Trk30_eta2p1_1pr_MET100_v3
+  258 HLT_MediumChargedIsoPFTau50_Trk30_eta2p1_1pr_v3
+  259 HLT_MediumChargedIsoPFTau100HighPtRelaxedIso_Trk50_eta2p1_1pr_v3
+  260 HLT_MediumChargedIsoPFTau180HighPtRelaxedIso_Trk50_eta2p1_v3
+  261 HLT_IsoMu24_eta2p1_LooseChargedIsoPFTau35_Trk1_eta2p1_Reg_CrossL1_v3
+  262 HLT_IsoMu24_eta2p1_LooseChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_CrossL1_v3
+  263 HLT_IsoMu24_eta2p1_MediumChargedIsoPFTau35_Trk1_eta2p1_Reg_CrossL1_v3
+  264 HLT_IsoMu24_eta2p1_MediumChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_CrossL1_v3
+  265 HLT_IsoMu24_eta2p1_TightChargedIsoPFTau35_Trk1_eta2p1_Reg_CrossL1_v3
+  266 HLT_IsoMu24_eta2p1_TightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_CrossL1_v3
+  267 HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL_v3
+  268 HLT_ZeroBias_part0_v2
+  269 HLT_ZeroBias_part1_v2
+  270 HLT_ZeroBias_part2_v2
+  271 HLT_ZeroBias_part3_v2
+  272 HLT_ZeroBias_part4_v2
+  273 HLT_ZeroBias_part5_v2
+  274 HLT_ZeroBias_part6_v2
+  275 HLT_ZeroBias_part7_v2
+  276 HLT_ZeroBias_part8_v2
+  277 HLT_ZeroBias_part9_v2
+  278 HLT_L1FatEvents_v1
+  279 HLTriggerFinalPath
+HLTConfigData::dump: PrescaleTable: # of sets : 16
+ 0/'Emergency' 1/'2.0e34' 2/'1.6e34' 3/'1.6e34 3kHz ZB' 4/'1.4e34' 5/'1.4e34 3kHz ZB' 6/'1.2e34' 7/'1.0e34' 8/'7.5e33' 9/'5.0e33' 10/'2.5e33' 11/'3KHz ZB' 12/'70kHz ZB' 13/'80kHz ZB' 14/'90kHz ZB' 15/'100kHz ZB'
+HLTConfigData::dump: PrescaleTable: # of paths: 276
+ 5 5 3 3 3 3 3 3 2 1 1 5 0 0 0 0 AlCa_EcalEtaEBonly_v9
+ 2 2 1 1 1 1 1 1 1 1 1 2 0 0 0 0 AlCa_EcalEtaEEonly_v9
+ 1 1 1 1 1 1 1 1 1 1 1 1 10 10 10 10 AlCa_EcalPhiSym_v7
+ 8 8 5 5 5 5 4 4 3 2 1 8 0 0 0 0 AlCa_EcalPi0EBonly_v9
+ 5 5 3 3 3 3 2 2 1 1 1 5 0 0 0 0 AlCa_EcalPi0EEonly_v9
+ 2 2 2 2 2 2 2 5 5 5 5 2 40 47 53 59 AlCa_LumiPixels_ZeroBias_v7
+ 12 12 10 10 12 12 18 12 12 12 12 12 0 0 0 0 AlCa_RPCMuonNormalisation_v12
+ 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 DQMOutput
+ 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 DST_Physics_v6
+ 1 1 1 1 1 1 1 3 3 3 3 1 24 27 30 33 DST_ZeroBias_v1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4CaloJet100_v6
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4CaloJet120_v5
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4CaloJet30_v7
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4CaloJet40_v6
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4CaloJet50_v6
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4CaloJet80_v6
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4PFJet100_v10
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4PFJet120_v9
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4PFJet30_v10
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4PFJet50_v10
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_AK4PFJet80_v10
+ 0 6 6 6 6 6 30 30 30 30 30 0 0 0 0 0 HLT_AK8PFJet140_v6
+ 0 4 4 4 4 4 90 90 90 90 90 0 0 0 0 0 HLT_AK8PFJet200_v6
+ 0 200 140 140 140 140 50 50 50 50 50 0 0 0 0 0 HLT_AK8PFJet260_v7
+ 0 70 50 50 50 50 20 20 20 20 20 0 0 0 0 0 HLT_AK8PFJet320_v7
+ 0 2 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_AK8PFJet400_v7
+ 0 200 200 200 200 200 200 600 600 600 600 0 0 0 0 0 HLT_AK8PFJet40_v7
+ 0 2 2 2 2 2 1 1 1 1 1 0 0 0 0 0 HLT_AK8PFJet450_v7
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_AK8PFJet500_v7
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_AK8PFJet550_v2
+ 0 3 3 3 3 3 3 3 3 3 3 0 0 0 0 0 HLT_AK8PFJet60_v6
+ 0 12 12 12 12 12 12 12 12 12 12 0 0 0 0 0 HLT_AK8PFJet80_v6
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_BTagMu_AK4DiJet110_Mu5_v6
+ 0 3 3 3 3 3 3 3 3 3 3 0 0 0 0 0 HLT_BTagMu_AK4DiJet170_Mu5_v5
+ 0 4 4 4 4 4 4 4 4 4 4 0 0 0 0 0 HLT_BTagMu_AK4DiJet20_Mu5_v6
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_BTagMu_AK4DiJet40_Mu5_v6
+ 0 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 HLT_BTagMu_AK4DiJet70_Mu5_v6
+ 0 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 HLT_BTagMu_AK4Jet300_Mu5_v6
+ 0 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 HLT_BTagMu_AK8DiJet170_Mu5_v2
+ 0 3 2 2 2 2 2 2 2 2 2 0 0 0 0 0 HLT_BTagMu_AK8Jet300_Mu5_v6
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_CaloJet500_NoJetID_v7
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_CaloJet550_NoJetID_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DiMu9_Ele9_CaloIdL_TrackIdL_DZ_v10
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DiMu9_Ele9_CaloIdL_TrackIdL_v10
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DiPFJet15_FBEta3_NoCaloMatched_v9
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DiPFJet15_NoCaloMatched_v8
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DiPFJet25_FBEta3_NoCaloMatched_v9
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DiPFJet25_NoCaloMatched_v8
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DiPFJetAve15_HFJEC_v9
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DiPFJetAve25_HFJEC_v9
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DiPFJetAve35_HFJEC_v9
+ 0 155 155 155 155 155 6 6 6 6 6 0 0 0 0 0 HLT_DiSC30_18_EIso_AND_HE_Mass70_v8
+ 0 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 0 0 0 0 0 HLT_Dimuon0_LowMass_L1_0er1p5R_v2
+ 0 2300 2300 2300 2300 2300 2300 2300 2300 2300 2300 0 0 0 0 0 HLT_Dimuon0_LowMass_L1_4R_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Dimuon10_PsiPrime_Barrel_Seagulls_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Dimuon12_Upsilon_eta1p5_v9
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Dimuon14_Phi_Barrel_Seagulls_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Dimuon18_PsiPrime_v9
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Dimuon20_Jpsi_Barrel_Seagulls_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Dimuon25_Jpsi_v9
+ 0 10 10 10 10 10 10 10 10 10 10 0 0 0 0 0 HLT_Diphoton30EB_18EB_R9Id_OR_IsoCaloId_AND_HE_R9Id_NoPixelVeto_Mass55_v8
+ 0 10 10 10 10 10 10 10 10 10 10 0 0 0 0 0 HLT_Diphoton30EB_18EB_R9Id_OR_IsoCaloId_AND_HE_R9Id_PixelVeto_Mass55_v9
+ 0 10 10 10 10 10 10 10 10 10 10 0 0 0 0 0 HLT_Diphoton30PV_18PV_R9Id_AND_IsoCaloId_AND_HE_R9Id_NoPixelVeto_Mass55_v8
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Diphoton30PV_18PV_R9Id_AND_IsoCaloId_AND_HE_R9Id_PixelVeto_Mass55_v9
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass90_v8
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Diphoton30_22_R9Id_OR_IsoCaloId_AND_HE_R9Id_Mass95_v8
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleEle33_CaloIdL_MW_v11
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DoubleLooseChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v3
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DoubleLooseChargedIsoPFTau35_Trk1_eta2p1_Reg_v3
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DoubleLooseChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v3
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_DoubleLooseChargedIsoPFTau40_Trk1_eta2p1_Reg_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMediumChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMediumChargedIsoPFTau35_Trk1_eta2p1_Reg_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMediumChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMediumChargedIsoPFTau40_Trk1_eta2p1_Reg_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMu20_7_Mass0to30_L1_DM4EG_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMu20_7_Mass0to30_Photon23_v2
+ 0 2 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMu3_Trk_Tau3mu_v6
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMu4_3_Bs_v9
+ 0 14 14 14 14 14 14 14 14 14 14 0 0 0 0 0 HLT_DoubleMu4_3_Jpsi_Displaced_v10
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMu4_JpsiTrk_Displaced_v9
+ 0 120 80 80 80 80 30 30 30 30 30 0 0 0 0 0 HLT_DoubleMu4_Jpsi_Displaced_v2
+ 0 120 80 80 80 80 30 30 30 30 30 0 0 0 0 0 HLT_DoubleMu4_Jpsi_NoVertexing_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMu4_LowMassNonResonantTrk_Displaced_v9
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleMu4_PsiPrimeTrk_Displaced_v9
+ 0 0 0 0 5 5 1 1 1 1 1 0 0 0 0 0 HLT_DoublePhoton33_CaloIdL_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoublePhoton70_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoublePhoton85_v10
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleTightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleTightChargedIsoPFTau35_Trk1_eta2p1_Reg_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleTightChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_DoubleTightChargedIsoPFTau40_Trk1_eta2p1_Reg_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_ECALHT800_v7
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele16_Ele12_Ele8_CaloIdL_TrackIdL_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v12
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_v12
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele24_eta2p1_WPTight_Gsf_LooseChargedIsoPFTau30_eta2p1_CrossL1_v4
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele24_eta2p1_WPTight_Gsf_LooseChargedIsoPFTau30_eta2p1_TightID_CrossL1_v4
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele24_eta2p1_WPTight_Gsf_MediumChargedIsoPFTau30_eta2p1_CrossL1_v4
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele24_eta2p1_WPTight_Gsf_MediumChargedIsoPFTau30_eta2p1_TightID_CrossL1_v4
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele24_eta2p1_WPTight_Gsf_TightChargedIsoPFTau30_eta2p1_CrossL1_v4
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele24_eta2p1_WPTight_Gsf_TightChargedIsoPFTau30_eta2p1_TightID_CrossL1_v4
+ 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele27_WPTight_Gsf_v10
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele28_eta2p1_WPTight_Gsf_HT150_v4
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele30_eta2p1_WPTight_Gsf_CentralPFJet35_EleCleaned_v4
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele32_WPTight_Gsf_L1DoubleEG_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele35_WPTight_Gsf_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele38_WPTight_Gsf_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Ele40_WPTight_Gsf_v3
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_FullTrack_Multiplicity105_v1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_FullTrack_Multiplicity135_v1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_FullTrack_Multiplicity155_v1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_FullTrack_Multiplicity85_v1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_HISinglePhoton10_Eta3p1ForPPRef_v5
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_HISinglePhoton20_Eta3p1ForPPRef_v5
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_HISinglePhoton30_Eta3p1ForPPRef_v5
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_HISinglePhoton40_Eta3p1ForPPRef_v5
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_HISinglePhoton50_Eta3p1ForPPRef_v5
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_HISinglePhoton60_Eta3p1ForPPRef_v5
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_HT300PT30_QuadJet_75_60_45_40_TripeCSV_p07_v3
+ 0 200 200 200 200 200 200 200 200 200 200 0 0 0 0 0 HLT_HT300PT30_QuadJet_75_60_45_40_v3
+ 0 50 35 35 35 35 12 12 12 12 12 9 0 0 0 0 HLT_HT300_Beamspot_v2
+ 0 10 7 7 7 7 2 2 2 2 2 2 0 0 0 0 HLT_HT450_Beamspot_v2
+ 1 1 1 1 1 1 1 1 1 1 1 1 10 10 10 10 HLT_HcalNZS_v11
+ 1 1 1 1 1 1 1 1 1 1 1 1 10 10 10 10 HLT_HcalPhiSym_v12
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu20_eta2p1_LooseChargedIsoPFTau27_eta2p1_CrossL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu20_eta2p1_LooseChargedIsoPFTau27_eta2p1_TightID_CrossL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu20_eta2p1_MediumChargedIsoPFTau27_eta2p1_CrossL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu20_eta2p1_MediumChargedIsoPFTau27_eta2p1_TightID_CrossL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu20_eta2p1_TightChargedIsoPFTau27_eta2p1_CrossL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu20_eta2p1_TightChargedIsoPFTau27_eta2p1_TightID_CrossL1_v3
+ 0 0 0 0 0 0 20 20 20 20 20 0 0 0 0 0 HLT_IsoMu20_v9
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_LooseChargedIsoPFTau20_SingleL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_LooseChargedIsoPFTau20_TightID_SingleL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_LooseChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_CrossL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_LooseChargedIsoPFTau35_Trk1_eta2p1_Reg_CrossL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_MediumChargedIsoPFTau20_SingleL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_MediumChargedIsoPFTau20_TightID_SingleL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_MediumChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_CrossL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_MediumChargedIsoPFTau35_Trk1_eta2p1_Reg_CrossL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_MediumChargedIsoPFTau50_Trk30_eta2p1_1pr_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_TightChargedIsoPFTau20_SingleL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_TightChargedIsoPFTau20_TightID_SingleL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_TightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_CrossL1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_TightChargedIsoPFTau35_Trk1_eta2p1_Reg_CrossL1_v3
+ 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_eta2p1_v9
+ 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu24_v7
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_IsoMu27_v10
+ 25 50 75 75 75 75 75 75 70 50 35 25 65 75 85 95 HLT_L1FatEvents_v1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_L1MinimumBiasHF0OR_v2
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_L1MinimumBiasHF_OR_v1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_L1NotBptxOR_v2
+ 0 2 4 4 4 4 420 350 260 175 90 0 0 0 0 0 HLT_L1SingleMu18_v2
+ 0 450 450 450 450 450 450 450 450 450 450 0 0 0 0 0 HLT_L1SingleMu25_v1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_L1UnpairedBunchBptxMinus_v1
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_L1UnpairedBunchBptxPlus_v1
+ 0 100 100 100 100 100 100 100 100 100 100 0 0 0 0 0 HLT_L2Mu10_NoVertex_NoBPTX3BX_v3
+ 0 100 100 100 100 100 100 100 100 100 100 0 0 0 0 0 HLT_L2Mu10_NoVertex_NoBPTX_v4
+ 0 220 160 160 160 160 140 120 90 60 30 0 0 0 0 0 HLT_L2Mu10_v4
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_L2Mu40_NoVertex_3Sta_NoBPTX3BX_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_L2Mu45_NoVertex_3Sta_NoBPTX3BX_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_MediumChargedIsoPFTau100HighPtRelaxedIso_Trk50_eta2p1_1pr_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_MediumChargedIsoPFTau180HighPtRelaxedIso_Trk50_eta2p1_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_MediumChargedIsoPFTau50_Trk30_eta2p1_1pr_MET100_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_MediumChargedIsoPFTau50_Trk30_eta2p1_1pr_MET90_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_MediumChargedIsoPFTau50_Trk30_eta2p1_1pr_v3
+ 0 100 100 100 100 100 100 100 100 100 100 0 0 0 0 0 HLT_MonoCentralPFJet80_PFMETNoMu110_PFMHTNoMu110_IDTight_v11
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_MonoCentralPFJet80_PFMETNoMu120_PFMHTNoMu120_IDTight_v11
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v8
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8_v8
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v10
+ 0 48 36 36 36 36 1 1 1 1 1 0 0 0 0 0 HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v9
+ 0 3 3 3 3 3 3 3 3 3 3 0 0 0 0 0 HLT_Mu17_TrkIsoVVL_v7
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu17_v7
+ 0 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 HLT_Mu20_TkMu0_Phi_v2
+ 0 6 6 6 6 6 720 600 450 500 300 0 0 0 0 0 HLT_Mu20_v7
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v8
+ 0 480 315 315 315 315 120 120 120 120 120 0 0 0 0 0 HLT_Mu27_v8
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu30_TkMu0_Onia_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu50_v8
+ 0 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 HLT_Mu7p5_Track2_Jpsi_v6
+ 0 2 2 2 2 2 2 2 2 2 2 0 0 0 0 0 HLT_Mu7p5_Track2_Upsilon_v6
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu7p5_Track3p5_Jpsi_v6
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu7p5_Track3p5_Upsilon_v6
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu7p5_Track7_Jpsi_v6
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu7p5_Track7_Upsilon_v6
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu8_DiEle12_CaloIdL_TrackIdL_DZ_v11
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu8_DiEle12_CaloIdL_TrackIdL_v11
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v6
+ 0 120 120 120 120 120 120 120 120 120 120 0 0 0 0 0 HLT_Mu8_TrkIsoVVL_v7
+ 0 240 240 240 240 240 240 240 240 240 240 0 0 0 0 0 HLT_Mu8_v7
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFHT1050_v9
+ 0 2 2 2 5 5 5 5 5 5 5 0 0 0 0 0 HLT_PFHT180_v8
+ 0 2 2 2 5 5 5 5 5 5 5 0 0 0 0 0 HLT_PFHT250_v8
+ 0 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 0 0 0 0 0 HLT_PFHT350_v10
+ 0 2 2 2 5 5 5 5 5 5 5 0 0 0 0 0 HLT_PFHT370_v8
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFHT380_SixJet32_DoubleBTagCSV_p075_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFHT430_SixJet40_BTagCSV_p080_v2
+ 0 2 2 2 5 5 5 5 5 5 5 0 0 0 0 0 HLT_PFHT430_v8
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFHT500_PFMET100_PFMHT100_IDTight_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFHT500_PFMET110_PFMHT110_IDTight_v3
+ 0 480 384 384 336 336 288 240 176 112 48 0 0 0 0 0 HLT_PFHT510_v8
+ 0 240 192 192 168 168 144 120 88 56 24 0 0 0 0 0 HLT_PFHT590_v8
+ 0 120 96 96 84 84 72 60 44 28 12 0 0 0 0 0 HLT_PFHT680_v8
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFHT700_PFMET85_PFMHT85_IDTight_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFHT700_PFMET95_PFMHT95_IDTight_v3
+ 0 60 48 48 42 42 36 30 22 14 6 0 0 0 0 0 HLT_PFHT780_v8
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFHT800_PFMET75_PFMHT75_IDTight_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFHT800_PFMET85_PFMHT85_IDTight_v3
+ 0 30 24 24 21 21 18 15 11 7 3 0 0 0 0 0 HLT_PFHT890_v8
+ 0 3 3 3 3 3 20 20 20 20 20 0 0 0 0 0 HLT_PFJet140_v10
+ 0 4 4 4 4 4 60 60 60 60 60 0 0 0 0 0 HLT_PFJet200_v10
+ 0 200 140 140 140 140 50 50 50 50 50 0 0 0 0 0 HLT_PFJet260_v11
+ 0 70 50 50 50 50 20 20 20 20 20 0 0 0 0 0 HLT_PFJet320_v11
+ 0 24 20 20 20 20 5 5 5 5 5 0 0 0 0 0 HLT_PFJet400_v11
+ 0 24 20 20 20 20 20 60 60 60 60 0 0 0 0 0 HLT_PFJet40_v12
+ 0 2 2 2 2 2 1 1 1 1 1 0 0 0 0 0 HLT_PFJet450_v12
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFJet500_v12
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFJet550_v2
+ 0 3 3 3 3 3 3 3 3 3 3 0 0 0 0 0 HLT_PFJet60_v12
+ 0 6 6 6 6 6 6 6 6 6 6 0 0 0 0 0 HLT_PFJet80_v11
+ 0 100 100 100 100 100 1 1 1 1 1 0 0 0 0 0 HLT_PFMET110_PFMHT110_IDTight_v11
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFMET120_PFMHT120_IDTight_v11
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFMET130_PFMHT130_IDTight_v11
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFMET140_PFMHT140_IDTight_v11
+ 0 100 100 100 100 100 100 100 100 100 100 0 0 0 0 0 HLT_PFMETNoMu110_PFMHTNoMu110_IDTight_v11
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFMETNoMu120_PFMHTNoMu120_IDTight_v11
+ 0 100 100 100 100 100 1 1 1 1 1 0 0 0 0 0 HLT_PFMETTypeOne110_PFMHT110_IDTight_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFMETTypeOne120_PFMHT120_IDTight_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFMETTypeOne130_PFMHT130_IDTight_v3
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_PFMETTypeOne140_PFMHT140_IDTight_v2
+ 0 10 8 8 8 8 3 3 3 3 3 0 0 0 0 0 HLT_Photon120_R9Id90_HE10_IsoM_v10
+ 0 280 200 200 200 200 70 70 70 70 70 0 0 0 0 0 HLT_Photon120_v9
+ 0 75 50 50 50 50 20 20 20 20 20 0 0 0 0 0 HLT_Photon150_v2
+ 0 5 4 4 4 4 1 1 1 1 1 0 0 0 0 0 HLT_Photon165_R9Id90_HE10_IsoM_v11
+ 0 64 45 45 45 45 16 16 16 16 16 0 0 0 0 0 HLT_Photon175_v10
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Photon200_v9
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_Photon20_HoverELoose_v7
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Photon300_NoHE_v9
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_Photon30_HoverELoose_v7
+ 0 42 6 6 5 5 5 60 45 30 15 0 0 0 0 0 HLT_Photon33_v2
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_Photon40_HoverELoose_v7
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_Photon50_HoverELoose_v7
+ 0 300 240 240 240 240 90 90 90 90 90 0 0 0 0 0 HLT_Photon50_R9Id90_HE10_IsoM_v10
+ 0 7500 5320 5320 5320 5320 1800 1800 1800 1800 1800 0 0 0 0 0 HLT_Photon50_v9
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 HLT_Photon60_HoverELoose_v7
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Photon60_R9Id90_CaloIdL_IsoL_DisplacedIdL_PFHT350MinPFJet15_v3
+ 0 60 48 48 48 48 18 18 18 18 18 0 0 0 0 0 HLT_Photon75_R9Id90_HE10_IsoM_v10
+ 0 1600 1120 1120 1120 1120 400 400 400 400 400 0 0 0 0 0 HLT_Photon75_v9
+ 0 30 24 24 24 24 9 9 9 9 9 0 0 0 0 0 HLT_Photon90_R9Id90_HE10_IsoM_v10
+ 0 800 560 560 560 560 200 200 200 200 200 0 0 0 0 0 HLT_Photon90_v9
+ 25 50 75 75 75 75 75 75 70 50 35 25 65 75 85 95 HLT_Physics_v6
+ 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 60 HLT_Random_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_Trimuon2_Upsilon5_Muon_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_TripleMu_10_5_5_DZ_v5
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_TripleMu_12_10_5_v5
+ 0 16 16 16 16 16 16 16 16 16 16 0 0 0 0 0 HLT_UncorrectedJetE30_NoBPTX3BX_v2
+ 0 16 16 16 16 16 16 16 16 16 16 0 0 0 0 0 HLT_UncorrectedJetE30_NoBPTX_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_UncorrectedJetE60_NoBPTX3BX_v2
+ 0 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 HLT_UncorrectedJetE70_NoBPTX3BX_v2
+ 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 HLT_ZeroBias_FirstBXAfterTrain_v2
+ 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 HLT_ZeroBias_FirstCollisionAfterAbortGap_v4
+ 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 HLT_ZeroBias_FirstCollisionInTrain_v2
+ 10 10 10 10 10 10 10 10 10 10 10 10 0 0 0 0 HLT_ZeroBias_IsolatedBunches_v4
+ 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 HLT_ZeroBias_LastCollisionInTrain_v2
+ 0 0 0 10 0 10 0 0 0 0 0 10 230 267 300 333 HLT_ZeroBias_part0_v2
+ 0 0 0 10 0 10 0 0 0 0 0 10 230 267 300 333 HLT_ZeroBias_part1_v2
+ 0 0 0 10 0 10 0 0 0 0 0 10 230 267 300 333 HLT_ZeroBias_part2_v2
+ 0 0 0 10 0 10 0 0 0 0 0 10 230 267 300 333 HLT_ZeroBias_part3_v2
+ 0 0 0 10 0 10 0 0 0 0 0 10 230 267 300 333 HLT_ZeroBias_part4_v2
+ 0 0 0 10 0 10 0 0 0 0 0 10 230 267 300 333 HLT_ZeroBias_part5_v2
+ 0 0 0 10 0 10 0 0 0 0 0 10 230 267 300 333 HLT_ZeroBias_part6_v2
+ 0 0 0 10 0 10 0 0 0 0 0 10 230 267 300 333 HLT_ZeroBias_part7_v2
+ 0 0 0 10 0 10 0 0 0 0 0 10 230 267 300 333 HLT_ZeroBias_part8_v2
+ 0 0 0 10 0 10 0 0 0 0 0 10 230 267 300 333 HLT_ZeroBias_part9_v2
+ 85 85 85 85 85 85 85 250 250 250 250 85 700 800 900 1000 HLT_ZeroBias_v5
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+ Ok1 
+ Ok 2 
+10-Mar-2020 18:19:58 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2017B/JetHT/MINIAOD/09Aug2019_UL2017-v1/50000/FFEEECDB-9680-6749-976A-F2CF385F8489.root
+Total Event =0
+Total  triggerd event  =0
