@@ -1,11 +1,11 @@
 from CRABClient.UserUtilities import config, getUsernameFromSiteDB
 config = config()
 
-#config.General.requestName = 'ESV_Trigger_Run_v2_JetHT_Run2017F-31Mar2018-v1_7Mar20_2'
-#config.General.requestName = 'ESV_Trigger_Run_v2_JetHT_Run2017E-31Mar2018-v1_7Mar20_2'
-#config.General.requestName = 'ESV_Trigger_Run_v2_JetHT_Run2017D-31Mar2018-v1_7Mar20_2'
-#config.General.requestName = 'ESV_Trigger_Run_v2_JetHT_Run2017C-31Mar2018-v1_7Mar20_2'
-config.General.requestName = 'ESV_Trigger_Run_v2_JetHT_Run2017B-31Mar2018-v1_7Mar20_2'
+config.General.requestName = 'ESV_Trigger_Run_v2_JetHT_Run2017F-31Mar2018-v1_12April_1'
+#config.General.requestName = 'ESV_Trigger_Run_v2_JetHT_Run2017E-31Mar2018-v1_12April'
+#config.General.requestName = 'ESV_Trigger_Run_v2_JetHT_Run2017D-31Mar2018-v1_12April'
+#config.General.requestName = 'ESV_Trigger_Run_v2_JetHT_Run2017C-31Mar2018-v1_12April'
+#config.General.requestName = 'ESV_Trigger_Run_v2_JetHT_Run2017B-31Mar2018-v1_12April'
 config.General.workArea = 'crab_projects'
 config.General.transferOutputs = True
 config.General.transferLogs = True
@@ -22,11 +22,11 @@ config.JobType.inputFiles= [
 #config.Data.inputDataset = '/JetHT/Run2017E-17Nov2017-v1/MINIAOD'
 #config.Data.inputDataset = '/JetHT/Run2017F-17Nov2017-v1/MINIAOD'
 
-#config.Data.inputDataset = '/JetHT/Run2017F-31Mar2018-v1/MINIAOD'
+config.Data.inputDataset = '/JetHT/Run2017F-31Mar2018-v1/MINIAOD'
 #config.Data.inputDataset = '/JetHT/Run2017E-31Mar2018-v1/MINIAOD'
 #config.Data.inputDataset = '/JetHT/Run2017D-31Mar2018-v1/MINIAOD'
 #config.Data.inputDataset = '/JetHT/Run2017C-31Mar2018-v1/MINIAOD'
-config.Data.inputDataset = '/JetHT/Run2017B-31Mar2018-v1/MINIAOD'
+#config.Data.inputDataset = '/JetHT/Run2017B-31Mar2018-v1/MINIAOD'
 
 #config.Data.inputDataset = '/JetHT/Run2015D-PromptReco-v4/MINIAOD'
 #config.Data.inputDataset = '/JetHT/Run2015D-PromptReco-v3/MINIAOD'
@@ -50,7 +50,7 @@ config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Coll
 #config.Data.lumiMask = '/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions15/13TeV/Cert_246908-260627_13TeV_PromptReco_Collisions15_25ns_JSON_v2.txt'
 #config.Data.lumiMask ='/afs/cern.ch/cms/CAF/CMSCOMM/COMM_DQM/certification/Collisions15/13TeV/Reprocessing/Cert_13TeV_16Dec2015ReReco_Collisions15_25ns_JSON_v2.txt'
 #config.Data.runRange = '246908-260627' # '193093-194075'
-config.Data.outLFNDirBase = '/store/user/%s/' % (getUsernameFromSiteDB())
+#config.Data.outLFNDirBase = '/store/user/%s/' % (getUsernameFromSiteDB())
 config.Data.publication = False
 #config.Data.publishDataName = 'May2015_Data_analysis'
 
