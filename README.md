@@ -4,7 +4,7 @@ Study of Event Shape Variables with the charged particles inside jets
 ## Trigger used
 HLT_DiPFJetAve40_v, HLT_DiPFJetAve60_v ,HLT_DiPFJetAve80_v, HLT_DiPFJetAve140_v, HLT_DiPFJetAve200_v, HLT_DiPFJetAve260_v, HLT_DiPFJetAve320_v, HLT_DiPFJetAve400_v, HLT_DiPFJetAve500_v
 
-
+## Data set are not updated!
 Analysis code based on MINIAOD Format
 https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookMiniAOD2017
 ## 2017 
@@ -97,6 +97,8 @@ https://github.com/Sumankkundu/ChargedParticle/tree/master/QCDEventShape/2017/MC
 - [x] Reco distribution : Done
 - [x] Basic Kinematics  : Done(17.04.2020)
 - [x] Trigger           : Done (17.04.2020)
-- [x] 1DUnfolding      :Partially done(10.07.19) 
-- [x] 2DUnfolding      : not done
+- [x] 1DUnfolding      : Done(10.07.20) 
+- [x] 2DUnfolding      : Almost Done
+- [x] Systemetic      : Started(28.10.2020)
+
 
