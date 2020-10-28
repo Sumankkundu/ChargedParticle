@@ -45,10 +45,8 @@
 #include <TVectorD.h>
 #include <TDecompSVD.h>
 
-#define NOREG
-//#define CLOUSER
+#define CLOUSER
 #define BLTest
-#define Unfold2D
 
 using namespace std;
 static const auto feps = numeric_limits<float>::epsilon();
@@ -68,9 +66,9 @@ void testUnfold2c(){
   //const TString Pyinput = "Herwig_UL17_Flat_17Oct20.root";
   
   //const TString datainput = "PY8_UL17_Flat_JECV5_JERV2_17oct20.root"; 
-  const TString datainput = "PY8_UL17_Bin17_JecV5_JERV2_2D_17Oct20.root"; 
+  //const TString datainput = "PY8_UL17_Bin17_JecV5_JERV2_2D_17Oct20.root"; 
   //const TString datainput = "Data_UL17v1_JRV2_JECV4_2D_14Oct20.root"; 
-  //const TString datainput = "MG_UL17_JECV5_JEERV2_2D_17oct20.root"; 
+  const TString datainput = "MG_UL17_JECV5_JEERV2_2D_17oct20.root"; 
   //const TString datainput = "Herwig_UL17_Flat_17Oct20.root"; 
   
   TFile *inputbinning = new TFile("PY8_HT2_83_3000_Binnied.root");
@@ -95,7 +93,7 @@ void testUnfold2c(){
   
   const char* Dimtag = "2d";
   const char* Histtag = "dd_";
-
+  
   char histname[100], name[100], title[100], Axisname[100];
   const int nHLTmx=8; //HT2 Range
   const int njetetamn=1;  //eta value used 2.4
@@ -118,7 +116,6 @@ void testUnfold2c(){
 			      "#rho^{T}_{Tot} ", "#rho^{T}_{Tot,E} ", "#rho^{T}_{Tot,R} ",
 			      "#rho^{T}_{H,C} ", "#rho^{T}_{H,E} ", "#rho^{T}_{H,R} ",
 			      "S_{_{#perp} _{   ,C}}", "C-parameter_{C}"};
-  
   TDirectoryFile *DirData = new TDirectoryFile("Data2D","Inputs Data");
   
   TDirectoryFile *outputDir[nmc];
@@ -143,82 +140,82 @@ void testUnfold2c(){
   void Extract(TH1* global2d, TUnfoldBinning* Bin , char* Axisname, bool iw=0);
   TH1D* ReadHist1D(string name,TFile* root);
   TH2D* ReadHist2D(string name,TFile* root);
-  void HT2_NormalV3(TH2D* VarHT, int nht, int htbin[nht+1], TH1D* Var[nht]);
+  void HT2_NormalV3(TH1* global2d, TUnfoldBinning* Bin, char* Axisname, int nht,  bool iw=0);
+  
   //---------------------------------Different Binning ----------------------------------------------
-    
-    TH1D *MC_Reco[nmc][type][nusedvar];  //Reconstructed MC
-    TH1D *MC_fake[nmc][type][nusedvar];  //Fake :  Reco but No Gen
-    TH1D *MC_fakerate[nmc][type][nusedvar];  //Fake rate
-    TH1D *MC_reco_fake[nmc][type][nusedvar];  //reco -fake
-    
-    TH1D *MC_Gen[nmc][type][nusedvar];   //Generator MC
-    TH1D *MC_miss[nmc][type][nusedvar];   //Miss:  No Reco but in Gen
-    TH1D *MC_Gen_miss[nmc][type][nusedvar];   //Gen -miss
-    TH1D *MC_missrate[nmc][type][nusedvar];   //Missrate
-    
-    TH2D *h2dGenDetMC[nmc][type][nusedvar];   // MC Response Matrix
-    TH1D *RMX[nmc][type][nusedvar];  //Response Matrix ProjectionX
-    TH1D *RMY[nmc][type][nusedvar];  //RM projetcion
-    
-    TH1D* hist_eff[nmc][type][nusedvar];
-    TH1D* hist_fake[nmc][type][nusedvar];
-    TH1D* hist_purity[nmc][type][nusedvar];
-    TH1D* hist_stbl[nmc][type][nusedvar];
-    
-    TH1D *Data_Reco[type][nusedvar];    //Reconstructed Data
+  TH1D *MC_Reco[nmc][type][nusedvar];  //Reconstructed MC
+  TH1D *MC_fake[nmc][type][nusedvar];  //Fake :  Reco but No Gen
+  TH1D *MC_fakerate[nmc][type][nusedvar];  //Fake rate
+  TH1D *MC_reco_fake[nmc][type][nusedvar];  //reco -fake
+  
+  TH1D *MC_Gen[nmc][type][nusedvar];   //Generator MC
+  TH1D *MC_miss[nmc][type][nusedvar];   //Miss:  No Reco but in Gen
+  TH1D *MC_Gen_miss[nmc][type][nusedvar];   //Gen -miss
+  TH1D *MC_missrate[nmc][type][nusedvar];   //Missrate
+  
+  TH2D *h2dGenDetMC[nmc][type][nusedvar];   // MC Response Matrix
+  TH1D *RMX[nmc][type][nusedvar];  //Response Matrix ProjectionX
+  TH1D *RMY[nmc][type][nusedvar];  //RM projetcion
+  
+  TH1D* hist_eff[nmc][type][nusedvar];
+  TH1D* hist_fake[nmc][type][nusedvar];
+  TH1D* hist_purity[nmc][type][nusedvar];
+  TH1D* hist_stbl[nmc][type][nusedvar];
+  
+  TH1D *Data_Reco[type][nusedvar];    //Reconstructed Data
 #ifdef CLOUSER
-    TH1D *Data_Gen[type][nusedvar];    //     For Closure 
-    TH1D *Data_fakerate[type][nusedvar];    //Reconstructed Data
-    TH1D *Data_fakerateInv[type][nusedvar];    //Reconstructed Data
-    TH1D *Data_missrateInv[type][nusedvar];    //Reconstructed Data
-    TH1D *Data_missrate[type][nusedvar];    //Reconstructed Data
-    TH1D *Data_reco_fake[type][nusedvar];    //Reconstructed Data
-    TH1D *Data_gen_miss[type][nusedvar];    //Reconstructed Data
-#endif
-
-    TH1D *RMinput_Reco[type][nusedvar];    //Reconstructed RMinput
-    TH1D *RMinput_Gen[type][nusedvar];    //     For Closure
-    TH1D *RMinput_fakerate[type][nusedvar];    //Reconstructed RMinput
-    TH1D *RMinput_fakerateInv[type][nusedvar];    //Reconstructed RMinput
-    TH1D *RMinput_missrateInv[type][nusedvar];    //Reconstructed RMinput
-    TH1D *RMinput_missrate[type][nusedvar];    //Reconstructed RMinput
-    TH1D *RMinput_reco_fake[type][nusedvar];    //Reconstructed RMinput
-    TH1D *RMinput_gen_miss[type][nusedvar];    //Reconstructed RMinput
-    TH2D *RMinput_RM[type][nusedvar];    //Reconstructed RMinput
-    
-    TUnfoldBinning *binsRec[type][nusedvar]; //Binning Name 
-    TUnfoldBinning *RecoBinning[type][nusedvar]; //Node Name
-    TUnfoldBinning *binsGen[type][nusedvar];  //Gen Binning
-    TUnfoldBinning *GenBinning[type][nusedvar];  //Gen Node 
-    
-    //---------------------------------------------Binning-------------------------------------
-      for(int ity=0; ity <type; ity++){
-	for(int ivar=0; ivar < nusedvar ; ivar ++){
-	  sprintf(histname, "%s/Detector%s_typ_%i_eta0_%i", BinDir, Dimtag, ity,  var[ivar]);	 
-	  inputbinning->GetObject(histname, binsRec[ity][ivar]);  cout << histname <<endl;
-	  //binsRec[ity][ivar][ipt]->PrintStream(cout);        
-	  sprintf(histname, "%s/Generator%s_typ_%i_eta0_%i", BinDir, Dimtag, ity, var[ivar]);
-	  inputbinning->GetObject(histname, binsGen[ity][ivar]);  cout << histname <<endl;
-	  //binsGen[ity][ivar][ipt]->PrintStream(cout);
-	}
-      }
-    //----------------------------------------------Read Input Data MC and Response matrix
+  TH1D *Data_Gen[type][nusedvar];    //     For Closure 
+  TH1D *Data_fakerate[type][nusedvar];    //Reconstructed Data
+  TH1D *Data_fakerateInv[type][nusedvar];    //Reconstructed Data
+  TH1D *Data_missrateInv[type][nusedvar];    //Reconstructed Data
+  TH1D *Data_missrate[type][nusedvar];    //Reconstructed Data
+  TH1D *Data_reco_fake[type][nusedvar];    //Reconstructed Data
+  TH1D *Data_gen_miss[type][nusedvar];    //Reconstructed Data
+#endif 
+  TH1D *RMinput_Reco[type][nusedvar];    //Reconstructed RMinput
+  TH1D *RMinput_Gen[type][nusedvar];    //     For Closure
+  TH1D *RMinput_fakerate[type][nusedvar];    //Reconstructed RMinput
+  TH1D *RMinput_fakerateInv[type][nusedvar];    //Reconstructed RMinput
+  TH1D *RMinput_missrateInv[type][nusedvar];    //Reconstructed RMinput
+  TH1D *RMinput_missrate[type][nusedvar];    //Reconstructed RMinput
+  TH1D *RMinput_reco_fake[type][nusedvar];    //Reconstructed RMinput
+  TH1D *RMinput_fake[type][nusedvar];    //Reconstructed RMinput
+  TH1D *RMinput_gen_miss[type][nusedvar];    //Reconstructed RMinput
+  TH1D *RMinput_miss[type][nusedvar];    //Reconstructed RMinput
+  TH2D *RMinput_RM[type][nusedvar];    //Reconstructed RMinput
+  
+  TUnfoldBinning *binsRec[type][nusedvar]; //Binning Name 
+  TUnfoldBinning *RecoBinning[type][nusedvar]; //Node Name
+  TUnfoldBinning *binsGen[type][nusedvar];  //Gen Binning
+  TUnfoldBinning *GenBinning[type][nusedvar];  //Gen Node 
+  //---------------------------------------------Binning-------------------------------------
+  for(int ity=0; ity <type; ity++){
+    for(int ivar=0; ivar < nusedvar ; ivar ++){
+      sprintf(histname, "%s/Detector%s_typ_%i_eta0_%i", BinDir, Dimtag, ity,  var[ivar]);	 
+      inputbinning->GetObject(histname, binsRec[ity][ivar]);  cout << histname <<endl;
+      //binsRec[ity][ivar][ipt]->PrintStream(cout);        
+      sprintf(histname, "%s/Generator%s_typ_%i_eta0_%i", BinDir, Dimtag, ity, var[ivar]);
+      inputbinning->GetObject(histname, binsGen[ity][ivar]);  cout << histname <<endl;
+      //binsGen[ity][ivar][ipt]->PrintStream(cout);
+    }
+  }
+  //----------------------------------------------Read Input Data MC and Response matrix
     for(int ity=0; ity <type; ity++){
       for(int ivar=0; ivar < nusedvar ; ivar ++){
         sprintf(Axisname,"var_%i[UO]",var[ivar]);
 	DirData->cd();
 	Data_Reco[ity][ivar]= (TH1D*)ReadHist1D(HistDir+"/dd_reco_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),inputData)->Clone();
-//	for(int i=1 ; i< Data_Reco[ity][ivar]->GetNbinsX()+1; i++){ if(Data_Reco[ity][ivar]->GetBinContent(i) == 0) {cout << " Data Bin entry Nil : bin no : "<< i << endl;}}
-	Extract(Data_Reco[ity][ivar], binsRec[ity][ivar], Axisname);
+        //for(int i=1 ; i< Data_Reco[ity][ivar]->GetNbinsX()+1; i++){ if(Data_Reco[ity][ivar]->GetBinContent(i) == 0) {cout << " Data Bin entry Nil : bin no : "<< i << endl;}}
+	HT2_NormalV3(Data_Reco[ity][ivar], binsRec[ity][ivar], Axisname,nHLTmx);
 #ifdef CLOUSER
         Data_Gen[ity][ivar]=(TH1D*)ReadHist1D( HistDir+"/dd_gen_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),inputData)->Clone();
-        Extract(Data_Gen[ity][ivar], binsGen[ity][ivar] ,Axisname);
-
+	HT2_NormalV3(Data_Gen[ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx);
+	
         TH1D *Datafake= (TH1D*)ReadHist1D( HistDir+"/dd_fake_reco_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),inputData)->Clone();
         TH1D *Datamiss= (TH1D*)ReadHist1D( HistDir+"/dd_miss_gen_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),inputData)->Clone();
 	
         Data_fakerate[ity][ivar] = (TH1D*)Datafake->Clone();   Data_fakerate[ity][ivar]->Divide(Data_fakerate[ity][ivar], Data_Reco[ity][ivar], 1, 1, "b");
-        sprintf(name,"%sDatafake_rate_%i_eta0_%i", Histtag, ity, var[ivar]); Data_fakerate[ity][ivar]->SetNameTitle(name,name);
+        Data_fakerate[ity][ivar]->SetNameTitle(Form("%sData_fakerate_%i_eta0_%i", Histtag, ity, var[ivar]),Form("%sData_fakerate_%i_eta0_%i", Histtag, ity, var[ivar]));
 	
 	Data_fakerateInv[ity][ivar]=(TH1D*)Data_fakerate[ity][ivar]->Clone();  Data_fakerateInv[ity][ivar]->Reset();
         for (int i = 1; i <= Data_fakerate[ity][ivar]->GetNbinsX(); ++i) {
@@ -233,7 +230,6 @@ void testUnfold2c(){
 	  double factor = Data_missrate[ity][ivar]->GetBinContent(i);
 	  double content =1-factor; Data_missrateInv[ity][ivar]->SetBinContent(i, content);
 	}
-
         sprintf(name,"%sDataRecominusfake_%i_eta0_%i",Histtag ,ity, var[ivar]);
         Data_reco_fake[ity][ivar] = (TH1D*)Data_fakerateInv[ity][ivar]->Clone();
         Data_reco_fake[ity][ivar]->SetNameTitle(name,name); 
@@ -246,77 +242,77 @@ void testUnfold2c(){
 	Data_gen_miss[ity][ivar]->Multiply(Data_Gen[ity][ivar]);
         Extract(Data_gen_miss[ity][ivar], binsGen[ity][ivar], Axisname);
 #endif
-//--------------------------------------------MC for Read RM------------------------------------
-
+	//--------------------------------------------MC for Read RM------------------------------------
 	DirRMinput->cd();
         RMinput_Reco[ity][ivar]= (TH1D*)ReadHist1D(HistDir+"/dd_reco_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),RMinput)->Clone();
         for(int i=1 ; i< RMinput_Reco[ity][ivar]->GetNbinsX()+1; i++){ if(RMinput_Reco[ity][ivar]->GetBinContent(i) == 0) {cout << " RMinput Bin entry Nil : bin no : "<< i << endl;}}
-        Extract(RMinput_Reco[ity][ivar], binsRec[ity][ivar], Axisname);
+	HT2_NormalV3(RMinput_Reco[ity][ivar], binsRec[ity][ivar], Axisname,nHLTmx);
         
 	RMinput_Gen[ity][ivar]=(TH1D*)ReadHist1D( HistDir+"/dd_gen_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),RMinput)->Clone();
-        Extract(RMinput_Gen[ity][ivar], binsGen[ity][ivar] ,Axisname);
-
-	//Response Matrix
-         RMinput_RM[ity][ivar] = (TH2D*)ReadHist2D(HistDir+"/dd_corr_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),RMinput)->Clone();
-
-        TH1D *RMinputfake= (TH1D*)ReadHist1D( HistDir+"/dd_fake_reco_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),RMinput)->Clone();
-        TH1D *RMinputmiss= (TH1D*)ReadHist1D( HistDir+"/dd_miss_gen_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),RMinput)->Clone();
-
-        RMinput_fakerate[ity][ivar] = (TH1D*)RMinputfake->Clone();   RMinput_fakerate[ity][ivar]->Divide(RMinput_fakerate[ity][ivar], RMinput_Reco[ity][ivar], 1, 1, "b");
-        sprintf(name,"%sRMinputfake_rate_%i_eta0_%i", Histtag, ity, var[ivar]); RMinput_fakerate[ity][ivar]->SetNameTitle(name,name);
-
+	HT2_NormalV3(RMinput_Gen[ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx);
+	
+        RMinput_RM[ity][ivar] = (TH2D*)ReadHist2D(HistDir+"/dd_corr_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),RMinput)->Clone();
+	
+        RMinput_fake[ity][ivar]= (TH1D*)ReadHist1D( HistDir+"/dd_fake_reco_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),RMinput)->Clone();
+        RMinput_miss[ity][ivar]= (TH1D*)ReadHist1D( HistDir+"/dd_miss_gen_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),RMinput)->Clone();
+	
+        RMinput_fakerate[ity][ivar] = (TH1D*) RMinput_fake[ity][ivar]->Clone();   RMinput_fakerate[ity][ivar]->Divide(RMinput_fakerate[ity][ivar], RMinput_Reco[ity][ivar], 1, 1, "b");
+        RMinput_fakerate[ity][ivar]->SetNameTitle(Form("%sRMinputfake_rate_%i_eta0_%i", Histtag, ity, var[ivar]),Form("%s fakerate %i eta0 %i", Histtag, ity, var[ivar]));
+	HT2_NormalV3(RMinput_fakerate[ity][ivar], binsRec[ity][ivar], Axisname,nHLTmx);
+	
         RMinput_fakerateInv[ity][ivar]=(TH1D*)RMinput_fakerate[ity][ivar]->Clone();  RMinput_fakerateInv[ity][ivar]->Reset();
         for (int i = 1; i <= RMinput_fakerate[ity][ivar]->GetNbinsX(); ++i) {
           double factor = RMinput_fakerate[ity][ivar]->GetBinContent(i);
           double content =1-factor;  RMinput_fakerateInv[ity][ivar]->SetBinContent(i, content);
         }
-        RMinput_missrate[ity][ivar]= (TH1D*)RMinputmiss->Clone();  RMinput_missrate[ity][ivar]->Divide(RMinput_missrate[ity][ivar], RMinput_Gen[ity][ivar], 1, 1, "b");
-        sprintf(name,"%sRMinputmiss_rate_%i_eta0_%i", Histtag,ity, var[ivar]); RMinput_missrate[ity][ivar]->SetNameTitle(name,name);
-
+        RMinput_missrate[ity][ivar]= (TH1D*)RMinput_miss[ity][ivar]->Clone();  RMinput_missrate[ity][ivar]->Divide(RMinput_missrate[ity][ivar], RMinput_Gen[ity][ivar], 1, 1, "b");
+        RMinput_missrate[ity][ivar]->SetNameTitle(Form("%sRMinputmiss_rate_%i_eta0_%i", Histtag,ity, var[ivar]),Form("%s missrate%i eta0 %i", Histtag,ity, var[ivar]));
+	HT2_NormalV3(RMinput_missrate[ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx);
+	
         RMinput_missrateInv[ity][ivar]=(TH1D*)RMinput_missrate[ity][ivar]->Clone();  RMinput_missrateInv[ity][ivar]->Reset();
         for (int i = 1; i <= RMinput_missrate[ity][ivar]->GetNbinsX(); ++i) {
           double factor = RMinput_missrate[ity][ivar]->GetBinContent(i);
           double content =1-factor; RMinput_missrateInv[ity][ivar]->SetBinContent(i, content);
         }
-
-        sprintf(name,"%sRMinputRecominusfake_%i_eta0_%i",Histtag ,ity, var[ivar]);
         RMinput_reco_fake[ity][ivar] = (TH1D*)RMinput_fakerateInv[ity][ivar]->Clone();
-        RMinput_reco_fake[ity][ivar]->SetNameTitle(name,name);
+        RMinput_reco_fake[ity][ivar]->SetNameTitle(Form("%sRMinputRecominusfake_%i_eta0_%i",Histtag ,ity, var[ivar]),Form("Reco - fake %i eta0 %i",Histtag ,ity, var[ivar]));
         RMinput_reco_fake[ity][ivar]->Multiply(RMinput_Reco[ity][ivar]);
-        Extract(RMinput_reco_fake[ity][ivar], binsRec[ity][ivar], Axisname);
-
-        sprintf(name,"%sRMinputGenminusmiss_%i_eta0_%i",Histtag ,ity, var[ivar]);
+	HT2_NormalV3(RMinput_reco_fake[ity][ivar], binsRec[ity][ivar], Axisname,nHLTmx);
+	
         RMinput_gen_miss[ity][ivar] = (TH1D*)RMinput_missrateInv[ity][ivar]->Clone();
-        RMinput_gen_miss[ity][ivar]->SetNameTitle(name,name);
+        RMinput_gen_miss[ity][ivar]->SetNameTitle(Form("%sRMinputGenminusmiss_%i_eta0_%i",Histtag ,ity, var[ivar]),Form("Gen - miss %i eta0 %i",Histtag ,ity, var[ivar]));
         RMinput_gen_miss[ity][ivar]->Multiply(RMinput_Gen[ity][ivar]);
-        Extract(RMinput_gen_miss[ity][ivar], binsGen[ity][ivar], Axisname);
-
-
+	HT2_NormalV3(RMinput_gen_miss[ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx);
 //--------------------------------------------Read MC---------------------------------------------	
 	for (int imc=0; imc<nmc ; imc++){
-		cout <<  " MC number : " << imc << endl;
+	  cout <<  " MC number : " << imc << endl;
 	  outputDir[imc]->cd(); //..........................MC directory .......................................
 	  MC_Reco[imc][ity][ivar] = (TH1D*)ReadHist1D(HistDir+"/dd_reco_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]), inputMC[imc])->Clone();
           MC_Gen[imc][ity][ivar] = (TH1D*)ReadHist1D(HistDir+"/dd_gen_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]), inputMC[imc])->Clone();
           MC_fake[imc][ity][ivar] = (TH1D*)ReadHist1D(HistDir+"/dd_fake_reco_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]), inputMC[imc])->Clone();
           MC_miss[imc][ity][ivar] = (TH1D*)ReadHist1D(HistDir+"/dd_miss_gen_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]), inputMC[imc])->Clone();
 	  
+	  HT2_NormalV3(MC_Reco[imc][ity][ivar], binsRec[ity][ivar], Axisname,nHLTmx);
+	  HT2_NormalV3(MC_Gen[imc][ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx);
+          HT2_NormalV3(MC_fake[imc][ity][ivar], binsRec[ity][ivar], Axisname,nHLTmx);
+	  HT2_NormalV3(MC_miss[imc][ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx);
+	  
 	  cout << " Fake= " <<MC_fake[imc][ity][ivar]->GetEntries() <<" Reco-fake: " <<(MC_Reco[imc][ity][ivar]->GetEntries() -  MC_fake[imc][ity][ivar]->GetEntries())<<endl;
 	  cout << " Miss= " <<MC_miss[imc][ity][ivar]->GetEntries() <<" Gen-Miss: " << (MC_Gen[imc][ity][ivar]->GetEntries() - MC_miss[imc][ity][ivar]->GetEntries()) ;
 	  //Response Matrix
 	  h2dGenDetMC[imc][ity][ivar] = (TH2D*)ReadHist2D(HistDir+"/dd_corr_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]), inputMC[imc])->Clone();
 	  cout << " Corr = "  << h2dGenDetMC[imc][ity][ivar]->GetEntries() <<endl;
-	  
 	  //--------------------------------------Calculate Fake rate and Miss Rate
 	  TH1D* fakerate = (TH1D*)MC_fake[imc][ity][ivar]->Clone();
 	  fakerate->Divide(fakerate,MC_Reco[imc][ity][ivar], 1, 1, "b");
-	  sprintf(name,"%sfake_rate_%i_eta0_%i", Histtag, ity, var[ivar]); fakerate->SetNameTitle(name,name);
+	  sprintf(name,"%sfake_rate_%i_eta0_%i", Histtag, ity, var[ivar]); fakerate->SetNameTitle(name,Form("%s fake rate %i eta0 %i", Histtag, ity, var[ivar]));
 	  TH1D* missrate = (TH1D*)MC_miss[imc][ity][ivar]->Clone();
 	  missrate->Divide(missrate, MC_Gen[imc][ity][ivar], 1, 1, "b");
-	  sprintf(name,"%smiss_rate_%i_eta0_%i", Histtag,ity, var[ivar]); missrate->SetNameTitle(name,name);
+	  sprintf(name,"%smiss_rate_%i_eta0_%i", Histtag,ity, var[ivar]); missrate->SetNameTitle(name,Form("%s miss rate %i eta0 %i", Histtag,ity, var[ivar]));
 	  fakerate->SetMinimum(-0.05); fakerate->SetMaximum(1.01);  missrate->SetMinimum(-0.05); missrate->SetMaximum(1.01);
 	  MC_fakerate[imc][ity][ivar] = (TH1D*)fakerate->Clone();  MC_missrate[imc][ity][ivar] = (TH1D*)missrate->Clone();
-
+	  HT2_NormalV3(MC_fakerate[imc][ity][ivar], binsRec[ity][ivar], Axisname,nHLTmx,1);
+	  HT2_NormalV3(MC_missrate[imc][ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx,1);
 	  //--------------------------------------Check RM Projection with Reco(gen)-Fake(miss)  : Patrick 1 Sep20
 	  TH1* RMx = h2dGenDetMC[imc][ity][ivar]->ProjectionX(); TH1* RMy = h2dGenDetMC[imc][ity][ivar]->ProjectionY();
 	  sprintf(name,"%sProjectX_%i_eta0_%i", Histtag, ity, var[ivar]); RMx->SetNameTitle(name,name);
@@ -339,21 +335,13 @@ void testUnfold2c(){
 	  for (int i = 1; i <=  MC_Gen_miss[imc][ity][ivar]->GetNbinsX(); ++i) {
 	    double content = MC_Gen[imc][ity][ivar]->GetBinContent(i); double factor = MC_miss[imc][ity][ivar]->GetBinContent(i);
 	    content -= factor;   MC_Gen_miss[imc][ity][ivar]->SetBinContent(i, content);
-	     MC_Gen_miss[imc][ity][ivar]->SetBinError(i, MC_Gen_miss[imc][ity][ivar]->GetBinError(i)+ MC_Gen[imc][ity][ivar]->GetBinError(i));
+	    MC_Gen_miss[imc][ity][ivar]->SetBinError(i, MC_Gen_miss[imc][ity][ivar]->GetBinError(i)+ MC_Gen[imc][ity][ivar]->GetBinError(i));
 	  }
 	  MC_reco_fake[imc][ity][ivar]->Write();  MC_Gen_miss[imc][ity][ivar]->Write(); RMx->Write(); RMy->Write(); 
-          
-	  Extract(MC_Reco[imc][ity][ivar], binsRec[ity][ivar], Axisname);
-          Extract(MC_reco_fake[imc][ity][ivar], binsRec[ity][ivar], Axisname);
-          Extract(MC_fakerate[imc][ity][ivar], binsRec[ity][ivar], Axisname,1);
+          HT2_NormalV3(MC_reco_fake[imc][ity][ivar], binsRec[ity][ivar], Axisname,nHLTmx,1);
+          HT2_NormalV3(MC_Gen_miss[imc][ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx,1);
 	  
-	  Extract(MC_Gen[imc][ity][ivar], binsGen[ity][ivar] ,Axisname);
-	  Extract(MC_Gen_miss[imc][ity][ivar], binsGen[ity][ivar] ,Axisname);
-	  Extract(MC_missrate[imc][ity][ivar], binsGen[ity][ivar] ,Axisname,1);
-
 	  //------------------------------------------------------Stability and Purity -----------------------------------------
-	  
-	  //TH1* hist_pu= (TH1D*)MC_fake[imc][ity][ivar][ipt]->Clone(); hist_pu->Reset();
 	  TH1* hist_pu= (TH1D*)MC_miss[imc][ity][ivar]->Clone(); hist_pu->Reset();
 	  TH1* hist_st= (TH1D*)MC_miss[imc][ity][ivar]->Clone(); hist_st->Reset();
 	  TH2* RMcopy = (TH2D*)h2dGenDetMC[imc][ity][ivar]->Clone(); RMcopy->RebinX(2);
@@ -362,13 +350,13 @@ void testUnfold2c(){
 	    for(int binGen=1; binGen<=hist_pu->GetNbinsX(); binGen++) {
 	      //sum += RMcopy->GetBinContent(binGen,binRec);
 	      sum += RMcopy->GetBinContent(binRec,binGen);
-	    }
-	    double p=0.;
-	    if(sum>0.0) {
+	   }
+	  double p=0.;
+	   if(sum>0.0) {
 	      p = RMcopy->GetBinContent(binRec,binRec)/sum;
 	    }
 	    hist_pu->SetBinContent(binRec,p);
-        }
+	  }
 	  hist_pu->SetMinimum(-0.07); hist_pu->SetMaximum(1.01);
 	  //hist_pu->Write();
 	  //TH2* RMcopy = (TH2D*)RM_RecoGen->Clone(); RMcopy->RebinX(2);
@@ -377,7 +365,6 @@ void testUnfold2c(){
 	  for(int ibin =1; ibin <= hist_pu->GetNbinsX(); ibin++){ hist_st->SetBinContent(ibin, RMcopy->GetBinContent(ibin,ibin));};
 	  //hist_pu->Divide(hist_pu,RMxcopy, 1, 1, "b");
 	  hist_st->Divide(hist_st,RMy, 1, 1, "b");
-	  
 	  
 	  //TH1* RMMx= (TH1D*)RMx->Clone(); RMMx->Rebin(2);
 	  //hist_pu->Divide(RMy,RMMx, 1, 1, "b");
@@ -389,26 +376,18 @@ void testUnfold2c(){
 	  
 	  for(int i =1; i<h_pu->GetNbinsX()+1; i++){
 	    h_pu->SetBinContent(i,pu[i]);
-	    h_st->SetBinContent(i,st[i]);
+	    h_st->SetBinContent(i,st[i]); 
 	  }
-	  
 	  hist_purity[imc][ity][ivar]=(TH1D*)hist_pu->Clone(); 
-	  //hist_purity[imc][ity][ivar][ipt]=(TH1D*)h_pu->Clone(); 
-	  //hist_stbl[imc][ity][ivar][ipt]=(TH1D*)h_st->Clone(); 
 	  hist_stbl[imc][ity][ivar]=(TH1D*)hist_st->Clone(); 
-	  hist_purity[imc][ity][ivar]->SetMinimum(-0.05); hist_purity[imc][ity][ivar]->SetMaximum(1.01);
-	  hist_stbl[imc][ity][ivar]->SetMinimum(-0.05); hist_stbl[imc][ity][ivar]->SetMaximum(1.01);
 
 	  sprintf(name,"%sPurity_%i_eta0_%i",Histtag, ity, var[ivar]);
 	  hist_purity[imc][ity][ivar]->SetNameTitle(name,name);
 	  sprintf(name,"%sstability_%i_eta0_%i", Histtag, ity, var[ivar]);
 	  hist_stbl[imc][ity][ivar]->SetNameTitle(name,name);
 	  
-	  hist_purity[imc][ity][ivar]->Write();
-	  hist_stbl[imc][ity][ivar]->Write();
-	  Extract(hist_purity[imc][ity][ivar], binsGen[ity][ivar] ,Axisname);
-	  Extract(hist_stbl[imc][ity][ivar], binsGen[ity][ivar] ,Axisname);
-
+          HT2_NormalV3(hist_purity[imc][ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx,1);
+          HT2_NormalV3(hist_stbl[imc][ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx,1);
 	} //for (int imc=0;imc<nmc;imc++)
       }//for(int ivar=0; ivar < nusedvar ; ivar ++)
     }//for(int ity=0; ity <type; ity++)
@@ -429,7 +408,7 @@ void testUnfold2c(){
 	
 	TH1D* Folded = (TH1D*)MC_Reco[umc][ity][ivar]->Clone(); Folded->Reset();
 	Fold(RM, Reco, Gen, miss, fake, Folded);
-
+	
 	sprintf(name,"%sFold_%i_eta0_%i",Histtag, ity, var[ivar]);
 	Folded->SetNameTitle(name,name);
         Extract(Folded, binsRec[ity][ivar], Axisname);	
@@ -439,8 +418,8 @@ void testUnfold2c(){
     //----------------------------Condition  number of Probability Matrix
     for(int ity=0; ity <type; ity++){
       for(int ivar=0; ivar < nusedvar ; ivar ++){
-	TH2D* RM  = (TH2D*)h2dGenDetMC[umc][ity][ivar]->Clone();
-	TH1D* miss = (TH1D*)MC_miss[umc][ity][ivar]->Clone();
+	TH2D* RM  = (TH2D*)RMinput_RM[ity][ivar]->Clone();
+	TH1D* miss = (TH1D*)RMinput_miss[ity][ivar]->Clone();
 	//TH1D* miss = (TH1D*)MC_missrate[umc][ity][ivar][ipt]->Clone();
 	RM->RebinY(irbin); miss->Rebin(irbin);
 	cout <<setw(2) << ity <<setw(5) <<ivar << setw(5) <<'\n';
@@ -453,19 +432,13 @@ void testUnfold2c(){
       for(int ivar=0; ivar < nusedvar ; ivar ++){
 	cout << " TUnfoldBinning2D : "<< " typ : "<< ity << " : Var " << ivar << " ";
         
-	//Get reco bins
-	double rxbins[MC_Reco[umc][ity][ivar]->GetNbinsX()+1]={0};
-	for(int ix=0; ix<MC_Reco[umc][ity][ivar]->GetNbinsX()+1; ix++) {
-	  rxbins[ix] = MC_Reco[umc][ity][ivar]->GetXaxis()->GetBinLowEdge(ix+1); }
-	
-	//Get Gen bins
-	double gxbins[MC_Gen[umc][ity][ivar]->GetNbinsX()+1]={0};
-	for (int ix=0; ix<MC_Gen[umc][ity][ivar]->GetNbinsX()+1; ix++) {
-	  gxbins[ix] = MC_Gen[umc][ity][ivar]->GetXaxis()->GetBinLowEdge(ix+1); }
+	double rxbins[MC_Reco[umc][ity][ivar]->GetNbinsX()+1]={0}; //get Reco bin array
+	for(int ix=0; ix<MC_Reco[umc][ity][ivar]->GetNbinsX()+1; ix++){ rxbins[ix] = MC_Reco[umc][ity][ivar]->GetXaxis()->GetBinLowEdge(ix+1); }
+	double gxbins[MC_Gen[umc][ity][ivar]->GetNbinsX()+1]={0}; //Get Gen Bin array
+	for (int ix=0; ix<MC_Gen[umc][ity][ivar]->GetNbinsX()+1; ix++) {gxbins[ix] = MC_Gen[umc][ity][ivar]->GetXaxis()->GetBinLowEdge(ix+1); }
 	
 	//Rebin for match the condition of reco vs gen bin 
-	RMinput_RM[ity][ivar]->RebinY(irbin);
-	RMinput_Gen[ity][ivar]->Rebin(irbin);
+	RMinput_RM[ity][ivar]->RebinY(irbin); 	RMinput_Gen[ity][ivar]->Rebin(irbin);
 	//----------------------------------------------------------Define Input---------------------	
         TUnfoldBinning* RecoBin = binsRec[ity][ivar];
         TUnfoldBinning* GenBin = binsGen[ity][ivar];
@@ -473,63 +446,23 @@ void testUnfold2c(){
 	TH2* RMin = (TH2D*)RMinput_RM[ity][ivar]->Clone();
 	TH1* input = (TH1D*)Data_Reco[ity][ivar]->Clone();
 	TH1* mc_missrate = (TH1D*)RMinput_missrate[ity][ivar]->Clone();
+	TH1* mc_miss = (TH1D*)RMinput_miss[ity][ivar]->Clone();
         TH1* mcbackground = (TH1D*)RMinput_fakerate[ity][ivar]->Clone();
+	TH1* mcgen = (TH1D*)RMinput_Gen[ity][ivar]->Clone();
 	mcbackground->Multiply(input); //correction for Fake as background subtraction : Patrick
-	
-	
-	TH1* mcgen = (TH1D*)MC_Gen[umc][ity][ivar]->Clone();
-	TH1* mcreco = (TH1D*)MC_Reco[umc][ity][ivar]->Clone();
-	TH1* mcgen_miss = (TH1D*)MC_Gen_miss[umc][ity][ivar]->Clone();
-	TH1* mc_miss = (TH1D*)MC_miss[umc][ity][ivar]->Clone();
-	
 	
         double biasScale = 0;
         const char *REGULARISATION_DISTRIBUTION=0;
         const char *REGULARISATION_AXISSTEERING="*[UO]";
         
         //https://root.cern.ch/doc/master/testUnfold5d_8C.html      : this get input covariance matrix : Data covariance matrix
-        sprintf(name,"%sData_covariance_%i_eta0_%i",Histtag, ity, var[ivar]);
-        TH2D* covM = RecoBin->CreateErrorMatrixHistogram(name,false); covM->Sumw2();
+        TH2D* covM = RecoBin->CreateErrorMatrixHistogram(Form("%sData_covariance_%i_eta0_%i",Histtag, ity, var[ivar]),false); covM->Sumw2();
 	for (int ix=1; ix<input->GetNbinsX()+1; ix++) {
 	  double err = input->GetBinError(ix);
 	  covM->SetBinContent(ix,ix,err*err);
 	}
-	/*       for (int ix=1; ix<covM->GetNbinsX()+1; ix++) {
-		 for (int iy=1; iy<covM->GetNbinsY()+1; iy++) {
-		 double cTmp = input->GetBinContent(ix)*input->GetBinContent(iy);
-		 if(ix==iy)covM->SetBinContent(ix,iy,cTmp);
-		 }
-		 }*/
-      
-	covM->Write();
-#ifdef BLTest	
-	TH1 * BLTdata = (TH1*)Data_Reco[ity][ivar]->Clone(); //Data Reco
-
-//	TH1 * BLTdata1 = (TH1*)Data_fakerateInv[ity][ivar]->Clone(); BLTdata->Multiply(input);  //Data -background
-        
-	//TH1 * BLTgen = (TH1*)Data_missrateInv[ity][ivar]->Clone(); BLTgen->Multiply(Data_Gen[ity][ivar]);  //Data -background
-        TH1 * BLTmcreco = (TH1*)RMinput_Reco[ity][ivar]->Clone();   //Reco
-        TH1 * BLTmcreco1 = (TH1*)RMinput_missrateInv[ity][ivar]->Clone(); BLTmcreco->Multiply(RMinput_Reco[ity][ivar]);  //Reco - background
-
-	TH1 * BLTgen = (TH1*)RMinput_Gen[ity][ivar];  //Data -background
-	TH1 * BLTgen1 = (TH1*)RMinput_missrateInv[ity][ivar]->Clone(); BLTgen->Multiply(RMinput_Gen[ity][ivar]);  //Data -background
 	
-	sprintf(name,"%sBLT_Data_covariance_%i_eta0_%i",Histtag, ity, var[ivar]);
-	TH2D* covMBLT= RecoBin->CreateErrorMatrixHistogram(name,false); covMBLT->Sumw2();
-	for (int ix=1; ix<BLTdata->GetNbinsX()+1; ix++) {
-	  double err = BLTdata->GetBinError(ix);
-	  covMBLT->SetBinContent(ix,ix,err*err);
-       }
-  /*     
-       sprintf(name,"%sBLT_Data_covariance_%i_eta0_%i",Histtag, ity, var[ivar]);
-       TH2D* covMBLT1= RecoBin->CreateErrorMatrixHistogram(name,false); covMBLT1->Sumw2();
-       for (int ix=1; ix<BLTdata1->GetNbinsX()+1; ix++) {
-          double err = BLTdata1->GetBinError(ix);
-          covMBLT1->SetBinContent(ix,ix,err*err);
-       }
-*/
-	//BLT------------------
-#endif
+	covM->Write();
 	//----------------------------------------------------------No Reguratization-------------------------------------	
         TUnfoldDensity density(RMin,TUnfold::kHistMapOutputVert,
 			       TUnfoldDensity::kRegModeNone,
@@ -548,110 +481,94 @@ void testUnfold2c(){
         sprintf(histname, "%sTUnfold_NoReg_typ_%i_eta0_%i", Histtag, ity, var[ivar]); //unfolded_typ_0_pt2_eta0_3
         sprintf(title, "Unfolded No Reg %s 2.4 %s ", itypeN[ity], vartitle[var[ivar]]);
 	bool AxisBin = false;
-
+	
 	TH1 *Unfolded = density.GetOutput(histname,title,0,"*[UO]", AxisBin);//,0,"*[UO]" ,true);//,"","*[UO]");//,"signal");
         
-	sprintf(histname, "%sInEmat_NoReg_typ_%i_eta0_%i",Histtag, ity, var[ivar]);
         sprintf(title, "Input Ematrix No Reg %s 2.4 %s ", itypeN[ity],  vartitle[var[ivar]]);
-        TH2 *hist_In_Emat = density.GetEmatrixInput(histname,title);//,"signal");
+        TH2 *hist_In_Emat = density.GetEmatrixInput(Form("%sInEmat_NoReg_typ_%i_eta0_%i",Histtag, ity, var[ivar]),title);//,"signal");
 	
-	sprintf(histname, "%scorr_NoReg_typ_%i_eta0_%i", Histtag, ity, var[ivar]);
         sprintf(title, "RhoIJtotal No Reg %s  2.4 %s ", itypeN[ity],  vartitle[var[ivar]]);
-        TH2 *Hist_RhoIJ = density.GetRhoIJtotal(histname, title);//,"signal");
+        TH2 *Hist_RhoIJ = density.GetRhoIJtotal(Form("%scorr_NoReg_typ_%i_eta0_%i", Histtag, ity, var[ivar]), title);//,"signal");
 	
-        sprintf(histname, "%sEmat_NoReg_typ_%i_eta0_%i",Histtag, ity, var[ivar]);
         sprintf(title, "Ematrix No Reg %s 2.4 %s ", itypeN[ity],  vartitle[var[ivar]]);
-        TH2 *hist_Emat = density.GetEmatrixTotal(histname,title);//,"signal");
+        TH2 *hist_Emat = density.GetEmatrixTotal(Form("%sEmat_NoReg_typ_%i_eta0_%i",Histtag, ity, var[ivar]),title);//,"signal");
 	
-        sprintf(histname, "%sRefold_NoReg_typ_%i_eta0_%i", Histtag,ity, var[ivar]);
         sprintf(title, "Back folded No Reg %s 2.4 %s ", itypeN[ity], vartitle[var[ivar]]);
-        TH1 *hist_folded = density.GetFoldedOutput(histname,title,0,"*[UO]",AxisBin);//,"signal");
+        TH1 *hist_folded = density.GetFoldedOutput(Form("%sRefold_NoReg_typ_%i_eta0_%i", Histtag,ity, var[ivar]),title,0,"*[UO]",AxisBin);//,"signal");
 	
-        sprintf(histname, "%sProb_NoReg_typ_%i_eta0_%i",Histtag, ity, var[ivar]);
         sprintf(title, "ProbabilityMatrix No Reg %s 2.4 %s ", itypeN[ity], vartitle[var[ivar]]);
-        TH2 *hist_prob = density.GetProbabilityMatrix(histname,title,TUnfold::kHistMapOutputVert);//,"signal");
-	
-	
-	//Calculate Unfolded covarince 
-	//https://root.cern.ch/doc/master/testUnfold5d_8C.html      : this get input covariance matrix : Data covariance matrix
-	sprintf(name,"%sMC_covariance_%i_eta0_%i",Histtag, ity, var[ivar]);
-	TH2D* covUf = GenBin->CreateErrorMatrixHistogram(name,false); covUf->Sumw2();
-	for (int ix=1; ix<covUf->GetNbinsX()+1; ix++) {
-	  //double errmc = mcgen->GetBinError(ix);
-	  double err = Unfolded->GetBinError(ix);
-	  covUf->SetBinContent(ix,ix,err*err);
-	  //covUf->SetBinContent(ix,ix,errmc*errmc);
-	  //covUf->SetBinContent(ix,ix,err*err+errmc*errmc);
-	}
-	//covMC->Add(hist_Emat);
-#ifdef BLTest
-      	TH2 *hist_Emat_Norm = (TH2*)hist_Emat->Clone();
-        cout << " From Density Chi2A() : " << density.GetChi2A() << " " << density.GetChi2L()  << " " << density.GetNdf() <<" Chi2/NDf : "  <<density.GetChi2A()/(density.GetNdf()+1) <<endl;
-        cout << " Smeared detector level 1: ";BLT(BLTdata, covM, hist_folded, 2);
-        cout << " Smeared detector level 2: ";BLT(BLTdata, covMBLT, hist_folded, 2) ; cout<< endl;
- //       cout << " Smeared detector level 3: ";BLT(BLTdata1, covMBLT, BLTmcreco, 2) ; cout<< endl;
-        TH1D* BLTDetRatio= (TH1D*)BLTdata->Clone(); BLTDetRatio->SetName(Form("BLTDet_typ_%i_eta0_%i",ity,var[ivar]));
-	//BLTDetRatio->Divide(hist_folded);
-	BLTDetRatio->Divide(BLTmcreco);
-	BLTDetRatio->Write();
-	Extract(BLTDetRatio, binsRec[ity][ivar], Axisname);
+        TH2 *hist_prob = density.GetProbabilityMatrix(Form("%sProb_NoReg_typ_%i_eta0_%i",Histtag, ity, var[ivar]),title,TUnfold::kHistMapOutputVert);//,"signal");
 
-	cout << " Unfold before Miss correction 1 : "; BLT(Unfolded, covUf, BLTgen1);
-	cout << " Unfold before Miss 2: "; BLT(Unfolded, hist_Emat, BLTgen1);
-	cout << " Unfold before Miss 3: "; BLT(Unfolded, hist_In_Emat, BLTgen) ;cout << endl;
-        
-//	TH1D* BLTGenRatio= (TH1D*)BLTgen1->Clone(); BLTGenRatio->SetName(Form("BLTgen_typ_%i_eta0_%i",ity,var[ivar]));
-//        BLTGenRatio->Divide(Unfolded);
-//        BLTGenRatio->Write();
-//	Extract(BLTGenRatio, binsGen[ity][ivar], Axisname);
-#endif
-	// correction for Miss entries  : Partick
+        TH1 * BLTUnf = (TH1*)Unfolded->Clone();  //for BLT test
+	//correction for Miss entries  : Partick
         for (int i = 1; i <= Unfolded->GetNbinsX(); ++i) {
           double content = Unfolded->GetBinContent(i);
           double factor = 1;
-          //factor += (mc_missrate->GetBinContent(i)/(1-mc_missrate->GetBinContent(i)));
+        //factor += (mc_missrate->GetBinContent(i)/(1-mc_missrate->GetBinContent(i)));
           factor += (mc_miss->GetBinContent(i)/(mcgen->GetBinContent(i) - mc_miss->GetBinContent(i)));
           content *= factor;
           Unfolded->SetBinContent(i, content);  }
-          for (int i = 1; i <= Unfolded->GetNbinsX(); ++i) {cout<<" "<<Unfolded->GetBinContent(i)/mcgen->GetBinContent(i); } ; cout << endl;
-	  Unfolded->Write(); Hist_RhoIJ->Write(); hist_Emat->Write(); hist_folded->Write(); hist_prob->Write(); hist_In_Emat->Write();
-          ConditionV2(hist_prob);
+	for (int i = 1; i <= Unfolded->GetNbinsX(); ++i) {cout<<" "<<Unfolded->GetBinContent(i)/mcgen->GetBinContent(i); } ; cout << endl;
+	Unfolded->Write(); Hist_RhoIJ->Write(); hist_Emat->Write(); hist_folded->Write(); hist_prob->Write(); hist_In_Emat->Write();
+	ConditionV2(hist_prob);
         //----------------------Extract The True Distrubuntions
-          Extract(hist_folded, binsRec[ity][ivar], Axisname);
-          Extract(Unfolded, binsGen[ity][ivar] ,Axisname);
-
-#ifdef BLTest
-	cout << " Unfold after Miss 1: "; BLT(Unfolded, covUf,RMinput_Gen[ity][ivar]);
-	cout << " Unfold after Miss 1: "; BLT(Unfolded, covUf, BLTgen);
-	cout << " Unfold after Miss 2: "; BLT(Unfolded, hist_Emat, RMinput_Gen[ity][ivar]);
-//	cout << " Unfold after Miss 3: "; BLT(Unfolded, hist_In_Emat,Data_Gen[ity][ivar]);	
+	HT2_NormalV3(hist_folded,binsRec[ity][ivar], Axisname,nHLTmx,1);
+	HT2_NormalV3(Unfolded, binsGen[ity][ivar], Axisname,nHLTmx,1);
 	
-        TH1D* BLTGenRatio= (TH1D*)BLTgen->Clone(); BLTGenRatio->SetName(Form("BLTgen_typ_%i_eta0_%i",ity,var[ivar]));
-        BLTGenRatio->Divide(Unfolded);
-        BLTGenRatio->Write();
-        Extract(BLTGenRatio, binsGen[ity][ivar], Axisname);
-/*
-       	
-	sprintf(Axisname,"var_%i[UO]",var[ivar]);
-	  sprintf(name,"fly%s",Unfolded->GetName());
-	  auto UnfoldedExtact = dynamic_cast<TH2*>(binsGen[ity][ivar]->ExtractHistogram(name, Unfolded , 0, true, Axisname));
-          cout << " Unfolded Extract  : " << UnfoldedExtact->GetName() << endl;
+#ifdef BLTest  
+        int ib =0;	
+        TH1 * BLTdata = (TH1*)Data_Reco[ity][ivar]->Clone(); //Data Reco
+        TH1 * BLTreco = (TH1*)MC_Reco[ib][ity][ivar]->Clone(); //Data Reco
+        TH1 * BLTdata1 = (TH1*)RMinput_fakerateInv[ity][ivar]->Clone(); BLTdata1->Multiply(Data_Reco[ity][ivar]);  //Data -background
+	
+        TH1 * BLTgen = (TH1*)MC_Gen[ib][ity][ivar]->Clone(); //Data Reco
+        TH1 * BLTunf = (TH1*)Unfolded->Clone(); //Data Reco
 
-	  sprintf(name,"fly%s",mcgen->GetName()); 
-	  auto DatagenExtact = dynamic_cast<TH2*>(binsGen[ity][ivar]->ExtractHistogram(name, Data_Gen[ity][ivar], 0, true, Axisname));
-	  auto genpx = DatagenExtact->ProjectionX();
-	  auto unfpx = UnfoldedExtact->ProjectionX();
-          for (int i = 1; i <= unfpx->GetNbinsX(); ++i) {cout<<" "<<unfpx->GetBinContent(i)/genpx->GetBinContent(i); }
-*/
+        sprintf(name,"%sBLT_Data_covariance_%i_eta0_%i",Histtag, ity, var[ivar]);
+        TH2D* covMBLT= RecoBin->CreateErrorMatrixHistogram(name,false); covMBLT->Sumw2();
+        for (int ix=1; ix<BLTdata1->GetNbinsX()+1; ix++) {
+          double err = BLTdata1->GetBinError(ix);
+          covMBLT->SetBinContent(ix,ix,err*err);
+       }
+	//https://root.cern.ch/doc/master/testUnfold5d_8C.html      : this get input covariance matrix : Data covariance matrix
+        sprintf(name,"%sMC_covariance_%i_eta0_%i",Histtag, ity, var[ivar]);
+        TH2D* covUf = GenBin->CreateErrorMatrixHistogram(name,false); covUf->Sumw2();
+        for (int ix=1; ix<covUf->GetNbinsX()+1; ix++) {
+          double err = Unfolded->GetBinError(ix);
+          covUf->SetBinContent(ix,ix,err*err);  
+	}
+	cout << " From Density Chi2A() : " << density.GetChi2A() << " " << density.GetChi2L()  << " " << density.GetNdf() <<" Chi2/NDf : "  <<density.GetChi2A()/(density.GetNdf()+1) <<endl;
+        cout << " chi2 det level 1: "; BLT(BLTdata, covM, MC_Reco[ib][ity][ivar], 1);
+        cout << " chi2 det level 2: "; BLT(BLTdata1, covM, MC_reco_fake[ib][ity][ivar], 1); 
+        cout << " chi2 det level 3: "; BLT(hist_folded, covMBLT, MC_reco_fake[ib][ity][ivar], 1) ; cout << endl;
+	
+        cout << " Unfold before Miss input uncert: "; BLT(BLTUnf, hist_In_Emat, MC_Gen_miss[ib][ity][ivar]);
+        cout << " Unfold before Miss Tolat: "; BLT(BLTUnf, hist_Emat, MC_Gen_miss[ib][ity][ivar]); cout << endl;
+	
+	cout << " Unfold after Miss 2: "; BLT(Unfolded, hist_In_Emat,MC_Gen[ib][ity][ivar]);	
+	cout << " Unfold after Miss 1: "; BLT(Unfolded, hist_Emat, MC_Gen[ib][ity][ivar]);
+
+	BLTdata->Rebin(2);
+	BLTreco->Rebin(2);
+	Integralhist(BLTdata);
+        Integralhist(BLTreco);
+	TH1D* BLTDetRatio= (TH1D*)BLTreco->Clone(); BLTDetRatio->SetNameTitle(Form("BLTDet_typ_%i_eta0_%i",ity,var[ivar]),Form("BLTDet typ%i eta0 %i",ity,var[ivar]));
+        BLTDetRatio->Divide(BLTdata);
+        HT2_NormalV3(BLTDetRatio, binsGen[ity][ivar], Axisname,nHLTmx,1);
+
+        Integralhist(Unfolded);
+        Integralhist(MC_Gen[ib][ity][ivar]);
+        TH1D* BLTGenRatio= (TH1D*)MC_Gen[ib][ity][ivar]->Clone(); BLTGenRatio->SetNameTitle(Form("BLTgen_typ_%i_eta0_%i",ity,var[ivar]),Form("BLTgen typ%i eta0 %i",ity,var[ivar]));
+        BLTGenRatio->Divide(Unfolded);
+	HT2_NormalV3(BLTGenRatio, binsGen[ity][ivar], Axisname,nHLTmx,1);
 #endif
 	//-----------------------------------------End of Variables loop	
 	cout << endl ; 
       }
     }
-    
-  cout << "TUnfoldBinning 2D OK " <<endl;
+   cout << "TUnfoldBinning 2D OK " <<endl;
   
-  delete outputFile;
+    delete outputFile;
 }
 
 //-----------------------------------------------------------------------
@@ -893,7 +810,7 @@ void Normalise(TH1* h, TH2* covmat)
       covmat->SetBinContent(i + 1, j + 1, res(i, j));
   }
 }
-
+//---------------------------------------------------------------------------------
 void Extract(TH1* global2d, TUnfoldBinning* Bin, char* Axisname, bool iw=0){
 	if(iw){global2d->Write();}
 	char  name[100], title[100];
@@ -908,38 +825,36 @@ void Extract(TH1* global2d, TUnfoldBinning* Bin, char* Axisname, bool iw=0){
 	extract->Write();
 	extractpx->Write();
 }
+//----------------------------------------------------------------------
 TH1D* ReadHist1D(string name, TFile* root){
 TString histname = name; cout << histname<< endl;
 TH1D* hist=(TH1D*)root->Get(histname);
 hist->Write();
 return hist;
 }
-
+//-----------------------------------------------------------
 TH2D* ReadHist2D(string name, TFile* root){
 TString histname = name; cout << histname<< endl;
 TH2D* hist=(TH2D*)root->Get(histname);
 hist->Write();
 return hist;
 }
-
-void HT2_NormalV3(TH1* global2d, TUnfoldBinning* Bin, char* Axisname, int nht, int htbin[nht+1], bool iw=0){
+//-------------------------------------------------
+void HT2_NormalV3(TH1* global2d, TUnfoldBinning* Bin, char* Axisname, int nht, bool iw=0){
     if(iw){global2d->Write();}
     char  name[100], title[100];
     sprintf(name,"E%s", global2d->GetName()); sprintf(title,"True bin %s", global2d->GetName());
     auto extract=  dynamic_cast<TH2*>(Bin->ExtractHistogram(name, global2d, 0, true, Axisname));
     extract->SetTitle(title);
     extract->Write();
-int nbiny= VarHTin->GetNbinsY();
-int nbinx= VarHTin->GetNbinsX();
-
-//TH1D* h_var = VarHTin->ProjectionX(); h_var->Reset();
+int nbiny= extract->GetNbinsY();  int nbinx= extract->GetNbinsX();
 
 for (int iht = 1; iht <= nbiny; ++iht) {
-       const char * name_hbin = Form("%s_pt%i",VarHTin->GetName(), iht);
+       const char * name_hbin = Form("%s_pt%i",extract->GetName(), iht-1);
         TH1D* h_var  = extract->ProjectionX(name_hbin, iht, iht);
-        h_var-Write();
+	h_var->SetTitle(Form("HT2 %s pt%i",global2d->GetTitle(),iht-1));
+        h_var->Write();
       }
-
   }
 
 
