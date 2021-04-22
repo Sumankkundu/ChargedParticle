@@ -1,11 +1,11 @@
 from CRABClient.UserUtilities import config
 config = config()
 
-config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017F-UL_4July20'
-#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017E-UL_4July20'
-#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017D-UL_4July20'
-#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017C-UL_4July20'
-#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017B-UL_4July20'
+config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017F-UL_14Oct20'
+#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017E-UL_14Oct20'
+#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017D-UL_14Oct20'
+#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017C-UL_14Oct20'
+#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017B-UL_14Oct20'
 config.General.workArea = 'crab_projects'
 config.General.transferOutputs = True
 config.General.transferLogs = True

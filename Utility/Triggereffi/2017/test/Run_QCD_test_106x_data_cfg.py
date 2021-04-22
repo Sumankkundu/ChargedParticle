@@ -12,7 +12,11 @@ process.load("PhysicsTools.PatAlgos.selectionLayer1.selectedPatCandidates_cff")
 
 # source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring(#'/store/mc/Spring14dr/TTJets_MSDecaysCKM_central_Tune4C_13TeV-madgraph-tauola/AODSIM/PU20bx25_POSTLS170_V5-v1/00000/00B6F8B6-90F1-E311-B72C-0025905A6092.root'
+    fileNames = cms.untracked.vstring(
+'/store/data/Run2017D/JetHT/MINIAOD/09Aug2019_UL2017-v1/00000/03A89500-ED1F-3B4F-AA84-33D55D96D9B9.root',
+'/store/data/Run2017D/JetHT/MINIAOD/09Aug2019_UL2017-v1/00000/4EAE67FC-658E-1647-B91F-A978348DA634.root',
+'/store/data/Run2017D/JetHT/MINIAOD/09Aug2019_UL2017-v1/00000/56454910-080C-714B-9B0B-D76B3AD61185.root',
+'/store/data/Run2017D/JetHT/MINIAOD/09Aug2019_UL2017-v1/00000/9A2F7287-D3C7-EB42-B8CC-D4F5F536BFC4.root',
 '/store/data/Run2017E/JetHT/MINIAOD/09Aug2019_UL2017-v1/130000/016BE62D-1105-AC4F-8A58-59BD14326D8B.root',
 '/store/data/Run2017E/JetHT/MINIAOD/09Aug2019_UL2017-v1/130000/01BB9E36-70E0-D64A-8164-87AEA03925B2.root',
 #'/store/data/Run2015D/JetHT/MINIAOD/16Dec2015-v1/00000/7E46D250-67B0-E511-BB96-0025905C3E66.root'
@@ -37,7 +41,7 @@ from Configuration.AlCa.GlobalTag import GlobalTag
 #process.GlobalTag = GlobalTag(process.GlobalTag,'GR_P_V56::All')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'GR_R_44_V11::All')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'102X_dataRun2_v12')
-process.GlobalTag = GlobalTag(process.GlobalTag,'106X_dataRun2_v20')
+process.GlobalTag = GlobalTag(process.GlobalTag,'106X_dataRun2_v33')
 # produce PAT Layer 1
 process.load("PhysicsTools.PatAlgos.patSequences_cff")
 

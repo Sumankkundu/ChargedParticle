@@ -32,11 +32,11 @@
 //#define TRIGGER
 
 ////for Pythia8
-#define JETRESO
-#define TRIGGER
+//#define JETRESO
+//#define TRIGGER
 
 //For Flat
-#define FLAT
+//#define FLAT
 
 
 ////For GenParticle only
@@ -416,7 +416,7 @@ const int njetetamn=1; // GMA 4;
 #elif defined(JETRESO)
         const int njecmx = 3;
   TH1F* h_recoevtvarres[ntype][njetptmn][njetetamn][nvar][njecmx];
-  TH1* h_recoevtvarres_2D[ntype][njetetamn][nvar][njecmx]; //For 2D
+  TH1* h_recoevtvarres_2D[ntype][njetetamn][nvar][njecmx]; //For 2D //No use
 #else
   const int njecmx=1;
 #endif
@@ -594,9 +594,9 @@ class QCDEventShape : public edm::EDAnalyzer {
   float inslumi;
   int nsicls, ntottrk;
 //#ifdef FLAT 
-  bool isFlat=1;
+ // bool isFlat=1;
 //#else 
-  //bool isFlat=0;
+  bool isFlat=0;
 //#endif
 
     float defweight=1.0, weighttrg=1., qlow=-10., qhigh=100000.;
@@ -1000,7 +1000,7 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
               sprintf(title, "Gen_Reco %s %g %s", typname[ityp], etarange[iet], vartitle[ij]);
 	      RM_2D[ityp][iet][ij] = TUnfoldBinning::CreateHistogramOfMigrations(binsRec2D[ityp][iet][ij], binsGen2D[ityp][iet][ij], name ,0,0, title);
               RM_2D[ityp][iet][ij]->Sumw2();              
-             
+            
 	      } //if (isReconstruct)
 	    }//if (isItUsed(ij))
           }
@@ -2135,14 +2135,16 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
       // resolution file 
       JME::JetResolution resolution;
     //resolution = JME::JetResolution("Fall17_V2_MC_PtResolution_AK4PFchs.txt");
-      resolution = JME::JetResolution("Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt");
+      //resolution = JME::JetResolution("Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt");
+      resolution = JME::JetResolution("Summer19UL17_JRV3_MC_PtResolution_AK4PFchs.txt");
     //resolution = JME::JetResolution("Fall17_V3b_MC_PtResolution_AK4PFchs.txt");
     //resolution = JME::JetResolution("Fall15_25nsV2_MC_PtResolution_AK4PFchs.txt");
  
       // Scalefactor file
       JME::JetResolutionScaleFactor res_sf;
       //		cout<<"Filename="<<scalefile<<endl;
-    res_sf = JME::JetResolutionScaleFactor("Summer19UL17_JRV2_MC_SF_AK4PFchs.txt");
+    res_sf = JME::JetResolutionScaleFactor("Summer19UL17_JRV3_MC_SF_AK4PFchs.txt");
+    //res_sf = JME::JetResolutionScaleFactor("Summer19UL17_JRV2_MC_SF_AK4PFchs.txt");
     //res_sf = JME::JetResolutionScaleFactor("Fall17_V3b_MC_SF_AK4PFchs.txt");
     //res_sf = JME::JetResolutionScaleFactor("Fall17_V2_MC_SF_AK4PFchs.txt");
     //res_sf = JME::JetResolutionScaleFactor("Fall15_25nsV2_MC_SF_AK4PFchs.txt");
@@ -3128,7 +3130,7 @@ else {
                  if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) {
 		EventShape_vector  recoevtshape(recomom[isrc][itp][iet], 2.4, 0, 2, 1);
 		recovar =  recoevtshape.getEventShapes();
-		if(isrc==0){recovar1 =  recoevtshape.getEventShapes();}
+                if(isrc==0){recovar1 =  recoevtshape.getEventShapes();}
 		if (recovar[nvar]>=2) {
 		  if (isrc==0) {isRECO[itp][iet] = true;}
 		  for (int ij=0; ij<nvar; ij++) {
@@ -3159,6 +3161,7 @@ else {
 			if (int(recovar[nvar])>=2) {h_recoevtvarres[itp][irecohtjec[isrc]][iet][ij][isrc]->Fill(recovar[ij], weighttrg);
                            int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar[ij],aveleadingptjec[isrc]);
                            h_recoevtvarres_2D[itp][iet][ij][isrc]->Fill(irecbin, weighttrg);}
+		         
 #endif
 		      }
 		    }
@@ -3209,6 +3212,7 @@ else {
 		}
 	      }
 
+                //         cout << " all isrc : " <<isrc <<endl; 
 ///cout <<endl;	
   	      if(isrc==0 && isReconstruct){ 
 		  for(int ij=0; ij<nvar; ij++) {
@@ -3216,7 +3220,7 @@ else {
 		      if(isRECO[itp][iet] && isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) { 
 			naa++;
 	                if(recovar1[nvar]>=2 &&  genvar[nvar]>=2){
- 
+                //         cout << " isrc : " <<isrc <<endl; 
 			 h_2devtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], genvar[ij], weighttrg);
 			 int igenbin = GenBinning2D[itp][iet][ij]->GetGlobalBinNumber(genvar[ij], avegenptres[isrc]);
                          int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar1[ij],aveleadingptjec[isrc]);

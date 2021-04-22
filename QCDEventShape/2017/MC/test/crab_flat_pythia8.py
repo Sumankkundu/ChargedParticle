@@ -15,9 +15,9 @@ config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'Run_QCD_test_miaod_v2_94x_mc_cfg.py'
 
 #config.JobType.psetName = options.cfg
-config.JobType.maxMemoryMB = 9000 # Default is 2500 : Max I have used is 13000
-config.JobType.maxJobRuntimeMin = 2750 #Default is 1315; 2750 minutes guaranteed to be available; Max I have used is 9000
-config.JobType.numCores = 4
+#config.JobType.maxMemoryMB = 9000 # Default is 2500 : Max I have used is 13000
+#config.JobType.maxJobRuntimeMin = 2750 #Default is 1315; 2750 minutes guaranteed to be available; Max I have used is 9000
+#config.JobType.numCores = 4
 
 config.JobType.inputFiles= [
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_17Nov2017F_V6_DATA/Fall17_17Nov2017F_V6_DATA_UncertaintySources_AK4PFchs.txt",

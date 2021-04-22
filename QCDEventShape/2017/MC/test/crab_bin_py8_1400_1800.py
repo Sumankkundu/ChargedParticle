@@ -2,12 +2,14 @@
 from CRABClient.UserUtilities import config
 config = config()
 
-config.General.requestName ='ESVQCD_UL_Ptbinned_1400to1800_tuneCP5_bin_12Sep20'
+config.General.requestName ='ESVQCD_UL_Ptbinned_1400to1800_tuneCP5_bin'
 
 #config.General.requestName ='ESV_Pt_C5_PY82017_1523_OLPU_GT94x_23Apr'
 #config.General.requestName ='ESV_Pt_C5_PY82017_249_14PU94X_20APr_CMSSW94X'
 #config.General.requestName ='ESV_Pt_TuneCUETP8M1_PY82017_14PU_GT94X_LJEC_23Apr_CMSSW94X'
 #config.General.requestName ='ESV_Pt_TuneCUETP8M1_PY82017_OLPU_GT94X_LJEC_23Apr_CMSSW94X'
+
+#config.General.workArea = 'crab_projects_1'
 config.General.workArea = 'crab_projects'
 config.General.transferOutputs = True
 config.General.transferLogs = True
@@ -32,8 +34,10 @@ config.JobType.inputFiles= [
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/MC17_12Apr2018/Fall17_17Nov2017_V32_MC_UncertaintySources_AK4PFchs.txt",
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt",
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV2_MC_SF_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt"
-]
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV3_MC_SF_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV3_MC_PtResolution_AK4PFchs.txt"]
+
 
 
 config.Data.inputDataset ='/QCD_Pt_1400to1800_TuneCP5_13TeV_pythia8/RunIISummer19UL17MiniAOD-106X_mc2017_realistic_v6-v2/MINIAODSIM'

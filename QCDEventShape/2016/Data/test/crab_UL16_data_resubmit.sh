@@ -1,0 +1,9 @@
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2016B_v1 
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2016B_v2 
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2016C 
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2016D 
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2016E 
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2016F 
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2016G 
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2016H 
+

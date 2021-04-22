@@ -11,9 +11,9 @@ config.General.transferLogs = True
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'Run_QCD_test_miaod_v2_94x_mc_cfg.py'
 #config.JobType.psetName = options.cfg
-config.JobType.maxMemoryMB = 9000 # Default is 2500 : Max I have used is 13000
-config.JobType.maxJobRuntimeMin = 2750 #Default is 1315; 2750 minutes guaranteed to be available; Max I have used is 9000
-config.JobType.numCores = 4
+#config.JobType.maxMemoryMB = 9000 # Default is 2500 : Max I have used is 13000
+#config.JobType.maxJobRuntimeMin = 2750 #Default is 1315; 2750 minutes guaranteed to be available; Max I have used is 9000
+#config.JobType.numCores = 4
 
 
 config.JobType.inputFiles= [
@@ -28,7 +28,10 @@ config.JobType.inputFiles= [
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/MC17_12Apr2018/Fall17_17Nov2017_V32_MC_UncertaintySources_AK4PFchs.txt",
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt",
 "/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV2_MC_SF_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt"]
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV3_MC_SF_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV3_MC_PtResolution_AK4PFchs.txt"]
+
 
 
 
@@ -49,6 +52,6 @@ config.Data.unitsPerJob = 1  #For Filebased or Lumibased
 #config.Data.outLFNDirBase = '/store/user/%s/' % (getUsernameFromSiteDB())
 #config.Data.outLFNDirBase = '/store/user/%s/' % (sukundu)
 config.Data.publication = True
-config.Data.outputDatasetTag = 'MC_UL2017_Herwig7_flat_15oct'
+config.Data.outputDatasetTag = 'MC_UL2017_Herwig7_flat'
 config.JobType.allowUndistributedCMSSW = True
 config.Site.storageSite ='T2_IN_TIFR'
