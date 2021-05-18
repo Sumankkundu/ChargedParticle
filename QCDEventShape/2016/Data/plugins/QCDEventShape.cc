@@ -3293,7 +3293,10 @@ QCDEventShape::beginJob() {
     const char *name = srcnames[isrc];
   //JetCorrectorParameters *p = new JetCorrectorParameters("Summer16_23Sep2016BCDV4_DATA_UncertaintySources_AK4PFchs.txt", name);    
   //JetCorrectorParameters *p = new JetCorrectorParameters("Summer16_23Sep2016EFV6_DATA_UncertaintySources_AK4PFchs.txt", name);    
-  JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL16APV_RunBCDEF_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
+  //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL16APV_RunBCDEF_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
+  //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL16APV_RunBCD_V7_DATA_UncertaintySources_AK4PFchs.txt", name);    
+  //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL16APV_RunEF_V7_DATA_UncertaintySources_AK4PFchs.txt", name);    
+  JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL16_RunFGH_V7_DATA_UncertaintySources_AK4PFchs.txt", name);    
 //  JetCorrectorParameters *p = new JetCorrectorParameters("Summer16_25nsV5_MC_Uncertainty_AK4PFchs.txt", name);    
 JetCorrectionUncertainty *unc = new JetCorrectionUncertainty(*p);
 		//    vsrc[isrc] = unc;

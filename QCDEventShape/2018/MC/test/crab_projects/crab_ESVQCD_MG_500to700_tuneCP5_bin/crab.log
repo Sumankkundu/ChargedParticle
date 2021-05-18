@@ -1,0 +1,150 @@
+test1
+test2
+DEBUG 2021-05-13 20:18:14.465 UTC: 	 CRAB Client version: v3.210323
+DEBUG 2021-05-13 20:18:14.466 UTC: 	 Running on: Linux lxplus798.cern.ch 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Apr 8 19:51:47 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-05-13 20:18:14.466 UTC: 	 Executing command: 'submit'
+DEBUG 2021-05-13 20:18:14.466 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+INFO 2021-05-13 20:18:14.467 UTC: 	 Will use CRAB configuration file crab_bin_Madgraph_500_700.py
+DEBUG 2021-05-13 20:18:14.467 UTC: 	 Loading CRAB configuration file.
+DEBUG 2021-05-13 20:18:14.471 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2021-05-13 20:18:14.518 UTC: 	 Checking credentials
+DEBUG 2021-05-13 20:18:14.518 UTC: 	 Found proxy file /tmp/x509up_u107261
+DEBUG 2021-05-13 20:18:14.518 UTC: 	 Getting proxy life time left
+DEBUG 2021-05-13 20:18:15.123 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -timeleft
+ output : 42781
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-13 20:18:15.729 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -actimeleft
+ output : 42781
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-13 20:18:15.730 UTC: 	 Proxy valid for 11:53:01 hours
+DEBUG 2021-05-13 20:18:16.339 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u107261 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-13 20:18:16.393 UTC: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+DEBUG 2021-05-13 20:18:17.007 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u107261 -identity
+ output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-13 20:18:17.016 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-05-13 20:18:17.016 UTC: 	 using 7078db9116897da1421ea80d6b19074617f7d7b6 as credential login name
+DEBUG 2021-05-13 20:18:17.521 UTC: 	 Executing : 
+ command : myproxy-info -l 7078db9116897da1421ea80d6b19074617f7d7b6 -s myproxy.cern.ch
+ output : username: 7078db9116897da1421ea80d6b19074617f7d7b6
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 549:35:44  (22.9 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-13 20:18:17.522 UTC: 	 Myproxy is valid: 1978544
+DEBUG 2021-05-13 20:18:17.523 UTC: 	 Retrieving username ...
+DEBUG 2021-05-13 20:18:17.523 UTC: 	 Retrieving username from CRIC...
+DEBUG 2021-05-13 20:18:18.674 UTC: 	 username is sukundu
+DEBUG 2021-05-13 20:18:18.682 UTC: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2021-05-13 20:18:18.682 UTC: 	 using sukundu_CRAB as credential login name
+DEBUG 2021-05-13 20:18:19.287 UTC: 	 Executing : 
+ command : myproxy-info -l sukundu_CRAB -s myproxy.cern.ch
+ output : username: sukundu_CRAB
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=sukundu/CN=824416/CN=Suman Kumar Kundu
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms0105.cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(02|01).cern.ch|/DC=ch/DC=cern/OU=computers/CN=(ddi|ddidk|mytw).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch
+  timeleft: 549:37:21  (22.9 days)
+
+ error: 
+ retcode : 0
+DEBUG 2021-05-13 20:18:19.288 UTC: 	 Myproxy is valid: 1978641
+DEBUG 2021-05-13 20:18:19.288 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: 7078db9116897da1421ea80d6b19074617f7d7b6  - validity: 22 days, 21:35:44
+  Credential exists on myproxy: username: sukundu_CRAB  - validity: 22 days, 21:37:21
+DEBUG 2021-05-13 20:18:19.288 UTC: 	 Command use: submit
+DEBUG 2021-05-13 20:18:19.288 UTC: 	 Options use: ['-c', 'crab_bin_Madgraph_500_700.py']
+DEBUG 2021-05-13 20:18:19.418 UTC: 	 CRABClient version: v3.210323
+DEBUG 2021-05-13 20:18:19.418 UTC: 	 Instance is prod
+DEBUG 2021-05-13 20:18:19.418 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2021-05-13 20:18:19.418 UTC: 	 Command url /crabserver/prod/workflow
+DEBUG 2021-05-13 20:18:19.418 UTC: 	 Started submission
+DEBUG 2021-05-13 20:18:19.418 UTC: 	 Working on /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/src/Test/QCDEventShape/test/crab_projects/crab_ESVQCD_MG_500to700_tuneCP5_bin
+DEBUG 2021-05-13 20:18:19.503 UTC: 	 Loading required information from the environment
+DEBUG 2021-05-13 20:18:19.503 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20
+DEBUG 2021-05-13 20:18:19.503 UTC: 	 Loading required information from the environment
+DEBUG 2021-05-13 20:18:19.503 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20
+DEBUG 2021-05-13 20:18:19.503 UTC: 	 UNIQUE NAME: tarUUID 32a4a811-261c-4d58-a203-92ac1a28889b 
+DEBUG 2021-05-13 20:18:19.503 UTC: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferLogs = True
+config.General.transferOutputs = True
+config.General.workArea = 'crab_projects'
+config.General.requestName = 'ESVQCD_MG_500to700_tuneCP5_bin'
+config.section_('JobType')
+config.JobType.psetName = 'Run_QCD_test_MiniAOD_102x_mc_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.inputFiles = ['/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_JRV2_MC_SF_AK4PFchs.txt', '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_JRV2_MC_PtResolution_AK4PFchs.txt', '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_V5_MC_Uncertainty_AK4PFchs.txt', '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunA_V5_DATA_UncertaintySources_AK4PFchs.txt', '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunB_V5_DATA_UncertaintySources_AK4PFchs.txt', '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunC_V5_DATA_UncertaintySources_AK4PFchs.txt', '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunD_V5_DATA_UncertaintySources_AK4PFchs.txt', '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunA_V5_DATA_Uncertainty_AK4PFchs.txt', '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunB_V5_DATA_Uncertainty_AK4PFchs.txt', '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunC_V5_DATA_Uncertainty_AK4PFchs.txt', '/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunD_V5_DATA_Uncertainty_AK4PFchs.txt']
+config.JobType.allowUndistributedCMSSW = True
+config.section_('Data')
+config.Data.inputDataset = '/QCD_HT500to700_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM'
+config.Data.outputDatasetTag = 'MC_MG_UL_2018'
+config.Data.publication = True
+config.Data.unitsPerJob = 1
+config.Data.inputDBS = 'global'
+config.Data.splitting = 'FileBased'
+config.section_('Site')
+config.Site.storageSite = 'T2_IN_TIFR'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2021-05-13 20:18:19.503 UTC: 	 self.config.JobType.psetName: Run_QCD_test_MiniAOD_102x_mc_cfg.py
+INFO 2021-05-13 20:18:19.503 UTC: 	 Importing CMSSW configuration Run_QCD_test_MiniAOD_102x_mc_cfg.py
+INFO 2021-05-13 20:18:20.866 UTC: 	 Finished importing CMSSW configuration Run_QCD_test_MiniAOD_102x_mc_cfg.py
+DEBUG 2021-05-13 20:18:20.867 UTC: 	 Writing CMSSW configuration to /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/src/Test/QCDEventShape/test/crab_projects/crab_ESVQCD_MG_500to700_tuneCP5_bin/inputs/PSet.py
+DEBUG 2021-05-13 20:18:21.312 UTC: 	 The following EDM output files will be collected: []
+DEBUG 2021-05-13 20:18:21.312 UTC: 	 The following TFile output files will be collected: ['Test_MC_QCD.root']
+DEBUG 2021-05-13 20:18:21.312 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2021-05-13 20:18:21.312 UTC: 	 Loading required information from the environment
+DEBUG 2021-05-13 20:18:21.312 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20
+DEBUG 2021-05-13 20:18:21.312 UTC: 	 Making tarball in /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/src/Test/QCDEventShape/test/crab_projects/crab_ESVQCD_MG_500to700_tuneCP5_bin/inputs/32a4a811-261c-4d58-a203-92ac1a28889bdefault.tgz
+DEBUG 2021-05-13 20:18:21.313 UTC: 	 Checking directory /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/lib
+DEBUG 2021-05-13 20:18:21.313 UTC: 	 Adding directory /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/lib to tarball
+DEBUG 2021-05-13 20:18:21.319 UTC: 	 Checking directory /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/biglib
+DEBUG 2021-05-13 20:18:21.319 UTC: 	 Adding directory /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/biglib to tarball
+DEBUG 2021-05-13 20:18:21.320 UTC: 	 Checking directory /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/module
+DEBUG 2021-05-13 20:18:21.331 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_JRV2_MC_SF_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:21.331 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_JRV2_MC_PtResolution_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:21.332 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_V5_MC_Uncertainty_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:21.332 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunA_V5_DATA_UncertaintySources_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:21.769 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunB_V5_DATA_UncertaintySources_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:22.246 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunC_V5_DATA_UncertaintySources_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:22.722 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunD_V5_DATA_UncertaintySources_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:23.220 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunA_V5_DATA_Uncertainty_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:23.220 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunB_V5_DATA_Uncertainty_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:23.221 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunC_V5_DATA_Uncertainty_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:23.354 UTC: 	 Adding file /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2018/AK4PFCHS_Summer19UL/Summer19UL18_RunD_V5_DATA_Uncertainty_AK4PFchs.txt to tarball
+DEBUG 2021-05-13 20:18:23.578 UTC: 	 Uploading archive /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/src/Test/QCDEventShape/test/crab_projects/crab_ESVQCD_MG_500to700_tuneCP5_bin/inputs/32a4a811-261c-4d58-a203-92ac1a28889bdefault.tgz (0.694336.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch:8443/crabcache
+DEBUG 2021-05-13 20:18:24.892 UTC: 	 Loading required information from the environment
+DEBUG 2021-05-13 20:18:24.892 UTC: 	 Found CMSSW_10_6_20 for slc7_amd64_gcc820 with base /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20
+DEBUG 2021-05-13 20:18:24.892 UTC: 	 Making tarball in /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/src/Test/QCDEventShape/test/crab_projects/crab_ESVQCD_MG_500to700_tuneCP5_bin/inputs/debugFiles.tgz
+DEBUG 2021-05-13 20:18:24.899 UTC: 	 Uploading archive /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/src/Test/QCDEventShape/test/crab_projects/crab_ESVQCD_MG_500to700_tuneCP5_bin/inputs/debugFiles.tgz (3 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch:8443/crabcache
+DEBUG 2021-05-13 20:18:25.001 UTC: 	 Result uploading input files: d7230cb820264eef256c2a4938898b1975a8c6d7d6065675ad1eb06cfbad3a41.tar.gz 
+WARNING 2021-05-13 20:18:25.001 UTC: 	 Warning: The following output files will not be published, as they are not EDM files: ['Test_MC_QCD.root']
+INFO 2021-05-13 20:18:25.001 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2021-05-13 20:18:25.001 UTC: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 0, 'savelogsflag': 1, 'useparent': 0, 'asyncdest': 'T2_IN_TIFR', 'algoargs': 1, 'cachefilename': 'd7230cb820264eef256c2a4938898b1975a8c6d7d6065675ad1eb06cfbad3a41.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_10_6_20', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/QCD_HT500to700_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/RunIISummer19UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2/MINIAODSIM', 'dryrun': 0, 'workflow': 'crab_ESVQCD_MG_500to700_tuneCP5_bin', 'cacheurl': u'https://cmsweb.cern.ch:8443/crabcache', 'nonprodsw': 1, 'tfileoutfiles': ['Test_MC_QCD.root'], 'oneEventMode': 0, 'debugfilename': '53347327905b2abad53b443cdee0d5924f1458d081648371dbd8350aba77ed5e.tar.gz', 'saveoutput': 1, 'publication': 1, 'jobarch': 'slc7_amd64_gcc820', 'totalunits': 0, 'splitalgo': 'FileBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': 'MC_MG_UL_2018'} 
+DEBUG 2021-05-13 20:18:25.001 UTC: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=0&savelogsflag=1&useparent=0&asyncdest=T2_IN_TIFR&algoargs=1&cachefilename=d7230cb820264eef256c2a4938898b1975a8c6d7d6065675ad1eb06cfbad3a41.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_10_6_20&primarydataset=&inputdata=%2FQCD_HT500to700_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8%2FRunIISummer19UL18MiniAOD-106X_upgrade2018_realistic_v11_L1v1-v2%2FMINIAODSIM&dryrun=0&workflow=crab_ESVQCD_MG_500to700_tuneCP5_bin&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%3A8443%2Fcrabcache&nonprodsw=1&oneEventMode=0&debugfilename=53347327905b2abad53b443cdee0d5924f1458d081648371dbd8350aba77ed5e.tar.gz&saveoutput=1&publication=1&jobarch=slc7_amd64_gcc820&totalunits=0&splitalgo=FileBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=MC_MG_UL_2018&tfileoutfiles=Test_MC_QCD.root
+DEBUG 2021-05-13 20:18:25.064 UTC: 	 Result: {u'result': [{u'RequestName': u'210513_201825:sukundu_crab_ESVQCD_MG_500to700_tuneCP5_bin'}]}
+INFO 2021-05-13 20:18:25.066 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
+INFO 2021-05-13 20:18:25.066 UTC: 	 Task name: 210513_201825:sukundu_crab_ESVQCD_MG_500to700_tuneCP5_bin
+INFO 2021-05-13 20:18:25.067 UTC: 	 Project dir: crab_projects/crab_ESVQCD_MG_500to700_tuneCP5_bin
+INFO 2021-05-13 20:18:25.067 UTC: 	 Please use ' crab status -d crab_projects/crab_ESVQCD_MG_500to700_tuneCP5_bin ' to check how the submission process proceeds.
+DEBUG 2021-05-13 20:18:25.067 UTC: 	 About to return
+INFO 2021-05-13 20:18:25.069 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Eventshape_variables/MC_TUnfoldBinning/2018_UL/CMSSW_10_6_20/src/Test/QCDEventShape/test/crab_projects/crab_ESVQCD_MG_500to700_tuneCP5_bin/crab.log

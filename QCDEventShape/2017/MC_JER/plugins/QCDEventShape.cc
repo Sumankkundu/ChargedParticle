@@ -595,9 +595,9 @@ class QCDEventShape : public edm::EDAnalyzer {
   float inslumi;
   int nsicls, ntottrk;
 //#ifdef FLAT 
-//  bool isFlat=1;
+  bool isFlat=1;
 //#else 
-    bool isFlat=0;
+  //  bool isFlat=0;
 //#endif
 
     float defweight=1.0, weighttrg=1., qlow=-10., qhigh=100000.;
@@ -618,20 +618,20 @@ class QCDEventShape : public edm::EDAnalyzer {
 
    TH1* h_genvar_2D[ntype][njetetamn][nvar]; //Gen
    TH1* h_genmiss_2D[ntype][njetetamn][nvar]; //For Miss
- //  TH1* h_genmissOutE_2D[type][njetetamn][nvar]; //For Miss
- //  TH1* h_genmissOutHT_2D[type][njetetamn][nvar]; //For Miss
+ //TH1* h_genmissOutE_2D[type][njetetamn][nvar]; //For Miss
+ //TH1* h_genmissOutHT_2D[type][njetetamn][nvar]; //For Miss
 
    TH2* RM_2D[ntype][njetetamn][nvar];
    
-   TH2* RM_JER_2D[ntype][njetetamn][nvar][njecmx];
-   TH1* h_gen_JER_miss_2D[ntype][njetetamn][nvar][njecmx]; //For Miss
-   TH1* h_reco_JER_fake_2D[ntype][njetetamn][nvar][njecmx];//For fake
+   TH2* RM_JER_2D[njecmx][ntype][njetetamn][nvar];
+   TH1* h_gen_JER_miss_2D[njecmx][ntype][njetetamn][nvar]; //For Miss
+   TH1* h_reco_JER_fake_2D[njecmx][ntype][njetetamn][nvar];//For fake
 
 
 
   //=============****=========================
   //TH1F* recojt_hist;
-//  TH1F* recojt_pt[njetetamn][nHLTmx];
+  //TH1F* recojt_pt[njetetamn][nHLTmx];
   TH1F* recojt_pt[njetetamn];
   TH1F* recojt_eta;
   TH1F* recojt_phi;
@@ -983,7 +983,7 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
               h_recoevtvarjec_2D[ityp][iet][ij][ix]->Sumw2();
             }
 #elif defined(JETRESO)
-            for (int ix=1; ix<njecmx; ix++ ) {
+            for (int ix=0; ix<njecmx; ix++ ) {
               sprintf(name, "dd_recoreso_typ_%i_eta%i_%i_%i", ityp, iet, ij, ix);
               sprintf(title, "2D Recoreso %s %g %s %i", typname[ityp], etarange[iet], vartitle[ij], ix);
               h_recoevtvarres_2D[ityp][iet][ij][ix] = binsRec2D[ityp][iet][ij]->CreateHistogram(name,false,0,title);
@@ -992,18 +992,18 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
              
               sprintf(name, "dd_corr_reso_typ_%i_eta%i_%i_%i", ityp, iet, ij, ix);
               sprintf(title, "2D Corr reso %s %g %s %i", typname[ityp], etarange[iet], vartitle[ij], ix);
-              RM_JER_2D[ityp][iet][ij][ix] = TUnfoldBinning::CreateHistogramOfMigrations(binsRec2D[ityp][iet][ij], binsGen2D[ityp][iet][ij], name ,0,0, title);
-              RM_JER_2D[ityp][iet][ij][ix]->Sumw2();
+              RM_JER_2D[ix][ityp][iet][ij] = TUnfoldBinning::CreateHistogramOfMigrations(binsRec2D[ityp][iet][ij], binsGen2D[ityp][iet][ij], name ,0,0, title);
+              RM_JER_2D[ix][ityp][iet][ij]->Sumw2();
 
               sprintf(name, "dd_fake_reso_typ_%i_eta%i_%i_%i", ityp, iet, ij, ix);
               sprintf(title, "2D fake reso %s %g %s %i", typname[ityp], etarange[iet], vartitle[ij], ix);
-              h_reco_JER_fake_2D[ityp][iet][ij][ix] = binsRec2D[ityp][iet][ij]->CreateHistogram(name,false,0,title);
-              h_reco_JER_fake_2D[ityp][iet][ij][ix]->Sumw2();
+              h_reco_JER_fake_2D[ix][ityp][iet][ij] = binsRec2D[ityp][iet][ij]->CreateHistogram(name,false,0,title);
+              h_reco_JER_fake_2D[ix][ityp][iet][ij]->Sumw2();
 
               sprintf(name, "dd_miss_reso_typ_%i_eta%i_%i_%i", ityp, iet, ij, ix);
               sprintf(title, "2D miss reso %s %g %s %i", typname[ityp], etarange[iet], vartitle[ij], ix);
-              h_gen_JER_miss_2D[ityp][iet][ij][ix] = binsGen2D[ityp][iet][ij]->CreateHistogram(name,false,0,title);
-              h_gen_JER_miss_2D[ityp][iet][ij][ix]->Sumw2();
+              h_gen_JER_miss_2D[ix][ityp][iet][ij] = binsGen2D[ityp][iet][ij]->CreateHistogram(name,false,0,title);
+              h_gen_JER_miss_2D[ix][ityp][iet][ij]->Sumw2();
              }
 #endif
 	      sprintf(name, "dd_gen_typ_%i_eta%i_%i", ityp, iet, ij);
@@ -2156,7 +2156,7 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 #if defined(JETRESO)&&(!defined(JETENERGY))
       // resolution file 
       JME::JetResolution resolution;
-    //resolution = JME::JetResolution("Fall17_V2_MC_PtResolution_AK4PFchs.txt");
+      //resolution = JME::JetResolution("Summer19UL17_JRV3_MC_PtResolution_AK4PFchs.txt");
       resolution = JME::JetResolution("Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt");
     //resolution = JME::JetResolution("Fall17_V3b_MC_PtResolution_AK4PFchs.txt");
     //resolution = JME::JetResolution("Fall15_25nsV2_MC_PtResolution_AK4PFchs.txt");
@@ -2164,8 +2164,8 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
       // Scalefactor file
       JME::JetResolutionScaleFactor res_sf;
       //		cout<<"Filename="<<scalefile<<endl;
+   // res_sf = JME::JetResolutionScaleFactor("Summer19UL17_JRV3_MC_SF_AK4PFchs.txt");
     res_sf = JME::JetResolutionScaleFactor("Summer19UL17_JRV2_MC_SF_AK4PFchs.txt");
-    //res_sf = JME::JetResolutionScaleFactor("Fall17_V3b_MC_SF_AK4PFchs.txt");
     //res_sf = JME::JetResolutionScaleFactor("Fall17_V2_MC_SF_AK4PFchs.txt");
     //res_sf = JME::JetResolutionScaleFactor("Fall15_25nsV2_MC_SF_AK4PFchs.txt");
       
@@ -2183,6 +2183,8 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
       float sf_dn= res_sf.getScaleFactor({{JME::Binning::JetEta, eta}}, Variation::DOWN);
       //#endif
       //#endif
+      //cout << " Resolution " << rp <<endl;
+     // cout << " Scale factor : Nominal " << sf <<" Up : " << sf_up << " Donw : " << sf_dn  << endl;
 #endif
       
       for (int isrc = 0; isrc < njecmx; isrc++) {
@@ -2203,13 +2205,14 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 	}
 #elif defined(JETRESO)
 	if (isrc==0) {  
-	  reso = sqrt(sf*sf - 1)*rp;
+	  reso = sqrt(abs(sf*sf - 1))*rp;
 	} else if (isrc==1) {
-	  reso = sqrt(sf_up*sf_up - 1)*rp;
+	  reso = sqrt(abs(sf_up*sf_up - 1))*rp;
 	} else if (isrc==2) {
-	  reso = sqrt(sf_dn*sf_dn - 1)*rp;
+	  reso = sqrt(abs(sf_dn*sf_dn - 1))*rp;
 	}
-	sup = gRandom->Gaus(1.0, reso);			
+	sup = gRandom->Gaus(1.0, reso);	
+ //       cout << " reso : " << reso << " sup : "<< sup <<" Pt " << pt  <<endl; 		
 #endif
 	jetptx[isrc].push_back(sup*pt);
 	jetscl[isrc].push_back(sup);
@@ -2243,6 +2246,7 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
  //   double aveleadingptjec[njecmx] ={0};
     for (int isrc = 0; isrc < njecmx; isrc++) {
       if (jetptx[isrc].size()>=2) {
+     //   cout <<"isrc "<< isrc<< " corrected PT :--> Jet1: " <<jetptx[isrc][0] << " Jet2:" << jetptx[isrc][1] <<endl;
 	aveleadingptjec[isrc] = 0.5*(jetptx[isrc][0] + jetptx[isrc][1]);
 	irecohtjec[isrc] = getbinid(aveleadingptjec[isrc], nHLTmx, leadingPtThreshold);
       } else {
@@ -3150,7 +3154,7 @@ else {
 	      //recovar1.clear();
 	      if (isrc==0) {isRECO[itp][iet]=false;}
 	      isRECO_JER[isrc][itp][iet]=false;
-	      
+//	      cout <<"iJer: "<< isrc << " Bin Id :" << irecohtjec[isrc] << " Reco HT "  << aveleadingptjec[isrc] << endl;      
                  if (irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) {
 		EventShape_vector  recoevtshape(recomom[isrc][itp][iet], 2.4, 0, 2, 1);
 		recovar =  recoevtshape.getEventShapes();
@@ -3169,6 +3173,7 @@ else {
 		       h_recoevtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
                        int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar[ij],aveleadingptjec[isrc]);
                        h_recovar_2D[itp][iet][ij]->Fill(irecbin, weighttrg);
+                       h_recoevtvarres_2D[itp][iet][ij][0]->Fill(irecbin, weighttrg);
 			}
 			/*for (int irand=0; irand<10; irand++) {
 			  if(irand !=k ) h_recoevtvar[irand][itp][irecohtjec[isrc]][iet][ij]->Fill(recovar[ij], weighttrg); 
@@ -3238,34 +3243,41 @@ else {
 		}
 	      }
 
-  //                 cout << " JER ok : " <<isrc <<endl; 
-///cout <<endl;
-//cout << " is reco: " << isRECO_JER[0][itp][iet] << " " << isRECO_JER[1][itp][iet] << " "<< isRECO_JER[2][itp][iet] ;	
-  	      if(isrc==0 && isReconstruct){ 
-int ijer =2;
+  //        cout <<"is Jer : " <<njecmx << " "<< isRECO_JER[0][itp][iet] <<" " <<  isRECO_JER[1][itp][iet] << " "<< isRECO_JER[2][itp][iet] <<" IsGen :" << isGEN<< endl;
+        //cout << "HT JER "<< " Reco var : " << recovar2[0][3]<< " " << recovar2[1][3] << " " << recovar2[2][3] <<" Gen Var " << genvar[3]  <<endl; 
+        //cout << " JER ok : " <<isrc <<endl; 
+        //cout << " is reco: " << isRECO_JER[0][itp][iet] << " " << isRECO_JER[1][itp][iet] << " "<< isRECO_JER[2][itp][iet] ;	
+  
+if(isrc==0 && isReconstruct){ 
+       //cout << "HT JER "<< " Reco var : " << recovar2[0][3]<< " " << recovar2[1][3] << " " << recovar2[2][3] <<" Gen Var " << genvar[3]  <<endl; 
+       int ijer =0;
 	  for(int ij=0; ij<nvar; ij++) {
-		    if (isItUsed(ij)) { 	
+           if(isItUsed(ij)) { 	
         //if(isRECO[itp][iet] && isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) { 
 //if(isRECO_JER[ijer][itp][iet]){	
 	      if(isRECO_JER[ijer][itp][iet] && isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && irecohtjec[isrc]>=0 && irecohtjec[isrc]<njetptmn && recomom[isrc][itp][iet].size()>1) { 
 			naa++;
 	                if(recovar2[ijer][nvar]>=2 &&  genvar[nvar]>=2){
-          //               cout << " isrc : " <<isrc << " Reco var : " << recovar1[ij]<<" Gen Var " << genvar[ij]  <<endl; 
-   //                      cout << " ijer: " <<ijer <<" HT Nominal "<< aveleadingptjec[isrc] <<endl;
-     //                   cout << irecohtjec[ijer]<< " "<< recomom[ijer][itp][iet].size() << " " ; 
-      //                   cout<< "HT JER "<< " Reco var : " << recovar2[0][ij]<< " " << recovar2[ijer][ij] << " " << recovar2[ijer][ij] <<" Gen Var " << genvar[ij]  <<endl; 
+                         //cout << " isrc : " <<isrc << " Reco var : " << recovar1[ij]<<" Gen Var " << genvar[ij]  <<endl; 
+                        //cout << " ijer: " <<ijer <<" HT Nominal "<< aveleadingptjec[isrc] <<endl;
+                        //cout << irecohtjec[ijer]<< " "<< recomom[ijer][itp][iet].size() << " " ; 
+                     // if (isRECO_JER[0][itp][iet] && isRECO_JER[1][itp][iet] && isRECO_JER[2][itp][iet] && ij==3){cout<< "itp"<< itp << " Reco var : " << recovar2[0][3]<< " " << recovar2[1][3] << " " << recovar2[2][3] <<" Gen Var " << genvar[3]  <<endl; }
 			 h_2devtvar[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], genvar[ij], weighttrg);
 			 int igenbin = GenBinning2D[itp][iet][ij]->GetGlobalBinNumber(genvar[ij], avegenptres[isrc]);
-                         //int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar1[ij],aveleadingptjec[isrc]);
-                        int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar2[ijer][ij],aveleadingptjec[ijer]);
+                        int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar1[ij],aveleadingptjec[isrc]);
+                        //int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar2[ijer][ij],aveleadingptjec[ijer]);
       //                   cout << "XId  "<< irecbin << " YID " << igenbin << " weg :" << weighttrg <<endl; 
                          RM_2D[itp][iet][ij]->Fill(irecbin, igenbin, weighttrg);
+                        // RM_JER_2D[0][itp][iet][ij]->Fill(irecbin, igenbin, weighttrg);
+                        // RM_JER_2D[1][itp][iet][ij]->Fill(irecbin, igenbin, weighttrg);
+                        // RM_JER_2D[2][itp][iet][ij]->Fill(irecbin, igenbin, weighttrg);
+                                                //
                         }else if (recovar2[isrc][nvar]>=2) {
 			 
                          //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg);				
 			  h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], weighttrg);
-                          //int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar1[ij],aveleadingptjec[isrc]);
-                         int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar2[ijer][ij],aveleadingptjec[ijer]);
+                         int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar1[ij],aveleadingptjec[isrc]);
+                         //int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar2[ijer][ij],aveleadingptjec[ijer]);
                          h_recofake_2D[itp][iet][ij]->Fill(irecbin, weighttrg);
                         }else if (genvar[nvar]>=2) {
 			//h_2devtvar[itp][igenht][iet][ij]->Fill(-10.0, genvar[ij], weighttrg);	//Fill in Reco Underflow
@@ -3280,8 +3292,8 @@ int ijer =2;
 			  nbb++;
 			  //h_2devtvar[itp][igenht][iet][ij]->Fill(recovar[ij],-10.0, weighttrg); //Fill Fake in Gen Underflow
 			    h_recoevtfake[itp][irecohtjec[isrc]][iet][ij]->Fill(recovar1[ij], weighttrg);
-                            //int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar1[ij],aveleadingptjec[isrc]);
-                            int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar2[ijer][ij],aveleadingptjec[ijer]);
+                            int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar1[ij],aveleadingptjec[isrc]);
+                            //int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar2[ijer][ij],aveleadingptjec[ijer]);
                             h_recofake_2D[itp][iet][ij]->Fill(irecbin, weighttrg);
 			}
 			if (isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && genvar[nvar]>=2) {
@@ -3296,49 +3308,57 @@ int ijer =2;
 		    } //if (isItUsed(ij)) 
 		  } // for(int ij=0; ij<nvar; ij++)	
 		} // if (isrc==0 && isReconstruct)
-/*
+
 //-----------------------------------------------------------------for JER
 #ifdef JETRESO
 if(isrc==0 && isReconstruct){
+//  if (isRECO_JER[0][itp][iet] && isRECO_JER[1][itp][iet] && isRECO_JER[2][itp][iet]){
    for(int ijer=0 ; ijer < njecmx ; ijer++){
                   for(int ij=0; ij<nvar; ij++) {
                     if (isItUsed(ij)) {
                       if(isRECO_JER[ijer][itp][iet] && isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && irecohtjec[ijer]>=0 && irecohtjec[ijer]<njetptmn && recomom[ijer][itp][iet].size()>1) {                  
                         
                         if(recovar2[ijer][nvar]>=2 &&  genvar[nvar]>=2){
-                         cout << " isrc : " <<isrc << " ijer : " << ijer << " HT : " << aveleadingptjec[ijer] << " " <<genvar[ij]<<" " <<recovar2[ijer][ij] <<"   ";
+    //                     cout << " RM  isrc : " <<isrc << " ijer : " << ijer << " HT : " << aveleadingptjec[ijer] << " Gen Level:" <<genvar[ij]<<"   Reco Level:" <<recovar2[ijer][ij] <<"   " <<endl;
                          int igenbin = GenBinning2D[itp][iet][ij]->GetGlobalBinNumber(genvar[ij], avegenptres[isrc]);
                          int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar2[ijer][ij],aveleadingptjec[ijer]);
-                         cout << " OK " << igenbin<<" " << irecbin<<endl;
- //                        RM_JER_2D[itp][iet][ij][ijer]->Fill(irecbin, igenbin, weighttrg);
+//                         cout << " OK " << igenbin<<" " << irecbin<<endl;
+                         RM_JER_2D[ijer][itp][iet][ij]->Fill(irecbin, igenbin, weighttrg);
                         }else if (recovar2[ijer][nvar]>=2) {
                           int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar2[ijer][ij],aveleadingptjec[ijer]);
-  //                        h_reco_JER_fake_2D[itp][iet][ij][ijer]->Fill(irecbin, weighttrg);
+                          h_reco_JER_fake_2D[ijer][itp][iet][ij]->Fill(irecbin, weighttrg);
                         }else if (genvar[nvar]>=2) {
                           int igenbin = GenBinning2D[itp][iet][ij]->GetGlobalBinNumber(genvar[ij], avegenptres[isrc]);
-  //                        h_gen_JER_miss_2D[itp][iet][ij][ijer]->Fill(igenbin, weighttrg);      
+                         h_gen_JER_miss_2D[ijer][itp][iet][ij]->Fill(igenbin, weighttrg);      
   
                           }
                       } else {
                         if (isRECO_JER[ijer][itp][iet] && irecohtjec[ijer]>=0 && irecohtjec[ijer]<njetptmn && recomom[ijer][itp][iet].size()>1 && recovar2[ijer][nvar]>=2) {
-                         
+                    //cout << " IN Fake"<<endl;     
+      //                   cout << "Fake isrc : " <<isrc << " ijer : " << ijer << " HT : " << aveleadingptjec[ijer] <<" " <<recovar2[ijer][ij] <<"   "<< endl;
                             int irecbin =  RecoBinning2D[itp][iet][ij]->GetGlobalBinNumber(recovar2[ijer][ij],aveleadingptjec[ijer]);
-//                            h_reco_JER_fake_2D[itp][iet][ij][ijer]->Fill(irecbin, weighttrg);
+                            h_reco_JER_fake_2D[ijer][itp][iet][ij]->Fill(irecbin, weighttrg);
                         }
                         if (isGEN && igenhtres[isrc]>=0 && igenhtres[isrc]<njetptmn && genmom[isrc][itp][iet].size()>1 && genvar[nvar]>=2) {
                          
+        //              cout << " Miss isrc : " <<isrc << " ijer : " << ijer << " HT : " << aveleadingptjec[ijer] << " " <<genvar[ij] <<"   "<< endl;
+                      //cout << " IN miss"<<endl;     
 
                            int igenbin = GenBinning2D[itp][iet][ij]->GetGlobalBinNumber(genvar[ij], avegenptres[isrc]);
- //                          h_gen_JER_miss_2D[itp][iet][ij][ijer]->Fill(igenbin, weighttrg);
+                          h_gen_JER_miss_2D[ijer][itp][iet][ij]->Fill(igenbin, weighttrg);
                         }
 
                       }
                     } //if (isItUsed(ij)) 
                   } // for(int ij=0; ij<nvar; ij++)     
+
+
                 } //ijer <3
+                   
+                //  }//jer
                 } // if (isrc==0 && isReconstruct)
 #endif
-*/
+
 //-----------------------------------------------------------
 
 
@@ -3351,7 +3371,7 @@ if(isrc==0 && isReconstruct){
       //if (nevt%1000==1) { std::cout <<"nevt "<<nevt<<" naa "<<naa<<" nbb "<<nbb<<" ncc "<<ncc<< std::endl;}
 if(nevt==100){   cout <<igenht <<endl;}
 
-    cout <<"end event" << endl;
+//    cout <<"end event" << endl <<  endl;
     }
 
 // ------------ method called once each job just before starting event loop  ------------
@@ -3419,11 +3439,11 @@ QCDEventShape::endJob()
 #ifdef  JETENERGY
             for (int ix=1; ix<njecmx; ix++) {h_recoevtvarjec_2D[ityp][iet][ij][ix]->Write();   }
 #elif defined(JETRESO)
-            for (int ix=1; ix<njecmx; ix++ ) {   
+            for (int ix=0; ix<njecmx; ix++ ) {   
              h_recoevtvarres_2D[ityp][iet][ij][ix]->Write();  
-//             RM_JER_2D[ityp][iet][ij][ix]->Write();
-//             h_reco_JER_fake_2D[ityp][iet][ij][ix]->Write();
-//             h_gen_JER_miss_2D[ityp][iet][ij][ix]->Write();
+             RM_JER_2D[ix][ityp][iet][ij]->Write();
+             h_reco_JER_fake_2D[ix][ityp][iet][ij]->Write();
+           h_gen_JER_miss_2D[ix][ityp][iet][ij]->Write();
 
  }
 #endif

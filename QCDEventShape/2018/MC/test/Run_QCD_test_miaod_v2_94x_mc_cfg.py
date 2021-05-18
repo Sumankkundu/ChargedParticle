@@ -10,16 +10,11 @@ process.load("PhysicsTools.PatAlgos.producersLayer1.patCandidates_cff")
 process.load("PhysicsTools.PatAlgos.selectionLayer1.selectedPatCandidates_cff")
 
 
-# source
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring(#'/store/mc/Spring14dr/TTJets_MSDecaysCKM_central_Tune4C_13TeV-madgraph-tauola/AODSIM/PU20bx25_POSTLS170_V5-v1/00000/00B6F8B6-90F1-E311-B72C-0025905A6092.root'
-'/store/mc/RunIIAutumn18MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/102X_upgrade2018_realistic_v15_ext1-v1/110000/FF7E6F76-76B3-2345-840B-073E02E94CC5.root',
-'/store/mc/RunIIAutumn18MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/102X_upgrade2018_realistic_v15_ext1-v1/110000/FE7AFAAC-39F9-A74B-A2EB-21F0BE061CA8.root',
-'/store/mc/RunIIAutumn18MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/102X_upgrade2018_realistic_v15_ext1-v1/110000/FDADE1CC-00B9-6240-93F6-25A851C52C5D.root',
-'/store/mc/RunIIAutumn18MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/102X_upgrade2018_realistic_v15_ext1-v1/110000/FB129765-2532-C84A-8118-796F5AA05E48.root',
-'/store/mc/RunIIAutumn18MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/102X_upgrade2018_realistic_v15_ext1-v1/110000/FA7F10B2-192A-EF48-A231-9C14203FFE7D.root',
-#'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/NoPU_12Apr2018_94X_mc2017_realistic_v14-v1/120000/FE40878F-EDEA-E811-85E5-0025905A611C.root',
-#'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/70000/804D8458-8842-E811-A27E-0CC47AA47824.root',
+    fileNames = cms.untracked.vstring(#'/store/mc/Spring14dr/TTJets_MSDecaysCKM_central_Tune4C_13TeV-madgraph-tauola/AODSIM/PU20bx25_POSTLS170_V5-v1/00000/00B6F8B6-90F1-E311-B72C-0025905A6092.root',
+#'/store/mc/RunIISummer19UL17MiniAOD/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FEDF66BB-75F5-6746-A6E0-CE47C31F7F6C.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FE41CF02-0D7E-914E-B610-BE747691D499.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FE3755A8-7960-BB48-8B2C-31478A80E7C5.root',
 #'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/70000/7E86CBA6-9842-E811-B26F-0CC47AA53D6E.root',
 #'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/70000/7E65A585-9C42-E811-BA22-0025901ABB72.root',
  )
@@ -28,8 +23,9 @@ process.source = cms.Source("PoolSource",
 #eventRanges = cms.untracked.VEventRange('1:1000-1:2000'),
 )
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(2000) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000) )
 
 #process.load("Configuration.StandardSequences.Geometry_cff")
@@ -42,16 +38,24 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 
 from Configuration.AlCa.GlobalTag import GlobalTag
 #process.GlobalTag = GlobalTag(process.GlobalTag,'94X_mc2017_realistic_v17')
-process.GlobalTag = GlobalTag(process.GlobalTag,'102X_upgrade2018_realistic_v20')
-#process.GlobalTag = GlobalTag(process.GlobalTag,'76X_mcRun2_asymptotic_RunIIFall15DR76_v1')
-#process.GlobalTag = GlobalTag(process.GlobalTag,'76X_mcRun2_asymptotic_v12')
-#process.GlobalTag = GlobalTag(process.GlobalTag,'74X_mcRun2_asymptotic_realisticBS_v1')
+#process.GlobalTag = GlobalTag(process.GlobalTag,'94X_mc2017_realistic_v14')
+process.GlobalTag = GlobalTag(process.GlobalTag,'106X_upgrade2018_realistic_v15_L1v1')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'MCRUN2_74_V9')
 from PhysicsTools.PatAlgos.tools.coreTools import *
 # produce PAT Layer 1
 process.load("PhysicsTools.PatAlgos.patSequences_cff")
 
 #process.load("HLTrigger.HLTcore.hltPrescaleRecorder_cfi")
+
+
+process.options = cms.untracked.PSet(
+
+)
+
+#Setup FWK for multithreaded
+#process.options.numberOfThreads=cms.untracked.uint32(1)
+#process.options.numberOfStreams=cms.untracked.uint32(0)
+
 
 
 process.MessageLogger = cms.Service("MessageLogger",  

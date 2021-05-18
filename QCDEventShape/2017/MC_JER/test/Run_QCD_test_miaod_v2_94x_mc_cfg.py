@@ -11,7 +11,7 @@ process.load("PhysicsTools.PatAlgos.selectionLayer1.selectedPatCandidates_cff")
 
 
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring(#'/store/mc/Spring14dr/TTJets_MSDecaysCKM_central_Tune4C_13TeV-madgraph-tauola/AODSIM/PU20bx25_POSTLS170_V5-v1/00000/00B6F8B6-90F1-E311-B72C-0025905A6092.root',
+    fileNames = cms.untracked.vstring(
 #'/store/mc/RunIISummer19UL17MiniAOD/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FEDF66BB-75F5-6746-A6E0-CE47C31F7F6C.root',
 #'/store/mc/RunIISummer19UL17MiniAOD/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FE41CF02-0D7E-914E-B610-BE747691D499.root',
 #'/store/mc/RunIISummer19UL17MiniAOD/QCD_HT50to100_TuneCP5_PSWeights_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/60000/FE3755A8-7960-BB48-8B2C-31478A80E7C5.root',
@@ -25,31 +25,29 @@ process.source = cms.Source("PoolSource",
 #'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_600to800_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/270000/0859D23C-3B96-F94D-85C5-2A277F6704FE.root',
 #'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_600to800_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/270000/084EEF62-871E-1E49-A9FA-EEC55E72FE35.root',
 #'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/FB6B1B36-AF31-BB4F-8B24-37063D7D7CD9.root',
-'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_3200toInf_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/100000/056902FE-004C-0241-98D4-578B5CA3E5EF.root',
-'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_3200toInf_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/100000/0BE0D1BF-4D99-424B-9A34-0B4963D32583.root',
-'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_3200toInf_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/100000/229F01AF-F833-8B44-9D8E-746EC9D07D4A.root',
-'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_300to470_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/230000/010500FB-59DB-AA46-B1CD-8124A482D3C8.root',
-'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_300to470_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/230000/0126930D-72F3-084D-9996-5EE27F1B48D5.root',
-'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_300to470_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/230000/0221EC6C-9792-7F44-9197-4EDC3149F603.root',
-'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_50to80_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/1010000/9A2D1D7C-AE6D-3E49-967E-BB133C6C7FAB.root',
-'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_50to80_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/270000/023B9108-86BA-0644-9669-0A8446173F98.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/100000/0385CA7E-75E3-014D-8DF7-0C6F3C9420ED.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/100000/19C19296-B9A6-8648-AC47-107553C9A9D2.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/100000/1F96CCE4-9654-9B4E-B0A2-CEF7D52C3BEE.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/FA0DBDDB-4DC6-5A44-934B-B3100EB43C5E.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/F199462C-AD3F-CD41-A707-168EBF5BA2B9.root',
-#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/E98B458E-FF8B-1F41-993E-05D6AC948556.root',
-#'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/70000/7E86CBA6-9842-E811-B26F-0CC47AA53D6E.root',
-#'/store/mc/RunIIFall17MiniAODv2/QCD_Pt-15to7000_TuneCUETP8M1_Flat_13TeV_pythia8/MINIAODSIM/PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/70000/7E65A585-9C42-E811-BA22-0025901ABB72.root',
+#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_3200toInf_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/100000/056902FE-004C-0241-98D4-578B5CA3E5EF.root',
+#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_3200toInf_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/100000/0BE0D1BF-4D99-424B-9A34-0B4963D32583.root',
+#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_3200toInf_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/100000/229F01AF-F833-8B44-9D8E-746EC9D07D4A.root',
+#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_300to470_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/230000/010500FB-59DB-AA46-B1CD-8124A482D3C8.root',
+#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_300to470_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/230000/0126930D-72F3-084D-9996-5EE27F1B48D5.root',
+#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_300to470_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/230000/0221EC6C-9792-7F44-9197-4EDC3149F603.root',
+#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_50to80_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/1010000/9A2D1D7C-AE6D-3E49-967E-BB133C6C7FAB.root',
+#'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt_50to80_TuneCP5_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6-v2/270000/023B9108-86BA-0644-9669-0A8446173F98.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/100000/0385CA7E-75E3-014D-8DF7-0C6F3C9420ED.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/100000/19C19296-B9A6-8648-AC47-107553C9A9D2.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/100000/1F96CCE4-9654-9B4E-B0A2-CEF7D52C3BEE.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/FA0DBDDB-4DC6-5A44-934B-B3100EB43C5E.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/F199462C-AD3F-CD41-A707-168EBF5BA2B9.root',
+'/store/mc/RunIISummer19UL17MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13TeV_pythia8/MINIAODSIM/106X_mc2017_realistic_v6_ext2-v2/60000/E98B458E-FF8B-1F41-993E-05D6AC948556.root',
  )
 #eventsToSkip = cms.untracked.VEventRange('1:1950-1:2000'),
 #eventsToSkip = cms.untracked.EventRange('1:1950-1:2000'),
 #eventRanges = cms.untracked.VEventRange('1:1000-1:2000'),
 )
 
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000) )
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) )
+#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000) )
 
 #process.load("Configuration.StandardSequences.Geometry_cff")
@@ -63,10 +61,7 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 from Configuration.AlCa.GlobalTag import GlobalTag
 #process.GlobalTag = GlobalTag(process.GlobalTag,'94X_mc2017_realistic_v17')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'94X_mc2017_realistic_v14')
-process.GlobalTag = GlobalTag(process.GlobalTag,'106X_mc2017_realistic_v7')
-#process.GlobalTag = GlobalTag(process.GlobalTag,'76X_mcRun2_asymptotic_RunIIFall15DR76_v1')
-#process.GlobalTag = GlobalTag(process.GlobalTag,'76X_mcRun2_asymptotic_v12')
-#process.GlobalTag = GlobalTag(process.GlobalTag,'74X_mcRun2_asymptotic_realisticBS_v1')
+process.GlobalTag = GlobalTag(process.GlobalTag,'106X_mc2017_realistic_v9')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'MCRUN2_74_V9')
 from PhysicsTools.PatAlgos.tools.coreTools import *
 # produce PAT Layer 1
