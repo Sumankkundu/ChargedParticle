@@ -45,8 +45,8 @@
 #include <TVectorD.h>
 #include <TDecompSVD.h>
 
-//#define CLOSURE
-#define BLTest
+//#define CLOUSER
+//#define BLTest
 
 using namespace std;
 static const auto feps = numeric_limits<float>::epsilon();
@@ -62,8 +62,9 @@ void testUnfold2c(){
   
   //const TString Pyinput = "PY8_UL17_2D_ALLHT2.root";
   //const TString Pyinput = "PY8_UL17_Bin17_JecV5_JERV2_2D_17Oct20.root";
-  const TString Pyinput = "PY8_CP5_JECV5_JERV3_6Feb21.root";
-  //const TString Pyinput = "PY8_CP5_10Jan21.root";
+  //const TString Pyinput = "PY8_CP5_JECV5_JERV3_6Feb21.root";
+   const TString Pyinput = "PY8_CP5_PU_Up_21March21.root";
+   //const TString Pyinput = "PY8_CP5_PU_Down_21March21.root";
   //const TString Pyinput = "MG_UL17_JECV5_JEERV2_2D_17oct20.root";
   //const TString Pyinput = "MG_CP5_15Jan21.root";
   //const TString Pyinput = "PY8_UL17_Flat_JECV5_JERV2_17oct20.root";
@@ -71,12 +72,12 @@ void testUnfold2c(){
   //const TString Pyinput = "Hw_ESV_10Jan21.root";
   
   //const TString datainput = "PY8_UL17_Flat_JECV5_JERV2_17oct20.root"; 
-  //const TString datainput = "PY8_CP5_JECV5_JERV3_6Feb21.root"; 
+  //const TString datainput = "PY8_CP5_Flat_6Jan21.root"; 
   //const TString datainput = "PY8_UL17_Bin17_JecV5_JERV2_2D_17Oct20.root"; 
-  //const TString datainput = "PY8_CP5_10Jan21.root"; 
+   //const TString datainput = "PY8_CP5_10Jan21.root"; 
   const TString datainput = "Data_UL17v1_JRV2_JECV4_2D_14Oct20.root"; 
-  //const TString datainput = "MG_UL17_JECV5_JEERV2_2D_17oct20.root"; 
-  //const TString datainput = "MG_CP5_15Jan21.root"; 
+ // const TString datainput = "MG_UL17_JECV5_JEERV2_2D_17oct20.root"; 
+ //   const TString datainput = "MG_CP5_15Jan21.root"; 
   //const TString datainput = "Herwig_UL17_Flat_17Oct20.root"; 
   //const TString datainput = "Hw_ESV_10Jan21.root"; 
   
@@ -88,14 +89,14 @@ void testUnfold2c(){
   TFile *RMinput=new TFile(Pyinput);
   
   TFile *inputMC[nmc];
- // inputMC[0]=new TFile("PY8_CP5_10Jan21.root");
- inputMC[0]=new TFile("PY8_CP5_JECV5_JERV3_6Feb21.root");
+ inputMC[0]=new TFile("PY8_CP5_10Jan21.root");
+// inputMC[0]=new TFile("PY8_UL17_Bin17_JecV5_JERV2_2D_17Oct20.root");
  inputMC[1]=new TFile("PY8_UL17_Flat_JECV5_JERV2_17oct20.root");
  // inputMC[1]=new TFile("PY8_CP5_Flat_6Jan21.root");
- inputMC[2]=new TFile("MG_UL17_JECV5_JEERV2_2D_17oct20.root");
- // inputMC[2]=new TFile("MG_CP5_15Jan21.root");
- inputMC[3]=new TFile("Herwig_UL17_Flat_17Oct20.root");
- //inputMC[3]=new TFile("Hw_ESV_10Jan21.root");
+// inputMC[2]=new TFile("MG_UL17_JECV5_JEERV2_2D_17oct20.root");
+ inputMC[2]=new TFile("MG_CP5_15Jan21.root");
+// inputMC[3]=new TFile("Herwig_UL17_Flat_17Oct20.root");
+  inputMC[3]=new TFile("Hw_ESV_10Jan21.root");
   
   TFile *outputFile=new TFile("Unfolded_Result.root","recreate");   //Unfolded Data and Covarince matrix, efficincy,fake rate, purity, stability
   
@@ -177,7 +178,7 @@ void testUnfold2c(){
   TH1D* hist_stbl[nmc][type][nusedvar];
   
   TH1D *Data_Reco[type][nusedvar];        //Reconstructed Data
-#ifdef CLOSURE
+#ifdef CLOUSER
   TH1D *Data_Gen[type][nusedvar];         //For Closure 
   TH1D *Data_fake[type][nusedvar];        //Fake for psudo data reco
   TH1D *Data_miss[type][nusedvar];        //MIss for Psudo data gen
@@ -209,10 +210,10 @@ void testUnfold2c(){
     for(int ivar=0; ivar < nusedvar ; ivar ++){
       sprintf(histname, "%s/Detector%s_typ_%i_eta0_%i", BinDir, Dimtag, ity,  var[ivar]);	 
       inputbinning->GetObject(histname, binsRec[ity][ivar]);  cout << histname <<endl;
-      binsRec[ity][ivar]->PrintStream(cout);        
+      //binsRec[ity][ivar][ipt]->PrintStream(cout);        
       sprintf(histname, "%s/Generator%s_typ_%i_eta0_%i", BinDir, Dimtag, ity, var[ivar]);
       inputbinning->GetObject(histname, binsGen[ity][ivar]);  cout << histname <<endl;
-      binsGen[ity][ivar]->PrintStream(cout);
+      //binsGen[ity][ivar][ipt]->PrintStream(cout);
     }
   }
   //----------------------------------------------Read Input Data MC and Response matrix
@@ -223,7 +224,7 @@ void testUnfold2c(){
 	Data_Reco[ity][ivar]= (TH1D*)ReadHist1D(HistDir+"/dd_reco_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),inputData)->Clone();
         //for(int i=1 ; i< Data_Reco[ity][ivar]->GetNbinsX()+1; i++){ if(Data_Reco[ity][ivar]->GetBinContent(i) == 0) {cout << " Data Bin entry Nil : bin no : "<< i << endl;}}
 	HT2_NormalV3(Data_Reco[ity][ivar], binsRec[ity][ivar], Axisname,nHLTmx);
-#ifdef CLOSURE
+#ifdef CLOUSER
         Data_Gen[ity][ivar]=(TH1D*)ReadHist1D( HistDir+"/dd_gen_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar]),inputData)->Clone();
 	HT2_NormalV3(Data_Gen[ity][ivar], binsGen[ity][ivar], Axisname,nHLTmx);
 	
@@ -460,7 +461,7 @@ void testUnfold2c(){
 	
 	TH2* RMin = (TH2D*)RMinput_RM[ity][ivar]->Clone();
 	TH1* input = (TH1D*)Data_Reco[ity][ivar]->Clone();
-#ifdef CLOSURE
+#ifdef CLOUSER
 	TH1* mcgen = (TH1D*)Data_Gen[ity][ivar]->Clone();
         TH1* mcbackground = (TH1D*)Data_fakerate[ity][ivar]->Clone();
 	TH1* mc_missrate = (TH1D*)Data_missrate[ity][ivar]->Clone();
@@ -475,7 +476,7 @@ void testUnfold2c(){
 #endif
 	mcbackground->Multiply(input); //correction for Fake as background subtraction : Patrick
 	
-        double biasScale = 1;
+        double biasScale = 0;
         const char *REGULARISATION_DISTRIBUTION=0;
         const char *REGULARISATION_AXISSTEERING="*[UO]";
         
@@ -493,19 +494,19 @@ void testUnfold2c(){
 			       //TUnfoldDensity::kRegModeCurvature,
 			       //TUnfoldDensity::kEConstraintArea,
 			       TUnfoldDensity::kEConstraintNone,
-			       //TUnfoldDensity::kDensityModeNone,
-			       TUnfoldDensity::kDensityModeBinWidthAndUser,
+			       TUnfoldDensity::kDensityModeNone,
+			       //TUnfoldDensity::kDensityModeBinWidthAndUser,
 			       GenBin,RecoBin);// REGULARISATION_DISTRIBUTION, REGULARISATION_AXISSTEERING);//,0,0,REGULARISATION_DISTRIBUTION,REGULARISATION_AXISSTEERING);
 	
         density.SubtractBackground(mcbackground, "fake", 1.0, 0.00); // hist,name,scale, scale error 
-        int status = density.SetInput(input);//,biasScale,0,covM);
+        int status = density.SetInput(input,biasScale,0,covM);
 
 
         int nBadErrors = status%10000, nUnconstrOutBins = status/10000; cout << nBadErrors << " bad errors and " << nUnconstrOutBins << " unconstrained output bins" << endl;
 	
        // density.SetBias(mcgen);   //not much affect on result
       //  density.ScanLcurve(50,0.,0.,0,0,0);        
-        density.DoUnfold(0.0);//,input,biasScale);  // tau 0.0 means no regularization
+        density.DoUnfold(0.0,input,biasScale);  // tau 0.0 means no regularization
 
         sprintf(histname, "%sTUnfold_NoReg_typ_%i_eta0_%i", Histtag, ity, var[ivar]); //unfolded_typ_0_pt2_eta0_3
         sprintf(title, "Unfolded No Reg %s 2.4 %s ", itypeN[ity], vartitle[var[ivar]]);

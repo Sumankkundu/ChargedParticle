@@ -56,8 +56,9 @@ void JER_cal(){
   Int_t var[nusedvar]={3,9,15,18,24};   // Names 3 Thrust , 9 Jet mass , 15 Y23 , 18 Jet Boardening , 24 Total Jet mass
   static const int nhist=10; //We need 8 But define 10
   const int njetptmn = nHLTmx;
-  string NominalDir = "Unfold2D";
-  string JERDir = "Unfold2D";
+  string NominalDir = "Unfold2DJER_Nominal";
+  string JERUp = "Unfold2DJER_Up";
+  string JERDown = "Unfold2DJER_Down";
 
   ofstream file_out("jerunc_eta0_test.inc");
 
@@ -78,42 +79,33 @@ void JER_cal(){
   TH1D *Nominal_HT[ntype][nusedvar][nHLTmx];                    //Nominal Data Unfolded 
   TH1D *JERRelerr_HT[ntype][nusedvar][nHLTmx];                    //Nominal Data Unfolded 
   TH1D *Unfold_JER[njer][ntype][nusedvar];        //JEC Data Unfolded
-  TH1D *Unfold_JER_HT[njer][ntype][nusedvar][nHLTmx];        //JEC Data Unfolded
+  TH1D *Unfold_JER_Up[ntype][nusedvar][nHLTmx];        //JEC Data Unfolded
+  TH1D *Unfold_JER_Down[ntype][nusedvar][nHLTmx];        //JEC Data Unfolded
 
 //  TFile *Unfoldroot = TFile::Open("/home/suman/Paradox/Charged_ESV/Working/Unfolding/TUnfold_check_CT_1Jan21/Test_14Jan21/JEC_Tunfold_19Jan21/Unfolded_Result.root");  // Unfolded data 
-  TFile *Unfoldroot = TFile::Open("Unfolded_Data_PY8_Nominal.root");  // Unfolded data 
-  //TFile *Unfoldroot = TFile::Open("Unfolded_Result_MG_JER_0_6Feb21.root");  // Unfolded data 
-  //TFile *Unfoldroot = TFile::Open("Unfolded_Result_MG_JERV3_0_6Feb21.root");  // Unfolded data 
-  TFile *JER_file[2];
- 
-  //JER_file[0] = TFile::Open("Unfolded_Result_MG_Reso_1_RM_3Feb21.root");  // Unfolded data 
- //JER_file[1] = TFile::Open("Unfolded_Result_MG_Reso_2_RM_3Feb21.root");  // Unfolded data 
-   JER_file[0] = TFile::Open("Unfolded_Result_JER_RM_1_3Feb21.root");  // Unfolded data 
-   JER_file[1] = TFile::Open("Unfolded_Result_PY8_JER2_19Feb21.root");  // Unfolded data 
- 
-   //JER_file[0] = TFile::Open("Unfolded_Result_MG_JER_1_6Feb21.root");  // Unfolded data 
-   //JER_file[1] = TFile::Open("Unfolded_Result_MG_JER_2_6Feb21.root");  // Unfolded data 
+  TFile *Unfoldroot = TFile::Open("Unfolded_Result.root");  // Unfolded data 
   TFile *JER_Result =new TFile("JER_Result.root","recreate");   
 
 for(int ity=0; ity <ntype; ity++){
    for(int ivar=0; ivar < nusedvar ; ivar ++){
-      Nominal[ity][ivar]= (TH1D*)ReadHist1D(NominalDir+"/Edd_TUnfold_NoReg_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar])+"_px", Unfoldroot)->Clone();
+     // Nominal[ity][ivar]= (TH1D*)ReadHist1D(NominalDir+"/Edd_TUnfold_NoReg_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar])+"_px", Unfoldroot)->Clone();
       //HT2_NormalV3(Data_Reco[ity][ivar], binsRec[ity][ivar], Axisname,nHLTmx);
       for(int ipt=0; ipt < nHLTmx; ipt++){
-      Nominal_HT[ity][ivar][ipt] = (TH1D*)ReadHist1D(NominalDir+"/Edd_TUnfold_NoReg_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar])+"_pt"+to_string(ipt),Unfoldroot);
+      Nominal_HT[ity][ivar][ipt] = (TH1D*)ReadHist1D(NominalDir+"/Edd_TUnfold_NoReg_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar])+"_jer0_pt"+to_string(ipt),Unfoldroot);
       JERRelerr_HT[ity][ivar][ipt]= (TH1D*)Nominal_HT[ity][ivar][ipt]->Clone();       
       JERRelerr_HT[ity][ivar][ipt]->Reset();
       JERRelerr_HT[ity][ivar][ipt]->SetNameTitle(Form("jer_erro_%i_eta0_%i_pt%i" ,ity, var[ivar], ipt),Form("JER Relative %i_eta0_%i_pt%i", ity, var[ivar], ipt));      }
 
-      for(int ijer=0; ijer <njer; ijer++){
-      cout << ijer<< "  :  " ;
-      Unfold_JER[ijer][ity][ivar]= (TH1D*)ReadHist1D(JERDir+"/Edd_TUnfold_NoReg_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar])+"_px", JER_file[ijer])->Clone();
+//      Unfold_JER[ity][ivar]= (TH1D*)ReadHist1D(JERDir+"/Edd_TUnfold_NoReg_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar])+"_px", Unfoldroot)->Clone();
         
       for(int ipt=0; ipt < nHLTmx; ipt++){
-      Unfold_JER_HT[ijer][ity][ivar][ipt]= (TH1D*)ReadHist1D(JERDir+"/Edd_TUnfold_NoReg_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar])+"_pt"+to_string(ipt), JER_file[ijer])->Clone();
+      Unfold_JER_Up[ity][ivar][ipt]= (TH1D*)ReadHist1D(JERUp+"/Edd_TUnfold_NoReg_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar])+"_jer1_pt"+to_string(ipt), Unfoldroot)->Clone();
            } 
+
+      for(int ipt=0; ipt < nHLTmx; ipt++){
+      Unfold_JER_Down[ity][ivar][ipt]= (TH1D*)ReadHist1D(JERDown+"/Edd_TUnfold_NoReg_typ_"+ to_string(ity)+"_eta0_"+to_string(var[ivar])+"_jer2_pt"+to_string(ipt), Unfoldroot)->Clone();
+           }
       //HT2_NormalV3(Data_Reco_JEC[ity][ivar][ijec], binsRec[ity][ivar], Axisname,nHLTmx);   
-        }
       }
     }
 for(int ity=0; ity <ntype; ity++){
@@ -145,8 +137,8 @@ cout << mean[ix] << " ";
      
        //cout << " JEC : " << ijec ;
 
-     TH1D* up_hist = (TH1D*)Unfold_JER_HT[0][ity][ivar][ipt]->Clone();
-     TH1D* down_hist = (TH1D*)Unfold_JER_HT[1][ity][ivar][ipt]->Clone();
+     TH1D* up_hist = (TH1D*)Unfold_JER_Up[ity][ivar][ipt]->Clone();
+     TH1D* down_hist = (TH1D*)Unfold_JER_Down[ity][ivar][ipt]->Clone();
      
      double binwid = default_hist->GetBinWidth(nbins/2);
      
