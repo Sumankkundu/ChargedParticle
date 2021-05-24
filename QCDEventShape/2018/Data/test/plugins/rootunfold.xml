@@ -1,6 +1,0 @@
-<tool name="rootunfold" version="6.14.09">
-<info url="http://root.cern.ch/root/"/>
-<lib name="Unfold"/>
-<use name="roothistmatrix"/>
-<use name="rootxml"/>
-</tool>
