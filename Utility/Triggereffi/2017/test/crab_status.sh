@@ -3,3 +3,5 @@ crab status crab_projects/crab_Trigger_2017UL_C
 crab status crab_projects/crab_Trigger_2017UL_D
 crab status crab_projects/crab_Trigger_2017UL_E
 crab status crab_projects/crab_Trigger_2017UL_F
+crab status crab_projects/crab_Trigger_2017UL_G
+crab status crab_projects/crab_Trigger_2017UL_H

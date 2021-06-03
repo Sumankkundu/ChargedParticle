@@ -488,10 +488,10 @@ Triggereffi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       double NHF = (*ak4PFJets)[ij].neutralHadronEnergyFraction();
       double NEMF = (*ak4PFJets)[ij].neutralEmEnergyFraction();
       double CHF = (*ak4PFJets)[ij].chargedHadronEnergyFraction();
-  //    double  MUF  = (*ak4PFJets)[ij].muonEnergyFraction();
-  //    double CEMF = (*ak4PFJets)[ij].chargedEmEnergyFraction();
+    //double  MUF  = (*ak4PFJets)[ij].muonEnergyFraction();
+    //double CEMF = (*ak4PFJets)[ij].chargedEmEnergyFraction();
       int NumConst = (*ak4PFJets)[ij].chargedMultiplicity()+(*ak4PFJets)[ij].neutralMultiplicity();
-     // int NumNeutralParticles =(*ak4PFJets)[ij].neutralMultiplicity();
+    //int NumNeutralParticles =(*ak4PFJets)[ij].neutralMultiplicity();
       int CHM = (*ak4PFJets)[ij].chargedMultiplicity();
       bool TightJetID =false;
 //-------------------------------2017 UL Update
@@ -506,7 +506,7 @@ Triggereffi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 //----------------------------------2018 UL ID update 
       if(abs((*ak4PFJets)[ij].eta())<=2.7){
       if(NHF<0.90 && NEMF<0.90 && NumConst>1 && CHF>0 && CHM>0  && abs((*ak4PFJets)[ij].eta())<=2.6 )  TightJetID =true;
-      if(NHF<0.90 && NEMF<0.99 && NumConst>1 && CHF>0 && CHM>0  && abs((*ak4PFJets)[ij].eta())>2.6 )  TightJetID =true;
+      if(NHF<0.90 && NEMF<0.99 && CHM>0  && abs((*ak4PFJets)[ij].eta())>2.6 )  TightJetID =true;
                                    }else{ 
                                  TightJetID =false;
                                  }
@@ -541,10 +541,10 @@ Triggereffi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
            const std::pair<std::vector<std::pair<std::string,int> >,int> prescalesInDetail(hltPrescaleProvider_.prescaleValuesInDetail(iEvent,iSetup,variab1));
             preL1 = prescalesInDetail.first[0].second;  //acesses the L1 prescale
             preHLT = prescalesInDetail.second;     // acesses the HLT prescale
-//           if(preL1<=0){preL1=1;}      //skip the l1 prescale if it give negative or zero
+           if(preL1<=0){preL1=1;}      //skip the l1 prescale if it give negative or zero
              prescale = preL1 * preHLT;
              compres[jk] = prescale;
- //    cout << " By index " << triggerPrescales->getPrescaleForIndex(ij) << "  L1 : "<< preL1 << "  HLT :" << preHLT << "  L1*HLT "  << compres[jk] <<endl;
+     cout << " By index " << triggerPrescales->getPrescaleForIndex(ij) << "  L1 : "<< preL1 << "  HLT :" << preHLT << "  L1*HLT "  << compres[jk] <<endl;
  //    cout << "prescale check " <<   compres[jk] << endl; 
      }
     }

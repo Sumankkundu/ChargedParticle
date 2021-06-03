@@ -390,7 +390,6 @@ Triggereffi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   //   cout <<endl;
   
   if (nevt%10000==1) cout <<"TriggerEfficiency::analyze run number = "<<nevt<<endl;
- // cout << " Ok1 " << endl;  
   const char* variab1;
   const char* variab2;
   double aveleadingpt =0;
@@ -428,7 +427,6 @@ Triggereffi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   if (!trigRes.isValid()) return;
   bool mutrig=false;
   bool dijtrig=false;
-  //cout << " Ok 2 " << endl; 
   edm::TriggerNames triggerNames = iEvent.triggerNames(*trigRes);   //Get The trigger name for TriggerResult Input
   
   if (trigRes.isValid()) {
@@ -466,14 +464,13 @@ Triggereffi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
     } //Trigger size
     
   }//Triger result valid
- 
-
-  mutrig=true;//for avoid unusual error message
-  if (!mutrig) return;
+	  
+  mutrig=true;// To avoid an error massege in compiliation
+  
+  if (!mutrig) return; // no need of this
   if (!dijtrig) return;
   
   //*********************************************
-  
   
   
   //**************************************************
@@ -491,29 +488,30 @@ Triggereffi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       double NHF = (*ak4PFJets)[ij].neutralHadronEnergyFraction();
       double NEMF = (*ak4PFJets)[ij].neutralEmEnergyFraction();
       double CHF = (*ak4PFJets)[ij].chargedHadronEnergyFraction();
-  //    double  MUF  = (*ak4PFJets)[ij].muonEnergyFraction();
-  //    double CEMF = (*ak4PFJets)[ij].chargedEmEnergyFraction();
+    //double  MUF  = (*ak4PFJets)[ij].muonEnergyFraction();
+    //double CEMF = (*ak4PFJets)[ij].chargedEmEnergyFraction();
       int NumConst = (*ak4PFJets)[ij].chargedMultiplicity()+(*ak4PFJets)[ij].neutralMultiplicity();
-     // int NumNeutralParticles =(*ak4PFJets)[ij].neutralMultiplicity();
+    //int NumNeutralParticles =(*ak4PFJets)[ij].neutralMultiplicity();
       int CHM = (*ak4PFJets)[ij].chargedMultiplicity();
       bool TightJetID =false;
-//-------------------2017 Re eco ID
+//-------------------------------2017 UL Update
 //      if(abs((*ak4PFJets)[ij].eta())<=2.7){
 //                     if( (NHF<0.90 && NEMF<0.90 && NumConst>1) && (abs((*ak4PFJets)[ij].eta())<=2.4 && CHF>0 && CHM>0 )) TightJetID =true;
 //      } else {
 //                         TightJetID =false;
-//      }      
- //---------------------UL 13TeV 2017/18 Updte
-     if(abs((*ak4PFJets)[ij].eta())<=2.7){
+//      }
+//      
+//      if (abs((*ak4PFJets)[ij].eta())>2.7) {TightJetID = false;}
+//      if ((*ak4PFJets)[ij].pt()<30.0) {TightJetID = false;}
+//----------------------------------2018 UL ID update 
+      if(abs((*ak4PFJets)[ij].eta())<=2.7){
       if(NHF<0.90 && NEMF<0.90 && NumConst>1 && CHF>0 && CHM>0  && abs((*ak4PFJets)[ij].eta())<=2.6 )  TightJetID =true;
-      if(NHF<0.90 && NEMF<0.99 && NumConst>1 && CHF>0 && CHM>0  && abs((*ak4PFJets)[ij].eta())>2.6 )  TightJetID =true;
-                                   }else{
+      if(NHF<0.90 && NEMF<0.99 && CHM>0  && abs((*ak4PFJets)[ij].eta())>2.6 )  TightJetID =true;
+                                   }else{ 
                                  TightJetID =false;
-                                 }    
-
+                                 }
       if (abs((*ak4PFJets)[ij].eta())>2.7) {TightJetID = false;}
       if ((*ak4PFJets)[ij].pt()<30.0) {TightJetID = false;}
-
 
       
       if (TightJetID) {
@@ -543,11 +541,11 @@ Triggereffi::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
            const std::pair<std::vector<std::pair<std::string,int> >,int> prescalesInDetail(hltPrescaleProvider_.prescaleValuesInDetail(iEvent,iSetup,variab1));
             preL1 = prescalesInDetail.first[0].second;  //acesses the L1 prescale
             preHLT = prescalesInDetail.second;     // acesses the HLT prescale
-//           if(preL1<=0){preL1=1;}      //skip the l1 prescale if it give negative or zero
+           if(preL1<=0){preL1=1;}      //skip the l1 prescale if it give negative or zero
              prescale = preL1 * preHLT;
              compres[jk] = prescale;
- //    cout << " By index " << triggerPrescales->getPrescaleForIndex(ij) << "  L1 : "<< preL1 << "  HLT :" << preHLT << "  L1*HLT "  << compres[jk] <<endl;
-  //   cout << "prescale check " <<   compres[jk] << endl; 
+     cout << " By index " << triggerPrescales->getPrescaleForIndex(ij) << "  L1 : "<< preL1 << "  HLT :" << preHLT << "  L1*HLT "  << compres[jk] <<endl;
+ //    cout << "prescale check " <<   compres[jk] << endl; 
      }
     }
   }//calculation of prescale
@@ -644,7 +642,7 @@ if(!HLTtrg) return;
       for (int jk=0; jk<nDiJetHLTmx; jk++) { 
 	  if (strstr(variab2,dijethlt_label[jk]) && strlen(variab2)-strlen(dijethlt_label[jk])<5){ 
         if(trgpas[jk]){
-//	  cout << "Trigger object name, ID pt, eta, phi: " << variab2 <<","<< obj.filterIds()[ih]<<", " << obj.pt()<<", "<<obj.eta()<<", "<<obj.phi() << endl;
+	 // cout << "Trigger object name, ID pt, eta, phi: " << variab2 <<","<< obj.filterIds()[ih]<<", " << obj.pt()<<", "<<obj.eta()<<", "<<obj.phi() << endl;
 	  
 	  //-------------------------------------------------------- 
 	  double dr1 = dR((*ak4PFJets)[0].eta(), (*ak4PFJets)[0].phi(), obj.eta(), obj.phi());

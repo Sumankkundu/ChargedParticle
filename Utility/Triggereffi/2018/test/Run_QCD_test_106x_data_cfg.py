@@ -20,6 +20,17 @@ process.source = cms.Source("PoolSource",
 '/store/data/Run2018A/JetHT/MINIAOD/12Nov2019_UL2018-v2/100000/0141D902-DDEF-C240-8F77-A770EBB7BE86.root',
 '/store/data/Run2018A/JetHT/MINIAOD/12Nov2019_UL2018-v2/100000/017688D8-C200-6E4A-A6D0-F3A25E562EB2.root',
 '/store/data/Run2018A/JetHT/MINIAOD/12Nov2019_UL2018-v2/100000/036C6DB3-D7FD-E346-A5CB-92FAE2373914.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/0E924B47-1083-6143-B581-00202A3A57BE.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/0F161137-4891-9440-85F0-0805939F055B.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/13603EC7-043E-224B-882E-7F188853108E.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/1427D01F-D8BF-6D4D-9F3B-54738FA1021D.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/57ABAE04-125C-DE4D-8F9D-65432CFE9084.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/5D34214B-BF11-7342-B7D9-5B130D1F3B2C.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/5E9143A7-C4AE-9F41-A468-4F171B57B25A.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/6181803E-A9FE-404D-84E8-A9B1B3094142.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/667C7180-B5EF-284C-87C6-5E3C502AAFE6.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/76871D9C-C48D-9341-BD15-8987632E0F7B.root',
+'/store/data/Run2018D/JetHT/MINIAOD/12Nov2019_UL2018_rsb-v1/100000/87AAA4F0-8CD1-DF4C-9020-0C7A0461832A.root',
  )
 )
 
@@ -39,7 +50,7 @@ from Configuration.AlCa.GlobalTag import GlobalTag
 #process.GlobalTag = GlobalTag(process.GlobalTag,'GR_P_V56::All')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'GR_R_44_V11::All')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'102X_dataRun2_v12')
-process.GlobalTag = GlobalTag(process.GlobalTag,'106X_dataRun2_v33')
+process.GlobalTag = GlobalTag(process.GlobalTag,'106X_dataRun2_v32')
 # produce PAT Layer 1
 process.load("PhysicsTools.PatAlgos.patSequences_cff")
 

@@ -13,15 +13,19 @@ process.load("PhysicsTools.PatAlgos.selectionLayer1.selectedPatCandidates_cff")
 # source
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
+#'/store/data/Run2018A/JetHT/MINIAOD/12Nov2019_UL2018-v2/100000/006D4A04-6DF4-7941-B54F-12CEF66AEE20.root',
+#'/store/data/Run2018A/JetHT/MINIAOD/12Nov2019_UL2018-v2/100000/00DC6D7F-C300-504F-A3BC-497C7D8FDA98.root',
+#'/store/data/Run2018A/JetHT/MINIAOD/12Nov2019_UL2018-v2/100000/0101796A-F847-3340-8AEA-0617AA884CA5.root',
+#'/store/data/Run2018A/JetHT/MINIAOD/12Nov2019_UL2018-v2/100000/010EF86B-7A36-EF4D-B96E-EF1D390FA68A.root',
+#'/store/data/Run2018A/JetHT/MINIAOD/12Nov2019_UL2018-v2/100000/0141D902-DDEF-C240-8F77-A770EBB7BE86.root',
+#'/store/data/Run2018A/JetHT/MINIAOD/12Nov2019_UL2018-v2/100000/017688D8-C200-6E4A-A6D0-F3A25E562EB2.root',
+#'/store/data/Run2018A/JetHT/MINIAOD/12Nov2019_UL2018-v2/100000/036C6DB3-D7FD-E346-A5CB-92FAE2373914.root',
 '/store/data/Run2017D/JetHT/MINIAOD/09Aug2019_UL2017-v1/00000/03A89500-ED1F-3B4F-AA84-33D55D96D9B9.root',
 '/store/data/Run2017D/JetHT/MINIAOD/09Aug2019_UL2017-v1/00000/4EAE67FC-658E-1647-B91F-A978348DA634.root',
 '/store/data/Run2017D/JetHT/MINIAOD/09Aug2019_UL2017-v1/00000/56454910-080C-714B-9B0B-D76B3AD61185.root',
 '/store/data/Run2017D/JetHT/MINIAOD/09Aug2019_UL2017-v1/00000/9A2F7287-D3C7-EB42-B8CC-D4F5F536BFC4.root',
 '/store/data/Run2017E/JetHT/MINIAOD/09Aug2019_UL2017-v1/130000/016BE62D-1105-AC4F-8A58-59BD14326D8B.root',
 '/store/data/Run2017E/JetHT/MINIAOD/09Aug2019_UL2017-v1/130000/01BB9E36-70E0-D64A-8164-87AEA03925B2.root',
-#'/store/data/Run2015D/JetHT/MINIAOD/16Dec2015-v1/00000/7E46D250-67B0-E511-BB96-0025905C3E66.root'
-#'/store/data/Run2017D/JetHT/MINIAOD/31Mar2018-v1/90000/E4402B21-F739-E811-BA23-0CC47A4C8E1E.root',
-#'/store/data/Run2017B/JetHT/MINIAOD/17Nov2017-v1/60000/DA587060-EED8-E711-80CC-0CC47A4D7678.root',
  )
 )
 
@@ -41,7 +45,7 @@ from Configuration.AlCa.GlobalTag import GlobalTag
 #process.GlobalTag = GlobalTag(process.GlobalTag,'GR_P_V56::All')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'GR_R_44_V11::All')
 #process.GlobalTag = GlobalTag(process.GlobalTag,'102X_dataRun2_v12')
-process.GlobalTag = GlobalTag(process.GlobalTag,'106X_dataRun2_v33')
+process.GlobalTag = GlobalTag(process.GlobalTag,'106X_dataRun2_v32')
 # produce PAT Layer 1
 process.load("PhysicsTools.PatAlgos.patSequences_cff")
 

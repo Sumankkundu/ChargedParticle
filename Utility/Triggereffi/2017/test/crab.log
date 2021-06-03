@@ -1,0 +1,342 @@
+DEBUG 2021-06-01 18:13:42.116 UTC: 	 CRAB Client version: v3.210505
+DEBUG 2021-06-01 18:13:42.117 UTC: 	 Running on: Linux lxplus708.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-01 18:13:42.117 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-01 18:13:42.117 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-01 18:13:42.118 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+ERROR 2021-06-01 18:13:42.118 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+INFO 2021-06-01 18:13:42.121 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-01 18:14:02.213 UTC: 	 CRAB Client version: v3.210505
+DEBUG 2021-06-01 18:14:02.214 UTC: 	 Running on: Linux lxplus708.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-01 18:14:02.214 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-01 18:14:02.214 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-01 18:14:02.215 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+ERROR 2021-06-01 18:14:02.215 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+INFO 2021-06-01 18:14:02.217 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-01 18:14:02.590 UTC: 	 CRAB Client version: v3.210505
+DEBUG 2021-06-01 18:14:02.591 UTC: 	 Running on: Linux lxplus708.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-01 18:14:02.591 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-01 18:14:02.591 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-01 18:14:02.592 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+ERROR 2021-06-01 18:14:02.593 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+INFO 2021-06-01 18:14:02.595 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 07:18:02.038 UTC: 	 CRAB Client version: v3.210505
+DEBUG 2021-06-02 07:18:02.039 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Apr 8 19:51:47 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 07:18:02.039 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-02 07:18:02.039 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 07:18:02.120 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+ERROR 2021-06-02 07:18:02.120 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+INFO 2021-06-02 07:18:02.155 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 07:18:28.295 UTC: 	 CRAB Client version: v3.210505
+DEBUG 2021-06-02 07:18:28.296 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Apr 8 19:51:47 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 07:18:28.296 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-02 07:18:28.296 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 07:18:28.297 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+ERROR 2021-06-02 07:18:28.297 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+INFO 2021-06-02 07:18:28.300 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 07:18:28.710 UTC: 	 CRAB Client version: v3.210505
+DEBUG 2021-06-02 07:18:28.710 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Apr 8 19:51:47 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 07:18:28.710 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-02 07:18:28.710 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 07:18:28.711 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+ERROR 2021-06-02 07:18:28.712 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+INFO 2021-06-02 07:18:28.714 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 07:18:37.416 UTC: 	 CRAB Client version: v3.210505
+DEBUG 2021-06-02 07:18:37.417 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Apr 8 19:51:47 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 07:18:37.417 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-06-02 07:18:37.417 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 07:18:37.418 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+ERROR 2021-06-02 07:18:37.418 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/resubmit.py", line 26, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+INFO 2021-06-02 07:18:37.420 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 07:19:22.464 UTC: 	 CRAB Client version: v3.210505
+DEBUG 2021-06-02 07:19:22.465 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Apr 8 19:51:47 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 07:19:22.465 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-06-02 07:19:22.465 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 07:19:22.467 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+ERROR 2021-06-02 07:19:22.467 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/resubmit.py", line 26, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+INFO 2021-06-02 07:19:22.469 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 07:19:22.918 UTC: 	 CRAB Client version: v3.210505
+DEBUG 2021-06-02 07:19:22.918 UTC: 	 Running on: Linux lxplus721.cern.ch 3.10.0-1160.24.1.el7.x86_64 #1 SMP Thu Apr 8 19:51:47 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 07:19:22.918 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-06-02 07:19:22.919 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 07:19:22.920 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+ERROR 2021-06-02 07:19:22.920 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/resubmit.py", line 26, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210505.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+INFO 2021-06-02 07:19:22.925 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 18:37:27.331 UTC: 	 CRAB Client version: v3.210601
+DEBUG 2021-06-02 18:37:27.331 UTC: 	 Running on: Linux lxplus778.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 18:37:27.331 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-02 18:37:27.332 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 18:37:27.427 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+ERROR 2021-06-02 18:37:27.427 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+INFO 2021-06-02 18:37:27.481 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 18:37:51.263 UTC: 	 CRAB Client version: v3.210601
+DEBUG 2021-06-02 18:37:51.263 UTC: 	 Running on: Linux lxplus778.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 18:37:51.263 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-02 18:37:51.263 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 18:37:51.264 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+ERROR 2021-06-02 18:37:51.265 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+INFO 2021-06-02 18:37:51.266 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 18:37:51.615 UTC: 	 CRAB Client version: v3.210601
+DEBUG 2021-06-02 18:37:51.615 UTC: 	 Running on: Linux lxplus778.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 18:37:51.616 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-02 18:37:51.616 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 18:37:51.617 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+ERROR 2021-06-02 18:37:51.617 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+INFO 2021-06-02 18:37:51.619 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 18:38:04.220 UTC: 	 CRAB Client version: v3.210601
+DEBUG 2021-06-02 18:38:04.220 UTC: 	 Running on: Linux lxplus778.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 18:38:04.221 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-06-02 18:38:04.221 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 18:38:04.222 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+ERROR 2021-06-02 18:38:04.222 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/resubmit.py", line 26, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+INFO 2021-06-02 18:38:04.223 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 18:38:42.329 UTC: 	 CRAB Client version: v3.210601
+DEBUG 2021-06-02 18:38:42.329 UTC: 	 Running on: Linux lxplus778.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 18:38:42.329 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-06-02 18:38:42.329 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 18:38:42.330 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+ERROR 2021-06-02 18:38:42.330 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/resubmit.py", line 26, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+INFO 2021-06-02 18:38:42.332 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-02 18:38:42.678 UTC: 	 CRAB Client version: v3.210601
+DEBUG 2021-06-02 18:38:42.679 UTC: 	 Running on: Linux lxplus778.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-02 18:38:42.679 UTC: 	 Executing command: 'resubmit'
+DEBUG 2021-06-02 18:38:42.679 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-02 18:38:42.680 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+ERROR 2021-06-02 18:38:42.680 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/resubmit.py", line 26, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+INFO 2021-06-02 18:38:42.682 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-03 05:20:23.561 UTC: 	 CRAB Client version: v3.210601
+DEBUG 2021-06-03 05:20:23.561 UTC: 	 Running on: Linux lxplus795.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-03 05:20:23.561 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-03 05:20:23.561 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-03 05:20:23.576 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+ERROR 2021-06-03 05:20:23.576 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_B is not a valid CRAB project directory.
+INFO 2021-06-03 05:20:23.657 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-03 05:20:45.367 UTC: 	 CRAB Client version: v3.210601
+DEBUG 2021-06-03 05:20:45.368 UTC: 	 Running on: Linux lxplus795.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-03 05:20:45.368 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-03 05:20:45.368 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-03 05:20:45.369 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+ERROR 2021-06-03 05:20:45.369 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_G is not a valid CRAB project directory.
+INFO 2021-06-03 05:20:45.372 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
+DEBUG 2021-06-03 05:20:45.755 UTC: 	 CRAB Client version: v3.210601
+DEBUG 2021-06-03 05:20:45.755 UTC: 	 Running on: Linux lxplus795.cern.ch 3.10.0-1160.25.1.el7.x86_64 #1 SMP Wed Apr 28 21:49:45 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-06-03 05:20:45.755 UTC: 	 Executing command: 'status'
+DEBUG 2021-06-03 05:20:45.755 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/sukundu/.crab3
+ERROR 2021-06-03 05:20:45.756 UTC: 	 Error: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+ERROR 2021-06-03 05:20:45.756 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 151, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/bin/crab", line 136, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/status.py", line 39, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 270, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.210601.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: crab_projects/crab_Trigger_2017UL_H is not a valid CRAB project directory.
+INFO 2021-06-03 05:20:45.758 UTC: 	 Log file is /afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Trigger/2017_UL/CMSSW_10_6_20/src/Test/Triggereffi/test/crab.log
