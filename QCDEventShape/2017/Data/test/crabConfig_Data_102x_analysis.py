@@ -1,11 +1,12 @@
 from CRABClient.UserUtilities import config
 config = config()
 
-config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017F-UL_14Oct20'
-#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017E-UL_14Oct20'
-#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017D-UL_14Oct20'
-#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017C-UL_14Oct20'
-#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017B-UL_14Oct20'
+#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017B'
+#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017C'
+#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017D'
+#config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017E'
+config.General.requestName = 'Event_Shape_Charge_Data_analysis_Run2017F'
+
 config.General.workArea = 'crab_projects'
 config.General.transferOutputs = True
 config.General.transferLogs = True
@@ -13,18 +14,15 @@ config.JobType.pluginName = 'Analysis'
 config.JobType.allowUndistributedCMSSW = True
 config.JobType.psetName = 'Run_QCD_test_102x_data_cfg.py'
 
-config.JobType.inputFiles= ["/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_V2_MC/Fall17_V2_MC_PtResolution_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_V2_MC/Fall17_V2_MC_SF_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_RunB_V4_DATA_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_RunC_V4_DATA_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_RunD_V4_DATA_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_RunE_V4_DATA_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_RunF_V4_DATA_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV2_DATA_PtResolution_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV2_DATA_SF_AK4PFchs.txt",
+config.JobType.inputFiles= [
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_JRV2_MC_SF_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_RunB_V5_DATA_UncertaintySources_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_RunC_V5_DATA_UncertaintySources_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_RunD_V5_DATA_UncertaintySources_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_RunE_V5_DATA_UncertaintySources_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_RunF_V5_DATA_UncertaintySources_AK4PFchs.txt"
 ]
-
-#config.JobType.inputFiles= ["/afs/cern.ch/work/t/tsarkar/private/QCD-13/CMSSW_7_6_3/src/Test/QCDEventShape/test/Fall15_25nsV2_MC_PtResolution_AK4PFchs.txt", "/afs/cern.ch/work/t/tsarkar/private/QCD-13/CMSSW_7_6_3/src/Test/QCDEventShape/test/Fall15_25nsV2_MC_SF_AK4PFchs.txt", "/afs/cern.ch/work/t/tsarkar/private/QCD-13/CMSSW_7_6_3/src/Test/QCDEventShape/test/Fall15_25nsV2_DATA_UncertaintySources_AK4PF.txt"]
 
 
 #config.Data.inputDataset = '/JetHT/Run2017E-31Mar2018-v1/MINIAOD'

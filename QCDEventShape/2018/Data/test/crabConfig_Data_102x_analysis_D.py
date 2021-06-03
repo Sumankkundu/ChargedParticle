@@ -35,7 +35,10 @@ config.JobType.inputFiles= [
 #config.Data.inputDataset = '/JetHT/Run2018A-UL2018_MiniAODv2-v1/MINIAOD'
 #config.Data.inputDataset = '/JetHT/Run2018B-UL2018_MiniAODv2-v1/MINIAOD'
 #config.Data.inputDataset = '/JetHT/Run2018C-UL2018_MiniAODv2-v1/MINIAOD'
-config.Data.inputDataset ='/JetHT/Run2018D-UL2018_MiniAODv2-v1/MINIAOD'
+#config.Data.inputDataset ='/JetHT/Run2018D-UL2018_MiniAODv2-v1/MINIAOD'
+
+
+config.Data.inputDataset = '/JetHT/Run2018D-12Nov2019_UL2018_rsb-v1/MINIAOD'
 
 
 config.Data.inputDBS = 'global'

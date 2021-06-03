@@ -15,7 +15,7 @@ config.General.transferOutputs = True
 config.General.transferLogs = True
 
 config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = 'Run_QCD_test_miaod_v2_94x_mc_cfg.py'
+config.JobType.psetName = 'Run_QCD_test_miaod_v2_106x_mc_cfg.py'
 
 #config.JobType.maxMemoryMB = 9000 # Default is 2500 : Max I have used is 13000
 #config.JobType.maxJobRuntimeMin = 2750 #Default is 1315; 2750 minutes guaranteed to be available; Max I have used is 9000
@@ -23,20 +23,14 @@ config.JobType.psetName = 'Run_QCD_test_miaod_v2_94x_mc_cfg.py'
 
 
 config.JobType.inputFiles= [
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_17Nov2017F_V6_DATA/Fall17_17Nov2017F_V6_DATA_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_17Nov2017E_V6_DATA/Fall17_17Nov2017E_V6_DATA_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_17Nov2017D_V6_DATA/Fall17_17Nov2017D_V6_DATA_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_17Nov2017C_V6_DATA/Fall17_17Nov2017C_V6_DATA_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/Fall17_17Nov2017B_V6_DATA/Fall17_17Nov2017B_V6_DATA_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/MC17_12Apr2018/Fall17_V3b_MC_PtResolution_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/MC17_12Apr2018/Fall17_V3b_MC_SF_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/MC17_12Apr2018/Fall17_17Nov2017_V32_MC_Uncertainty_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/MC17_12Apr2018/Fall17_17Nov2017_V32_MC_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_V5_MC_UncertaintySources_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV2_MC_SF_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV3_MC_SF_AK4PFchs.txt",
-"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/DataMC17UL_V4/Summer19UL17_JRV3_MC_PtResolution_AK4PFchs.txt"]
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_JRV2_MC_PtResolution_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_JRV2_MC_SF_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_RunB_V5_DATA_UncertaintySources_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_RunC_V5_DATA_UncertaintySources_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_RunD_V5_DATA_UncertaintySources_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_RunE_V5_DATA_UncertaintySources_AK4PFchs.txt",
+"/afs/cern.ch/work/s/sukundu/private/ESV_charge_CMSSW/Uncertainty2017/AK4PFCHS_Summer19UL/Summer19UL17_RunF_V5_DATA_UncertaintySources_AK4PFchs.txt"
+]
 
 
 

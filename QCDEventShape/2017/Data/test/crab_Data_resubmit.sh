@@ -1,0 +1,5 @@
+#sleep 4h
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2017C
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2017D
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2017E
+crab resubmit -d crab_projects/crab_Event_Shape_Charge_Data_analysis_Run2017F
