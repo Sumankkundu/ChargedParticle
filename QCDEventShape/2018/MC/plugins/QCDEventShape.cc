@@ -1514,14 +1514,14 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
   for(int ij=0; ij<njetetamn; ij++){
     sprintf(name, "njets_%i",ij);
     sprintf(title, "No of Jets_eta range_%gs", etarange[ij]);
-    h_njets[ij] = fs->make<TH1F>(name, title, 60, 0, 30);
+    h_njets[ij] = fs->make<TH1F>(name, title, 30, 0, 30);
     h_njets[ij]->Sumw2();
   }
 
   for(int ij=0; ij<njetetamn; ij++){
     sprintf(name, "ncharges_%i",ij);
     sprintf(title, "No of charge particles_eta range_%gs", etarange[ij]);
-    h_nchg[ij] = fs->make<TH1F>(name, title, 800, 0, 400);
+    h_nchg[ij] = fs->make<TH1F>(name, title, 400, 0, 400);
     h_nchg[ij]->Sumw2();
   }
 
@@ -1529,7 +1529,7 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
   for(int ij=0; ij<njetetamn; ij++){
     sprintf(name, "gennjets_%i",ij);
     sprintf(title, "No of GenJets_eta range_%gs", etarange[ij]);
-    gen_njets[ij] = fs->make<TH1F>(name, title, 60, 0, 30);
+    gen_njets[ij] = fs->make<TH1F>(name, title, 30, 0, 30);
     gen_njets[ij]->Sumw2();
   }
 
