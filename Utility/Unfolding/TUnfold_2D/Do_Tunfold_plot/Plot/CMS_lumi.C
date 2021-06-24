@@ -31,6 +31,10 @@ void CMS_lumi(TPad *pad, int iPeriod, int iPosX)
   float r = pad->GetRightMargin();
   float b = pad->GetBottomMargin();
 
+  float sftX = 0.11; //SKK
+  //float sftX = 0.0; //SKK
+  
+  
   pad->cd();
 
   TString lumiText;
@@ -98,12 +102,12 @@ void CMS_lumi(TPad *pad, int iPeriod, int iPosX)
     latex->SetTextFont(cmsTextFont);
     latex->SetTextAlign(11); 
     latex->SetTextSize(cmsTextSize*t);    
-    latex->DrawLatex(l, 1 - t + lumiTextOffset*t, cmsText);
+   latex->DrawLatex(l+sftX, 1 - t + lumiTextOffset*t, cmsText);//l ->l+sftX by SKK
   }
   
   pad->cd();
 
-  float posX_ = 0;
+  float posX_ = 0; //0
 
   if (iPosX%10 <=1) {
     posX_ = l + relPosX*(1-l-r);
@@ -121,7 +125,7 @@ void CMS_lumi(TPad *pad, int iPeriod, int iPosX)
 
   if (!outOfFrame) {
     if (drawLogo) {
-      posX_ = l + 0.045*(1-l-r)*W/H;
+      posX_ = l + 0.045*(1-l-r)*W/H;//0.045
       posY_ = 1 - t - 0.045*(1-t-b);
 
       float xl_0 = posX_;
@@ -161,7 +165,8 @@ void CMS_lumi(TPad *pad, int iPeriod, int iPosX)
 
   else if (writeExtraText) {
     if (iPosX == 0) {
-      posX_ = 0.063 + l + relPosX*(1-l-r);
+      posX_ = 0.043 + l+ sftX + relPosX*(1-l-r); //0.063 Changed by S.K.Kundu and l->l+sftX
+      //std::cout <<posX <<endl;
       posY_ = 1 - t + lumiTextOffset*t;
     }
 
