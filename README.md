@@ -99,6 +99,7 @@ https://github.com/Sumankkundu/ChargedParticle/tree/master/QCDEventShape/2017/MC
 - [x] Trigger           : Done (17.04.2020)
 - [x] 1DUnfolding      : Done(10.07.20) 
 - [x] 2DUnfolding      : Almost Done
-- [x] Systemetic      : Started(28.10.2020)
+- [x] Systemetic      : Done(04.06.2021)
+- [x] Lumi weight for 2016, 2017, 2018 data : 
 
 
