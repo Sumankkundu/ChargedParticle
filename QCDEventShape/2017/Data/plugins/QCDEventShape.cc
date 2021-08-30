@@ -301,7 +301,15 @@ double binrngs1[nvar][nmxbins+1]={{},{},{},
 
 
 //----------------------------------------HT2 Binning For 2D unfold 
-double recohtbins[nHLTmx+1] = {83, 109, 172, 241, 309, 377, 462, 570, 3000.0};
+//double recohtbins[nHLTmx+1] = {83, 109, 172, 241, 309, 377, 462, 570, 3000.0};
+double recohtbins[nHLTmx+1] = {83, 109, 176, 247, 318, 387, 477, 573, 3000.0}; // 2018 UL
+
+
+//---------------------------------------------Lumi weight
+int iera = 1;// 0 for Run 2016, 1 for Run 2017 , 2 for Run 2018
+double lumi[3] = {36330, 41480, 59830};
+double total_lumi = lumi[0]+lumi[1]+lumi[2];
+double lumiwtt = lumi[iera]/total_lumi;
 
 //---------------------------------------------------------------------------------------------------------
 const int nusedvar=5;
@@ -402,7 +410,8 @@ const int njetptbin=120;
 const char* jethlt_name[nHLTmx]={"HLT_DiPFJetAve60_v","HLT_DiPFJetAve80_v", "HLT_DiPFJetAve140_v", "HLT_DiPFJetAve200_v", "HLT_DiPFJetAve260_v", "HLT_DiPFJetAve320_v", "HLT_DiPFJetAve400_v", "HLT_DiPFJetAve500_v"};
 //double leadingPtThreshold[njetptmn+1] ={90.0, 120.0, 180.0, 250.0, 320.0, 400.0, 480.0, 600.0, 2000.0};
 
-double leadingPtThreshold[njetptmn+1] ={83, 109, 172, 241, 309, 377, 462, 570, 3000.0}; //Fit Value dijet trigger
+double leadingPtThreshold[njetptmn+1] ={83, 109, 176, 247, 318, 387, 477, 573, 3000.0}; //2018 UL
+//double leadingPtThreshold[njetptmn+1] ={83, 109, 172, 241, 309, 377, 462, 570, 3000.0}; //Fit Value dijet trigger
 
 //double compres[njetptmn] = {1630, 5320, 62.1, 38.9, 27.0, 4.33, 1.23, 1.0};
 //double compres[njetptmn] = {1630, 5320, 62.1, 38.9, 27.0, 4.33, 1.23, 1.0};
@@ -622,7 +631,7 @@ class QCDEventShape : public edm::EDAnalyzer {
 //#ifdef FLAT 
   //bool isFlat=1;
 //#else 
- bool isFlat=0;
+  bool isFlat=0;
 //#endif
 
     float defweight=1.0, weighttrg=1., qlow=-10., qhigh=100000.;
@@ -1510,14 +1519,14 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
   for(int ij=0; ij<njetetamn; ij++){
     sprintf(name, "njets_%i",ij);
     sprintf(title, "No of Jets_eta range_%gs", etarange[ij]);
-    h_njets[ij] = fs->make<TH1F>(name, title, 60, 0, 30);
+    h_njets[ij] = fs->make<TH1F>(name, title, 9, 1.5, 10.5);
     h_njets[ij]->Sumw2();
   }
 
   for(int ij=0; ij<njetetamn; ij++){
     sprintf(name, "ncharges_%i",ij);
     sprintf(title, "No of charge particles_eta range_%gs", etarange[ij]);
-    h_nchg[ij] = fs->make<TH1F>(name, title, 800, 0, 400);
+    h_nchg[ij] = fs->make<TH1F>(name, title, 100, 0, 100);
     h_nchg[ij]->Sumw2();
   }
 
@@ -1525,7 +1534,7 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
   for(int ij=0; ij<njetetamn; ij++){
     sprintf(name, "gennjets_%i",ij);
     sprintf(title, "No of GenJets_eta range_%gs", etarange[ij]);
-    gen_njets[ij] = fs->make<TH1F>(name, title, 60, 0, 30);
+    gen_njets[ij] = fs->make<TH1F>(name, title, 30, 0, 30);
     gen_njets[ij]->Sumw2();
   }
 
@@ -2086,6 +2095,11 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
     //    weighttrg = weight*lumiwt[3];
     // cout <<"TEST2  weighttrg "<< weighttrg<<" ; weight "<<weight<<" ; "<< wtfact<<endl;
   }
+//------------------------------------------------------------Lumi weight add 24 June21
+//double tmpwt = weighttrg;
+//weighttrg = tmpwt*lumiwtt;
+
+
   //=====================================
 #ifndef GENPART
   if(!isMC){
@@ -2452,7 +2466,7 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 		  HepLorentzVector cand4v(pfcand.px(), pfcand.py(), pfcand.pz(), pfcand.energy());
 		  tmpcand4v.push_back(cand4v);	
                   if (charge !=0){nchg++;}
-                  h_nchg[iet]->Fill(nchg, weighttrg);
+            //      h_nchg[iet]->Fill(nchg, weighttrg);
                   
 		  //	   if (cand4v.perp()<0.5) continue;
 		//  if (ncount<=2 && isEta && isPt) { 
@@ -2550,9 +2564,10 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 	      }
 	    }*/ //if (ithird>=0) 
 	    //if (isrc==0) {h_njets[iet]->Fill(ncount, weighttrg);}
-	    h_njets[iet]->Fill(ncount, weighttrg);
+	    h_nchg[iet]->Fill(nchg, weighttrg);
               } //if (abs((*ak4PFJets)[jetindx[isrc][0]].eta())<etarange[iet] && abs((*ak4PFJets)[jetindx[isrc][1]].eta())<etarange[iet])
             } // for(unsigned ijet = 0; ijet != ak4PFJets->size(); ijet++)
+	    h_njets[iet]->Fill(ncount, weighttrg);
 	  } //if (aveleadingptjec[isrc] >leadingPtThreshold[0])
 	} // 	for (int isrc = 0; isrc < njecmx; isrc++)
       } //for (int iet=0; iet<njetetamn; iet++)	   
@@ -3331,11 +3346,11 @@ QCDEventShape::beginJob() {
 #ifdef JETENERGY
   for (int isrc = 0; isrc < nsrc; isrc++) {
     const char *name = srcnames[isrc];
-     //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_RunB_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
-     //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_RunC_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
-     //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_RunD_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
-     //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_RunE_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
-     JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_RunF_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
+   //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_RunB_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
+   //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_RunC_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
+   //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_RunD_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
+   //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_RunE_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
+   JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL17_RunF_V5_DATA_UncertaintySources_AK4PFchs.txt", name);    
      //JetCorrectorParameters *p = new JetCorrectorParameters("Summer19UL18_V5_MC_Uncertainty_AK4PFchs.txt", name);    
       JetCorrectionUncertainty *unc = new JetCorrectionUncertainty(*p);
 		//    vsrc[isrc] = unc;

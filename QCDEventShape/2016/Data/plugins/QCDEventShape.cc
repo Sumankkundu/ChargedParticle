@@ -301,8 +301,18 @@ double binrngs1[nvar][nmxbins+1]={{},{},{},
 
 
 //----------------------------------------HT2 Binning For 2D unfold 
-double recohtbins[nHLTmx+1] = {83, 109, 172, 241, 309, 377, 462, 570, 3000.0};
+//double recohtbins[nHLTmx+1] = {66, 95, 155, 227, 286, 350, 444, 557, 3000.0}; // For 2016 Trigger
+double recohtbins[nHLTmx+1] = {83, 109, 176, 247, 318, 387, 477, 573, 3000.0}; //For 2018
 
+
+
+//---------------------------------------------Lumi weight
+int iera = 0;// 0 for Run 2016, 1 for Run 2017 , 2 for Run 2018
+double lumi[3] = {36330, 41480, 59830};
+double total_lumi = lumi[0]+lumi[1]+lumi[2];
+double lumiwtt = lumi[iera]/total_lumi;
+
+//
 //---------------------------------------------------------------------------------------------------------
 const int nusedvar=5;
 double usedvars[nusedvar]={3, 9, 15, 18, 24};
@@ -377,7 +387,9 @@ const int njetptbin=120;
 const char* jethlt_name[nHLTmx]={"HLT_DiPFJetAve60_v","HLT_DiPFJetAve80_v", "HLT_DiPFJetAve140_v", "HLT_DiPFJetAve200_v", "HLT_DiPFJetAve260_v", "HLT_DiPFJetAve320_v", "HLT_DiPFJetAve400_v", "HLT_DiPFJetAve500_v"};
 //double leadingPtThreshold[njetptmn+1] ={90.0, 120.0, 180.0, 250.0, 320.0, 400.0, 480.0, 600.0, 2000.0};
 
-double leadingPtThreshold[njetptmn+1] ={83, 109, 172, 241, 309, 377, 462, 570, 3000.0}; //Fit Value dijet trigger
+//double leadingPtThreshold[njetptmn+1] ={66, 95, 155, 227, 286, 350, 444, 557, 3000.0}; //Fit Value dijet trigger 2016
+double leadingPtThreshold[njetptmn+1] ={83, 109, 176, 247, 318, 387, 477, 573, 3000.0}; //Fit Value dijet trigger 2018
+//double leadingPtThreshold[njetptmn+1] ={83, 109, 172, 241, 309, 377, 462, 570, 3000.0}; //Fit Value dijet trigger 2017
 
 //double compres[njetptmn] = {1630, 5320, 62.1, 38.9, 27.0, 4.33, 1.23, 1.0};
 //double compres[njetptmn] = {1630, 5320, 62.1, 38.9, 27.0, 4.33, 1.23, 1.0};
@@ -435,7 +447,7 @@ const int njetetamn=1; // GMA 4;
 //double trgpas[nHLTmx+1]={0,0,0,0,0,0,0,0,0};
 
 //const int njetetamn=3;
-double etarange[njetetamn] ={2.4}; //{3.0, 2.4, 1.8, 1.3};
+double etarange[njetetamn] ={2.5}; //{3.0, 2.4, 1.8, 1.3};
 double resetarange[njetetamn+4] ={0, 0.5, 1.0, 1.5}; //, 2.0, 2.5, 3.0, 3.5};
 double par0[njetetamn+4]={1.02, 1.02, 1.022, 1.017, 0.98}; //, 0.9327};
 double par1[njetetamn+4]={7.3e-6, -7.3e-6, -5.66e-6, -9.9e-6, 1.41e-4}; //, 4.6e-4};
@@ -595,7 +607,7 @@ class QCDEventShape : public edm::EDAnalyzer {
   float inslumi;
   int nsicls, ntottrk;
 //#ifdef FLAT 
- // bool isFlat=1;
+//bool isFlat=1;
 //#else 
  bool isFlat=0;
 //#endif
@@ -1485,14 +1497,14 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
   for(int ij=0; ij<njetetamn; ij++){
     sprintf(name, "njets_%i",ij);
     sprintf(title, "No of Jets_eta range_%gs", etarange[ij]);
-    h_njets[ij] = fs->make<TH1F>(name, title, 60, 0, 30);
+    h_njets[ij] = fs->make<TH1F>(name, title, 9, 1.5, 10.5);
     h_njets[ij]->Sumw2();
   }
 
   for(int ij=0; ij<njetetamn; ij++){
     sprintf(name, "ncharges_%i",ij);
     sprintf(title, "No of charge particles_eta range_%gs", etarange[ij]);
-    h_nchg[ij] = fs->make<TH1F>(name, title, 800, 0, 400);
+    h_nchg[ij] = fs->make<TH1F>(name, title, 100, 0, 100);
     h_nchg[ij]->Sumw2();
   }
 
@@ -1500,7 +1512,7 @@ QCDEventShape::QCDEventShape(const edm::ParameterSet& iConfig):
   for(int ij=0; ij<njetetamn; ij++){
     sprintf(name, "gennjets_%i",ij);
     sprintf(title, "No of GenJets_eta range_%gs", etarange[ij]);
-    gen_njets[ij] = fs->make<TH1F>(name, title, 60, 0, 30);
+    gen_njets[ij] = fs->make<TH1F>(name, title, 30, 0, 30);
     gen_njets[ij]->Sumw2();
   }
 
@@ -1794,13 +1806,14 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
       // if( (NHF<0.90 && NEMF<0.90 && NumConst>1) && (abs((*ak4PFJets)[ij].eta())<=2.4 && CHF>0 && CHM>0) ) TightJetID =true;
       //      } else {
       //                           TightJetID =false;}
-      //Updated for UL17 : 27Aug20
-      if(abs((*ak4PFJets)[ij].eta())<=2.6){
-      if(NHF<0.90 && NEMF<0.90 && NumConst>1 && CHF>0 && CHM>0)  TightJetID =true;
+      //Updated for UL16 : 27Aug20
+      if(abs((*ak4PFJets)[ij].eta())<=2.7){
+      if(NHF<0.90 && NEMF<0.90 && NumConst>1 && CHF>0 && CHM>0  && abs((*ak4PFJets)[ij].eta())<=2.4 )  TightJetID =true;
+      if(NHF<0.90 && NEMF<0.99 && abs((*ak4PFJets)[ij].eta())>2.4 )  TightJetID =true;
                       } else {
                                  TightJetID =false;
                                  }
-      if (abs((*ak4PFJets)[ij].eta())>2.6) {TightJetID = false;}
+      if (abs((*ak4PFJets)[ij].eta())>2.7) {TightJetID = false;}
       if ((*ak4PFJets)[ij].pt()<30.0) {TightJetID = false;}
 
       if (TightJetID) {
@@ -2051,6 +2064,14 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
     //    weighttrg = weight*lumiwt[3];
     // cout <<"TEST2  weighttrg "<< weighttrg<<" ; weight "<<weight<<" ; "<< wtfact<<endl;
   }
+
+//------------------------------------------------------------Lumi weight add 24 June21
+
+double tmpwt = weighttrg;
+weighttrg = tmpwt*lumiwtt;
+//
+//
+
   //=====================================
 #ifndef GENPART
   if(!isMC){
@@ -2176,11 +2197,11 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 	}
 #elif defined(JETRESO)
 	if (isrc==0) {  
-	  reso = sqrt(sf*sf - 1)*rp;
+	  reso = sqrt(abs(sf*sf - 1))*rp;
 	} else if (isrc==1) {
-	  reso = sqrt(sf_up*sf_up - 1)*rp;
+	  reso = sqrt(abs(sf_up*sf_up - 1))*rp;
 	} else if (isrc==2) {
-	  reso = sqrt(sf_dn*sf_dn - 1)*rp;
+	  reso = sqrt(abs(sf_dn*sf_dn - 1))*rp;
 	}
 	sup = gRandom->Gaus(1.0, reso);			
 #endif
@@ -2278,13 +2299,14 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
                 //       } else {
                 //                           TightJetID =false; }
                 //Update for UL17 : 27Aug20
-                if(abs((*ak4PFJets)[ireorjt].eta())<=2.6){
-                if(NHF<0.90 && NEMF<0.90 && NumConst>1 && CHF>0 && CHM>0)  TightJetID =true;
+                if(abs((*ak4PFJets)[ireorjt].eta())<=2.7){
+                if(NHF<0.90 && NEMF<0.90 && NumConst>1 && CHF>0 && CHM>0 && abs((*ak4PFJets)[ireorjt].eta())<=2.4)  TightJetID =true;
+                if(NHF<0.90 && NEMF<0.99 && abs((*ak4PFJets)[ireorjt].eta())>2.4)  TightJetID =true;
                       } else {
                                  TightJetID =false;
                                  }
                 
-                 if (abs((*ak4PFJets)[ireorjt].eta())>2.6) {TightJetID = false;}
+                 if (abs((*ak4PFJets)[ireorjt].eta())>2.7) {TightJetID = false;}
                  if ((*ak4PFJets)[ireorjt].pt()<30.0) {TightJetID = false;}
 		
 		if( ireorjt<=1 && !TightJetID) break;
@@ -2411,8 +2433,7 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 		  int charge = pfcand.charge();
 		  HepLorentzVector cand4v(pfcand.px(), pfcand.py(), pfcand.pz(), pfcand.energy());
 		  tmpcand4v.push_back(cand4v);	
-                  nchg++;
-                  h_nchg[iet]->Fill(nchg, weighttrg);
+                  if (charge !=0){nchg++;}
                   
 		  //	   if (cand4v.perp()<0.5) continue;
 		//  if (ncount<=2 && isEta && isPt) { 
@@ -2510,9 +2531,10 @@ void QCDEventShape::analyze(const edm::Event& iEvent, const edm::EventSetup& iSe
 	      }
 	    }*/ //if (ithird>=0) 
 	    //if (isrc==0) {h_njets[iet]->Fill(ncount, weighttrg);}
-	    h_njets[iet]->Fill(ncount, weighttrg);
+                h_nchg[iet]->Fill(nchg, weighttrg);
               } //if (abs((*ak4PFJets)[jetindx[isrc][0]].eta())<etarange[iet] && abs((*ak4PFJets)[jetindx[isrc][1]].eta())<etarange[iet])
             } // for(unsigned ijet = 0; ijet != ak4PFJets->size(); ijet++)
+	    h_njets[iet]->Fill(ncount, weighttrg);
 	  } //if (aveleadingptjec[isrc] >leadingPtThreshold[0])
 	} // 	for (int isrc = 0; isrc < njecmx; isrc++)
       } //for (int iet=0; iet<njetetamn; iet++)	   
